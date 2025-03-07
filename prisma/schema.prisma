@@ -10,11 +10,12 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
+model ContactForm {
+    id        String   @id @default(uuid())
     name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+    email     String
+    message   String   @db.VarChar(1024)
+    createdAt DateTime @default(now()) @map("created_at")
 
-    @@index([name])
+    @@map("contact_form")
 }
