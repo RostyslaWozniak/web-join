@@ -21,7 +21,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pl" className={`${spaceGrotesk.className} dark`}>
-      <body className="selection:bg-primary-cyan overflow-x-hidden selection:text-background">
+      <body className="overflow-x-hidden selection:bg-primary-cyan selection:text-background">
         <Nav />
         <main>{children}</main>
       </body>

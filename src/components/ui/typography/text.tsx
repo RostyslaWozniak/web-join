@@ -5,10 +5,10 @@ import React from "react";
 const textVariants = cva("leading-7 text-pretty font-manrope ", {
   variants: {
     size: {
-      default: "text-base font-normal leading-relaxed tracking-wide ",
+      default: "text-lg font-normal leading-relaxed tracking-wide ",
       sm: "text-sm font-normal leading-relaxed  tracking-wider",
-      lg: "text-lg font-semibold md:text-lg/relaxed tracking-wider",
-      subtitle: "text-lg font-semibold md:text-xl tracking-[2px] ",
+      lg: "text-xl font-semibold md:text-lg/relaxed tracking-wider",
+      subtitle: "text-xl font-semibold md:text-2xl tracking-[2px] ",
     },
     variant: {
       default: "text-foreground",
