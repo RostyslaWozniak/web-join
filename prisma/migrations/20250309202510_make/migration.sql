@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "contact_form" ADD COLUMN     "agreement" BOOLEAN NOT NULL DEFAULT false,
+ALTER COLUMN "name" DROP NOT NULL,
+ALTER COLUMN "message" DROP NOT NULL,
+ALTER COLUMN "message" SET DATA TYPE TEXT;

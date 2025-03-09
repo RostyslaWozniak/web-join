@@ -20,10 +20,10 @@ import { Text } from "../ui/typography";
 import { LoadingButton } from "@/components/ui/loading-button";
 import { toast } from "sonner";
 import { subscribe } from "./actions";
-import { useTransition } from "react";
+import { useState } from "react";
 
 export function SubscribeForm() {
-  const [isPending, startTransition] = useTransition();
+  const [isPending, setIsPending] = useState(false);
   const form = useForm<SubscribeFormSchema>({
     resolver: zodResolver(subscribeFormSchema),
     defaultValues: {
@@ -31,14 +31,20 @@ export function SubscribeForm() {
     },
   });
 
-  function onSubmit(values: SubscribeFormSchema) {
+  async function onSubmit(values: SubscribeFormSchema) {
     try {
-      const res = startTransition(async () => await subscribe(values));
-      toast.success("Dziekuje za zapisanie");
-      console.log({ res });
-    } catch (err) {
-      console.log(err);
+      setIsPending(true);
+      const res = await subscribe(values);
+      if (res.code === 201 || res.code === 200) {
+        toast.success(res.message);
+        form.reset();
+      } else if (res.code === 400) {
+        toast.warning(res.message);
+      }
+    } catch {
       toast.error("Coś poszło nie tak");
+    } finally {
+      setIsPending(false);
     }
   }
 
@@ -67,10 +73,10 @@ export function SubscribeForm() {
                 </FormControl>
                 <LoadingButton
                   type="submit"
-                  loading={!isPending}
+                  loading={isPending}
                   size="default"
                   variant="secondary"
-                  className="h-12 w-full sm:h-10 sm:w-min"
+                  className="h-12 w-full text-white sm:h-10 sm:w-min"
                 >
                   Zapisz się
                 </LoadingButton>
