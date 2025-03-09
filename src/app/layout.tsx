@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import { Space_Grotesk } from "next/font/google";
 import { type Metadata } from "next";
 import { Header } from "@/components/header";
-import { Providers } from "@/components/providers";
+// import { Providers } from "@/components/providers";
 import { Footer } from "@/components/footer";
 
 const spaceGrotesk = Space_Grotesk({
@@ -24,15 +24,15 @@ export default function RootLayout({
   return (
     <html
       lang="pl"
-      className={`${spaceGrotesk.className} scroll-smooth`}
+      className={`${spaceGrotesk.className} dark scroll-smooth`}
       suppressHydrationWarning
     >
       <body className="overflow-x-hidden selection:bg-primary-cyan selection:text-background">
-        <Providers>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </Providers>
+        {/* <Providers> */}
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        {/* </Providers> */}
       </body>
     </html>
   );
