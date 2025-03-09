@@ -6,9 +6,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <ReactLenis root options={{ lerp: 0.1 }}>
       <ThemeProvider
         attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
+        // defaultTheme="system"
+        // enableSystem
+        // disableTransitionOnChange
       >
         {children}
       </ThemeProvider>
