@@ -17,9 +17,9 @@ export function ThemeToggle() {
         <button className="relative min-h-8 min-w-8">
           <Sun
             className={cn(
-              "absolute inset-0 h-full w-full scale-100 stroke-[1.5px] duration-1000",
+              "absolute inset-0 h-full w-full scale-100 stroke-[1.5px] duration-500",
               {
-                "scale-0": theme === "dark",
+                "rotate-90 scale-0": theme === "dark",
               },
             )}
           />
@@ -29,6 +29,7 @@ export function ThemeToggle() {
               "absolute inset-0 h-full w-full scale-0 stroke-primary-cyan stroke-[1.5px] duration-300",
               {
                 "scale-100": theme === "dark",
+                "rotate-90": theme === "light",
               },
             )}
           />
