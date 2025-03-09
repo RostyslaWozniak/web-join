@@ -16,34 +16,36 @@ export function Accordion({ questions, className }: AccorderonProps) {
   return (
     <div className={cn("w-full", className)}>
       {questions.map(({ question, answer }, index) => (
-        <div key={index} className="w-full">
+        <div key={index} className="relative w-full">
           <CardWrapper className="flex items-center justify-between rounded-2xl">
             <Text size="subtitle" className="flex-grow">
               {question}
             </Text>
-            <button className="relative min-h-9 min-w-9">
-              <PlayCircle
-                className={cn(
-                  "absolute inset-0 h-full w-full scale-100 stroke-[1.5px] transition-transform duration-300",
-                  {
-                    "rotate-45 scale-0": activeIndex === index,
-                  },
-                )}
-              />
-              <XCircle
-                className={cn(
-                  "absolute inset-0 h-full w-full scale-0 stroke-[1.5px] transition-transform duration-300",
-                  {
-                    "rotate-90 scale-100": activeIndex === index,
-                  },
-                )}
-              />
-              <span
-                className="absolute -inset-2 cursor-pointer"
-                onClick={() =>
-                  setActiveIndex(activeIndex === index ? null : index)
-                }
-              />
+            <button
+              className=""
+              onClick={() =>
+                setActiveIndex(activeIndex === index ? null : index)
+              }
+            >
+              <div className="relative min-h-10 min-w-10">
+                <PlayCircle
+                  className={cn(
+                    "absolute inset-0 h-full w-full scale-100 stroke-[1.5px] transition-transform duration-300",
+                    {
+                      "rotate-45 scale-0": activeIndex === index,
+                    },
+                  )}
+                />
+                <XCircle
+                  className={cn(
+                    "absolute inset-0 h-full w-full scale-0 stroke-[1.5px] transition-transform duration-300",
+                    {
+                      "rotate-90 scale-100": activeIndex === index,
+                    },
+                  )}
+                />
+              </div>
+              <span className="absolute inset-0 cursor-pointer" />
             </button>
           </CardWrapper>
           <div
@@ -56,9 +58,9 @@ export function Accordion({ questions, className }: AccorderonProps) {
           >
             <Text
               className={cn(
-                "overflow-hidden px-8 py-2 transition-all duration-300",
+                "overflow-hidden px-2 py-2 opacity-0 transition-all duration-300 md:px-8",
                 {
-                  "pb-8": index === activeIndex,
+                  "opacity-1 pb-8": index === activeIndex,
                 },
               )}
             >

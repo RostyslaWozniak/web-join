@@ -29,7 +29,7 @@ export function PortfolioSection() {
   return (
     <section id="portfolio">
       <MaxWidthWrapper className="flex flex-col items-center gap-y-8 px-0 py-16 md:gap-y-14 md:py-20">
-        <div className="flex flex-col items-center gap-y-4">
+        <div className="flex flex-col items-center gap-y-4 px-2.5">
           <H2>Portfolio</H2>
           <Text size="subtitle" className="max-w-2xl md:text-center">
             Każdy projekt to unikalne rozwiązanie stworzone z myślą o celach

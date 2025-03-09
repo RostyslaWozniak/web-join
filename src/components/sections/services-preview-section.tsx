@@ -57,9 +57,9 @@ export function ServicesPreviewSection() {
               transition={{ duration: 0.3, delay: index * 0.2 }}
               className="flex flex-col"
             >
-              <H3 className="max-w-[150px]">{title}</H3>
-              <Text className="flex-grow pt-20">{text}</Text>
-              <div className="relative flex items-center gap-4">
+              <H3 className="z-10 max-w-[150px]">{title}</H3>
+              <Text className="z-10 flex-grow pt-20">{text}</Text>
+              <div className="relative hidden items-center gap-4">
                 <PlayCircle size={40} strokeWidth={1.5} />
                 <Text size="lg">Więcej</Text>
                 <Link href={href} aria-label="więcej informacji o usłudze">
