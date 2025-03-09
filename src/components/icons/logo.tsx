@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 
 type LogoProps = {
@@ -5,7 +7,10 @@ type LogoProps = {
 };
 export function Logo({ className }: LogoProps) {
   return (
-    <div className={cn(className)}>
+    <div
+      className={cn("cursor-pointer", className)}
+      onClick={() => scrollTo({ top: 0, behavior: "smooth" })}
+    >
       <svg
         width="169"
         height="37"

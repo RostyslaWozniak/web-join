@@ -2,7 +2,9 @@ import "@/styles/globals.css";
 
 import { Space_Grotesk } from "next/font/google";
 import { type Metadata } from "next";
-import { Nav } from "@/components/nav";
+import { Header } from "@/components/header";
+import { Providers } from "@/components/providers";
+import { Footer } from "@/components/footer";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -20,10 +22,17 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pl" className={`${spaceGrotesk.className} dark`}>
+    <html
+      lang="pl"
+      className={`${spaceGrotesk.className} scroll-smooth`}
+      suppressHydrationWarning
+    >
       <body className="overflow-x-hidden selection:bg-primary-cyan selection:text-background">
-        <Nav />
-        <main>{children}</main>
+        <Providers>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

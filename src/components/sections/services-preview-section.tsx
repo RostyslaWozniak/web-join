@@ -1,11 +1,9 @@
-"use client";
-
-import { PlayCircle } from "lucide-react";
-import { MaxWidthWrapper } from "../max-width-wrapper";
-import { H2, H3, Text } from "../ui/typography";
-
 import Link from "next/link";
-import { CardWithAnimatedSphere } from "../animations/card-with-animated-sphere";
+import { PlayCircle } from "lucide-react";
+import { MaxWidthWrapper } from "@/components/max-width-wrapper";
+import { H2, H3, Text } from "@/components/ui/typography";
+
+import { CardWithAnimatedSphere } from "@/components/animations/card-with-animated-sphere";
 
 const servicesData = [
   {
@@ -48,7 +46,7 @@ const servicesData = [
 
 export function ServicesPreviewSection() {
   return (
-    <section>
+    <section id="uslugi">
       <MaxWidthWrapper className="flex flex-col items-center gap-y-8 py-16 md:gap-y-14 md:py-20">
         <H2 className="text-start md:text-center">Co mogę Tobie zaoferować?</H2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

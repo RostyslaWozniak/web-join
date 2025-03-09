@@ -9,7 +9,7 @@ export function CardWrapper({ children, className }: CardWrapperProps) {
   return (
     <div
       className={cn(
-        "space-y-4 rounded-3xl bg-card-gradient p-6 shadow-[0_0_0_1px_hsl(var(--primary)_/_30%)]",
+        "rounded-3xl bg-card-gradient p-6 shadow-[0_0_0_1px_hsl(var(--primary-cyan)_/_30%)]",
         className,
       )}
     >

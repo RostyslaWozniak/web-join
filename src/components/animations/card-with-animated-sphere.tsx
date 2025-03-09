@@ -24,7 +24,7 @@ export function CardWithAnimatedSphere({
         transition={{ duration: 0.3 }}
         viewport={{ once: true, margin: "0px 0px -100px 0px" }}
         className={cn(
-          "absolute -right-20 -top-10 -z-10 aspect-square h-60 rounded-full",
+          "absolute -right-20 -top-10 aspect-square h-60 rounded-full",
           color,
         )}
         {...props}

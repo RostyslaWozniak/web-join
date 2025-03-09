@@ -5,9 +5,9 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 199 18% 33%;
-    --card: 20 20% 100%;
+    --card: 184 74% 95%;
     --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 9%;
+    --popover: 162 74% 95%;
     --popover-foreground: 0 0% 3.9%;
     --primary: 162 72% 53%;
     --primary-foreground: 0 0% 98%;
@@ -36,9 +36,9 @@
   .dark {
     --background: 199 26 17%;
     --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
+    --card: 169 46% 27%;
     --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
+    --popover: 187 48% 28%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
     --primary-foreground: 0 0% 9%;
@@ -76,4 +76,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.button {
+  box-shadow: 0 0 0 10px linear-gradient(to left, red, blue);
 }

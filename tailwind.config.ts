@@ -17,7 +17,10 @@ export default {
       backgroundImage: {
         "primary-gradient":
           "linear-gradient(to left, hsl(var(--primary-green)), hsl(var(--primary-cyan)))",
-        "card-gradient": "linear-gradient(to left, #256358, #256068)",
+        "secondary-gradient":
+          "linear-gradient(to left, hsl(var(--primary-green) / 10%), hsl(var(--primary-cyan) / 10%))",
+        "card-gradient":
+          "linear-gradient(to left, hsl(var(--card)), hsl(var(--popover)))",
         "radial-gradient-primary-green":
           "radial-gradient(circle at 40% 20%, white, hsl(var(--primary-green)), black);",
         "radial-gradient-primary-cyan":
