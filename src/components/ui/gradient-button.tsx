@@ -16,7 +16,7 @@ export function GradientButton({
 }: GradientButtonProps) {
   return (
     <Button
-      className="group relative isolate w-full bg-primary-gradient shadow transition-shadow duration-300 hover:shadow-[0px_0px_20px_6px_hsl(var(--primary-cyan)_/_70%)] md:w-auto"
+      className="group relative isolate w-full bg-gradient-to-r from-cyan-400 to-emerald-300 shadow transition-shadow duration-300 hover:shadow-[0px_0px_20px_6px_hsl(var(--primary-cyan)_/_70%)] md:w-auto"
       {...props}
     >
       {outline && (
@@ -39,7 +39,7 @@ export function GradientButton({
         </span>
       )}
       {outline && (
-        <span className="relative z-30 bg-primary-gradient bg-clip-text text-2xl text-transparent group-hover:text-white">
+        <span className="relative z-30 bg-gradient-to-r from-cyan-400 to-emerald-300 bg-clip-text text-2xl text-transparent group-hover:text-white">
           {children}
         </span>
       )}
