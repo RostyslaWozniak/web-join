@@ -16,18 +16,18 @@ export function GradientButton({
 }: GradientButtonProps) {
   return (
     <Button
-      className="du ration-300 group relative isolate w-full bg-gradient-to-r from-cyan-400 to-emerald-300 shadow transition-shadow hover:shadow-[0px_0px_20px_6px_#22D3EE70] md:w-auto"
+      className="group relative isolate w-full bg-gradient-to-r from-cyan-400 to-emerald-300 shadow transition-shadow duration-300 hover:shadow-[0px_0px_20px_6px_#22D3EE70] md:w-auto"
       {...props}
     >
       {outline && (
-        <div className="absolute inset-0.5 z-20 rounded-full bg-background duration-300 group-hover:bg-transparent" />
+        <div className="absolute inset-0.5 z-50 rounded-full bg-background duration-300 group-hover:bg-transparent" />
       )}
       {showIcon && (
         <PlayCircle
           className={cn(
-            "relative z-30 min-h-8 min-w-8 stroke-background duration-300 group-hover:stroke-white",
+            "relative z-30 min-h-8 min-w-8 text-background duration-300 group-hover:stroke-white",
             {
-              "stroke-primary-cyan": outline,
+              "stroke-cyan-400": outline,
               "group-hover:-translate-x-0.5 group-hover:scale-105": !outline,
             },
           )}
