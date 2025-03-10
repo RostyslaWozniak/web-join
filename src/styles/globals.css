@@ -74,6 +74,8 @@
   }
 }
 
-.button {
-  box-shadow: 0 0 0 10px linear-gradient(to left, red, blue);
+html,
+body {
+  background-color: red; /* or your preferred color */
+  color: #ffffff;
 }
