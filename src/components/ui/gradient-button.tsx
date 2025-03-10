@@ -16,7 +16,7 @@ export function GradientButton({
 }: GradientButtonProps) {
   return (
     <Button
-      className="group relative isolate w-full bg-gradient-to-r from-cyan-400 to-emerald-300 shadow transition-shadow duration-300 hover:shadow-[0px_0px_20px_6px_hsl(var(--primary-cyan)_/_70%)] md:w-auto"
+      className="du ration-300 group relative isolate w-full bg-gradient-to-r from-cyan-400 to-emerald-300 shadow transition-shadow hover:shadow-[0px_0px_20px_6px_#22D3EE70] md:w-auto"
       {...props}
     >
       {outline && (

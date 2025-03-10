@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html
       lang="pl"
-      className={`${spaceGrotesk.className} dark scroll-smooth`}
+      className={`${spaceGrotesk.className} scroll-smooth`}
       suppressHydrationWarning
     >
       <body className="overflow-x-hidden selection:bg-primary-cyan selection:text-background">
