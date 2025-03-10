@@ -1,6 +1,6 @@
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { Logo } from "@/components/icons";
-import { ThemeToggle } from "@/components/ui/theme-toogle";
+// import { ThemeToggle } from "@/components/ui/theme-toogle";
 import { GradientButton } from "@/components/ui/gradient-button";
 import { navigation } from "./navigation";
 import { Nav } from "./nav";
@@ -17,9 +17,9 @@ export function Header() {
             Join
           </GradientButton>
         </nav>
-        <div className="min-w-14 pl-4 pt-1">
+        {/* <div className="min-w-14 pl-4 pt-1">
           <ThemeToggle />
-        </div>
+        </div> */}
       </MaxWidthWrapper>
     </header>
   );
