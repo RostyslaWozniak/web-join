@@ -10,7 +10,7 @@ export function HomeHeroSection() {
   return (
     <section id="start">
       <GridBackground className="flex items-center justify-center">
-        <MaxWidthWrapper className="relative flex min-h-[90vh] flex-col items-center justify-center gap-y-12 py-8 md:py-16">
+        <MaxWidthWrapper className="relative flex min-h-[70vh] flex-col items-center justify-center gap-y-12 py-8 md:py-16">
           <div className="flex flex-grow flex-col items-center justify-center gap-y-8 md:flex-none">
             <div className="space-y-22 grid place-items-center gap-y-2">
               <H1 className="max-w-7xl text-start text-foreground md:text-center">
@@ -51,9 +51,11 @@ export function HomeHeroSection() {
             </div>
           </div>
           <div className="flex w-full flex-col items-center justify-end gap-4 md:flex-row md:justify-center">
-            <GradientButton size="lg" outline>
-              Portfolio
-            </GradientButton>
+            <div className="hidden lg:block">
+              <GradientButton size="lg" outline>
+                Portfolio
+              </GradientButton>
+            </div>
             <GradientButton size="lg" showIcon>
               Join
             </GradientButton>
