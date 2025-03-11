@@ -20,7 +20,7 @@ export function GradientButton({
       {...props}
     >
       {outline && (
-        <div className="absolute inset-0.5 z-10 rounded-full !bg-background duration-300 group-hover:bg-transparent" />
+        <div className="absolute inset-0.5 z-10 rounded-full bg-background duration-300 group-hover:bg-transparent" />
       )}
       {showIcon && (
         <PlayCircle

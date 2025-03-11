@@ -22,10 +22,13 @@ export function Footer() {
         <div className="space-y-4">
           <h2 className="text-lg font-semibold">Linki</h2>
           <div className="flex items-center gap-4">
-            <Link href="https://github.com/RostyslaWozniak">
+            <Link href="https://github.com/RostyslaWozniak" aria-label="github">
               <Github />
             </Link>
-            <Link href="https://www.linkedin.com/in/rostyslav-vozniak/">
+            <Link
+              href="https://www.linkedin.com/in/rostyslav-vozniak/"
+              aria-label="linkedin"
+            >
               <Linkedin />
             </Link>
           </div>

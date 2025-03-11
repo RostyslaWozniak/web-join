@@ -5,7 +5,7 @@ import { type Metadata } from "next";
 import { Header } from "@/components/header";
 import { Providers } from "@/components/providers";
 import { Footer } from "@/components/footer";
-import { Toaster } from "sonner";
+import { Toaster } from "@/components/ui/sonner";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -33,16 +33,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
-          <Toaster
-            position="top-right"
-            toastOptions={{
-              style: {
-                background: "hsl(var(--background) / 50%)",
-                color: "hsl(var(--foreground))",
-                backdropFilter: "blur(4px)",
-              },
-            }}
-          />
+          <Toaster />
         </Providers>
       </body>
     </html>

@@ -5,6 +5,7 @@ import { CardWrapper } from "../card-wrapper";
 import { Text } from "../ui/typography";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { MotionWrapper } from "../motion-wrapper";
 
 type AccorderonProps = {
   questions: { question: string; answer: string }[];
@@ -16,7 +17,11 @@ export function Accordion({ questions, className }: AccorderonProps) {
   return (
     <div className={cn("w-full", className)}>
       {questions.map(({ question, answer }, index) => (
-        <div key={index} className="relative w-full">
+        <MotionWrapper
+          key={index}
+          transition={{ duration: 0.5, delay: 0.2 * index }}
+          className="relative"
+        >
           <CardWrapper className="flex items-center justify-between rounded-2xl">
             <Text size="subtitle" className="flex-grow">
               {question}
@@ -67,7 +72,7 @@ export function Accordion({ questions, className }: AccorderonProps) {
               {answer}
             </Text>
           </div>
-        </div>
+        </MotionWrapper>
       ))}
     </div>
   );

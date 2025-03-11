@@ -39,7 +39,7 @@ export function SubscribeForm() {
         toast.success(res.message);
         form.reset();
       } else if (res.code === 400) {
-        toast.warning(res.message);
+        toast.info(res.message);
       }
     } catch {
       toast.error("Coś poszło nie tak");
@@ -66,8 +66,9 @@ export function SubscribeForm() {
               <div className="flex flex-col items-center gap-3 sm:flex-row">
                 <FormControl>
                   <Input
-                    placeholder="Wpisz swoój email"
-                    className="h-12 w-full rounded-full pl-4 sm:h-10"
+                    type="email"
+                    placeholder="Wpisz swój email"
+                    className="h-12 w-full rounded-full border-foreground pl-4 sm:h-10"
                     {...field}
                   />
                 </FormControl>
@@ -75,8 +76,8 @@ export function SubscribeForm() {
                   type="submit"
                   loading={isPending}
                   size="default"
-                  variant="secondary"
-                  className="h-12 w-full text-white sm:h-10 sm:w-min"
+                  variant="outline"
+                  className="h-12 w-full border-foreground bg-transparent text-foreground hover:bg-transparent hover:opacity-80 sm:h-10 sm:w-min"
                 >
                   Zapisz się
                 </LoadingButton>

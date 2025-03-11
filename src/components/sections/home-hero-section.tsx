@@ -2,21 +2,23 @@ import { GridBackground } from "@/components/grid-background";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { H1 } from "@/components/ui/typography";
-import { Code, Globe, Sparkles, ZapIcon } from "lucide-react";
+import { Code, Globe, RocketIcon, Sparkles, ZapIcon } from "lucide-react";
 import { AnimatedText } from "@/components/animations/animated-text";
 import { GradientButton } from "../ui/gradient-button";
+import Link from "next/link";
 
 export function HomeHeroSection() {
   return (
     <section id="start">
       <GridBackground className="flex items-center justify-center">
-        <MaxWidthWrapper className="relative flex min-h-[70vh] flex-col items-center justify-center gap-y-12 py-8 md:py-16">
+        <MaxWidthWrapper className="relative flex min-h-[70vh] flex-col items-center justify-center gap-y-12 py-8 md:py-16 lg:min-h-[90vh]">
           <div className="flex flex-grow flex-col items-center justify-center gap-y-8 md:flex-none">
             <div className="space-y-22 grid place-items-center gap-y-2">
               <H1 className="max-w-7xl text-start text-foreground md:text-center">
-                Stwórzmy stronę{" "}
-                <span className="hidden md:inline">internetową</span>, która
-                rozpędzi{" "}
+                <span className="absolute right-2.5 top-2.5 mr-3 inline-block aspect-square h-20 md:static">
+                  <RocketIcon className="min-h-full min-w-full stroke-primary-cyan" />
+                </span>
+                Strona internetową, która napędzi{" "}
                 <span className="bg-primary-gradient bg-clip-text text-transparent">
                   Twój biznes
                 </span>
@@ -25,9 +27,9 @@ export function HomeHeroSection() {
                 className="hidden max-w-4xl md:inline md:text-center"
                 textProps={{ size: "subtitle" }}
               >
-                Ty rozwijasz biznes, a ja tworzę stronę, która go wspiera.
-                Zadbam o wszystkie aspekty techniczne, żebyś mógł skupić się na
-                tym, co ważne.
+                Ty rozwijasz firmę, a ja tworzę stronę, która działa szybko,
+                bezpiecznie i skutecznie. Zadbam o technologię, żebyś mógł
+                skupić się na zyskach.
               </AnimatedText>
             </div>
             <div className="flex w-full flex-grow flex-col justify-center gap-6 md:hidden">
@@ -52,13 +54,17 @@ export function HomeHeroSection() {
           </div>
           <div className="flex w-full flex-col items-center justify-end gap-4 md:flex-row md:justify-center">
             <div className="hidden lg:block">
-              <GradientButton size="lg" outline>
-                Portfolio
-              </GradientButton>
+              <Link href="#portfolio">
+                <GradientButton size="lg" outline>
+                  Portfolio
+                </GradientButton>
+              </Link>
             </div>
-            <GradientButton size="lg" showIcon>
-              Join
-            </GradientButton>
+            <Link href="#faq">
+              <GradientButton size="lg" showIcon>
+                Join
+              </GradientButton>
+            </Link>
           </div>
 
           <div className="hidden flex-col items-center gap-x-14 pt-20 md:flex md:flex-row">
