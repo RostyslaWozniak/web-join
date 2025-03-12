@@ -54,13 +54,13 @@ export function HomeHeroSection() {
           </div>
           <div className="flex w-full flex-col items-center justify-end gap-4 md:flex-row md:justify-center">
             <div className="hidden lg:block">
-              <Link href="#portfolio">
+              <Link href="/#portfolio" className="w-full">
                 <GradientButton size="lg" outline>
                   Portfolio
                 </GradientButton>
               </Link>
             </div>
-            <Link href="#faq">
+            <Link href="/#faq" className="w-full md:w-auto">
               <GradientButton size="lg" showIcon>
                 Join
               </GradientButton>

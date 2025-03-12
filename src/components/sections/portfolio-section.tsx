@@ -48,22 +48,24 @@ export function PortfolioSection() {
                   <Badge className="rounded-full bg-primary-gradient text-white transition-transform dark:bg-card-gradient">
                     {category}
                   </Badge>
-                  <div className="absolute top-12 overflow-hidden rounded-md shadow-[-4px_2px_10px_1px_#00000030] duration-500 group-hover:scale-105 dark:shadow-[-4px_2px_10px_1px_#00000080]">
-                    <Image
-                      src={image2}
-                      width={267}
-                      height={377}
-                      alt="Eleven Flower Studio"
-                    />
-                  </div>
-                  <div className="absolute right-0 top-0 overflow-hidden rounded-md shadow-[-4px_2px_10px_1px_#00000030] duration-500 group-hover:scale-105 dark:shadow-[-4px_2px_10px_1px_#00000080]">
-                    <Image
-                      src={image1}
-                      width={267}
-                      height={377}
-                      alt="Eleven Flower Studio"
-                    />
-                  </div>
+
+                  <Image
+                    className="absolute top-12 w-[250px] overflow-hidden rounded-md shadow-[-4px_2px_10px_1px_#00000030] duration-500 group-hover:scale-105 dark:shadow-[-4px_2px_10px_1px_#00000080]"
+                    src={image2}
+                    priority
+                    width={250}
+                    height={400}
+                    alt="Eleven Flower Studio"
+                  />
+
+                  <Image
+                    className="absolute right-0 top-0 w-[270px] overflow-hidden rounded-md shadow-[-4px_2px_10px_1px_#00000030] duration-500 group-hover:scale-105 dark:shadow-[-4px_2px_10px_1px_#00000080]"
+                    priority
+                    src={image1}
+                    width={250}
+                    height={400}
+                    alt="Eleven Flower Studio"
+                  />
                   <div className="group absolute bottom-0 left-8 right-8 z-50 flex h-28 items-center justify-between gap-3 rounded-2xl bg-card-gradient p-4 md:left-12 md:right-12">
                     <div className="space-y-2">
                       <h3 className="text-nowrap text-xl">{title}</h3>

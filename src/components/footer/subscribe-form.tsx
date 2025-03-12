@@ -68,7 +68,7 @@ export function SubscribeForm() {
                   <Input
                     type="email"
                     placeholder="Wpisz swój email"
-                    className="h-12 w-full rounded-full border-foreground pl-4 sm:h-10"
+                    className="h-12 w-full rounded-full border-foreground pl-4 placeholder:text-white/90 sm:h-10"
                     {...field}
                   />
                 </FormControl>
@@ -82,7 +82,7 @@ export function SubscribeForm() {
                   Zapisz się
                 </LoadingButton>
               </div>
-              <FormDescription className="max-w-lg text-foreground/80">
+              <FormDescription className="max-w-lg text-foreground/90">
                 Zapisując się, zgadzasz się na otrzymywanie aktualizacji i
                 akceptujesz naszą Politykę prywatności.
               </FormDescription>

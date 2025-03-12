@@ -14,7 +14,7 @@ export function Nav({ navigation }: NavProps) {
   useEffect(() => {
     const handleScroll = throttle(() => {
       const sectionElements = navigation.map((section) =>
-        document.getElementById(section.href),
+        document.getElementById(section.href.replace("/", "").replace("#", "")),
       );
 
       let currentSectionId = "";
@@ -42,8 +42,10 @@ export function Nav({ navigation }: NavProps) {
       {navigation.map(({ name, href }) => (
         <NavItem
           key={href}
-          href={`/#${href}`}
-          isActiveLink={activeSection === href}
+          href={`${href}`}
+          isActiveLink={
+            activeSection === href.replace("/", "").replace("#", "")
+          }
         >
           {name}
         </NavItem>
