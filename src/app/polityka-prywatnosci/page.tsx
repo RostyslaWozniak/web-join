@@ -9,12 +9,12 @@ export default async function PrivacyPolicyPage() {
         <Markdown
           components={{
             h1: ({ children }) => (
-              <h1 className="mt-6 text-3xl font-bold text-primary">
+              <h1 className="mt-6 text-3xl font-bold text-foreground">
                 {children}
               </h1>
             ),
             h2: ({ children }) => (
-              <h2 className="mt-4 text-2xl font-semibold text-primary">
+              <h2 className="mt-4 text-2xl font-semibold text-foreground">
                 {children}
               </h2>
             ),

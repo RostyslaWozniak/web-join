@@ -1,36 +1,55 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion, type MotionProps } from "framer-motion";
-import { Text, type TextProps } from "../ui/typography";
+import { motion } from "framer-motion";
 
-type AnimatedTextProps = {
-  children: string;
-  className?: string;
-  motionProps?: MotionProps;
-  textProps?: TextProps;
-};
 export function AnimatedText({
-  children,
+  text,
   className,
-  motionProps,
-  textProps,
-}: AnimatedTextProps) {
+  accentWords,
+}: {
+  text: string;
+  className?: string;
+  accentWords?: string[];
+}) {
   return (
-    <Text className={cn("", className)} {...textProps}>
-      {children.split("").map((char, index) => (
-        <motion.span
-          key={index}
-          initial={{ opacity: 0.25 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.02, delay: 0.01 * index }}
-          viewport={{ once: true }}
-          className="inline-block"
-          {...motionProps}
-        >
-          {char === " " ? "\u00A0" : char}
-        </motion.span>
-      ))}
-    </Text>
+    <div className={cn("flex flex-wrap gap-x-4 md:gap-x-6", className)}>
+      {text.split(" ").map((w, wIndex) => {
+        const isAccent = accentWords?.includes(w);
+
+        return (
+          <motion.div
+            key={wIndex}
+            className={cn("flex", {
+              "bg-primary-gradient bg-clip-text pb-1 pr-1 text-transparent":
+                isAccent,
+            })}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: wIndex * 0.05 }}
+          >
+            {isAccent ? (
+              // Wrap the whole accent word in a single motion element
+              <span>{w}</span>
+            ) : (
+              // Animate normal words letter by letter
+              w.split("").map((ch, chIndex) => (
+                <motion.span
+                  className="inline-block"
+                  key={chIndex}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: (wIndex + chIndex) * 0.02 }}
+                >
+                  {ch}
+                </motion.span>
+              ))
+            )}
+          </motion.div>
+        );
+      })}
+    </div>
   );
 }

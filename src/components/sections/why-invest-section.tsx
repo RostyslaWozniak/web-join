@@ -11,9 +11,9 @@ export function WhyInvestSection() {
         <H2 className="w-full max-w-3xl">
           Dlaczego warto zainwestować w profesjonalną stronę?
         </H2>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           <MotionWrapper transition={{ duration: 0.3, delay: 0 }}>
-            <CardWrapper className="h-full">
+            <CardWrapper className="max-w-[470px]">
               <div className="flex items-center gap-4 md:flex-col md:items-start">
                 <div className="rounded-full bg-accent-yellow p-3 md:rounded-2xl">
                   <Search className="min-h-8 min-w-8 stroke-white md:min-h-12 md:min-w-12" />
@@ -28,7 +28,7 @@ export function WhyInvestSection() {
             </CardWrapper>
           </MotionWrapper>
           <MotionWrapper transition={{ duration: 0.3, delay: 0.2 }}>
-            <CardWrapper className="h-full">
+            <CardWrapper className="max-w-[470px]">
               <div className="flex items-center gap-4 md:flex-col md:items-start">
                 <div className="rounded-full bg-primary-cyan p-3 md:rounded-2xl">
                   <AlarmClockCheck className="min-h-8 min-w-8 stroke-white md:min-h-12 md:min-w-12" />
@@ -43,7 +43,7 @@ export function WhyInvestSection() {
             </CardWrapper>
           </MotionWrapper>
           <MotionWrapper transition={{ duration: 0.3, delay: 0.4 }}>
-            <CardWrapper className="h-full">
+            <CardWrapper className="max-w-[470px]">
               <div className="flex items-center gap-4 md:flex-col md:items-start">
                 <div className="rounded-full bg-accent-green p-3 md:rounded-2xl">
                   <BriefcaseBusiness className="min-h-8 min-w-8 stroke-white md:min-h-12 md:min-w-12" />

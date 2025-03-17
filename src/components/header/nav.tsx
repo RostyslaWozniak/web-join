@@ -10,7 +10,7 @@ type NavProps = {
 };
 
 export function Nav({ navigation }: NavProps) {
-  const [activeSection, setActiveSection] = useState("start");
+  const [activeSection, setActiveSection] = useState("");
   useEffect(() => {
     const handleScroll = throttle(() => {
       const sectionElements = navigation.map((section) =>

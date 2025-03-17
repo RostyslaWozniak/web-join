@@ -57,7 +57,7 @@ export function SubscribeForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>
-                <Text size="lg" className="">
+                <Text size="lg" className="px-3 pb-4 sm:pb-0">
                   Zapisz się do newslettera
                 </Text>
               </FormLabel>
@@ -68,7 +68,7 @@ export function SubscribeForm() {
                   <Input
                     type="email"
                     placeholder="Wpisz swój email"
-                    className="h-12 w-full rounded-full border-foreground pl-4 placeholder:text-white/90 sm:h-10"
+                    className="h-12 w-full rounded-full border-foreground pl-4 text-center placeholder:text-foreground/90 sm:h-10 sm:text-start"
                     {...field}
                   />
                 </FormControl>
@@ -77,12 +77,12 @@ export function SubscribeForm() {
                   loading={isPending}
                   size="default"
                   variant="outline"
-                  className="h-12 w-full border-foreground bg-transparent text-foreground hover:bg-transparent hover:opacity-80 sm:h-10 sm:w-min"
+                  className="h-12 w-full bg-background text-foreground hover:bg-transparent hover:opacity-80 sm:h-10 sm:w-min"
                 >
                   Zapisz się
                 </LoadingButton>
               </div>
-              <FormDescription className="max-w-lg text-foreground/90">
+              <FormDescription className="max-w-lg px-3 text-foreground/90">
                 Zapisując się, zgadzasz się na otrzymywanie aktualizacji i
                 akceptujesz naszą Politykę prywatności.
               </FormDescription>

@@ -6,17 +6,24 @@ type GradientButtonProps = {
   children: React.ReactNode;
   showIcon?: boolean;
   outline?: boolean;
+  className?: string;
+  textSize?: string;
 } & ButtonProps;
 
 export function GradientButton({
   children,
   showIcon = false,
   outline = false,
+  className,
+  textSize = "text-2xl",
   ...props
 }: GradientButtonProps) {
   return (
     <Button
-      className="group relative isolate w-full bg-gradient-to-r from-cyan-400 to-emerald-300 shadow transition-shadow duration-300 hover:shadow-[0px_0px_20px_6px_#22D3EE70] md:w-auto"
+      className={cn(
+        "group relative isolate w-full bg-gradient-to-r from-cyan-400 to-emerald-300 shadow transition-shadow duration-300 hover:shadow-[0px_0px_20px_6px_#22D3EE70] md:w-auto",
+        className,
+      )}
       {...props}
     >
       {outline && (
@@ -34,12 +41,22 @@ export function GradientButton({
         />
       )}
       {!outline && (
-        <span className="group-hover:translate-x-0.2 relative z-30 text-2xl text-background duration-300 group-hover:scale-105 group-hover:text-white">
+        <span
+          className={cn(
+            "group-hover:translate-x-0.2 relative z-30 flex items-center text-background duration-300 group-hover:scale-[1.02] group-hover:text-white",
+            textSize,
+          )}
+        >
           {children}
         </span>
       )}
       {outline && (
-        <span className="relative z-30 bg-gradient-to-r from-cyan-400 to-emerald-300 bg-clip-text text-2xl text-transparent group-hover:text-white">
+        <span
+          className={cn(
+            "relative z-30 flex items-center bg-gradient-to-r from-cyan-400 to-emerald-300 bg-clip-text text-2xl text-transparent group-hover:text-white",
+            textSize,
+          )}
+        >
           {children}
         </span>
       )}

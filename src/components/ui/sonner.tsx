@@ -16,7 +16,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
       toastOptions={{
         unstyled: true,
         classNames: {
-          default: " p-4 pr-8 rounded-lg flex items-center gap-2 min-w-[320px]",
+          default: " p-4 pr-8 rounded-lg flex items-center gap-2 min-w-[400px]",
           error: "bg-destructive text-destructive-foreground",
           success: "bg-emerald-500 text-white",
           warning: "text-yellow-400",

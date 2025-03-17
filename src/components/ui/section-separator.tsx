@@ -1,12 +1,17 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { MaxWidthWrapper } from "../max-width-wrapper";
 import { motion } from "framer-motion";
 
-export function SectionSeparator() {
+export type SectionSeparatorProps = {
+  className?: string;
+};
+
+export function SectionSeparator({ className }: SectionSeparatorProps) {
   return (
     <div className="w-full">
-      <MaxWidthWrapper className="sm:px-5">
+      <MaxWidthWrapper className={cn("sm:px-5", className)}>
         <motion.div
           initial={{ width: "0%" }}
           whileInView={{ width: "100%" }}

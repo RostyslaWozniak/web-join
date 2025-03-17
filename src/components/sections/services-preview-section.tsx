@@ -79,7 +79,7 @@ export function ServicesPreviewSection() {
     <section id="uslugi">
       <MaxWidthWrapper className="flex flex-col items-center gap-y-8 py-16 md:gap-y-14 md:py-20">
         <H2 className="text-start md:text-center">Co mogę Tobie zaoferować?</H2>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {servicesData.map(({ title, href, color, features }, index) => (
             <CardWithAnimatedSphere
               key={index}

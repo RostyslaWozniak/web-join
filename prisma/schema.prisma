@@ -10,11 +10,20 @@ datasource db {
 
 model ContactForm {
     id        String   @id @default(uuid())
-    name      String?
-    email     String   @unique
-    agreement Boolean  @default(false)
-    message   String?
+    email     String?
+    phone     String?
+    service   String
+    features  String?
     createdAt DateTime @default(now()) @map("created_at")
 
     @@map("contact_form")
+}
+
+model Subscribers {
+    id        String   @id @default(uuid())
+    email     String   @unique
+    agreement Boolean  @default(false)
+    createdAt DateTime @default(now()) @map("created_at")
+
+    @@map("subscribers")
 }

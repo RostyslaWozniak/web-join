@@ -6,6 +6,7 @@ import { Header } from "@/components/header";
 import { Providers } from "@/components/providers";
 import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner";
+import { MobileNav } from "@/components/mobile-nav";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <MobileNav />
           <Toaster />
         </Providers>
       </body>
