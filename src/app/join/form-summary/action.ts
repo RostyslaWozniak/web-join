@@ -1,5 +1,7 @@
 "use server";
 
+import { env } from "@/env";
+import { sendSms } from "@/lib/services/twilio";
 import { contactFormSchema } from "@/lib/validation/contact-form-schema";
 import { db } from "@/server/db";
 
@@ -33,6 +35,13 @@ export async function sendForm(formData: unknown) {
           },
         });
       }
+    }
+
+    if (env.NODE_ENV === "production") {
+      await sendSms({
+        number: env.RECEIVE_SMS_NUMBER,
+        message: `Web Join contact form submited. Contact ${data.email ?? data.phone}`,
+      });
     }
 
     return {

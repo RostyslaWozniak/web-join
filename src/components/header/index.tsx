@@ -15,10 +15,11 @@ export function Header() {
         </Link>
         <nav className="hidden min-h-full flex-grow items-center md:flex">
           <Nav navigation={navigation} />
-
-          <GradientButton showIcon outline>
-            Join
-          </GradientButton>
+          <Link href="/join">
+            <GradientButton showIcon outline>
+              Join
+            </GradientButton>
+          </Link>
         </nav>
         <div className="min-w-14 pl-4 pt-1">
           <ThemeToggle />
