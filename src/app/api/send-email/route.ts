@@ -1,17 +1,36 @@
-import { OfferEmail } from "@/components/emails/offer-email";
+import OfferEmail from "@/components/emails/offer-email";
 import { sendEmail } from "@/lib/services/resend";
 import { NextResponse } from "next/server";
+import pMap from "p-map";
+import type { CreateEmailResponseSuccess, ErrorResponse } from "resend";
+
+const emails = [
+  "rostik19wozniak@icloud.com",
+  "rostik19wozniak@gmail.com",
+  // "ewelina.m.teklinska@gmail.com",
+  "rostyslav.vozniak.dev@gmail.com",
+];
 
 export async function POST() {
-  await sendEmail({
-    emails: [
-      "rostyslav.vozniak.dev@gmail.com",
-      "rostik19wozniak@gmail.com",
-      "ewelina.m.teklinska@gmail.com",
-    ],
-    subject: "Oferta Web Join",
-    emailTemplate: OfferEmail(),
-  });
+  const emailsSet = [...new Set(emails)]; // Ensure unique emails
+  const concurrencyLimit = 2; // Max 2 requests per second
+  const response: (CreateEmailResponseSuccess | ErrorResponse | null)[] = [];
 
-  return new NextResponse("OK", { status: 200 });
+  await pMap(
+    emailsSet,
+    async (email) => {
+      const res = await sendEmail({
+        email: email,
+        subject: "Oferta Web Join",
+        emailTemplate: OfferEmail(),
+      });
+      response.push(res);
+
+      // Delay of 500ms to respect the 2 requests/sec limit
+      await new Promise((resolve) => setTimeout(resolve, 500));
+    },
+    { concurrency: concurrencyLimit },
+  );
+
+  return NextResponse.json({ status: 200, response });
 }

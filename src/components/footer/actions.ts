@@ -4,7 +4,7 @@ import {
   subscribeFormSchema,
   type SubscribeFormSchema,
 } from "@/lib/validation/subscribe-form-schema";
-import { db } from "@/server/db";
+// import { db } from "@/server/db";
 
 export async function subscribe(
   data: SubscribeFormSchema,
@@ -13,7 +13,7 @@ export async function subscribe(
 
   if (!isValidData.success)
     return { message: "Nie prawidłowy email", code: 400 };
-  const { email } = isValidData.data;
+  // const { email } = isValidData.data;
 
   // const emailExists = await db.s.findUnique({ where: { email } });
 
