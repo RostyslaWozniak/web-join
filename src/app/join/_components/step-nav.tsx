@@ -9,23 +9,22 @@ import { useEffect, useState } from "react";
 export const steps = [
   {
     id: 1,
-    title: "Kontakt",
-    route: "contact-method",
-    link: "/join/contact-method",
-  },
-
-  {
-    id: 2,
     title: "Wybór usługi",
     route: "service-selection",
     link: "/join/service-selection",
   },
 
   {
-    id: 3,
+    id: 2,
     title: "Twoje priorytety",
     route: "additional-features",
     link: "/join/additional-features",
+  },
+  {
+    id: 3,
+    title: "Kontakt",
+    route: "contact-method",
+    link: "/join/contact-method",
   },
 
   {
@@ -49,7 +48,7 @@ export default function StepNav() {
     <div className="sticky isolate mb-12 mt-4 min-w-60 lg:mb-0">
       {/* back button */}
       <Link
-        href={steps[currentStep - 1]?.link ?? "/join/contact-method"}
+        href={steps[currentStep - 1]?.link ?? "/join/service-selection"}
         className="mb-8 flex items-center text-xl hover:underline disabled:text-white/50 lg:mb-12"
       >
         <ChevronLeft className="mr-2 h-5 w-5" /> Cofnij

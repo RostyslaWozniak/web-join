@@ -31,7 +31,7 @@ export function AdditionalFaturesForm() {
 
   function onSubmit(values: AdditionalFeaturesSchema) {
     updateContactForm(values);
-    router.push("/join/form-summary");
+    router.push("/join/contact-method");
   }
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function JoinPage() {
-  redirect("/join/contact-method");
+  redirect("/join/service-selection");
 }
