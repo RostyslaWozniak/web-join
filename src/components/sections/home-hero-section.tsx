@@ -15,7 +15,7 @@ export function HomeHeroSection() {
           <div className="flex flex-grow flex-col items-center justify-center gap-y-3 md:flex-none">
             <H1 className="flex max-w-7xl text-start text-foreground md:text-center">
               <span className="absolute right-4 top-4 aspect-square h-20 md:static">
-                <RocketIcon className="min-h-full min-w-full stroke-primary-cyan" />
+                <RocketIcon className="stroke-accent-cyan min-h-full min-w-full" />
               </span>
               <AnimatedText
                 className="md:justify-center"
@@ -28,7 +28,7 @@ export function HomeHeroSection() {
               transition={{ delay: 0.2, duration: 0.3 }}
               className="hidden max-w-4xl sm:inline md:text-center"
             >
-              <Text size={"subtitle"}>
+              <Text size={"subtitle"} variant="muted">
                 Ty rozwijasz firmę, a ja tworzę stronę, która działa szybko,
                 bezpiecznie i skutecznie. Zadbam o technologię, żebyś mógł
                 skupić się na zyskach.
@@ -63,7 +63,7 @@ export function HomeHeroSection() {
                 transition={{ delay: 0.1, duration: 0.3 }}
                 className="flex items-center gap-x-2 text-xl"
               >
-                <ZapIcon className="stroke-accent-yellow" /> Szybkie strony
+                <ZapIcon className="stroke-accent-lime" /> Szybkie strony
               </MotionWrapper>
               <MotionWrapper
                 initial={{ opacity: 0, y: 50 }}
@@ -71,7 +71,7 @@ export function HomeHeroSection() {
                 transition={{ delay: 0.2, duration: 0.3 }}
                 className="flex items-center gap-x-2 text-xl"
               >
-                <Code className="stroke-primary-cyan" />
+                <Code className="stroke-accent-cyan" />
                 Clean code
               </MotionWrapper>
               <MotionWrapper
@@ -80,7 +80,7 @@ export function HomeHeroSection() {
                 transition={{ delay: 0.3, duration: 0.3 }}
                 className="flex items-center gap-x-2 text-xl"
               >
-                <Sparkles className="stroke-primary-green" /> Modern UX
+                <Sparkles className="stroke-accent-green" /> Modern UX
               </MotionWrapper>
               <MotionWrapper
                 initial={{ opacity: 0, y: 50 }}

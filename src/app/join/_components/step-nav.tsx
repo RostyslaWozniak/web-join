@@ -49,7 +49,12 @@ export default function StepNav() {
       {/* back button */}
       <Link
         href={steps[currentStep - 1]?.link ?? "/join/service-selection"}
-        className="mb-8 flex items-center text-xl hover:underline disabled:text-white/50 lg:mb-12"
+        className={cn(
+          "mb-8 flex items-center text-xl hover:underline lg:mb-12",
+          {
+            "opacity-0": currentStep === 0,
+          },
+        )}
       >
         <ChevronLeft className="mr-2 h-5 w-5" /> Cofnij
       </Link>

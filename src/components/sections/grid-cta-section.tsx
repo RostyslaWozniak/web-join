@@ -19,7 +19,7 @@ export function GridCTASection() {
               <div className="w-full overflow-hidden pb-4">
                 <FlipWords
                   words={words}
-                  className="text-nowrap px-0 font-semibold text-primary-cyan"
+                  className="text-accent-cyan text-nowrap px-0 font-semibold"
                 />
               </div>
             </h2>

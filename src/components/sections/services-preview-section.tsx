@@ -85,7 +85,7 @@ export function ServicesPreviewSection() {
               key={index}
               color={color}
               transition={{ duration: 0.3, delay: index * 0.2 }}
-              className="flex flex-col duration-300 hover:scale-[1.02] hover:shadow-lg"
+              className="flex flex-col"
             >
               <H3 className="z-10 max-w-[150px]">{title}</H3>
               <div className="z-10 mt-14 flex flex-col gap-2">

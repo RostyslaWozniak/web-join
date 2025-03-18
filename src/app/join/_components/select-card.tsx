@@ -19,9 +19,9 @@ export function SelectCard({
   return (
     <div
       className={cn(
-        "grid cursor-pointer place-items-center rounded-2xl border-2 border-muted-foreground bg-background p-6 text-muted-foreground",
+        "grid cursor-pointer place-items-center rounded-2xl border-2 bg-background p-6",
         {
-          "border-primary-cyan bg-primary-cyan/10 text-foreground": isSelected,
+          "border-accent-cyan bg-[#22D3EE10] text-foreground": isSelected,
           "border-destructive": error,
         },
         className,
@@ -30,13 +30,13 @@ export function SelectCard({
     >
       <Icon
         className={cn("h-6 w-6", {
-          "scale-110 stroke-primary-cyan transition-transform duration-300 ease-in-out":
+          "stroke-accent-cyan scale-110 transition-transform duration-300 ease-in-out":
             isSelected,
         })}
       />
       <h3
         className={cn("text-center text-lg font-semibold", {
-          "scale-110 text-primary-cyan transition-transform duration-300":
+          "text-accent-cyan scale-110 transition-transform duration-300":
             isSelected,
         })}
       >

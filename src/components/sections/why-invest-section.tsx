@@ -15,8 +15,8 @@ export function WhyInvestSection() {
           <MotionWrapper transition={{ duration: 0.3, delay: 0 }}>
             <CardWrapper className="max-w-[470px]">
               <div className="flex items-center gap-4 md:flex-col md:items-start">
-                <div className="rounded-full bg-accent-yellow p-3 md:rounded-2xl">
-                  <Search className="min-h-8 min-w-8 stroke-white md:min-h-12 md:min-w-12" />
+                <div className="bg-accent-lime rounded-full p-3 md:rounded-2xl">
+                  <Search className="min-h-8 min-w-8 stroke-background dark:opacity-80 md:min-h-12 md:min-w-12" />
                 </div>
                 <H3>Zwiększenie widoczności </H3>
               </div>
@@ -30,8 +30,8 @@ export function WhyInvestSection() {
           <MotionWrapper transition={{ duration: 0.3, delay: 0.2 }}>
             <CardWrapper className="max-w-[470px]">
               <div className="flex items-center gap-4 md:flex-col md:items-start">
-                <div className="rounded-full bg-primary-cyan p-3 md:rounded-2xl">
-                  <AlarmClockCheck className="min-h-8 min-w-8 stroke-white md:min-h-12 md:min-w-12" />
+                <div className="bg-accent-cyan rounded-full p-3 md:rounded-2xl">
+                  <AlarmClockCheck className="min-h-8 min-w-8 stroke-background dark:opacity-80 md:min-h-12 md:min-w-12" />
                 </div>
                 <H3>Dostępność 24/7</H3>
               </div>
@@ -45,8 +45,8 @@ export function WhyInvestSection() {
           <MotionWrapper transition={{ duration: 0.3, delay: 0.4 }}>
             <CardWrapper className="max-w-[470px]">
               <div className="flex items-center gap-4 md:flex-col md:items-start">
-                <div className="rounded-full bg-accent-green p-3 md:rounded-2xl">
-                  <BriefcaseBusiness className="min-h-8 min-w-8 stroke-white md:min-h-12 md:min-w-12" />
+                <div className="bg-accent-emerald rounded-full p-3 md:rounded-2xl">
+                  <BriefcaseBusiness className="min-h-8 min-w-8 stroke-background dark:opacity-80 md:min-h-12 md:min-w-12" />
                 </div>
                 <H3>Profesjonalny wizerunek</H3>
               </div>

@@ -77,7 +77,7 @@ export function SubscribeForm() {
                   loading={isPending}
                   size="default"
                   variant="outline"
-                  className="h-12 w-full bg-background text-foreground hover:bg-transparent hover:opacity-80 sm:h-10 sm:w-min"
+                  className="h-12 w-full sm:h-10 sm:w-auto"
                 >
                   Zapisz się
                 </LoadingButton>

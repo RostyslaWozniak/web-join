@@ -17,17 +17,17 @@ export default {
       },
       backgroundImage: {
         "primary-gradient":
-          "linear-gradient(to left, var(--primary-green), var(--primary-cyan))",
+          "linear-gradient(to left, var(--accent-emerald), var(--accent-cyan))",
         "secondary-gradient":
-          "linear-gradient(to left, var(--primary-green) / 10%), var(--primary-cyan) / 10%)",
+          "linear-gradient(to left, hsl(156, 72%, 67%, 10%), hsl(188, 86%, 53%, 10%))",
         "card-gradient":
           "linear-gradient(to left, var(--card), var(--popover))",
         "radial-gradient-primary-green":
-          "radial-gradient(circle at 40% 20%, white, var(--primary-green), black);",
+          "radial-gradient(circle at 40% 20%, white, var(--accent-green), black);",
         "radial-gradient-primary-cyan":
-          "radial-gradient(circle at 40% 20%, white, var(--primary-cyan), black);",
+          "radial-gradient(circle at 40% 20%, white, var(--accent-cyan), black);",
         "radial-gradient-accent-yellow":
-          "radial-gradient(circle at 40% 20%, white, var(--accent-yellow), black);",
+          "radial-gradient(circle at 40% 20%, white, var(--accent-lime), black);",
         "radial-gradient-accent-green":
           "radial-gradient(circle at 40% 20%, white, var(--accent-green), black);",
       },
@@ -62,20 +62,13 @@ export default {
           DEFAULT: "var(--destructive)",
           foreground: "var(--destructive-foreground)",
         },
-        "primary-green": "var(--primary-green)",
-        "primary-cyan": "var(--primary-cyan)",
+        "accent-emerald": "var(--accent-emerald)",
+        "accent-cyan": "var(--accent-cyan)",
         "accent-green": "var(--accent-green)",
-        "accent-yellow": "var(--accent-yellow)",
+        "accent-lime": "var(--accent-lime)",
         border: "var(--border)",
         input: "var(--input)",
         ring: "var(--ring)",
-        chart: {
-          "1": "var(--chart-1)",
-          "2": "var(--chart-2)",
-          "3": "var(--chart-3)",
-          "4": "var(--chart-4)",
-          "5": "var(--chart-5)",
-        },
       },
     },
     animation: {

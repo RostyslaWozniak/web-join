@@ -12,7 +12,7 @@ export function GridBackground({
   return (
     <div
       className={cn(
-        "relative inset-0 h-full w-full bg-[linear-gradient(to_right,var(--popover)_1px,transparent_1px),linear-gradient(to_bottom,var(--popover)_1px,transparent_1px)] bg-[size:8px_8px]",
+        "relative inset-0 h-full w-full bg-[linear-gradient(to_right,#C4F0F7_1px,transparent_1px),linear-gradient(to_bottom,#C4F0F7_1px,transparent_1px)] bg-[size:8px_8px] dark:bg-[linear-gradient(to_right,var(--popover)_1px,transparent_1px),linear-gradient(to_bottom,var(--popover)_1px,transparent_1px)]",
         className,
       )}
     >
