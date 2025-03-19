@@ -7,7 +7,7 @@ import { AnimatedText } from "../animations/animated-text";
 export function ContactHeroSection() {
   return (
     <section>
-      <GridBackground maskGradient className="py-32 md:py-20">
+      <GridBackground maskGradient className="py-12 md:py-20">
         <MaxWidthWrapper className="relative z-10 flex flex-col items-center">
           <H1 className="max-w-sm sm:text-center md:max-w-6xl">
             <AnimatedText

@@ -7,7 +7,7 @@ import type { CreateEmailResponseSuccess, ErrorResponse } from "resend";
 const emails = [
   "rostik19wozniak@icloud.com",
   "rostik19wozniak@gmail.com",
-  // "ewelina.m.teklinska@gmail.com",
+  "ewelina.m.teklinska@gmail.com",
   "rostyslav.vozniak.dev@gmail.com",
 ];
 

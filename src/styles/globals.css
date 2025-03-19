@@ -61,7 +61,7 @@
 
 @layer base {
   :root {
-    --background: #fafafa;
+    --background: #fcffff;
     --foreground: #455a64;
     --card: #ecfdf5;
     --card-foreground: var(--foreground);

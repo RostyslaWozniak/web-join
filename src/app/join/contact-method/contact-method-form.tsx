@@ -57,7 +57,7 @@ export function ContactMethodForm() {
 
   function onSubmit(values: ContactMethodSchema) {
     updateContactForm(values);
-    router.push("/join/form-summary");
+    router.push("/join/form-summary#form");
   }
 
   useEffect(() => {

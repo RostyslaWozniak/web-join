@@ -143,7 +143,7 @@ const Summary = ({
             </Text>
           </div>
 
-          <EditLink href="/join/contact-method" />
+          <EditLink href="/join/contact-method#form" />
         </div>
 
         {/* Usługa */}
@@ -152,7 +152,7 @@ const Summary = ({
             <Text variant="muted">Interesuje Cię:</Text>
             <Text className="font-semibold">{service}</Text>
           </div>
-          <EditLink href="/join/service-selection" />
+          <EditLink href="/join/service-selection#form" />
         </div>
 
         {/* Dodatkowe opcje */}
@@ -176,7 +176,7 @@ const Summary = ({
             )}
           </div>
 
-          <EditLink href="/join/additional-features" />
+          <EditLink href="/join/additional-features#form" />
         </div>
       </div>
     </div>

@@ -14,9 +14,13 @@ export function HomeHeroSection() {
         <MaxWidthWrapper className="relative flex min-h-[70vh] flex-col items-center justify-center py-8 sm:gap-y-4 md:py-16 lg:min-h-[90vh]">
           <div className="flex flex-grow flex-col items-center justify-center gap-y-3 md:flex-none">
             <H1 className="flex max-w-7xl text-start text-foreground md:text-center">
-              <span className="absolute right-4 top-4 aspect-square h-20 md:static">
-                <RocketIcon className="stroke-accent-cyan min-h-full min-w-full" />
-              </span>
+              <MotionWrapper
+                className="absolute right-4 top-4 aspect-square h-20 md:static"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+              >
+                <RocketIcon className="min-h-full min-w-full stroke-accent-cyan" />
+              </MotionWrapper>
               <AnimatedText
                 className="md:justify-center"
                 text="Strona internetową, która napędzi Twój biznes"
@@ -40,13 +44,6 @@ export function HomeHeroSection() {
               transition={{ delay: 0.3, duration: 0.3 }}
               className="flex w-full flex-col items-center justify-end gap-4 md:flex-row md:justify-center"
             >
-              <div className="hidden lg:block">
-                <Link href="/#portfolio" className="w-full">
-                  <GradientButton size="lg" outline>
-                    Portfolio
-                  </GradientButton>
-                </Link>
-              </div>
               <div className="w-full md:w-auto">
                 <Link href="/join" className="w-full md:w-auto">
                   <GradientButton size="lg" showIcon>

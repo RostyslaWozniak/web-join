@@ -6,6 +6,7 @@ import { Text } from "../ui/typography";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { MotionWrapper } from "../motion-wrapper";
+import Markdown from "react-markdown";
 
 type AccorderonProps = {
   questions: { question: string; answer: string }[];
@@ -61,16 +62,27 @@ export function Accordion({ questions, className }: AccorderonProps) {
               },
             )}
           >
-            <Text
+            <div
               className={cn(
-                "overflow-hidden px-2 py-2 opacity-0 transition-all duration-300 md:px-8",
+                "overflow-hidden py-2 opacity-0 transition-all duration-300 md:px-8",
                 {
                   "opacity-1 pb-8": index === activeIndex,
                 },
               )}
             >
-              {answer}
-            </Text>
+              <Markdown
+                components={{
+                  li: ({ children }) => (
+                    <li className="ml-6 list-disc">{children}</li>
+                  ),
+                  p: ({ children }) => (
+                    <p className="pt-2 text-sm md:text-base">{children}</p>
+                  ),
+                }}
+              >
+                {answer}
+              </Markdown>
+            </div>
           </div>
         </MotionWrapper>
       ))}
