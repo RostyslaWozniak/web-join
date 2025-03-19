@@ -29,7 +29,7 @@ export const steps = [
 
   {
     id: 4,
-    title: "Podsumowanie",
+    title: "Join",
     route: "form-summary",
     link: "/join/form-summary",
   },
@@ -38,22 +38,19 @@ export const steps = [
 export default function StepNav() {
   const pathname = usePathname();
   const currentPath = path.basename(pathname);
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0);
 
   useEffect(() => {
     setCurrentStep(steps.findIndex((step) => step.route === currentPath));
   }, [currentPath]);
 
   return (
-    <div className="sticky isolate mb-12 mt-4 min-w-60 lg:mb-0">
+    <div className="sticky isolate mb-12 mt-4 min-w-72 lg:mb-0">
       {/* back button */}
       <Link
-        href={steps[currentStep - 1]?.link ?? "/join/service-selection"}
+        href={steps[currentStep - 1]?.link ?? "/"}
         className={cn(
           "mb-8 flex items-center text-xl hover:underline lg:mb-12",
-          {
-            "opacity-0": currentStep === 0,
-          },
         )}
       >
         <ChevronLeft className="mr-2 h-5 w-5" /> Cofnij
@@ -65,7 +62,7 @@ export default function StepNav() {
           <Link
             href={link}
             key={link}
-            className="group z-20 flex items-center gap-3 text-2xl"
+            className="group z-20 flex flex-col items-center gap-3 lg:w-auto lg:flex-row lg:text-nowrap"
             prefetch={true}
           >
             <span
@@ -74,7 +71,7 @@ export default function StepNav() {
                 {
                   "border-none bg-primary-gradient text-background":
                     currentPath === route,
-                  "border-foreground/75 bg-background text-foreground/75 group-hover:border-foreground group-hover:text-foreground":
+                  "border-foreground/75 text-foreground/75 bg-background group-hover:border-foreground group-hover:text-foreground":
                     currentPath !== route,
                 },
               )}
@@ -83,7 +80,7 @@ export default function StepNav() {
             </span>
             <span
               className={cn(
-                "hidden text-foreground/75 transition-colors duration-200 group-hover:text-foreground lg:block",
+                "text-foreground/75 w-min text-center text-sm transition-colors duration-200 group-hover:text-foreground lg:block lg:text-start lg:text-2xl",
                 {
                   "font-light": currentPath !== route,
                   "font-semibold text-foreground": currentPath === route,
@@ -95,7 +92,21 @@ export default function StepNav() {
           </Link>
         ))}
         {/* mobile background dashes */}
-        <div className="absolute top-4 flex h-1 w-full border-b border-dashed lg:hidden" />
+        <div
+          className={cn(
+            "absolute top-[18px] mx-auto flex h-1 w-full lg:hidden",
+            {
+              "bg-[linear-gradient(to_right,transparent_0%,transparent_10px,var(--muted)_10px,var(--muted)_calc(100%-40px),transparent_100%)]":
+                currentStep === 0,
+              "bg-[linear-gradient(to_right,transparent_0%,transparent_10px,var(--accent-cyan)_10px,var(--accent-emerald)_35%,var(--muted)_35%,var(--muted)_calc(100%-40px),transparent_100%)]":
+                currentStep === 1,
+              "bg-[linear-gradient(to_right,transparent_0%,transparent_10px,var(--accent-cyan)_10px,var(--accent-emerald)_65%,var(--muted)_65%,var(--muted)_calc(100%-40px),transparent_100%)]":
+                currentStep === 2,
+              "bg-[linear-gradient(to_right,transparent_0%,transparent_10px,var(--accent-cyan)_10px,var(--accent-emerald)_calc(100%-40px),transparent_calc(100%-40px),transparent_100%)]":
+                currentStep === 3,
+            },
+          )}
+        />
       </div>
     </div>
   );

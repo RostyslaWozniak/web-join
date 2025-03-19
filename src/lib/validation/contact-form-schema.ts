@@ -14,7 +14,7 @@ const additionalFeatures = [
   "multilingual",
   "cms",
   "paymentIntegration",
-  "aiChat",
+  "fastLoading",
   "responsiveUx",
 ] as const;
 

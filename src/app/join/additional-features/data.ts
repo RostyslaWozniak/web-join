@@ -1,37 +1,42 @@
 import {
   ChartNoAxesCombined,
   Languages,
+  LayoutPanelLeft,
   TvMinimalPlay,
   Wallet,
-  // Bot,
-  // LayoutPanelLeft,
+  ZapIcon,
 } from "lucide-react";
 
 export const features = [
   { id: 1, label: "SEO", value: "seo", icon: ChartNoAxesCombined },
   {
     id: 2,
-    label: "Obsługa wielu jezykow",
+    label: "Wersje językowe",
     value: "multilingual",
     icon: Languages,
   },
-  { id: 3, label: "Zarządzanie treścią", value: "cms", icon: TvMinimalPlay },
+  {
+    id: 3,
+    label: "System zarządzania treścią (CMS)",
+    value: "cms",
+    icon: TvMinimalPlay,
+  },
   {
     id: 4,
     label: "Płatności online",
     value: "paymentIntegration",
     icon: Wallet,
   },
-  // {
-  //   id: 5,
-  //   label: "AI Chatbot",
-  //   value: "aiChat",
-  //   icon: Bot,
-  // },
-  // {
-  //   id: 6,
-  //   label: "Responsywność i UX",
-  //   value: "responsiveUx",
-  //   icon: LayoutPanelLeft,
-  // },
+  {
+    id: 5,
+    label: "Szybkość i optymalizacja ładowania",
+    value: "fastLoading",
+    icon: ZapIcon,
+  },
+  {
+    id: 6,
+    label: "Pełna responsywność i optymalne UX",
+    value: "responsiveUx",
+    icon: LayoutPanelLeft,
+  },
 ] as const;

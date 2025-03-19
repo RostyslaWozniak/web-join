@@ -6,8 +6,8 @@ export default function ContactMethodPage() {
   return (
     <MotionWrapper className="w-full space-y-8" animate={{ opacity: 1, y: 0 }}>
       <PageHeader
-        title="Co chcesz stworzyć?"
-        subtitle="Wybierz typ projektu, który najlepiej odpowiada Twoim potrzebom."
+        title="Co Cię interesuje? Wybierz typ strony internetowej"
+        subtitle="Zaznacz, jakiego rodzaju stronę potrzebujesz. Jeśli nie jesteś pewien – nie martw się! Omówimy wszystko na konsultacji."
       />
       <ServiceSelectionForm />
     </MotionWrapper>

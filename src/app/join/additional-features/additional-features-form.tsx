@@ -50,7 +50,7 @@ export function AdditionalFaturesForm() {
           <Text size="sm" className="mb-2 text-destructive">
             {form.formState.errors.additionalFeatures?.message}
           </Text>
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid grid-cols-2 gap-4">
             {features.map(({ id, label, value, icon }) => (
               <SelectCard
                 key={id}

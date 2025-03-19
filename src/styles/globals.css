@@ -86,7 +86,7 @@
   }
   .dark {
     --background: #202e35;
-    --foreground: #fafafa;
+    --foreground: #fff;
     --card: #064e3b;
     --card-foreground: var(--foreground);
     --popover: #164e63;
@@ -96,7 +96,7 @@
     --secondary: 0 0% 14.9%;
     --secondary-foreground: var(--foreground);
     --muted: #3c4f58;
-    --muted-foreground: #dcdedf;
+    --muted-foreground: #cdcece;
     --destructive: #ff6666;
     --destructive-foreground: var(--foreground);
     --border: var(--foreground);

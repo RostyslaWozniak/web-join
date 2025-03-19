@@ -29,7 +29,7 @@ export default function RootLayout({
       className={`${spaceGrotesk.className} scroll-smooth`}
       suppressHydrationWarning
     >
-      <body className="overflow-x-hidden selection:bg-primary-cyan selection:text-background">
+      <body className="overflow-x-hidden selection:bg-accent-cyan selection:text-background">
         <Providers>
           <Header />
           <main>{children}</main>

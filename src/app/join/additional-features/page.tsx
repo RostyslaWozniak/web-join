@@ -6,8 +6,8 @@ export default function ContactMethodPage() {
   return (
     <MotionWrapper className="w-full space-y-8" animate={{ opacity: 1, y: 0 }}>
       <PageHeader
-        title="Czego potrzebujesz w swoim projekcie?"
-        subtitle="Zaznacz funkcje, które sprawią, że Twoja strona będzie dokładnie taka, jakiej potrzebujesz."
+        title="Potrzebujesz dodatkowych opcji?"
+        subtitle="Zaznacz funkcje, które mogą być przydatne dla Twojej strony. Jeśli nie wiesz, które wybrać – pomogę Ci to ustalić podczas darmowej konsultacji!"
       />
       <AdditionalFaturesForm />
     </MotionWrapper>

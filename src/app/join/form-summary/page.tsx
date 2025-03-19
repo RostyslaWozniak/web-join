@@ -6,8 +6,8 @@ export default function ContactMethodPage() {
   return (
     <MotionWrapper className="w-full space-y-8" animate={{ opacity: 1, y: 0 }}>
       <PageHeader
-        title="Prawie gotowe!"
-        subtitle='Sprawdź swoje wybory i kliknij "Join️", aby rozpocząć współpracę.'
+        title='Prawie gotowe! Teraz wystarczy kliknąć "JOIN".'
+        subtitle="Sprawdź swoje wybory i wyślij formularz. To nic nie kosztuje i do niczego Cię nie zobowiązuje. W ciągu 24 godzin skontaktuję się z Tobą, aby omówić szczegóły i zaproponować najlepsze rozwiązanie dla Twojej firmy."
       />
       <SummaryForm />
     </MotionWrapper>

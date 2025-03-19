@@ -74,7 +74,7 @@ export function ContactMethodForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-2 gap-4">
           {contactMethods.map(({ id, label, value, icon }) => (
             <SelectCard
               key={id}

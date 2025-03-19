@@ -1,4 +1,4 @@
-import { H3, Text } from "@/components/ui/typography";
+import { Text } from "@/components/ui/typography";
 import React from "react";
 
 export default function PageHeader({
@@ -9,9 +9,13 @@ export default function PageHeader({
   subtitle?: string;
 }) {
   return (
-    <div>
-      <H3>{title}</H3>
-      {subtitle && <Text variant="muted">{subtitle}</Text>}
+    <div className="space-y-1">
+      <h2 className="text-2xl font-semibold md:text-4xl">{title}</h2>
+      {subtitle && (
+        <Text variant="muted" size="sm">
+          {subtitle}
+        </Text>
+      )}
     </div>
   );
 }

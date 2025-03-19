@@ -43,7 +43,7 @@ export function ServiceSelectionForm() {
           <Text size="sm" className="mb-2 text-destructive">
             {form.formState.errors.serviceType?.message}
           </Text>
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid grid-cols-2 gap-4">
             {services.map(({ id, label, value, icon }) => (
               <SelectCard
                 key={id}

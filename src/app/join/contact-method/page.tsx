@@ -7,7 +7,7 @@ export default function ContactMethodPage() {
     <MotionWrapper className="w-full space-y-8" animate={{ opacity: 1, y: 0 }}>
       <PageHeader
         title="Jak najlepiej się z Tobą skontaktować?"
-        subtitle=" Wybierz preferowaną metodę kontaktu, abyśmy mogli sprawnie omówić Twój projekt."
+        subtitle="Wybierz swój preferowany sposób kontaktu – skontaktuję się z Tobą w ciągu 24h, aby odpowiedzieć na Twoje pytania i omówić szczegóły."
       />
       <ContactMethodForm />
     </MotionWrapper>
