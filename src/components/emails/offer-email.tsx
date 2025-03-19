@@ -109,7 +109,7 @@ const ServicesSection = () => {
             },
           ]}
         />
-        {/* <ServiceCard
+        <ServiceCard
           title="📝 Blogi i strony contentowe"
           description="Z łatwym zarządzaniem treścią."
           items={[
@@ -145,7 +145,7 @@ const ServicesSection = () => {
               price: "100 zł/miesiąc",
             },
           ]}
-        /> */}
+        />
         <CTAButton />
       </Section>
     </>
@@ -198,7 +198,7 @@ const CTAButton = () => {
         href="https://www.webjoin.pl/join"
         className="rounded-full bg-[linear-gradient(to_right,#31d5dd,#6ce6b9)] px-6 py-3 text-lg text-white no-underline"
       >
-        Zamów stronę!
+        Zapytaj o oferte
       </Button>
     </Section>
   );
