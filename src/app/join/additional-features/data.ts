@@ -2,7 +2,7 @@ import {
   ChartNoAxesCombined,
   Languages,
   LayoutPanelLeft,
-  TvMinimalPlay,
+  MonitorCog,
   Wallet,
   ZapIcon,
 } from "lucide-react";
@@ -19,7 +19,7 @@ export const features = [
     id: 3,
     label: "System zarządzania treścią (CMS)",
     value: "cms",
-    icon: TvMinimalPlay,
+    icon: MonitorCog,
   },
   {
     id: 4,
