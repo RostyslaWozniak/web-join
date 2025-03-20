@@ -79,12 +79,16 @@ export function SummaryForm() {
           </p>
         )}
         <Summary
-          contactMethod={newContactFormData.phone ? "Telefon" : "Email"}
-          contactValue={
-            newContactFormData.phone?.length
-              ? newContactFormData.phone
-              : newContactFormData.email!
-          }
+          contact={[
+            {
+              method: "Telefon",
+              value: newContactFormData.phone,
+            },
+            {
+              method: "Email",
+              value: newContactFormData.email,
+            },
+          ]}
           service={
             services.find((s) => s.value === newContactFormData.serviceType)
               ?.label ?? ""
@@ -116,33 +120,37 @@ export function SummaryForm() {
 }
 
 const Summary = ({
-  contactMethod,
-  contactValue,
+  contact,
   service,
   features,
 }: {
-  contactMethod: string;
-  contactValue: string;
+  contact: { method: "Telefon" | "Email"; value: string | undefined }[];
   service: string;
   features: string[];
 }) => {
   return (
     <div className="mx-auto w-full overflow-hidden rounded-2xl bg-card-gradient px-2 py-6 md:p-6">
-      <h2 className="mb-4 text-start text-2xl font-semibold">
+      <h3 className="mb-4 text-start text-xl font-semibold md:text-2xl">
         Podsumowanie Twojego wyboru
-      </h2>
+      </h3>
 
       <div className="space-y-4">
         {/* Kontakt */}
         <div className="relative flex items-center justify-between border-b pb-2">
           <div>
             <Text variant="muted">Wybrałeś kontakt przez:</Text>
-            <Text>
-              {contactMethod} ({contactValue})
-            </Text>
+            {contact.map(({ method, value }, index) => (
+              <div key={index}>
+                {value && (
+                  <Text>
+                    {method} ({value})
+                  </Text>
+                )}
+              </div>
+            ))}
           </div>
 
-          <EditLink href="/join/contact-method#form" />
+          <EditLink href="/join/contact-method?edit=true" />
         </div>
 
         {/* Usługa */}
@@ -151,7 +159,7 @@ const Summary = ({
             <Text variant="muted">Interesuje Cię:</Text>
             <Text className="font-semibold">{service}</Text>
           </div>
-          <EditLink href="/join/service-selection#form" />
+          <EditLink href="/join/service-selection?edit=true" />
         </div>
 
         {/* Dodatkowe opcje */}
@@ -168,14 +176,14 @@ const Summary = ({
                 ))}
               </ul>
             ) : (
-              <Text className="text-lg font-medium">
+              <Text>
                 Nie zaznaczyłeś żadnych dodatkowych opcji – zawsze możemy je
                 dodać później!
               </Text>
             )}
           </div>
 
-          <EditLink href="/join/additional-features#form" />
+          <EditLink href="/join/additional-features?edit=true" />
         </div>
       </div>
     </div>

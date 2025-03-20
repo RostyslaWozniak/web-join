@@ -18,15 +18,20 @@ import { ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { GradientButton } from "@/components/ui/gradient-button";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { SelectCard } from "@/app/join/_components/select-card";
 import { useContactFormContext } from "@/context/contact-form-context";
 import { contactMethods } from "./data";
+import { MotionWrapper } from "@/components/motion-wrapper";
 
 export function ContactMethodForm() {
   const [selectedMethod, setSelectedMethod] = useState<
     keyof ContactMethodSchema | null
   >("phone");
+
+  const searchParams = useSearchParams();
+
+  const edit = !!searchParams.get("edit");
 
   const { newContactFormData, updateContactForm } = useContactFormContext();
 
@@ -87,12 +92,17 @@ export function ContactMethodForm() {
               <FormItem>
                 <FormLabel>Telefon</FormLabel>
                 <FormControl>
-                  <Input
-                    placeholder="Wpisz swój numer telefonu"
-                    {...field}
-                    name="phone"
-                    type="tel"
-                  />
+                  <MotionWrapper
+                    initial={{ x: -100, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                  >
+                    <Input
+                      placeholder="Wpisz swój numer telefonu"
+                      {...field}
+                      name="phone"
+                      type="tel"
+                    />
+                  </MotionWrapper>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -108,7 +118,12 @@ export function ContactMethodForm() {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="Wpisz swój email" {...field} />
+                  <MotionWrapper
+                    initial={{ x: 100, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                  >
+                    <Input placeholder="Wpisz swój email" {...field} />
+                  </MotionWrapper>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -117,7 +132,7 @@ export function ContactMethodForm() {
         )}
 
         <GradientButton type="submit" size="lg" className="float-end">
-          <span className="text-xl">Kontynuuj</span>{" "}
+          <span className="text-xl">{edit ? "Zapisz" : "Kontynuuj"}</span>{" "}
           <ChevronRight className="min-h-5 min-w-5" />
         </GradientButton>
       </form>

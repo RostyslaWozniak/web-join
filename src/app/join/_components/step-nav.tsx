@@ -71,8 +71,10 @@ export default function StepNav() {
                 {
                   "border-none bg-primary-gradient text-background":
                     currentPath === route,
-                  "border-foreground/75 text-foreground/75 bg-background group-hover:border-foreground group-hover:text-foreground":
+                  "border-foreground bg-background text-foreground group-hover:text-foreground":
                     currentPath !== route,
+                  "border-transparent bg-muted text-muted-foreground":
+                    currentStep < i,
                 },
               )}
             >
@@ -80,7 +82,7 @@ export default function StepNav() {
             </span>
             <span
               className={cn(
-                "text-foreground/75 w-min text-center text-sm transition-colors duration-200 group-hover:text-foreground lg:block lg:text-start lg:text-2xl",
+                "text-foreground/75 w-min text-center text-xs transition-colors duration-200 group-hover:text-foreground lg:block lg:text-start lg:text-2xl",
                 {
                   "font-light": currentPath !== route,
                   "font-semibold text-foreground": currentPath === route,

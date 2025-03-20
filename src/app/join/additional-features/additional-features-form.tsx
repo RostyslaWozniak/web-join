@@ -6,7 +6,7 @@ import {
   additionalFeaturesSchema,
 } from "@/lib/validation/contact-form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { features } from "./data";
 import { SelectCard } from "../_components/select-card";
@@ -17,6 +17,10 @@ import { useContactFormContext } from "@/context/contact-form-context";
 import { useEffect } from "react";
 
 export function AdditionalFaturesForm() {
+  const searchParams = useSearchParams();
+
+  const edit = !!searchParams.get("edit");
+
   const router = useRouter();
   const { newContactFormData, updateContactForm, dataLoaded } =
     useContactFormContext();
@@ -31,7 +35,7 @@ export function AdditionalFaturesForm() {
 
   function onSubmit(values: AdditionalFeaturesSchema) {
     updateContactForm(values);
-    router.push("/join/contact-method");
+    router.push(edit ? "/join/form-summary" : "/join/contact-method");
   }
 
   useEffect(() => {
@@ -77,7 +81,7 @@ export function AdditionalFaturesForm() {
           </div>
         </div>
         <GradientButton type="submit" size="lg" className="float-end">
-          <span className="text-lg">Kontynuuj</span>{" "}
+          <span className="text-lg">{edit ? "Zapisz" : "Kontynuuj"}</span>{" "}
           <ChevronRight className="min-h-5 min-w-5" />
         </GradientButton>
       </form>

@@ -5,8 +5,8 @@ export default function ContactMethodPage() {
   return (
     <>
       <PageHeader
-        title="Co Cię interesuje? Wybierz typ strony internetowej"
-        subtitle="Zaznacz, jakiego rodzaju stronę potrzebujesz. Jeśli nie jesteś pewien – nie martw się! Omówimy wszystko na konsultacji."
+        title="Co Cię interesuje?"
+        subtitle="Zaznacz, jakiego rodzaju stronę potrzebujesz. Jeśli nie jesteś pewien – nie martw się! Omówimy wszystko na darmowej konsultacji."
       />
       <ServiceSelectionForm />
     </>
