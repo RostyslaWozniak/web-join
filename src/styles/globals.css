@@ -61,11 +61,11 @@
 
 @layer base {
   :root {
-    --background: #fcffff;
+    --background: #f3f6f9;
     --foreground: #455a64;
-    --card: #ecfdf5;
+    --card: #d1f1e2;
     --card-foreground: var(--foreground);
-    --popover: #ecfeff;
+    --popover: #d0effa;
     --popover-foreground: var(--foreground);
     --primary: 162 72% 53%;
     --primary-foreground: var(--foreground);
@@ -79,6 +79,7 @@
     --input: var(--foreground);
     --ring: var(--foreground);
     --radius: 0.5rem;
+
     --accent-emerald: #6ee7b7;
     --accent-cyan: #22d3ee;
     --accent-green: #4ade80;

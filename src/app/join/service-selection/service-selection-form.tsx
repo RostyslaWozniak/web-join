@@ -27,7 +27,7 @@ export function ServiceSelectionForm() {
 
   function onSubmit(values: ServiceSelectionSchema) {
     updateContactForm(values);
-    router.push("/join/additional-features#form");
+    router.push("/join/additional-features");
   }
 
   useEffect(() => {

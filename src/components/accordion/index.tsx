@@ -21,14 +21,13 @@ export function Accordion({ questions, className }: AccorderonProps) {
         <MotionWrapper
           key={index}
           transition={{ duration: 0.5, delay: 0.2 * index }}
-          className="relative"
         >
-          <CardWrapper className="flex items-center justify-between rounded-2xl">
+          <CardWrapper className="relative flex items-center justify-between rounded-2xl">
             <Text size="subtitle" className="flex-grow">
               {question}
             </Text>
             <button
-              className=""
+              aria-label="toggle question"
               onClick={() =>
                 setActiveIndex(activeIndex === index ? null : index)
               }
@@ -73,10 +72,10 @@ export function Accordion({ questions, className }: AccorderonProps) {
               <Markdown
                 components={{
                   li: ({ children }) => (
-                    <li className="ml-6 list-disc">{children}</li>
+                    <li className="ml-6 list-disc md:text-lg">{children}</li>
                   ),
                   p: ({ children }) => (
-                    <p className="pt-2 text-sm md:text-base">{children}</p>
+                    <p className="pt-2 md:text-xl">{children}</p>
                   ),
                 }}
               >

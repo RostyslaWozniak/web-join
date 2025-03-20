@@ -36,22 +36,7 @@ const faqs = [
 
 ✅ **Jeśli zależy Ci na bezpieczeństwie – lepiej wybrać stronę bez WordPressa!**`,
   },
-  {
-    question: "Czy mogę samodzielnie edytować stronę?",
-    answer: `Tak! Jeśli tego potrzebujesz, mogę dodać panel CMS (np. **Strapi** lub **Sanity**), który pozwoli Ci łatwo zmieniać treści, dodawać zdjęcia i wpisy na bloga – bez znajomości kodowania.
 
-👉 **Jeśli chcesz stronę, którą będziesz mógł edytować, po prostu zaznacz to w formularzu kontaktowym!**`,
-  },
-  {
-    question: "Ile kosztuje strona?",
-    answer: `💰 **Ceny startowe:** 
-
--  **Landing Page** – od 500 zł
--  **Strona firmowa** – od 1000 zł
--  **Sklep internetowy** – od 3000 zł
-
-📌 Cena zależy od funkcjonalności – mogę dopasować stronę do Twojego budżetu. **Po prostu opisz swoje potrzeby w formularzu!**`,
-  },
   {
     question: "Czy moja strona będzie dobrze wyglądać na telefonie?",
     answer: `Tak! Każda strona, którą tworzę, jest w pełni **responsywna**. Oznacza to, że będzie świetnie wyglądać na:
@@ -78,34 +63,51 @@ const faqs = [
 👉 **Wszystko zajmuje od 5 do 14 dni – szybciej niż na WordPressie!**`,
   },
   {
-    question: "Co jeśli będę potrzebował zmian po publikacji strony?",
-    answer: `Oferuję wsparcie techniczne – mogę wprowadzać zmiany na stronie, aktualizować treści lub dodać nowe funkcjonalności.
+    question: "Ile kosztuje strona?",
+    answer: `💰 **Ceny startowe:** 
 
-📌 Możesz wybrać opcję:
+-  **Strona wizytówka** – prosta strona z najważniejszymi informacjami o Twojej firmie **od 500 zł**
+-  **Landing Page** – pojedyncza strona do promocji produktu lub usługi, zoptymalizowana pod konwersję **od 800 zł**
+-  **Strona firmowa** – pełna strona z kilkoma podstronami: "O nas", "Usługi", "Kontakt"  **od 1200 zł**
+-  **Sklep internetowy** – od 3000 zł
 
-- 🔹 **Jednorazowe poprawki**
-- 🔹 **Abonament miesięczny na opiekę techniczną**
-
-👉 **Nie zostawię Cię samego ze stroną – zawsze możesz liczyć na moje wsparcie!**`,
+📌 Cena zależy od funkcjonalności – mogę dopasować stronę do Twojego budżetu. **Po prostu opisz swoje potrzeby w formularzu!**`,
   },
-  {
-    question: "Czy mogę mieć stronę w kilku językach?",
-    answer: `Tak! Jeśli prowadzisz firmę, która obsługuje klientów z różnych krajów, mogę dodać obsługę wielu języków.
+  //   {
+  //     question: "Czy mogę samodzielnie edytować stronę?",
+  //     answer: `Tak! Jeśli tego potrzebujesz, mogę dodać panel CMS (np. **Strapi** lub **Sanity**), który pozwoli Ci łatwo zmieniać treści, dodawać zdjęcia i wpisy na bloga – bez znajomości kodowania.
 
-✅ **Możliwość przełączania języka** (PL / EN / DE itd.)
+  // 👉 **Jeśli chcesz stronę, którą będziesz mógł edytować, po prostu zaznacz to w formularzu kontaktowym!**`,
+  //   },
+  //   {
+  //     question: "Co jeśli będę potrzebował zmian po publikacji strony?",
+  //     answer: `Oferuję wsparcie techniczne – mogę wprowadzać zmiany na stronie, aktualizować treści lub dodać nowe funkcjonalności.
 
-✅ **SEO dostosowane do różnych wersji językowych**
+  // 📌 Możesz wybrać opcję:
 
-✅ **Automatyczne przekierowanie na język użytkownika**
+  // - 🔹 **Jednorazowe poprawki**
+  // - 🔹 **Abonament miesięczny na opiekę techniczną**
 
-📌 **Strona wielojęzyczna to świetny sposób na dotarcie do większej liczby klientów!**`,
-  },
-  {
-    question: "Jak mogę zamówić stronę?",
-    answer: `📌 **Wystarczy, że klikniesz JOIN** i wypełnisz krótki formularz – skontaktuję się z Tobą w **24h**!
+  // 👉 **Nie zostawię Cię samego ze stroną – zawsze możesz liczyć na moje wsparcie!**`,
+  //   },
+  //   {
+  //     question: "Czy mogę mieć stronę w kilku językach?",
+  //     answer: `Tak! Jeśli prowadzisz firmę, która obsługuje klientów z różnych krajów, mogę dodać obsługę wielu języków.
 
-🔥 **Masz inne pytania? Napisz do mnie, chętnie pomogę!**`,
-  },
+  // ✅ **Możliwość przełączania języka** (PL / EN / DE itd.)
+
+  // ✅ **SEO dostosowane do różnych wersji językowych**
+
+  // ✅ **Automatyczne przekierowanie na język użytkownika**
+
+  // 📌 **Strona wielojęzyczna to świetny sposób na dotarcie do większej liczby klientów!**`,
+  //   },
+  //   {
+  //     question: "Jak mogę zamówić stronę?",
+  //     answer: `📌 **Wystarczy, że klikniesz JOIN** i wypełnisz krótki formularz – skontaktuję się z Tobą w **24h**!
+
+  // 🔥 **Masz inne pytania? Napisz do mnie, chętnie pomogę!**`,
+  //   },
 ];
 
 export function FaqSection() {

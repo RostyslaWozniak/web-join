@@ -9,7 +9,7 @@ const servicesData = [
   {
     title: "Strony internetowe",
     features: [
-      "⚡ Superszybkie ładowanie (Next.js)",
+      "⚡ Superszybkie ładowanie",
       "🔒 Bezpieczeństwo bez wtyczek",
       "📱 Nowoczesny design i UX",
     ],

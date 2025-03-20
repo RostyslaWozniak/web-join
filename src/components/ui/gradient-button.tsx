@@ -21,7 +21,7 @@ export function GradientButton({
   return (
     <Button
       className={cn(
-        "group relative isolate w-full bg-gradient-to-r from-cyan-400 to-emerald-300 shadow transition-shadow duration-300 hover:shadow-[0px_0px_20px_6px_#22D3EE70] md:w-auto",
+        "group relative isolate w-full bg-primary-gradient shadow transition-shadow duration-300 hover:shadow-[0px_0px_20px_6px_#22D3EE70] md:w-auto",
         className,
       )}
       {...props}
@@ -34,7 +34,7 @@ export function GradientButton({
           className={cn(
             "relative z-30 min-h-8 min-w-8 text-background duration-300 group-hover:stroke-white",
             {
-              "stroke-cyan-400": outline,
+              "stroke-accent-cyan": outline,
               "group-hover:-translate-x-0.5 group-hover:scale-105": !outline,
             },
           )}
@@ -53,7 +53,7 @@ export function GradientButton({
       {outline && (
         <span
           className={cn(
-            "relative z-30 flex items-center bg-gradient-to-r from-cyan-400 to-emerald-300 bg-clip-text text-2xl text-transparent group-hover:text-white",
+            "relative z-30 flex items-center bg-primary-gradient bg-clip-text text-2xl text-transparent group-hover:text-white",
             textSize,
           )}
         >

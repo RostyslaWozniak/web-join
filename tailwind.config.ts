@@ -18,8 +18,8 @@ export default {
       backgroundImage: {
         "primary-gradient":
           "linear-gradient(to left, var(--accent-emerald), var(--accent-cyan))",
-        "secondary-gradient":
-          "linear-gradient(to left, hsl(156, 72%, 67%, 10%), hsl(188, 86%, 53%, 10%))",
+        // "secondary-gradient":
+        //   "linear-gradient(to left, hsl(156, 72%, 67%, 10%), hsl(188, 86%, 53%, 10%))",
         "card-gradient":
           "linear-gradient(to left, var(--card), var(--popover))",
         "radial-gradient-primary-green":

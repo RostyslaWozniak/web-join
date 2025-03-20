@@ -2,7 +2,7 @@ import { GridBackground } from "@/components/grid-background";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { H1, Text } from "@/components/ui/typography";
-import { Code, Globe, RocketIcon, Sparkles, ZapIcon } from "lucide-react";
+import { Globe, Lock, RocketIcon, Sparkles, ZapIcon } from "lucide-react";
 import { GradientButton } from "../ui/gradient-button";
 import Link from "next/link";
 import { AnimatedText } from "../animations/animated-text";
@@ -29,7 +29,9 @@ export function HomeHeroSection() {
             </H1>
 
             <MotionWrapper
-              transition={{ delay: 0.2, duration: 0.3 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
               className="hidden max-w-4xl sm:inline md:text-center"
             >
               <Text size={"subtitle"} variant="muted">
@@ -41,7 +43,9 @@ export function HomeHeroSection() {
           </div>
           <div className="flex w-full flex-col-reverse gap-y-6 sm:flex-col">
             <MotionWrapper
-              transition={{ delay: 0.3, duration: 0.3 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
               className="flex w-full flex-col items-center justify-end gap-4 md:flex-row md:justify-center"
             >
               <div className="w-full md:w-auto">
@@ -57,10 +61,19 @@ export function HomeHeroSection() {
               <MotionWrapper
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="flex items-center gap-x-2 text-xl"
+              >
+                <ZapIcon className="stroke-accent-lime" /> Szybkie ładowanie
+              </MotionWrapper>
+              <MotionWrapper
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.3 }}
                 className="flex items-center gap-x-2 text-xl"
               >
-                <ZapIcon className="stroke-accent-lime" /> Szybkie strony
+                <Lock className="stroke-accent-green" />
+                Bezpieczeństwo
               </MotionWrapper>
               <MotionWrapper
                 initial={{ opacity: 0, y: 50 }}
@@ -68,21 +81,12 @@ export function HomeHeroSection() {
                 transition={{ delay: 0.2, duration: 0.3 }}
                 className="flex items-center gap-x-2 text-xl"
               >
-                <Code className="stroke-accent-cyan" />
-                Clean code
+                <Sparkles className="stroke-accent-cyan" /> Modern UX
               </MotionWrapper>
               <MotionWrapper
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.3 }}
-                className="flex items-center gap-x-2 text-xl"
-              >
-                <Sparkles className="stroke-accent-green" /> Modern UX
-              </MotionWrapper>
-              <MotionWrapper
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.3 }}
                 className="flex items-center gap-x-2 text-xl"
               >
                 <Globe className="stroke-accent-green" /> Globalny zasięg

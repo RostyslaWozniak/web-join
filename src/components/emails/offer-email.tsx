@@ -74,7 +74,7 @@ const ServicesSection = () => {
               title: "Strona wizytówka",
               description:
                 "prosta strona z najważniejszymi informacjami o Twojej firmie",
-              price: "499 zł",
+              price: "500 zł",
             },
             {
               title: "Landing Page",
@@ -87,8 +87,8 @@ const ServicesSection = () => {
               title: "Strona firmowa",
               description:
                 'pełna strona z kilkoma podstronami: "O nas", "Usługi", "Kontakt"',
-              price: "1199zł",
-              oldPrice: "1500 zł",
+              price: "999zł",
+              oldPrice: "1200 zł",
             },
           ]}
         />

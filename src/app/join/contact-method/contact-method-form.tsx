@@ -14,28 +14,14 @@ import {
   type ContactMethodSchema,
 } from "@/lib/validation/contact-form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ChevronRight, Mail, Phone } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { GradientButton } from "@/components/ui/gradient-button";
 import { useRouter } from "next/navigation";
 import { SelectCard } from "@/app/join/_components/select-card";
 import { useContactFormContext } from "@/context/contact-form-context";
-
-const contactMethods = [
-  {
-    id: 1,
-    label: "Telefon",
-    value: "phone",
-    icon: Phone,
-  },
-  {
-    id: 2,
-    label: "Email",
-    value: "email",
-    icon: Mail,
-  },
-] as const;
+import { contactMethods } from "./data";
 
 export function ContactMethodForm() {
   const [selectedMethod, setSelectedMethod] = useState<
@@ -57,7 +43,7 @@ export function ContactMethodForm() {
 
   function onSubmit(values: ContactMethodSchema) {
     updateContactForm(values);
-    router.push("/join/form-summary#form");
+    router.push("/join/form-summary");
   }
 
   useEffect(() => {

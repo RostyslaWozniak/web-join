@@ -28,7 +28,6 @@ export function SummaryForm() {
   });
 
   async function onSubmit(values: ContactFormSchema) {
-    console.log(values);
     if (!newContactFormData.phone && !newContactFormData.email) {
       router.push("/join/contact-method");
       return;
