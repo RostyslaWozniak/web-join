@@ -1,7 +1,6 @@
 import {
-  FileQuestion,
   HomeIcon,
-  ListCheck,
+  PanelsTopLeft,
   Play,
   Settings2,
   type LucideIcon,
@@ -10,8 +9,8 @@ import Link from "next/link";
 
 export function MobileNav() {
   return (
-    <nav className="sticky bottom-0 z-50 w-screen bg-background/70 p-3 backdrop-blur-lg md:hidden">
-      <div className="flex items-center justify-around">
+    <nav className="bg-background/70 sticky bottom-0 z-50 w-screen backdrop-blur-lg md:hidden">
+      <div className="grid grid-cols-5">
         <Link href="/">
           <MobileNavItem label="Start" icon={HomeIcon} />
         </Link>
@@ -19,13 +18,23 @@ export function MobileNav() {
           <MobileNavItem label="Usługi" icon={Settings2} />
         </Link>
         <Link href="/#portfolio">
-          <MobileNavItem label="Portfolio" icon={ListCheck} />
+          <MobileNavItem label="Portfolio" icon={PanelsTopLeft} />
         </Link>
         <Link href="/#faq">
-          <MobileNavItem label="FAQ" icon={FileQuestion} />
+          <div className="flex flex-col items-center gap-y-1 py-3">
+            <div className="aspect-square w-min rounded-full border-2 p-1 text-center text-2xl">
+              ?
+            </div>
+            <div className="text-xs">FAQ</div>
+          </div>
         </Link>
         <Link href="/join">
-          <MobileNavItem label="Join" icon={Play} />
+          <div className="flex flex-col items-center gap-y-1 py-3">
+            <div className="w-min rounded-full border-2 p-2">
+              <Play className="stroke-primary-cyan text-primary-cyan translate-x-[1px]" />
+            </div>
+            <div className="text-xs">Join</div>
+          </div>
         </Link>
       </div>
     </nav>
@@ -40,11 +49,12 @@ function MobileNavItem({
   label: string;
 }) {
   return (
-    <div className="flex flex-col items-center gap-y-1">
-      <div className="-cyan w-min rounded-full border-2 border-primary-cyan p-2">
+    <div className="flex flex-col items-center gap-y-1 py-3">
+      <div className="w-min rounded-full border-2 p-2">
         <Icon className="stroke-primary-cyan text-primary-cyan" />
       </div>
-      <div className="text-sm">{label}</div>
+      <span className="sr-only">{`link to ${label}`}</span>
+      <div className="text-xs">{label}</div>
     </div>
   );
 }

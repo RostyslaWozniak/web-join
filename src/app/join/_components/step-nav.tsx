@@ -1,6 +1,5 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import path from "path";
@@ -16,7 +15,7 @@ export const steps = [
 
   {
     id: 2,
-    title: "Twoje priorytety",
+    title: "Dodatkowe opcje",
     route: "additional-features",
     link: "/join/additional-features",
   },
@@ -45,17 +44,7 @@ export default function StepNav() {
   }, [currentPath]);
 
   return (
-    <div className="sticky isolate mb-12 mt-4 min-w-72 lg:mb-0">
-      {/* back button */}
-      <Link
-        href={steps[currentStep - 1]?.link ?? "/"}
-        className={cn(
-          "mb-8 flex items-center text-xl hover:underline lg:mb-12",
-        )}
-      >
-        <ChevronLeft className="mr-2 h-5 w-5" /> Cofnij
-      </Link>
-
+    <div className="sticky isolate mb-4 mt-4 min-w-72 lg:mb-0">
       {/* list of form steps */}
       <div className="relative flex flex-row justify-between lg:flex-col lg:justify-start lg:gap-8">
         {steps.map(({ title, route, link }, i) => (
@@ -82,7 +71,7 @@ export default function StepNav() {
             </span>
             <span
               className={cn(
-                "text-foreground/75 w-min text-center text-xs transition-colors duration-200 group-hover:text-foreground lg:block lg:text-start lg:text-2xl",
+                "text-foreground/75 hidden w-min text-center text-xs transition-colors duration-200 group-hover:text-foreground md:block lg:block lg:text-start lg:text-2xl",
                 {
                   "font-light": currentPath !== route,
                   "font-semibold text-foreground": currentPath === route,

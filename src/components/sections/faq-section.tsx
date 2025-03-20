@@ -10,17 +10,17 @@ const faqs = [
       "Czym różni się strona stworzona przez Web Join od strony na WordPressie?",
     answer: `Strony, które tworzę, są:
 
-- ✅ **Szybsze** – WordPress często używa ciężkich wtyczek i wolnych serwerów. Moje strony na **Next.js + Tailwind** ładują się błyskawicznie.
+- ✅ **Szybsze** – WordPress często używa ciężkich wtyczek i wolnych serwerów. Do budowy stron internetowych używam technologii tj. **Next.js + Tailwind**, co sprawia,že strony ładują się błyskawicznie.
 - ✅ **Bezpieczniejsze** – WordPress jest podatny na ataki przez stare wtyczki i luki w zabezpieczeniach. Moje strony działają na nowoczesnych technologiach i nie wymagają ciągłych aktualizacji.
 - ✅ **Lepsze pod SEO** – Strony WordPress są często przeładowane kodem. Moje strony są **optymalizowane pod wyszukiwarki**, co pomaga Ci szybciej zdobywać klientów.
 - ✅ **Bez ograniczeń** – WordPress narzuca ograniczenia techniczne i wymaga dodatkowych wtyczek. Moje strony są **szyte na miarę** pod Twoje potrzeby.
 
-👉 **Jeśli chcesz stronę, która nie będzie sprawiać problemów i spowolnień, postaw na nowoczesne rozwiązania.**
+**Jeśli chcesz stronę, która nie będzie sprawiać problemów i spowolnień, postaw na nowoczesne rozwiązania.**
 `,
   },
   {
     question: "Dlaczego szybkość strony ma znaczenie?",
-    answer: `📌 **Bo wpływa na:**
+    answer: `📌 **Szybkość wpływa na:**
 
 - 🚀 **Zadowolenie użytkowników** – Nikt nie lubi wolnych stron. Każda sekunda ładowania to utrata klientów.
 - 📈 **Pozycję w Google** – Google nagradza szybkie strony, więc Twoja firma będzie wyżej w wynikach wyszukiwania.
@@ -34,33 +34,33 @@ const faqs = [
 - 🛡️ **Nowoczesne technologie** – Strony działają na **Next.js, React i PostgreSQL**, co zapewnia najwyższy poziom bezpieczeństwa.
 - 🔄 **Brak konieczności częstych aktualizacji** – WordPress wymaga regularnych aktualizacji, które mogą „popsuć” stronę. Moje rozwiązania są stabilne i nie wymagają ciągłego monitorowania.
 
-✅ **Jeśli zależy Ci na bezpieczeństwie – lepiej wybrać stronę bez WordPressa!**`,
+ **Jeśli zależy Ci na bezpieczeństwie – lepiej wybrać stronę bez WordPressa!**`,
   },
 
   {
     question: "Czy moja strona będzie dobrze wyglądać na telefonie?",
-    answer: `Tak! Każda strona, którą tworzę, jest w pełni **responsywna**. Oznacza to, że będzie świetnie wyglądać na:
+    answer: `Tak! Każda strona, którą tworzę jest w pełni **responsywna**. Oznacza to, że będzie świetnie wyglądać na:
 
 - 📱 **Telefonach**
 - 💻 **Laptopach**
 - 🖥️ **Komputerach**
 - 📊 **Tabletach**
 
-👉 **Nie musisz się martwić – wszystko będzie dopracowane pod każde urządzenie!**`,
+**Nie musisz się martwić – wszystko będzie dopracowane pod każde urządzenie!**`,
   },
   {
     question: "Jak wygląda proces tworzenia strony?",
-    answer: `📌 **1. Kontakt** – Wypełniasz formularz na stronie (lub piszesz do mnie bezpośrednio).
+    answer: `📌 **Kontakt** – Kliknij "Join", aby wypełnić formularz i otrzymać darmową konsultację.
 
-📌 **2. Konsultacja** – Ustalamy, czego potrzebujesz i jaki masz budżet.
+📌 **Konsultacja** – Ustalamy, czego potrzebujesz i jaki masz budżet.
 
-📌 **3. Projektowanie** – Tworzę wygląd strony w **Figma (UI/UX)**.
+📌 **Projektowanie** – Tworzę wygląd strony w programie graficznym **Figma (UI/UX)**.
 
-📌 **4. Kodowanie** – Przenoszę projekt na działającą stronę (**Next.js, Tailwind**).
+📌 **Kodowanie** – Przenoszę projekt na działającą stronę (**Next.js, Tailwind**).
 
-📌 **5. Publikacja** – Umieszczam stronę na serwerze i dbam, by działała idealnie.
+📌 **Publikacja** – Umieszczam stronę na serwerze i dbam, by działała idealnie.
 
-👉 **Wszystko zajmuje od 5 do 14 dni – szybciej niż na WordPressie!**`,
+ **Wszystko zajmuje od 5 do 14 dni – szybciej niż na WordPressie!**`,
   },
   {
     question: "Ile kosztuje strona?",
@@ -73,41 +73,18 @@ const faqs = [
 
 📌 Cena zależy od funkcjonalności – mogę dopasować stronę do Twojego budżetu. **Po prostu opisz swoje potrzeby w formularzu!**`,
   },
-  //   {
-  //     question: "Czy mogę samodzielnie edytować stronę?",
-  //     answer: `Tak! Jeśli tego potrzebujesz, mogę dodać panel CMS (np. **Strapi** lub **Sanity**), który pozwoli Ci łatwo zmieniać treści, dodawać zdjęcia i wpisy na bloga – bez znajomości kodowania.
 
-  // 👉 **Jeśli chcesz stronę, którą będziesz mógł edytować, po prostu zaznacz to w formularzu kontaktowym!**`,
-  //   },
-  //   {
-  //     question: "Co jeśli będę potrzebował zmian po publikacji strony?",
-  //     answer: `Oferuję wsparcie techniczne – mogę wprowadzać zmiany na stronie, aktualizować treści lub dodać nowe funkcjonalności.
+  {
+    question: "Co jeśli będę potrzebował zmian po publikacji strony?",
+    answer: `Oferuję wsparcie techniczne – mogę wprowadzać zmiany na stronie, aktualizować treści lub dodać nowe funkcjonalności.
 
-  // 📌 Możesz wybrać opcję:
+  📌 Możesz wybrać opcję:
 
-  // - 🔹 **Jednorazowe poprawki**
-  // - 🔹 **Abonament miesięczny na opiekę techniczną**
+  - **Jednorazowe poprawki**
+  - **Abonament miesięczny na opiekę techniczną**
 
-  // 👉 **Nie zostawię Cię samego ze stroną – zawsze możesz liczyć na moje wsparcie!**`,
-  //   },
-  //   {
-  //     question: "Czy mogę mieć stronę w kilku językach?",
-  //     answer: `Tak! Jeśli prowadzisz firmę, która obsługuje klientów z różnych krajów, mogę dodać obsługę wielu języków.
-
-  // ✅ **Możliwość przełączania języka** (PL / EN / DE itd.)
-
-  // ✅ **SEO dostosowane do różnych wersji językowych**
-
-  // ✅ **Automatyczne przekierowanie na język użytkownika**
-
-  // 📌 **Strona wielojęzyczna to świetny sposób na dotarcie do większej liczby klientów!**`,
-  //   },
-  //   {
-  //     question: "Jak mogę zamówić stronę?",
-  //     answer: `📌 **Wystarczy, że klikniesz JOIN** i wypełnisz krótki formularz – skontaktuję się z Tobą w **24h**!
-
-  // 🔥 **Masz inne pytania? Napisz do mnie, chętnie pomogę!**`,
-  //   },
+  👉 **Nie zostawię Cię samego ze stroną – zawsze możesz liczyć na moje wsparcie!**`,
+  },
 ];
 
 export function FaqSection() {

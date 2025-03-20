@@ -5,10 +5,13 @@ import pMap from "p-map";
 import type { CreateEmailResponseSuccess, ErrorResponse } from "resend";
 
 const emails = [
-  "rostik19wozniak@icloud.com",
   "rostik19wozniak@gmail.com",
   "ewelina.m.teklinska@gmail.com",
   "rostyslav.vozniak.dev@gmail.com",
+  "haniaon@gmial.com",
+  "pawlexgaz@gmail.com",
+  "biala.kokarda@gmail.com",
+  "kwiaty.minska@gmail.com",
 ];
 
 export async function POST() {

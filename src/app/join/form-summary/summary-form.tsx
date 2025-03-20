@@ -137,8 +137,8 @@ const Summary = ({
       <div className="space-y-4">
         {/* Kontakt */}
         <div className="relative flex items-center justify-between border-b pb-2">
-          <div>
-            <Text variant="muted">Wybrałeś kontakt przez:</Text>
+          <div className="space-y-2">
+            <Text variant="muted">Kontakt:</Text>
             {contact.map(({ method, value }, index) => (
               <div key={index}>
                 {value && (
@@ -155,8 +155,8 @@ const Summary = ({
 
         {/* Usługa */}
         <div className="relative flex items-center justify-between border-b pb-2">
-          <div>
-            <Text variant="muted">Interesuje Cię:</Text>
+          <div className="space-y-2">
+            <Text variant="muted">Usługa:</Text>
             <Text className="font-semibold">{service}</Text>
           </div>
           <EditLink href="/join/service-selection?edit=true" />
@@ -164,14 +164,19 @@ const Summary = ({
 
         {/* Dodatkowe opcje */}
         <div className="relative flex items-center justify-between">
-          <div>
+          <div className="space-y-2">
             <Text variant="muted">Dodatkowe opcje:</Text>
             {features.length > 0 ? (
               <ul className="list-inside list-disc text-lg">
                 {features.map((feature, index) => (
-                  <li key={index} className="flex items-center gap-2">
-                    <CheckCircle size={18} className="text-accent-green" />{" "}
-                    {feature}
+                  <li key={index} className="flex gap-2">
+                    <div className="mt-1 h-full">
+                      <CheckCircle
+                        size={18}
+                        className="text-accent-green"
+                      />{" "}
+                    </div>
+                    <p>{feature}</p>
                   </li>
                 ))}
               </ul>
@@ -194,10 +199,12 @@ function EditLink({ href }: { href: string }) {
   return (
     <Link
       href={href}
-      className="absolute right-0 top-0 flex items-center text-foreground hover:underline"
+      className="absolute right-0 top-0 flex flex-col items-center gap-y-1 text-foreground hover:underline"
     >
       <Edit2 className="size-4" />
-      <span className="ml-2 hidden text-xs sm:block">edytuj</span>
+      <span className="ml-2 text-xs">edytuj</span>
+      <span className="sr-only">edytuj kontakt</span>
+      <span className="absolute -inset-2 [@media(pointer:fine)]:hidden" />
     </Link>
   );
 }

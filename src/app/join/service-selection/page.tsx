@@ -1,14 +1,26 @@
+import { MotionWrapper } from "@/components/motion-wrapper";
 import PageHeader from "../_components/form-header";
 import { ServiceSelectionForm } from "./service-selection-form";
+import { formAnimationVariants } from "../_components/form-animation-variants";
 
-export default function ContactMethodPage() {
+export default async function ContactMethodPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ edit: string }>;
+}) {
+  const { edit } = await searchParams;
   return (
-    <>
+    <MotionWrapper
+      animate={"animate"}
+      initial={"initial"}
+      variants={formAnimationVariants}
+      className="space-y-4 md:space-y-8"
+    >
       <PageHeader
         title="Co Cię interesuje?"
-        subtitle="Zaznacz, jakiego rodzaju stronę potrzebujesz. Jeśli nie jesteś pewien – nie martw się! Omówimy wszystko na darmowej konsultacji."
+        subtitle="Zaznacz, jakiego rodzaju stronę potrzebujesz. Omówimy wszystko na darmowej konsultacji i rozwieję twoje wątpliwości."
       />
-      <ServiceSelectionForm />
-    </>
+      <ServiceSelectionForm edit={!!edit} />
+    </MotionWrapper>
   );
 }
