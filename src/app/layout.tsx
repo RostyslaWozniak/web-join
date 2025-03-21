@@ -19,12 +19,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
   title: {
     default:
-      "Web Join - Nowoczesne strony internetowe i sklepy – Tworzenie stron | Stwórzmy stronę internetową – SEO i UX Optymalizacja",
+      "Web Join - Nowoczesne strony internetowe i sklepy – Tworzenie stron",
     template:
-      "%s | Web Join -  Nowoczesne strony internetowe i sklepy – Tworzenie stron | Stwórzmy stronę internetową – SEO i UX Optymalizacja",
+      "%s | Web Join -  Nowoczesne strony internetowe i sklepy – Tworzenie stron",
   },
   description:
-    "Tworzę szybkie, bezpieczne i nowoczesne strony internetowe oraz sklepy online. Optymalizacja SEO, UX i pełne wsparcie techniczne. Zwiększ swoją widoczność w sieci!",
+    "Tworzę szybkie, bezpieczne i nowoczesne strony internetowe oraz sklepy online. Optymalizacja SEO, UX i pełne wsparcie techniczne.",
   keywords: [],
   icons: [{ rel: "icon", url: "/icon.ico" }],
   alternates: {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     url: "./",
     description:
-      "Profesjonalne strony internetowe dla firm – szybkie, bezpieczne i zoptymalizowane pod SEO. Zbuduj swoją obecność online z Web Join!",
+      "Profesjonalne strony internetowe dla firm – szybkie, bezpieczne i zoptymalizowane pod SEO.",
     type: "website",
     images: {
       url: "/opengraph-image.jpg",
