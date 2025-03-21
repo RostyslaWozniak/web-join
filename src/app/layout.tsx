@@ -7,6 +7,8 @@ import { Providers } from "@/components/providers";
 import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { MobileNav } from "@/components/mobile-nav";
+import { env } from "@/env";
+import type { WebSite, WithContext } from "schema-dts";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -14,10 +16,41 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Web Join | Stwórzmy stronę internetową, która rozpędzi Twój biznes",
+  metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
+  title: {
+    default:
+      "Web Join - Nowoczesne strony internetowe i sklepy – Tworzenie stron | Stwórzmy stronę internetową – SEO i UX Optymalizacja",
+    template:
+      "%s | Web Join -  Nowoczesne strony internetowe i sklepy – Tworzenie stron | Stwórzmy stronę internetową – SEO i UX Optymalizacja",
+  },
   description:
-    "Ty rozwijasz biznes, a ja tworzę stronę, która go wspiera. Zadbam o wszystkie aspekty techniczne, żebyś mógł skupić się na tym, co ważne.",
+    "Tworzę szybkie, bezpieczne i nowoczesne strony internetowe oraz sklepy online. Optymalizacja SEO, UX i pełne wsparcie techniczne. Zwiększ swoją widoczność w sieci!",
+  keywords: [],
   icons: [{ rel: "icon", url: "/icon.ico" }],
+  alternates: {
+    canonical: "./",
+  },
+  openGraph: {
+    url: "./",
+    description:
+      "Profesjonalne strony internetowe dla firm – szybkie, bezpieczne i zoptymalizowane pod SEO. Zbuduj swoją obecność online z Web Join!",
+    type: "website",
+    images: {
+      url: "/opengraph-image.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Nowoczesne strony internetowe i sklepy online - Web Join",
+    },
+  },
+};
+
+const jsonLd: WithContext<WebSite> = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  url: "./",
+  name: "Web Join",
+  image: "./opengraph-image.jpg",
+  description: "Tworzę strony internetowe dla twojego biznesu",
 };
 
 export default function RootLayout({
@@ -30,6 +63,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="overflow-x-hidden selection:bg-accent-cyan selection:text-background">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Providers>
           <Header />
           <main>{children}</main>

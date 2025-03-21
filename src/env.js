@@ -18,9 +18,12 @@ export const env = createEnv({
     RECEIVE_SMS_NUMBER: z.string().min(1),
   },
 
-  client: {},
+  client: {
+    NEXT_PUBLIC_BASE_URL: z.string().url().default("http://localhost:3000"),
+  },
 
   runtimeEnv: {
+    NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
     DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,
     // resend
