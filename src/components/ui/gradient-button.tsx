@@ -21,7 +21,7 @@ export function GradientButton({
   return (
     <Button
       className={cn(
-        "group relative isolate w-full bg-primary-gradient shadow transition-shadow duration-300 hover:shadow-[0px_0px_20px_6px_#22D3EE70] md:w-auto",
+        "group relative isolate w-full bg-primary-gradient shadow transition-shadow duration-300 hover:shadow-[0px_0px_20px_6px_#22D3EE70] sm:w-auto",
         className,
       )}
       {...props}

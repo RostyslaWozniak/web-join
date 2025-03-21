@@ -12,17 +12,17 @@ export function HomeHeroSection() {
     <section id="start">
       <GridBackground className="flex items-center justify-center">
         <MaxWidthWrapper className="relative flex min-h-[70vh] flex-col items-center justify-center py-8 sm:gap-y-4 md:py-16 lg:min-h-[90vh]">
-          <div className="flex flex-grow flex-col items-center justify-center gap-y-3 md:flex-none">
-            <H1 className="flex max-w-7xl text-start text-foreground md:text-center">
+          <div className="flex flex-grow flex-col items-center justify-center gap-y-3 sm:flex-none">
+            <H1 className="flex max-w-7xl text-start text-foreground sm:text-center">
               <MotionWrapper
-                className="absolute right-4 top-4 aspect-square h-20 md:static"
+                className="absolute right-4 top-4 aspect-square h-20 sm:static"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >
                 <RocketIcon className="min-h-full min-w-full stroke-accent-cyan" />
               </MotionWrapper>
               <AnimatedText
-                className="md:justify-center"
+                className="sm:justify-center"
                 text="Strona internetową, która napędzi Twój biznes"
                 accentWords={["Strona", "biznes"]}
               />
@@ -32,7 +32,7 @@ export function HomeHeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
-              className="hidden max-w-4xl sm:inline md:text-center"
+              className="hidden max-w-4xl sm:inline sm:text-center"
             >
               <Text size={"subtitle"} variant="muted">
                 Ty rozwijasz firmę, a ja tworzę stronę, która działa szybko,
@@ -48,7 +48,7 @@ export function HomeHeroSection() {
               transition={{ duration: 0.3 }}
               className="flex w-full flex-col items-center justify-end gap-4 md:flex-row md:justify-center"
             >
-              <div className="w-full md:w-auto">
+              <div className="w-full sm:w-auto">
                 <Link href="/join" className="w-full md:w-auto">
                   <GradientButton size="lg" showIcon>
                     Join

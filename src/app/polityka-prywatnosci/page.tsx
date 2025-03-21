@@ -4,7 +4,7 @@ import { privacyPolicyContent } from "./data";
 
 export default async function PrivacyPolicyPage() {
   return (
-    <section className="bg-gradient-to-b from-card to-transparent">
+    <section className="bg-gradient-to-b from-popover to-transparent">
       <MaxWidthWrapper className="max-w-[1000px] py-16">
         <Markdown
           components={{

@@ -11,7 +11,7 @@ export function H1({
   return (
     <h1
       className={cn(
-        "text-center text-6xl font-bold tracking-tighter lg:text-8xl",
+        "text-center text-[min(60px,15vw)] font-bold leading-[min(60px,16vw)] tracking-tighter lg:text-8xl",
         className,
       )}
     >
