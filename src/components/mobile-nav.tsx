@@ -22,7 +22,7 @@ export function MobileNav() {
         </Link>
         <Link href="/#faq">
           <div className="flex flex-col items-center gap-y-0.5 pb-3">
-            <div className="aspect-square rounded-full bg-card p-1 text-center text-2xl dark:bg-popover">
+            <div className="aspect-square min-h-10 min-w-10 rounded-full bg-card p-1 text-center text-2xl dark:bg-popover">
               ?
             </div>
             <div className="text-xs">FAQ</div>
