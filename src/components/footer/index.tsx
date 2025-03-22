@@ -1,6 +1,7 @@
 import Link from "next/link";
 // import { Github, Linkedin } from "lucide-react";
 import { SubscribeForm } from "./subscribe-form";
+import { Facebook } from "lucide-react";
 
 export const navigation = [
   { name: "Start", href: "/" },
@@ -27,20 +28,18 @@ export function Footer() {
             ))}
           </div>
         </div>
-        {/* <div className="space-y-4">
-          <h2 className="text-lg font-semibold">Linki</h2>
+        <div className="space-y-4">
+          <h2 className="text-lg font-semibold">Social media</h2>
           <div className="flex items-center gap-4">
-            <Link href="https://github.com/RostyslaWozniak" aria-label="github">
-              <Github />
-            </Link>
             <Link
-              href="https://www.linkedin.com/in/rostyslav-vozniak/"
-              aria-label="linkedin"
+              href="https://www.facebook.com/webjoinpl"
+              target="_blank"
+              aria-label="facebook"
             >
-              <Linkedin />
+              <Facebook />
             </Link>
           </div>
-        </div> */}
+        </div>
       </div>
       <div className="text-foreground/90 mx-auto mt-12 flex max-w-[1400px] flex-col-reverse items-center justify-between gap-y-3 border-t border-muted-foreground pt-6 text-center text-sm md:flex-row">
         <span>
