@@ -44,14 +44,14 @@ export default function StepNav() {
   }, [currentPath]);
 
   return (
-    <div className="sticky isolate mb-4 mt-4 min-w-72 lg:mb-0">
+    <div className="sticky isolate mb-8 mt-8 min-w-72 lg:mb-0">
       {/* list of form steps */}
       <div className="relative flex flex-row justify-between lg:flex-col lg:justify-start lg:gap-8">
         {steps.map(({ title, route, link }, i) => (
           <Link
             href={link}
             key={link}
-            className="group z-20 flex flex-col items-center gap-3 lg:w-auto lg:flex-row lg:text-nowrap"
+            className="group z-20 flex flex-col items-center gap-x-3 gap-y-1 lg:w-auto lg:flex-row lg:text-nowrap"
             prefetch={true}
           >
             <span
@@ -71,7 +71,7 @@ export default function StepNav() {
             </span>
             <span
               className={cn(
-                "text-foreground/75 hidden w-min text-center text-xs transition-colors duration-200 group-hover:text-foreground md:block lg:block lg:text-start lg:text-2xl",
+                "text-foreground/75 w-min text-center text-xs transition-colors duration-200 group-hover:text-foreground md:block lg:block lg:text-start lg:text-2xl",
                 {
                   "font-light": currentPath !== route,
                   "font-semibold text-foreground": currentPath === route,

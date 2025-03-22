@@ -17,7 +17,7 @@ export function GridCTASection() {
               Wybierz czego potrzebujesz,
               <br /> a ja zajmę się resztą
               {/* <br /> */}
-              <div className="w-full pb-4">
+              <div className="max-w-screen w-full overflow-x-hidden pb-4">
                 <FlipWords
                   words={words}
                   className="text-nowrap px-0 font-semibold text-accent-cyan"
