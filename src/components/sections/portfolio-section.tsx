@@ -4,17 +4,21 @@ import { H2, Text } from "../ui/typography";
 import { Badge } from "../ui/badge";
 import { PlayCircle } from "lucide-react";
 import Link from "next/link";
-import { ElevenStudioLogo, SeasonChaiIcon } from "@/components/icons";
+import {
+  SwojeScianyLogo,
+  ElevenStudioLogo,
+  SeasonChaiIcon,
+} from "@/components/icons";
 import { MotionWrapper } from "../motion-wrapper";
 
 const projects = [
   {
-    title: "Season Chai",
-    href: "https://season-chai.vercel.app",
-    image1: "/images/portfolio/season-chai-1.jpg",
-    image2: "/images/portfolio/season-chai-2.jpg",
-    logo: SeasonChaiIcon,
-    category: "e-commerse",
+    title: "Swoje Ściany",
+    href: "https://swojesciany.vercel.app/",
+    image1: "/images/portfolio/swoje-sciany-1.jpg",
+    image2: "/images/portfolio/swoje-sciany-2.jpg",
+    logo: SwojeScianyLogo,
+    category: "website",
   },
   {
     title: "Eleven Flower Studio",
@@ -22,6 +26,14 @@ const projects = [
     image1: "/images/portfolio/eleven-studio-1.jpg",
     image2: "/images/portfolio/eleven-studio-2.jpg",
     logo: ElevenStudioLogo,
+    category: "e-commerse",
+  },
+  {
+    title: "Season Chai",
+    href: "https://season-chai.vercel.app",
+    image1: "/images/portfolio/season-chai-1.jpg",
+    image2: "/images/portfolio/season-chai-2.jpg",
+    logo: SeasonChaiIcon,
     category: "e-commerse",
   },
 ];
@@ -37,7 +49,7 @@ export function PortfolioSection() {
             mojego klienta.
           </Text>
         </div>
-        <div className="isolate grid w-full place-items-center gap-x-6 gap-y-12 lg:w-auto lg:grid-cols-2 lg:gap-x-12">
+        <div className="isolate grid w-full place-items-center gap-x-6 gap-y-12 lg:w-auto lg:grid-cols-2 lg:gap-x-12 xl:grid-cols-3">
           {projects.map(
             ({ title, href, image1, image2, logo: Logo, category }, index) => (
               <MotionWrapper
