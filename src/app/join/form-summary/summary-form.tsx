@@ -29,11 +29,11 @@ export function SummaryForm() {
 
   async function onSubmit(values: ContactFormSchema) {
     if (!newContactFormData.phone && !newContactFormData.email) {
-      router.push("/join/contact-method");
+      router.push("/join/contact-method?edit=true");
       return;
     }
     if (!newContactFormData.serviceType) {
-      router.push("/join/service-selection");
+      router.push("/join/service-selection?edit=true");
       return;
     }
     try {

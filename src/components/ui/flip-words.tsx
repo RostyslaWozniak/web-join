@@ -56,10 +56,7 @@ export const FlipWords = ({
           scale: 2,
           position: "absolute",
         }}
-        className={cn(
-          "relative z-10 overflow-hidden px-2 pb-1 text-left",
-          className,
-        )}
+        className={cn("relative z-10 inline-block text-left", className)}
         key={currentWord}
       >
         {currentWord.split(" ").map((word, wordIndex) => (

@@ -10,10 +10,10 @@ const faqs = [
       "Czym różni się strona stworzona przez Web Join od strony na WordPressie?",
     answer: `Strony, które tworzę, są:
 
-- ✅ **Szybsze** – WordPress często używa ciężkich wtyczek i wolnych serwerów. Do budowy stron internetowych używam technologii tj. **Next.js + Tailwind**, co sprawia,že strony ładują się błyskawicznie.
+- ✅ **Szybsze** – WordPress często używa ciężkich wtyczek i wolnych serwerów. Do budowy stron internetowych używam technologii tj. **Next.js + Tailwind**, co sprawia, że strony ładują się błyskawicznie.
 - ✅ **Bezpieczniejsze** – WordPress jest podatny na ataki przez stare wtyczki i luki w zabezpieczeniach. Moje strony działają na nowoczesnych technologiach i nie wymagają ciągłych aktualizacji.
 - ✅ **Lepsze pod SEO** – Strony WordPress są często przeładowane kodem. Moje strony są **optymalizowane pod wyszukiwarki**, co pomaga Ci szybciej zdobywać klientów.
-- ✅ **Bez ograniczeń** – WordPress narzuca ograniczenia techniczne i wymaga dodatkowych wtyczek. Moje strony są **szyte na miarę** pod Twoje potrzeby.
+- ✅ **Bez ograniczeń** – WordPress narzuca ograniczenia techniczne i wymaga dodatkowych wtyczek. Moje strony są zoptymalizowane pod Twoje potrzeby.
 
 **Jeśli chcesz stronę, która nie będzie sprawiać problemów i spowolnień, postaw na nowoczesne rozwiązania.**
 `,
@@ -50,15 +50,15 @@ const faqs = [
   },
   {
     question: "Jak wygląda proces tworzenia strony?",
-    answer: `📌 **Kontakt** – Kliknij "Join", aby wypełnić formularz i otrzymać darmową konsultację.
+    answer: `- **Kontakt** – Kliknij "Join", aby wypełnić formularz i otrzymać darmową konsultację.
 
-📌 **Konsultacja** – Ustalamy, czego potrzebujesz i jaki masz budżet.
+- **Konsultacja** – Ustalamy, czego potrzebujesz i jaki masz budżet.
 
-📌 **Projektowanie** – Tworzę wygląd strony w programie graficznym **Figma (UI/UX)**.
+- **Projektowanie** – Tworzę wygląd strony w programie graficznym **Figma (UI/UX)**.
 
-📌 **Kodowanie** – Przenoszę projekt na działającą stronę (**Next.js, Tailwind**).
+- **Kodowanie** – Przenoszę projekt na działającą stronę (**Next.js, Tailwind**).
 
-📌 **Publikacja** – Umieszczam stronę na serwerze i dbam, by działała idealnie.
+- **Publikacja** – Umieszczam stronę na serwerze i dbam, by działała idealnie.
 
  **Wszystko zajmuje od 5 do 14 dni – szybciej niż na WordPressie!**`,
   },

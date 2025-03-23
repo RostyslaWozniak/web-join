@@ -16,8 +16,7 @@ export function GridCTASection() {
             <H2 className="text-[min(60px,15vw)] font-bold leading-[min(60px,16vw)] tracking-tighter lg:text-7xl">
               Wybierz czego potrzebujesz,
               <br /> a ja zajmę się resztą
-              {/* <br /> */}
-              <div className="max-w-screen w-full overflow-x-hidden pb-4">
+              <div className="max-w-screen hidden w-full overflow-hidden pb-4 lg:block">
                 <FlipWords
                   words={words}
                   className="text-nowrap px-0 font-semibold text-accent-cyan"
