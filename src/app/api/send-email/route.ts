@@ -1,35 +1,48 @@
 import OfferEmail from "@/components/emails/offer-email";
-import { sendEmail } from "@/lib/services/resend";
-import { NextResponse } from "next/server";
-import pMap from "p-map";
-import type { CreateEmailResponseSuccess, ErrorResponse } from "resend";
+import { env } from "@/env";
+import { resend } from "@/lib/services/resend";
+import { tryCatch } from "@/lib/utils/try-catch";
+import { type NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
 
-const emails = [
-  "rostik19wozniak@gmail.com",
-  "ewelina.m.teklinska@gmail.com",
-  "rostyslav.vozniak.dev@gmail.com",
-];
+const bodySchema = z.object({
+  emails: z.array(z.string().email()),
+});
 
-export async function POST() {
-  const emailsSet = [...new Set(emails)]; // Ensure unique emails
-  const concurrencyLimit = 2; // Max 2 requests per second
-  const response: (CreateEmailResponseSuccess | ErrorResponse | null)[] = [];
+export async function POST(req: NextRequest) {
+  const body: unknown = await req.json();
 
-  await pMap(
-    emailsSet,
-    async (email) => {
-      const res = await sendEmail({
-        email: email,
+  const secret = req.headers.get("secret");
+
+  if (!secret || secret !== env.SEND_EMAILS_SECRET) {
+    return NextResponse.json({ status: 401, message: "Unauthorized" });
+  }
+
+  const isValidBody = bodySchema.safeParse(body);
+
+  if (!isValidBody.success) {
+    return NextResponse.json({ status: 400, message: "Invalid body" });
+  }
+
+  const emailsSet = [...new Set(isValidBody.data.emails)]; // Ensure unique emails
+
+  const { data: response, error } = await tryCatch(
+    resend.batch.send(
+      emailsSet.map((email) => ({
+        from: `Web Join <${process.env.RESEND_FROM_NAME}@${process.env.RESEND_DOMAIN}>`,
+        to: email,
         subject: "Oferta Web Join",
-        emailTemplate: OfferEmail(),
-      });
-      response.push(res);
-
-      // Delay of 500ms to respect the 2 requests/sec limit
-      await new Promise((resolve) => setTimeout(resolve, 500));
-    },
-    { concurrency: concurrencyLimit },
+        react: OfferEmail(),
+      })),
+    ),
   );
+
+  if (error) {
+    return NextResponse.json({
+      status: 500,
+      message: "Cannot send emails, try again later",
+    });
+  }
 
   return NextResponse.json({ status: 200, response });
 }

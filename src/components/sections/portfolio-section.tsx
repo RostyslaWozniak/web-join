@@ -22,7 +22,7 @@ const projects = [
   },
   {
     title: "Eleven Flower Studio",
-    href: "https://eleven-studio.pl",
+    href: "https://eleven-studio.vercel.app",
     image1: "/images/portfolio/eleven-studio-1.jpg",
     image2: "/images/portfolio/eleven-studio-2.jpg",
     logo: ElevenStudioLogo,

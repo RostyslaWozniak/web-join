@@ -11,6 +11,7 @@ export const env = createEnv({
     RESEND_API_KEY: z.string().min(1),
     RESEND_DOMAIN: z.string().min(1),
     RESEND_FROM_NAME: z.string().min(1),
+    SEND_EMAILS_SECRET: z.string().min(1),
     // twilio
     TWILIO_AUTH_TOKEN: z.string().min(1),
     TWILIO_ACCOUNT_SID: z.string().min(1),
@@ -30,6 +31,7 @@ export const env = createEnv({
     RESEND_API_KEY: process.env.RESEND_API_KEY,
     RESEND_DOMAIN: process.env.RESEND_DOMAIN,
     RESEND_FROM_NAME: process.env.RESEND_FROM_NAME,
+    SEND_EMAILS_SECRET: process.env.SEND_EMAILS_SECRET,
     // twilio
     TWILIO_AUTH_TOKEN: process.env.TWILIO_AUTH_TOKEN,
     TWILIO_ACCOUNT_SID: process.env.TWILIO_ACCOUNT_SID,
