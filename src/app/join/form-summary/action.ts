@@ -37,12 +37,12 @@ export async function sendForm(formData: unknown) {
       }
     }
 
-    if (env.NODE_ENV === "production") {
-      await sendSms({
-        number: env.RECEIVE_SMS_NUMBER,
-        message: `Web Join contact form submited. Contact ${data.email?.length ? data.email : data.phone}`,
-      });
-    }
+    // if (env.NODE_ENV === "production") {
+    //   await sendSms({
+    //     number: env.RECEIVE_SMS_NUMBER,
+    //     message: `Web Join contact form submited. Contact ${data.email?.length ? data.email : data.phone}`,
+    //   });
+    // }
 
     return {
       success: true,
