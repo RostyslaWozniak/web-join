@@ -1,4 +1,5 @@
 import OfferEmail from "@/components/emails/offer-email";
+import VetAppOfferEmail from "@/components/emails/vet-app-offer-email";
 import { env } from "@/env";
 import { resend } from "@/lib/services/resend";
 import { tryCatch } from "@/lib/utils/try-catch";
@@ -32,7 +33,7 @@ export async function POST(req: NextRequest) {
         from: `Web Join <${process.env.RESEND_FROM_NAME}@${process.env.RESEND_DOMAIN}>`,
         to: email,
         subject: "Oferta Web Join",
-        react: OfferEmail(),
+        react: VetAppOfferEmail(),
       })),
     ),
   );

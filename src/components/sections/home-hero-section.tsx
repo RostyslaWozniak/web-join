@@ -50,8 +50,8 @@ export function HomeHeroSection() {
             >
               <div className="w-full sm:w-auto">
                 <Link href="/join" className="w-full md:w-auto">
-                  <GradientButton size="lg" showIcon>
-                    Join
+                  <GradientButton size="default" showIcon>
+                    Dołącz
                   </GradientButton>
                 </Link>
               </div>

@@ -15,7 +15,7 @@ export function GradientButton({
   showIcon = false,
   outline = false,
   className,
-  textSize = "text-2xl",
+  textSize = "text-lg",
   ...props
 }: GradientButtonProps) {
   return (
@@ -27,12 +27,12 @@ export function GradientButton({
       {...props}
     >
       {outline && (
-        <div className="absolute inset-0.5 z-10 rounded-full bg-background duration-300 group-hover:bg-transparent" />
+        <div className="_group-hover:bg-transparent absolute inset-0.5 z-10 rounded-full bg-background duration-300" />
       )}
       {showIcon && (
         <PlayCircle
           className={cn(
-            "relative z-30 min-h-8 min-w-8 text-background duration-300 group-hover:stroke-white",
+            "relative z-30 min-h-6 min-w-6 text-background duration-300 group-hover:stroke-white",
             {
               "stroke-accent-cyan": outline,
               "group-hover:-translate-x-0.5 group-hover:scale-105": !outline,
@@ -53,7 +53,7 @@ export function GradientButton({
       {outline && (
         <span
           className={cn(
-            "relative z-30 flex items-center bg-primary-gradient bg-clip-text text-2xl text-transparent group-hover:text-white",
+            "_group-hover:text-white relative z-30 flex items-center bg-primary-gradient bg-clip-text text-2xl text-transparent",
             textSize,
           )}
         >

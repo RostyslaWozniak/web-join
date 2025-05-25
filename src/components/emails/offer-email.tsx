@@ -5,10 +5,11 @@ import {
   Container,
   Section,
   Text,
-  Link,
-  Button,
   Tailwind,
 } from "@react-email/components";
+import { Header } from "./components/header";
+import { Footer } from "./components/footer";
+import { CTAButton } from "./components/cta-button";
 
 export default function OfferEmail() {
   return (
@@ -38,7 +39,10 @@ export default function OfferEmail() {
                 className="mx-auto my-5 max-w-[600px] rounded-lg bg-white shadow-lg"
                 id="container"
               >
-                <Header />
+                <Header
+                  title="Nowoczesne strony internetowe 🚀"
+                  subtitle="Szybkie, bezpieczne i zoptymalizowane pod SEO. Sprawdź ofertę!"
+                />
                 <ServicesSection />
                 <Footer />
               </Container>
@@ -49,18 +53,6 @@ export default function OfferEmail() {
     </Html>
   );
 }
-const Header = () => {
-  return (
-    <Section className="text-center">
-      <Text className="my-2.5 text-2xl text-[#455a63]">
-        Nowoczesne strony internetowe 🚀
-      </Text>
-      <Text className="text-base text-[#455a63]">
-        Szybkie, bezpieczne i zoptymalizowane pod SEO. Sprawdź ofertę!
-      </Text>
-    </Section>
-  );
-};
 
 const ServicesSection = () => {
   return (
@@ -146,7 +138,7 @@ const ServicesSection = () => {
             },
           ]}
         />
-        <CTAButton />
+        <CTAButton href="https://webjoin.pl/join">Zapytaj o ofertę</CTAButton>
       </Section>
     </>
   );
@@ -187,32 +179,6 @@ const ServiceCard = ({
           </li>
         ))}
       </ul>
-    </Section>
-  );
-};
-
-const CTAButton = () => {
-  return (
-    <Section className="my-5">
-      <Button
-        href="https://www.webjoin.pl/join"
-        className="rounded-full bg-[linear-gradient(to_right,#31d5dd,#6ce6b9)] px-6 py-3 text-lg text-white no-underline"
-      >
-        Zapytaj o oferte
-      </Button>
-    </Section>
-  );
-};
-
-const Footer = () => {
-  return (
-    <Section className="py-5 text-center text-[#455a63]">
-      <Text>Masz pytania? Chętnie pomogę!</Text>
-      <Text className="text-base">
-        <Link href="https://www.webjoin.pl">www.webjoin.pl</Link> |{" "}
-        <Link href="mailto:contact@webjoin.pl">contact@webjoin.pl</Link> |{" "}
-        <Link href="tel:+48798582849">tel. +48 798 582 849</Link>
-      </Text>
     </Section>
   );
 };
