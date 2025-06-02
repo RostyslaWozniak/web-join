@@ -17,7 +17,7 @@ import {
 const defaultContactForm: InitialContactFormSchema = {
   email: "",
   phone: "",
-  serviceType: "website",
+  serviceType: undefined,
   additionalFeatures: [],
 };
 

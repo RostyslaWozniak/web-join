@@ -7,6 +7,7 @@ type SelectCardProps = {
   error: boolean;
   isSelected: boolean;
   icon: LucideIcon;
+  description?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export function SelectCard({
@@ -15,6 +16,7 @@ export function SelectCard({
   error,
   icon: Icon,
   className,
+  description,
   ...props
 }: SelectCardProps) {
   return (
@@ -43,6 +45,9 @@ export function SelectCard({
       >
         {label}
       </Text>
+      {description && (
+        <Text className="text-center text-sm">{description}</Text>
+      )}
     </div>
   );
 }

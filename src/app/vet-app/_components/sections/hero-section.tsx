@@ -33,8 +33,7 @@ export function VetAppHeroSection() {
                   </GradientButton>
                 </Link>
                 <Link
-                  href="https://vet-app-demo.vercel.app/"
-                  target="_blank"
+                  href="/join/service-selection?service=vet-app"
                   className="w-full md:w-auto"
                 >
                   <GradientButton size="default" outline>

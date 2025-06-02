@@ -5,7 +5,7 @@ import { H1, Text } from "@/components/ui/typography";
 import { Globe, Lock, RocketIcon, Sparkles, ZapIcon } from "lucide-react";
 import { GradientButton } from "../ui/gradient-button";
 import Link from "next/link";
-import { AnimatedText } from "../animations/animated-text";
+// import { AnimatedText } from "../animations/animated-text";
 
 export function HomeHeroSection() {
   return (
@@ -14,20 +14,36 @@ export function HomeHeroSection() {
         <MaxWidthWrapper className="relative flex min-h-[70vh] flex-col items-center justify-center py-8 sm:gap-y-4 md:py-16 lg:min-h-[90vh]">
           <div className="flex flex-grow flex-col items-center justify-center gap-y-3 sm:flex-none">
             <MotionWrapper
-              className="absolute right-4 top-4 aspect-square h-20 sm:left-0 lg:top-20 xl:top-40"
+              className="absolute right-4 top-4 aspect-square h-20 sm:left-0 lg:top-28 xl:top-48"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
               <RocketIcon className="min-h-full min-w-full stroke-accent-cyan" />
             </MotionWrapper>
-            <H1 className="flex max-w-7xl text-start text-foreground sm:text-center">
+            {/* <H1 className="flex max-w-7xl text-start text-foreground sm:text-center">
               <AnimatedText
                 className="sm:justify-center"
-                text="Strona internetową, która napędzi Twój biznes"
+                text="Strona internetowa, która napędzi Twój biznes"
                 accentWords={["Strona", "biznes"]}
               />
-            </H1>
+   
+            </H1> */}
 
+            <MotionWrapper
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              className="sm:text-center"
+            >
+              <H1 className="flex max-w-7xl text-start text-foreground sm:text-center">
+                <div>
+                  Strona internetowa, która napędzi{" "}
+                  <span className="bg-primary-gradient bg-clip-text text-transparent">
+                    Twój biznes
+                  </span>
+                </div>
+              </H1>
+            </MotionWrapper>
             <MotionWrapper
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

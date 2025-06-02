@@ -22,7 +22,6 @@ import { useRouter } from "next/navigation";
 import { SelectCard } from "@/app/join/_components/select-card";
 import { useContactFormContext } from "@/context/contact-form-context";
 import { contactMethods } from "./data";
-import { MotionWrapper } from "@/components/motion-wrapper";
 
 export function ContactMethodForm({ edit }: { edit?: boolean }) {
   const [selectedMethod, setSelectedMethod] = useState<
@@ -88,17 +87,12 @@ export function ContactMethodForm({ edit }: { edit?: boolean }) {
               <FormItem>
                 <FormLabel>Telefon</FormLabel>
                 <FormControl>
-                  <MotionWrapper
-                    initial={{ x: -100, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                  >
-                    <Input
-                      placeholder="Wpisz swój numer telefonu"
-                      {...field}
-                      name="phone"
-                      type="tel"
-                    />
-                  </MotionWrapper>
+                  <Input
+                    placeholder="Wpisz swój numer telefonu"
+                    {...field}
+                    name="phone"
+                    type="tel"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -114,12 +108,7 @@ export function ContactMethodForm({ edit }: { edit?: boolean }) {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <MotionWrapper
-                    initial={{ x: 100, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                  >
-                    <Input placeholder="Wpisz swój email" {...field} />
-                  </MotionWrapper>
+                  <Input placeholder="Wpisz swój email" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -127,7 +116,7 @@ export function ContactMethodForm({ edit }: { edit?: boolean }) {
           />
         )}
 
-        <GradientButton type="submit" size="lg" className="float-end">
+        <GradientButton type="submit" size="default" className="float-end">
           <span className="text-xl">{edit ? "Zapisz" : "Kontynuuj"}</span>{" "}
           <ChevronRight className="min-h-5 min-w-5" />
         </GradientButton>

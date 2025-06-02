@@ -50,8 +50,8 @@ export function AdditionalFaturesForm({ edit }: { edit: boolean }) {
           <Text size="sm" className="mb-2 text-destructive">
             {form.formState.errors.additionalFeatures?.message}
           </Text>
-          <div className="grid grid-cols-2 gap-4">
-            {features.map(({ id, label, value, icon }) => (
+          <div className="grid gap-4 md:grid-cols-2">
+            {features.map(({ id, label, value, icon, description }) => (
               <SelectCard
                 key={id}
                 onClick={() => {
@@ -72,11 +72,12 @@ export function AdditionalFaturesForm({ edit }: { edit: boolean }) {
                 error={!!form.formState.errors.additionalFeatures}
                 label={label}
                 icon={icon}
+                description={description}
               />
             ))}
           </div>
         </div>
-        <GradientButton type="submit" size="lg" className="float-end">
+        <GradientButton type="submit" size="default" className="float-end">
           <span className="text-lg">{edit ? "Zapisz" : "Kontynuuj"}</span>{" "}
           <ChevronRight className="min-h-5 min-w-5" />
         </GradientButton>

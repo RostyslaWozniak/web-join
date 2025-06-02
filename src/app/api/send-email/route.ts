@@ -1,4 +1,4 @@
-import OfferEmail from "@/components/emails/offer-email";
+// import OfferEmail from "@/components/emails/offer-email";
 import VetAppOfferEmail from "@/components/emails/vet-app-offer-email";
 import { env } from "@/env";
 import { resend } from "@/lib/services/resend";

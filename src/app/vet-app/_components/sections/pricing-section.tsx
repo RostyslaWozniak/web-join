@@ -2,7 +2,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -26,7 +25,13 @@ const pricing = [
     name: "standard",
     price: 2900,
     pricePerMonth: 149,
-    benefits: ["2–4 weterynarzy", "Strona z SEO", "Statystyki", "Support"],
+    benefits: [
+      "Wszystko z basic",
+      "2–4 weterynarzy",
+      "Strona z SEO",
+      "Statystyki",
+      "Support",
+    ],
     styles: "bg-blue-100 text-blue-800",
   },
   {
@@ -34,7 +39,12 @@ const pricing = [
     name: "premium",
     price: 4900,
     pricePerMonth: 199,
-    benefits: ["Pełna wersja", "Rozbudowa", "Priorytetowy support"],
+    benefits: [
+      "Wszystko z standard",
+      "Pełna wersja",
+      "Rozbudowa",
+      "Priorytetowy support",
+    ],
     styles: "bg-purple-100 text-purple-800",
   },
 ];
@@ -85,15 +95,6 @@ export function PricingSection() {
                       ))}
                     </ul>
                   </CardContent>
-                  <CardFooter>
-                    <GradientButton
-                      size="sm"
-                      textSize="text-base"
-                      className="!w-full capitalize"
-                    >
-                      Wybierz {name}
-                    </GradientButton>
-                  </CardFooter>
                 </Card>
               ),
             )}
@@ -101,12 +102,11 @@ export function PricingSection() {
 
           <div className="mt-12 text-center">
             <p className="mb-8 text-lg text-gray-700">
-              📈 Możliwość rozbudowy krok po kroku – współpraca długoterminowa.
+              Możliwość rozbudowy krok po kroku – współpraca długoterminowa.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
-                href="https://vet-app-demo.vercel.app/"
-                target="_blank"
+                href="/join/service-selection?service=vet-app"
                 className="w-full md:w-auto"
               >
                 <GradientButton size="default" outline>

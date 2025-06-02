@@ -1,5 +1,7 @@
 "use server";
 
+import { env } from "@/env";
+import { resend } from "@/lib/services/resend";
 // import { env } from "@/env";
 // import { sendSms } from "@/lib/services/twilio";
 import { contactFormSchema } from "@/lib/validation/contact-form-schema";
@@ -37,12 +39,12 @@ export async function sendForm(formData: unknown) {
       }
     }
 
-    // if (env.NODE_ENV === "production") {
-    //   await sendSms({
-    //     number: env.RECEIVE_SMS_NUMBER,
-    //     message: `Web Join contact form submited. Contact ${data.email?.length ? data.email : data.phone}`,
-    //   });
-    // }
+    await resend.emails.send({
+      from: `Web Join <${env.RESEND_FROM_NAME}@${env.RESEND_DOMAIN}>`,
+      to: "rostyslav.vozniak.dev@gmail.com",
+      subject: "Oferta Web Join",
+      text: `Nowa oferta Web Join. Dane kontaktowe: ${JSON.stringify(data)}`,
+    });
 
     return {
       success: true,

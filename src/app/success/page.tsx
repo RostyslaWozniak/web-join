@@ -79,7 +79,11 @@ export default function ThankYouPage() {
         </div>
         <div className="mt-12 flex justify-center">
           <Link href="/" className="w-full sm:w-auto">
-            <GradientButton className="mt-8 gap-2" size="lg" textSize="text-xl">
+            <GradientButton
+              className="mt-8 gap-2"
+              size="default"
+              textSize="text-xl"
+            >
               Powrót na główną
             </GradientButton>
           </Link>

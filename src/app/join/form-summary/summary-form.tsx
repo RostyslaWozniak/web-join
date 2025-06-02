@@ -103,7 +103,7 @@ export function SummaryForm() {
 
         <GradientButton
           type="submit"
-          size="lg"
+          size="default"
           className="float-end"
           disabled={form.formState.isSubmitting}
         >
@@ -129,7 +129,7 @@ const Summary = ({
   features: string[];
 }) => {
   return (
-    <div className="mx-auto w-full overflow-hidden rounded-2xl bg-card-gradient px-2 py-6 md:p-6">
+    <div className="mx-auto w-full overflow-hidden rounded-2xl bg-card-gradient px-4 py-6 md:p-6">
       <h3 className="mb-4 text-start text-xl font-semibold md:text-2xl">
         Podsumowanie Twojego wyboru
       </h3>
