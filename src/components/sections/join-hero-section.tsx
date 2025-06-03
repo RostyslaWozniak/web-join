@@ -4,7 +4,7 @@ import { H1 } from "@/components/ui/typography";
 
 import { AnimatedText } from "../animations/animated-text";
 
-export function ContactHeroSection() {
+export function JoinHeroSection() {
   return (
     <section>
       <GridBackground maskGradient className="py-12 md:py-20">

@@ -15,35 +15,48 @@ const pricing = [
   {
     id: 1,
     name: "basic",
-    price: 1500,
-    pricePerMonth: 99,
-    benefits: ["1 weterynarz", "Strona główna", "System wizyt"],
+    price: 3900,
+    pricePerMonth: 249,
+    benefits: [
+      "Profesjonalna strona główna z nowoczesnym designem",
+      "System rezerwacji wizyt dla jednego specjalisty",
+      "Intuicyjny terminarz dostępny online 24/7",
+      "Automatyczne potwierdzenia wizyt (e-mail)",
+      "Podstawowa optymalizacja SEO (widoczność w Google)",
+      "Możliwość dalszej rozbudowy w przyszłości",
+    ],
     styles: "bg-emerald-100 text-emerald-800",
   },
   {
     id: 2,
     name: "standard",
-    price: 2900,
-    pricePerMonth: 149,
+    price: 5900,
+    pricePerMonth: 349,
     benefits: [
-      "Wszystko z basic",
-      "2–4 weterynarzy",
-      "Strona z SEO",
-      "Statystyki",
-      "Support",
+      "Wszystko z Basic",
+      "Rozbudowana strona z podstronami (o nas, usługi, kontakt, blog, każda usługa osobno — lepsze SEO)",
+      "Możliwość zarządzania grafikami dla 2–4 lekarzy",
+      "Panel zarządzania dla właściciela lub kierownika kliniki",
+      "Osobne widoki kalendarza dla każdego lekarza",
+      "Statystyki — ile wizyt dziennie, tygodniowo, miesięcznie",
+      "Regularne wsparcie i aktualizacje",
+      "Przygotowanie do dalszej rozbudowy (np. płatności, CMS itd.)",
     ],
     styles: "bg-blue-100 text-blue-800",
   },
   {
     id: 3,
     name: "premium",
-    price: 4900,
-    pricePerMonth: 199,
+    price: 9900,
+    pricePerMonth: 499,
     benefits: [
-      "Wszystko z standard",
-      "Pełna wersja",
-      "Rozbudowa",
-      "Priorytetowy support",
+      "Wszystko z pakietu Standard",
+      "Obsługa dowolnej liczby lekarzy",
+      "Możliwość dodania płatności online i planów subskrypcyjnych",
+      "Strona w wielu językach (jeśli potrzebna)",
+      "Stała współpraca w ramach rozwoju i strategii online",
+      "Priorytetowe wsparcie — szybka reakcja na potrzeby i zmiany",
+      "Regularne konsultacje i analizy rozwoju strony",
     ],
     styles: "bg-purple-100 text-purple-800",
   },
@@ -53,7 +66,7 @@ export function PricingSection() {
   return (
     <section id="pricing" className="bg-gray-50 py-20">
       <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <div className="mb-16 text-center">
             <h2 className="mb-6 text-3xl font-bold text-gray-900 lg:text-4xl">
               💼 Dla małych i średnich przychodni – elastyczne opcje
@@ -66,12 +79,12 @@ export function PricingSection() {
                 <Card
                   key={id}
                   className={cn("relative flex flex-col bg-white shadow-lg", {
-                    "border-emerald-600 sm:scale-105": i === 1,
+                    "border-accent-cyan sm:scale-105": i === 1,
                   })}
                 >
                   {i === 1 && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 transform">
-                      <Badge className="bg-emerald-600 text-white">
+                      <Badge className="bg-accent-cyan text-white">
                         Najpopularniejszy
                       </Badge>
                     </div>
@@ -80,7 +93,9 @@ export function PricingSection() {
                     <Badge className={cn(styles, "mx-auto mb-4 uppercase")}>
                       {name}
                     </Badge>
-                    <CardTitle className="text-2xl">od {price} zł</CardTitle>
+                    <CardTitle className="text-2xl">
+                      wdrożenie od {price} zł
+                    </CardTitle>
                     <CardDescription className="text-lg">
                       + {pricePerMonth} zł/mies
                     </CardDescription>
@@ -88,9 +103,11 @@ export function PricingSection() {
                   <CardContent className="flex-grow">
                     <ul className="flex-1 space-y-3">
                       {benefits.map((benefit) => (
-                        <li key={benefit} className="flex items-center">
-                          <CheckCircleIcon className="mr-2 h-4 w-4 text-green-500" />
-                          <span className="text-sm">{benefit}</span>
+                        <li key={benefit} className="flex items-start">
+                          <CheckCircleIcon className="mr-2 mt-1 h-4 min-h-4 w-4 min-w-4 text-green-500" />
+                          <span className="text-sm lg:text-base">
+                            {benefit}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -109,7 +126,11 @@ export function PricingSection() {
                 href="/join/service-selection?service=vet-app"
                 className="w-full md:w-auto"
               >
-                <GradientButton size="default" outline>
+                <GradientButton
+                  size="default"
+                  outline
+                  textSize="tracking-tight text-base [@media(min-width:390px)]:tracking-normal [@media(min-width:390px)]:text-lg"
+                >
                   <CalendarIcon className="mr-2 h-5 w-5 text-accent-cyan" />
                   Umów się na bezpłatną prezentację
                 </GradientButton>

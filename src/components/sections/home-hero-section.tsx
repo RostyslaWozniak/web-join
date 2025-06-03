@@ -14,20 +14,12 @@ export function HomeHeroSection() {
         <MaxWidthWrapper className="relative flex min-h-[70vh] flex-col items-center justify-center py-8 sm:gap-y-4 md:py-16 lg:min-h-[90vh]">
           <div className="flex flex-grow flex-col items-center justify-center gap-y-3 sm:flex-none">
             <MotionWrapper
-              className="absolute right-4 top-4 aspect-square h-20 sm:left-0 lg:top-28 xl:top-48"
+              className="absolute right-4 top-4 aspect-square h-20 sm:left-0 lg:top-28 xl:top-44"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
               <RocketIcon className="min-h-full min-w-full stroke-accent-cyan" />
             </MotionWrapper>
-            {/* <H1 className="flex max-w-7xl text-start text-foreground sm:text-center">
-              <AnimatedText
-                className="sm:justify-center"
-                text="Strona internetowa, która napędzi Twój biznes"
-                accentWords={["Strona", "biznes"]}
-              />
-   
-            </H1> */}
 
             <MotionWrapper
               initial={{ opacity: 0 }}

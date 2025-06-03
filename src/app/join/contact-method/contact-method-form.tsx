@@ -85,10 +85,10 @@ export function ContactMethodForm({ edit }: { edit?: boolean }) {
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Telefon</FormLabel>
+                <FormLabel>Wpisz swój numer telefonu</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="Wpisz swój numer telefonu"
+                    placeholder="+48 123 456 789"
                     {...field}
                     name="phone"
                     type="tel"
@@ -106,9 +106,13 @@ export function ContactMethodForm({ edit }: { edit?: boolean }) {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel>Wpisz swój email</FormLabel>
                 <FormControl>
-                  <Input placeholder="Wpisz swój email" {...field} />
+                  <Input
+                    placeholder="example@gmail.com"
+                    type="email"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>

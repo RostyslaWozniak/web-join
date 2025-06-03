@@ -40,39 +40,47 @@ export function ServiceSelectionForm({
   }
 
   useEffect(() => {
-    if (dataLoaded) {
-      form.setValue(
-        "serviceType",
-        service ?? newContactFormData.serviceType ?? "website",
-      );
+    if (dataLoaded && (service || newContactFormData.serviceType)) {
+      if (service) {
+        form.setValue("serviceType", service);
+      } else if (newContactFormData.serviceType) {
+        form.setValue("serviceType", newContactFormData.serviceType);
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [newContactFormData.serviceType]);
+
+  useEffect(() => {
+    scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
+  }, []);
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <div>
+        <div className="grid gap-4 md:grid-cols-2">
+          {services.map(({ id, label, value, icon, description }) => (
+            <SelectCard
+              key={id}
+              onClick={() => form.setValue("serviceType", value)}
+              isSelected={form.watch("serviceType")?.includes(value)}
+              error={!!form.formState.errors.serviceType}
+              label={label}
+              icon={icon}
+              description={description}
+            />
+          ))}
+        </div>
+        <div className="flex flex-col items-center justify-between sm:flex-row">
           <Text size="sm" className="mb-2 text-destructive">
             {form.formState.errors.serviceType?.message}
           </Text>
-          <div className="grid gap-4 md:grid-cols-2">
-            {services.map(({ id, label, value, icon, description }) => (
-              <SelectCard
-                key={id}
-                onClick={() => form.setValue("serviceType", value)}
-                isSelected={form.watch("serviceType")?.includes(value)}
-                error={!!form.formState.errors.serviceType}
-                label={label}
-                icon={icon}
-                description={description}
-              />
-            ))}
-          </div>
+          <GradientButton type="submit" size="default" className="float-end">
+            <span className="text-lg">{edit ? "Zapisz" : "Kontynuuj"}</span>{" "}
+            <ChevronRight className="min-h-5 min-w-5" />
+          </GradientButton>
         </div>
-        <GradientButton type="submit" size="default" className="float-end">
-          <span className="text-lg">{edit ? "Zapisz" : "Kontynuuj"}</span>{" "}
-          <ChevronRight className="min-h-5 min-w-5" />
-        </GradientButton>
       </form>
     </Form>
   );

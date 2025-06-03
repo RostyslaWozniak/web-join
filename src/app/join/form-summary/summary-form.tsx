@@ -44,7 +44,6 @@ export function SummaryForm() {
         router.push("/");
       }
       if (res.success) {
-        toast.success(res.message);
         resetLocalStorage();
         router.push("/success");
       }
@@ -112,7 +111,7 @@ export function SummaryForm() {
           ) : (
             <PlayCircle className="mr-2 min-h-7 min-w-7" />
           )}
-          <span className="">Join</span>{" "}
+          <span className="">Dołącz</span>{" "}
         </GradientButton>
       </form>
     </Form>

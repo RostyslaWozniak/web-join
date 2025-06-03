@@ -38,7 +38,7 @@ export function SelectCard({
         })}
       />
       <Text
-        className={cn("text-center text-sm font-semibold md:text-lg", {
+        className={cn("text-center font-semibold md:text-lg", {
           "scale-110 text-accent-cyan transition-transform duration-300":
             isSelected,
         })}
@@ -46,7 +46,9 @@ export function SelectCard({
         {label}
       </Text>
       {description && (
-        <Text className="text-center text-sm">{description}</Text>
+        <Text className="text-center !text-sm md:!text-base">
+          {description}
+        </Text>
       )}
     </div>
   );
