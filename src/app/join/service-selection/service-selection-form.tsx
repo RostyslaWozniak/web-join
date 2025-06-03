@@ -15,6 +15,7 @@ import { ChevronRight } from "lucide-react";
 import { Text } from "@/components/ui/typography";
 import { useContactFormContext } from "@/context/contact-form-context";
 import { useEffect } from "react";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 
 export function ServiceSelectionForm({
   edit,
@@ -24,6 +25,7 @@ export function ServiceSelectionForm({
   service: ServiceSelectionSchema["serviceType"] | undefined;
 }) {
   const router = useRouter();
+  const isMobile = useIsMobile();
   const { newContactFormData, updateContactForm, dataLoaded } =
     useContactFormContext();
 
@@ -51,11 +53,13 @@ export function ServiceSelectionForm({
   }, [newContactFormData.serviceType]);
 
   useEffect(() => {
-    scrollTo({
-      top: 0,
-      behavior: "instant",
-    });
-  }, []);
+    if (isMobile) {
+      scrollTo({
+        top: 0,
+        behavior: "instant",
+      });
+    }
+  }, [isMobile]);
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

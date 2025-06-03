@@ -26,7 +26,7 @@ export function VetAppHeroSection() {
                 Twojej przychodni. Więcej czasu dla pacjentów, mniej bałaganu w
                 kalendarzu.
               </p>
-              <div className="flex flex-col gap-4 overflow-x-hidden sm:flex-row">
+              <div className="flex flex-col gap-4 sm:flex-row">
                 <Link
                   href="https://vet-app-demo.vercel.app/"
                   target="_blank"
