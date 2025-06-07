@@ -7,5 +7,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${env.NEXT_PUBLIC_BASE_URL}`,
       lastModified: new Date(),
     },
+    {
+      url: `${env.NEXT_PUBLIC_BASE_URL}/vet-app`,
+      lastModified: new Date(),
+    },
   ];
 }
