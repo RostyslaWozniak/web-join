@@ -19,13 +19,16 @@ Tworzę prosty system dla przychodni weterynaryjnych, który:
 – wspiera rozwój strony w wyszukiwarkach (SEO),  
 – i może być rozbudowywany w miarę potrzeb kliniki.
 
-Jeśli to coś, co Państwa interesuje, wersja demo dostępna jest pod linkiem:
-https://vet-app-demo.vercel.app
+Jeśli chcieliby Państwo zobaczyć, jak to wygląda w praktyce – zapraszam na krótką, bezpłatną prezentację online przez Google Meet (ok. 15 minut).
+Proszę o informację, kiedy byłby dogodny termin – dopasuję się.
+
+Wersja demo dostępna jest także pod linkiem:
+👉 https://vet-app-demo.vercel.app
 
 Pozdrawiam serdecznie,  
 Rostyslav Vozniak
-www.webjoin.pl/vet-app  
-+48 798 582 849
+🌐 www.webjoin.pl/vet-app  
+📞 +48 798 582 849
 
 ---
 
@@ -59,7 +62,8 @@ export async function POST(req: NextRequest) {
       emailsSet.map((email) => ({
         from: `Web Join <${process.env.RESEND_FROM_NAME}@${process.env.RESEND_DOMAIN}>`,
         to: email,
-        subject: "Nowoczesny system rezerwacji wizyt dla Twojej kliniki",
+        subject:
+          "Prosty system zapisów online dla przychodni weterynaryjnych – zaproszenie na prezentację",
         // react: ClinicBookingEmail(),
         text: message,
       })),
