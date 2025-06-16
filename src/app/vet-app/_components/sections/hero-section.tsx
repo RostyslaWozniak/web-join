@@ -22,9 +22,10 @@ export function VetAppHeroSection() {
                 </div>
               </h1>
               <p className="text-xl leading-relaxed text-muted-foreground">
-                Dedykowany system rezerwacji + nowoczesna strona internetowa dla
-                Twojej przychodni. Więcej czasu dla pacjentów, mniej bałaganu w
-                kalendarzu.
+                Dedykowany system rezerwacji online i nowoczesna strona
+                internetowa, stworzone specjalnie dla weterynarzy. Więcej czasu
+                dla Twojego personelu, mniej telefonów i dynamiczny wzrost
+                liczby wizyt.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Link

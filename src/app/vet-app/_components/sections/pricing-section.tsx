@@ -103,11 +103,11 @@ export function PricingSection() {
                   <CardContent className="flex-grow">
                     <ul className="flex-1 space-y-3">
                       {benefits.map((benefit) => (
-                        <li key={benefit} className="flex items-start">
-                          <CheckCircleIcon className="mr-2 mt-1 h-4 min-h-4 w-4 min-w-4 text-green-500" />
-                          <span className="text-sm lg:text-base">
-                            {benefit}
+                        <li key={benefit} className="flex items-start gap-2">
+                          <span className="flex h-[1lh] items-center">
+                            <CheckCircleIcon className="h-4 w-4 text-emerald-500" />
                           </span>
+                          {benefit}
                         </li>
                       ))}
                     </ul>

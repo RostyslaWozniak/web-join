@@ -7,26 +7,51 @@ import { TargetAudienceSection } from "./_components/sections/target-audience-se
 import { DemoSection } from "./_components/sections/demo-section";
 // import { CtaSection } from "./_components/sections/cta-section";
 import { AboutSection } from "./_components/sections/about-section";
+import { MotionWrapper } from "@/components/motion-wrapper";
+
+function SectionAnimationWrapper({ children }: { children: React.ReactNode }) {
+  return (
+    <MotionWrapper
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+      transition={{ duration: 0.7, delay: 0.2 }}
+    >
+      {children}
+    </MotionWrapper>
+  );
+}
 
 export default function VetAppPage() {
   return (
     <div className="min-h-screen">
       <VetAppHeroSection />
 
-      <ProblemSection />
+      <SectionAnimationWrapper>
+        <ProblemSection />
+      </SectionAnimationWrapper>
 
-      <WhatIsVetAppSection />
+      <SectionAnimationWrapper>
+        <WhatIsVetAppSection />
+      </SectionAnimationWrapper>
 
       {/* unique selling point (USP) */}
-      <UspSection />
+      <SectionAnimationWrapper>
+        <UspSection />
+      </SectionAnimationWrapper>
 
-      <PricingSection />
-
-      <TargetAudienceSection />
-
-      <DemoSection />
-
-      <AboutSection />
+      <SectionAnimationWrapper>
+        <PricingSection />
+      </SectionAnimationWrapper>
+      <SectionAnimationWrapper>
+        <TargetAudienceSection />
+      </SectionAnimationWrapper>
+      <SectionAnimationWrapper>
+        <DemoSection />
+      </SectionAnimationWrapper>
+      <SectionAnimationWrapper>
+        <AboutSection />
+      </SectionAnimationWrapper>
 
       {/* <CtaSection /> */}
     </div>
