@@ -67,7 +67,7 @@
     --card-foreground: var(--foreground);
     --popover: #d0effa;
     --popover-foreground: var(--foreground);
-    --primary: 162 72% 53%;
+    --primary: var(--accent-cyan);
     --primary-foreground: var(--foreground);
     --secondary: 184 74% 95%;
     --secondary-foreground: var(--foreground);

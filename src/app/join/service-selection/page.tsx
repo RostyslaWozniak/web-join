@@ -4,6 +4,8 @@ import { ServiceSelectionForm } from "./service-selection-form";
 import { formAnimationVariants } from "../_components/form-animation-variants";
 import { type ServiceSelectionSchema } from "@/lib/validation/contact-form-schema";
 
+export const dynamic = "force-static";
+
 export default async function ContactMethodPage({
   searchParams,
 }: {

@@ -62,14 +62,14 @@ export default function RootLayout({
       className={`${spaceGrotesk.className} scroll-smooth`}
       suppressHydrationWarning
     >
-      <body className="overflow-x-hidden selection:bg-accent-cyan selection:text-background">
+      <body className="flex min-h-screen flex-col overflow-x-hidden selection:bg-accent-cyan selection:text-background">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Providers>
           <Header />
-          <main>{children}</main>
+          <main className="flex-grow">{children}</main>
           <Footer />
           <MobileNav />
           <Toaster />

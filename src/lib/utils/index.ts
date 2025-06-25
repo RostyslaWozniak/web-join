@@ -8,3 +8,11 @@ export function cn(...inputs: ClassValue[]) {
 export function wait(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+export function getInitials(name: string) {
+  return name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase();
+}

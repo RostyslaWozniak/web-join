@@ -3,6 +3,8 @@ import PageHeader from "../_components/form-header";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { formAnimationVariants } from "../_components/form-animation-variants";
 
+export const dynamic = "force-static";
+
 export default async function ContactMethodPage({
   searchParams,
 }: {
