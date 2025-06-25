@@ -81,7 +81,7 @@ export default async function PostPage({
           <div className="mt-8 flex items-center justify-between">
             <Badge className="scale-125 rounded-full bg-primary-gradient text-gray-800">
               <Link
-                href={`blog/tags/${post.tag.slug}`}
+                href={`/blog/tags/${post.tag.slug}`}
                 className="absolute inset-0"
               />
 
