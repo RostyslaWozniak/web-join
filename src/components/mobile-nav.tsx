@@ -3,7 +3,6 @@
 import {
   BriefcaseBusiness,
   HomeIcon,
-  PawPrintIcon,
   Play,
   Settings2,
   type LucideIcon,
@@ -26,16 +25,13 @@ export function MobileNav() {
         <Link href="/#portfolio">
           <MobileNavItem label="Portfolio" icon={BriefcaseBusiness} />
         </Link>
-        {/* <Link href="/#faq">
+        <Link href="/#faq">
           <div className="flex flex-col items-center gap-y-0.5 pb-3">
             <div className="aspect-square min-h-10 min-w-10 rounded-full bg-card p-1 text-center text-2xl dark:bg-popover">
               ?
             </div>
             <div className="text-xs">FAQ</div>
           </div>
-        </Link> */}
-        <Link href="/vet-app">
-          <MobileNavItem label="VetApp" icon={PawPrintIcon} />
         </Link>
         <Link href="/join">
           <div className="flex flex-col items-center gap-y-0.5 pb-3">

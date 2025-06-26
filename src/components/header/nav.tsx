@@ -5,7 +5,7 @@ import { type NavigationType } from "./navigation";
 // import { usePathname } from "next/navigation";
 
 type NavProps = {
-  navigation: NavigationType;
+  navigation: Record<string, string>[];
 };
 
 export function Nav({ navigation }: NavProps) {

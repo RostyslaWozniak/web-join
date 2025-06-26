@@ -22,7 +22,7 @@ const projects = [
   },
   {
     title: "Eleven Flower Studio",
-    href: "https://eleven-studio.vercel.app",
+    href: "https://eleven-studio.pl",
     image1: "/images/portfolio/eleven-studio-1.jpg",
     image2: "/images/portfolio/eleven-studio-2.jpg",
     logo: ElevenStudioLogo,
@@ -95,7 +95,7 @@ export function PortfolioSection() {
                       </Link>
                     </div>
                   </div>
-                  <div>
+                  <div className="scale-75">
                     <Logo />
                   </div>
                 </div>

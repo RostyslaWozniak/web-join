@@ -12,8 +12,8 @@ export function Logo({ className }: LogoProps) {
       onClick={() => scrollTo({ top: 0, behavior: "smooth" })}
     >
       <svg
-        width="169"
-        height="37"
+        width="100%"
+        height="100%"
         viewBox="0 0 169 37"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

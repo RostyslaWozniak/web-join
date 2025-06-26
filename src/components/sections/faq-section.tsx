@@ -66,12 +66,12 @@ const faqs = [
     question: "Ile kosztuje strona?",
     answer: `💰 **Ceny startowe:** 
 
--  **Strona wizytówka** – prosta strona z najważniejszymi informacjami o Twojej firmie **od 500 zł**
--  **Landing Page** – pojedyncza strona do promocji produktu lub usługi, zoptymalizowana pod konwersję **od 800 zł**
--  **Strona firmowa** – pełna strona z kilkoma podstronami: "O nas", "Usługi", "Kontakt"  **od 1200 zł**
+-  **Strona wizytówka** – prosta strona z najważniejszymi informacjami o Twojej firmie **od 1200 zł**
+-  **Landing Page** – pojedyncza strona do promocji produktu lub usługi, zoptymalizowana pod konwersję **od 1500 zł**
+-  **Strona firmowa** – pełna strona z kilkoma podstronami: "O nas", "Usługi", "Kontakt"  **od 2000 zł**
 -  **Sklep internetowy** – od 3000 zł
 
-📌 Cena zależy od funkcjonalności – mogę dopasować stronę do Twojego budżetu. **Po prostu opisz swoje potrzeby w formularzu!**`,
+📌 Cena zależy od funkcjonalności – mogę dopasować stronę do Twojego budżetu.`,
   },
 
   {
