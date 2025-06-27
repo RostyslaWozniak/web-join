@@ -124,7 +124,7 @@ export function PricingSection() {
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
-                href="/join/service-selection?service=vet-app"
+                href="/join/service-selection?service=book-app"
                 className="w-full md:w-auto"
               >
                 <GradientButton
