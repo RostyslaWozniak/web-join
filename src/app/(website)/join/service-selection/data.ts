@@ -3,18 +3,18 @@ import {
   Layout,
   MessageCircle,
   Notebook,
-  PawPrintIcon,
   ShoppingBasket,
+  StarIcon,
 } from "lucide-react";
 
 export const services = [
   {
     id: 1,
-    label: "VetApp",
-    value: "vet-app",
-    icon: PawPrintIcon,
+    label: "BookApp",
+    value: "book-app",
+    icon: StarIcon,
     description:
-      "Nowoczesny system do zarządzania wizytami i stroną dla weterynarzy.",
+      "Nowoczesny system do zarządzania wizytami i stroną dla lokalnych firm.",
   },
   {
     id: 2,
@@ -57,26 +57,3 @@ export const services = [
       "Bezpłatna rozmowa, w której omówimy Twoje potrzeby i dobierzemy rozwiązanie.",
   },
 ] as const;
-// export const services = [
-//   {
-//     id: 1,
-//     label: "System VetApp",
-//     value: "vet-app",
-//     icon: PawPrintIcon,
-//   },
-//   { id: 2, label: "Strona internetowa", value: "website", icon: Globe },
-//   {
-//     id: 3,
-//     label: "Sklep internetowy",
-//     value: "e-commerce",
-//     icon: ShoppingBasket,
-//   },
-//   { id: 4, label: "Landing page", value: "landing", icon: Layout },
-//   { id: 5, label: "Blog", value: "blog", icon: Notebook },
-//   {
-//     id: 6,
-//     label: "Darmowa konsultacja",
-//     value: "consultation",
-//     icon: MessageCircle,
-//   },
-// ] as const;

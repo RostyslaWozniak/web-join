@@ -63,7 +63,7 @@ export function ServiceSelectionForm({
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           {services.map(({ id, label, value, icon, description }) => (
             <SelectCard
               key={id}
@@ -81,7 +81,7 @@ export function ServiceSelectionForm({
             {form.formState.errors.serviceType?.message}
           </Text>
           <GradientButton type="submit" size="default" className="float-end">
-            <span className="text-lg">{edit ? "Zapisz" : "Kontynuuj"}</span>{" "}
+            <span className="text-base">{edit ? "Zapisz" : "Kontynuuj"}</span>{" "}
             <ChevronRight className="min-h-5 min-w-5" />
           </GradientButton>
         </div>

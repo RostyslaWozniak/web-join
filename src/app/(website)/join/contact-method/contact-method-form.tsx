@@ -121,7 +121,7 @@ export function ContactMethodForm({ edit }: { edit?: boolean }) {
         )}
 
         <GradientButton type="submit" size="default" className="float-end">
-          <span className="text-xl">{edit ? "Zapisz" : "Kontynuuj"}</span>{" "}
+          <span className="text-base">{edit ? "Zapisz" : "Kontynuuj"}</span>{" "}
           <ChevronRight className="min-h-5 min-w-5" />
         </GradientButton>
       </form>

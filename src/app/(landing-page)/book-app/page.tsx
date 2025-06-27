@@ -1,6 +1,6 @@
 import { BookAppHeroSection } from "./_components/sections/hero-section";
 import { ProblemSection } from "./_components/sections/problem-section";
-import { WhatIsVetAppSection } from "./_components/sections/what-is-vet-app-section";
+import { WhatIsBookAppSection } from "./_components/sections/what-is-book-app-section";
 import { UspSection } from "./_components/sections/usp-section";
 import { PricingSection } from "./_components/sections/pricing-section";
 import { TargetAudienceSection } from "./_components/sections/target-audience-section";
@@ -12,17 +12,22 @@ export default function BookAppPage() {
   return (
     <div className="min-h-screen">
       <BookAppHeroSection />
-
       <ProblemSection />
-
-      <WhatIsVetAppSection />
-
+      <div id="dla-kogo">
+        <TargetAudienceSection />
+      </div>
+      <div id="o-bookapp">
+        <WhatIsBookAppSection />
+      </div>
       {/* unique selling point (USP) */}
-      <UspSection />
+      <div id="dlaczego-warto">
+        <UspSection />
+      </div>
 
-      <PricingSection />
-      <TargetAudienceSection />
       <DemoSection />
+      <div id="pakiety">
+        <PricingSection />
+      </div>
       <AboutSection />
       <BlogPreviewSection />
     </div>

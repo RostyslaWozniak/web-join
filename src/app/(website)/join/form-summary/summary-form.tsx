@@ -14,7 +14,7 @@ import { useContactFormContext } from "@/context/contact-form-context";
 import { Text } from "@/components/ui/typography";
 import { services } from "../service-selection/data";
 import { features } from "../additional-features/data";
-import { useEffect } from "react";
+import { useEffect, useTransition } from "react";
 import { sendForm } from "./action";
 import { toast } from "sonner";
 import Link from "next/link";
@@ -22,12 +22,13 @@ import Link from "next/link";
 export function SummaryForm() {
   const { newContactFormData, resetLocalStorage } = useContactFormContext();
   const router = useRouter();
+  const [isPending, startTransition] = useTransition();
 
   const form = useForm<ContactFormSchema>({
     resolver: zodResolver(contactFormSchema),
   });
 
-  async function onSubmit(values: ContactFormSchema) {
+  function onSubmit(values: ContactFormSchema) {
     if (!newContactFormData.phone && !newContactFormData.email) {
       router.push("/join/contact-method?edit=true");
       return;
@@ -37,16 +38,22 @@ export function SummaryForm() {
       return;
     }
     try {
-      const res = await sendForm(values);
+      startTransition(async () => {
+        const res = await sendForm(values);
 
-      if (!res.success) {
-        toast.error(res.message);
-        router.push("/");
-      }
-      if (res.success) {
-        resetLocalStorage();
-        router.push("/success");
-      }
+        if (!res.success) {
+          startTransition(() => {
+            toast.error(res.message);
+            router.push("/");
+          });
+        }
+        if (res.success) {
+          startTransition(() => {
+            resetLocalStorage();
+            router.push("/success");
+          });
+        }
+      });
     } catch {
       toast.error("Coś poszło nie tak. Spróbuj wysłać ponownie.");
       router.push("/");
@@ -104,9 +111,10 @@ export function SummaryForm() {
           type="submit"
           size="default"
           className="float-end"
-          disabled={form.formState.isSubmitting}
+          textSize="text-base"
+          disabled={isPending}
         >
-          {form.formState.isSubmitting ? (
+          {isPending ? (
             <Loader2 className="mr-2 min-h-7 min-w-7 animate-spin" />
           ) : (
             <PlayCircle className="mr-2 min-h-7 min-w-7" />

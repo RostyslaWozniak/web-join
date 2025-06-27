@@ -1,20 +1,14 @@
 import "@/styles/globals.css";
 
-import { Space_Grotesk } from "next/font/google";
 import { type Metadata } from "next";
 import { Header } from "@/components/header";
 import { Providers } from "@/components/providers";
 import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner";
-import { MobileNav } from "@/components/mobile-nav";
 import { env } from "@/env";
 import type { WebSite, WithContext } from "schema-dts";
-import { bookAppNav } from "./data/navigation";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  display: "swap",
-});
+import { bookAppNav } from "./book-app/data/book-app-nav";
+import { MobileNav } from "@/components/mobile-nav";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
@@ -52,28 +46,22 @@ const jsonLd: WithContext<WebSite> = {
   description: "Tworzę strony internetowe dla twojego biznesu",
 };
 
-export default function RootLayout({
+export default function LandingPageLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="pl"
-      className={`${spaceGrotesk.className} scroll-smooth`}
-      suppressHydrationWarning
-    >
-      <body className="flex min-h-screen flex-col overflow-x-hidden selection:bg-accent-cyan selection:text-background">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <Providers>
-          <Header navigation={bookAppNav} />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-          <MobileNav />
-          <Toaster />
-        </Providers>
-      </body>
-    </html>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Providers>
+        <Header navigation={bookAppNav} />
+        <main className="flex-grow">{children}</main>
+        <Footer />
+        <MobileNav navigation={bookAppNav} />
+        <Toaster />
+      </Providers>
+    </>
   );
 }

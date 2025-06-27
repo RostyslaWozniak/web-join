@@ -1,7 +1,7 @@
 import { env } from "@/env";
 import { type MetadataRoute } from "next";
-import { posts } from "./blog/data/posts";
-import { tags } from "./blog/data/tags";
+import { posts } from "./(blog)/blog/data/posts";
+import { tags } from "./(blog)/blog/data/tags";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const postsSitemap = posts.map((post) => ({
@@ -20,7 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
     },
     {
-      url: `${env.NEXT_PUBLIC_BASE_URL}/vet-app`,
+      url: `${env.NEXT_PUBLIC_BASE_URL}/book-app`,
       lastModified: new Date(),
     },
     {

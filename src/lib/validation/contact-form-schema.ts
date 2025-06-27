@@ -6,7 +6,7 @@ const serviceTypes = [
   "landing",
   "blog",
   "consultation",
-  "vet-app",
+  "book-app",
 ] as const;
 
 const additionalFeatures = [

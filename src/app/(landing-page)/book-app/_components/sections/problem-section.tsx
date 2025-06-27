@@ -1,5 +1,7 @@
+import { MotionWrapper } from "@/components/motion-wrapper";
 import { Card, CardContent } from "@/components/ui/card";
 import { H2 } from "@/components/ui/typography";
+import { cn } from "@/lib/utils";
 import {
   Clock10Icon,
   DatabaseIcon,
@@ -7,6 +9,33 @@ import {
   SearchIcon,
   TargetIcon,
 } from "lucide-react";
+
+const sectionData = [
+  {
+    id: "1",
+    icon: PhoneIcon,
+    text: "Niekończących się telefonów z pytaniami o terminy w godzinach pracy?",
+    style: "border-accent-cyan text-accent-cyan",
+  },
+  {
+    id: "2",
+    icon: DatabaseIcon,
+    text: "Chaotycznych zapisów na kartkach lub w przestarzałych kalendarzach?",
+    style: "border-accent-green text-accent-green",
+  },
+  {
+    id: "3",
+    icon: Clock10Icon,
+    text: "Zapominających o wizytach klientów, którzy nie dostają przypomnień?",
+    style: "border-accent-lime text-accent-lime",
+  },
+  {
+    id: "4",
+    icon: TargetIcon,
+    text: "Braku widoczności online, przez co nowi pacjenci trafiają do konkurencji?",
+    style: "border-accent-emerald text-accent-emerald",
+  },
+];
 
 export function ProblemSection() {
   return (
@@ -24,42 +53,16 @@ export function ProblemSection() {
             <p className="text-start text-2xl font-semibold">Masz dość:</p>
 
             <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              <Card className="border-accent-cyan bg-transparent">
-                <CardContent className="p-6 text-center">
-                  <PhoneIcon className="mx-auto mb-4 h-8 w-8 text-accent-cyan" />
-                  <p>
-                    Niekończących się telefonów z pytaniami o terminy w
-                    godzinach pracy?
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-accent-green bg-transparent">
-                <CardContent className="p-6 text-center">
-                  <DatabaseIcon className="mx-auto mb-4 h-8 w-8 border-accent-green text-accent-green" />
-                  <p>
-                    Chaotycznych zapisów na kartkach lub w przestarzałych
-                    kalendarzach?
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-accent-green bg-transparent">
-                <CardContent className="p-6 text-center">
-                  <Clock10Icon className="mx-auto mb-4 h-8 w-8 border-accent-green text-accent-green" />
-                  <p>
-                    Zapominających o wizytach klientów, którzy nie dostają
-                    przypomnień?
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-accent-lime bg-transparent">
-                <CardContent className="p-6 text-center">
-                  <TargetIcon className="mx-auto mb-4 h-8 w-8 border-accent-lime text-accent-lime" />
-                  <p>
-                    Braku widoczności online, przez co nowi pacjenci trafiają do
-                    konkurencji?
-                  </p>
-                </CardContent>
-              </Card>
+              {sectionData.map(({ id, icon: Icon, text, style }, i) => (
+                <MotionWrapper transition={{ delay: 0.1 * i + 1 }} key={id}>
+                  <Card className={cn("bg-transparent", style)}>
+                    <CardContent className="p-6 text-center">
+                      <Icon className="mx-auto mb-4 h-8 w-8" />
+                      <p className="text-foreground">{text}</p>
+                    </CardContent>
+                  </Card>
+                </MotionWrapper>
+              ))}
             </div>
           </div>
           <div className="mx-auto max-w-4xl">

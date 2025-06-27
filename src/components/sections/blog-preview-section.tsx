@@ -1,8 +1,8 @@
 import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight } from "lucide-react";
 import { H2 } from "../ui/typography";
-import { posts } from "@/app/(website)/blog/data/posts";
-import { PostCard } from "@/app/(website)/blog/_components/post-card";
+import { posts } from "@/app/(blog)/blog/data/posts";
+import { PostCard } from "@/app/(blog)/blog/_components/post-card";
 import Link from "next/link";
 import { GradientButton } from "../ui/gradient-button";
 
@@ -35,7 +35,7 @@ export default function BlogPreviewSection() {
         </div>
 
         <div className="text-center">
-          <Link href="/book-app" className="w-full md:w-auto">
+          <Link href="/blog" className="w-full md:w-auto">
             <GradientButton size="default">
               Zobacz więcej <ArrowUpRight className="ml-2 h-4 w-4" />
             </GradientButton>

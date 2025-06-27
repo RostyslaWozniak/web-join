@@ -9,10 +9,10 @@ export default function PageHeader({
   subtitle?: string;
 }) {
   return (
-    <div className="space-y-1">
+    <div className="max-w-2xl space-y-1">
       <h2 className="text-2xl font-semibold md:text-4xl">{title}</h2>
       {subtitle && (
-        <Text variant="muted" size="sm">
+        <Text variant="muted" className="text-sm sm:text-base">
           {subtitle}
         </Text>
       )}

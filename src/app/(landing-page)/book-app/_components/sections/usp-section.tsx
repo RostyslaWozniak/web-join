@@ -15,11 +15,11 @@ import {
 
 export function UspSection() {
   return (
-    <section className="py-20">
+    <section className="bg-white py-20">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 text-center">
-            <H2 className="mb-6">💡 Dlaczego warto wybrać VetApp?</H2>
+            <H2 className="mb-6">💡 Dlaczego warto wybrać BookApp?</H2>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">

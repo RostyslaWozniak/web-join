@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
 
-import { Space_Grotesk } from "next/font/google";
 import { type Metadata } from "next";
 import { Header } from "@/components/header";
 import { Providers } from "@/components/providers";
@@ -9,12 +8,8 @@ import { Toaster } from "@/components/ui/sonner";
 import { MobileNav } from "@/components/mobile-nav";
 import { env } from "@/env";
 import type { WebSite, WithContext } from "schema-dts";
-import { navigation } from "@/components/header/navigation";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  display: "swap",
-});
+import { homePageNav } from "@/components/header/home-page-nav";
+import { HideOnPath } from "@/components/conditional-path-renderer";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
@@ -56,26 +51,30 @@ const jsonLd: WithContext<WebSite> = {
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html
-      lang="pl"
-      className={`${spaceGrotesk.className} scroll-smooth`}
-      suppressHydrationWarning
-    >
-      <body className="flex min-h-screen flex-col overflow-x-hidden selection:bg-accent-cyan selection:text-background">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <Providers>
-          <Header navigation={navigation} />
-          <main className="flex-grow">{children}</main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Providers>
+        <Header navigation={homePageNav} />
+        <main className="flex-grow">{children}</main>
+
+        <HideOnPath
+          condition={{
+            path: "/join",
+            matchType: "startsWith",
+          }}
+        >
+          <MobileNav navigation={homePageNav} actionButton />
           <Footer />
-          <MobileNav />
-          <Toaster />
-        </Providers>
-      </body>
-    </html>
+        </HideOnPath>
+        <Toaster />
+      </Providers>
+    </>
   );
 }

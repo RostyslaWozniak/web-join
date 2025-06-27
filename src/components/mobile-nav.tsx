@@ -1,46 +1,39 @@
-"use client";
-
-import {
-  BriefcaseBusiness,
-  HomeIcon,
-  Play,
-  Settings2,
-  type LucideIcon,
-} from "lucide-react";
+import { cn } from "@/lib/utils";
+import { PlayIcon, type LucideIcon } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
-export function MobileNav() {
-  const pathname = usePathname();
-  if (pathname.startsWith("/join")) return null;
+export function MobileNav({
+  navigation,
+  actionButton = false,
+}: {
+  navigation: { href: string; label: string; icon?: LucideIcon }[];
+  actionButton?: boolean;
+}) {
   return (
     <nav className="bg-background/70 fixed bottom-2 left-2 right-2 z-50 mx-auto max-w-[400px] rounded-full bg-[#22D3EE30] text-foreground shadow-[0px_0px_20px_6px_#22D3EE20] backdrop-blur-lg md:hidden">
-      <div className="grid translate-y-2 grid-cols-5">
-        <Link href="/">
-          <MobileNavItem label="Start" icon={HomeIcon} />
-        </Link>
-        <Link href="/#uslugi">
-          <MobileNavItem label="Usługi" icon={Settings2} />
-        </Link>
-        <Link href="/#portfolio">
-          <MobileNavItem label="Portfolio" icon={BriefcaseBusiness} />
-        </Link>
-        <Link href="/#faq">
-          <div className="flex flex-col items-center gap-y-0.5 pb-3">
-            <div className="aspect-square min-h-10 min-w-10 rounded-full bg-card p-1 text-center text-2xl dark:bg-popover">
-              ?
+      <div
+        className={cn("grid translate-y-2 grid-cols-4", {
+          "grid-cols-5": actionButton && navigation.length > 3,
+        })}
+      >
+        {navigation.map(
+          ({ label, href, icon: Icon }) =>
+            Icon && (
+              <Link href={href} key={href}>
+                <MobileNavItem label={label} icon={Icon} />
+              </Link>
+            ),
+        )}
+        {actionButton && (
+          <Link href="/join">
+            <div className="flex flex-col items-center gap-y-0.5 pb-3">
+              <div className="rounded-full bg-primary-gradient p-2 dark:bg-popover">
+                <PlayIcon className="translate-x-[1px] text-white" />
+              </div>
+              <div className="text-xs">Dołącz</div>
             </div>
-            <div className="text-xs">FAQ</div>
-          </div>
-        </Link>
-        <Link href="/join">
-          <div className="flex flex-col items-center gap-y-0.5 pb-3">
-            <div className="rounded-full bg-primary-gradient p-2 dark:bg-popover">
-              <Play className="translate-x-[1px] text-white" />
-            </div>
-            <div className="text-xs">Dołącz</div>
-          </div>
-        </Link>
+          </Link>
+        )}
       </div>
     </nav>
   );
@@ -59,7 +52,7 @@ function MobileNavItem({
         <Icon className="" />
       </div>
       <span className="sr-only">{`link to ${label}`}</span>
-      <div className="text-xs">{label}</div>
+      <div className="text-center text-xs">{label}</div>
     </div>
   );
 }

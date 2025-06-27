@@ -1,4 +1,3 @@
-import { JoinHeroSection } from "@/components/sections/join-hero-section";
 import StepNav from "@/app/(website)/join/_components/step-nav";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import dynamic from "next/dynamic";
@@ -14,16 +13,11 @@ export default function JoinLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <div className="hidden lg:block">
-        <JoinHeroSection />
+    <MaxWidthWrapper className="flex max-w-5xl flex-col gap-x-16 pb-12 md:pt-6">
+      <StepNav />
+      <div className="relative min-h-[500px] flex-grow">
+        <ContactFormProvider>{children}</ContactFormProvider>
       </div>
-      <MaxWidthWrapper className="flex max-w-7xl flex-col gap-x-16 pb-28 sm:pt-20 lg:flex-row">
-        <StepNav />
-        <div className="relative min-h-[500px] flex-grow">
-          <ContactFormProvider>{children}</ContactFormProvider>
-        </div>
-      </MaxWidthWrapper>
-    </>
+    </MaxWidthWrapper>
   );
 }

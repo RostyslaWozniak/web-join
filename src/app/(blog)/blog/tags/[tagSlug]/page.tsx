@@ -1,4 +1,4 @@
-import { posts } from "@/app/(website)/blog/data/posts";
+import { posts } from "@/app/(blog)/blog/data/posts";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { H1 } from "@/components/ui/typography";
 import { notFound } from "next/navigation";

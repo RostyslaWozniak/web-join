@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import path from "path";
 import { useEffect, useState } from "react";
 
@@ -36,6 +35,7 @@ export const steps = [
 
 export default function StepNav() {
   const pathname = usePathname();
+  const router = useRouter();
   const currentPath = path.basename(pathname);
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -44,19 +44,19 @@ export default function StepNav() {
   }, [currentPath]);
 
   return (
-    <div className="sticky isolate mb-8 mt-8 min-w-72 lg:mb-0">
+    <div className="sticky isolate my-8 min-w-72">
       {/* list of form steps */}
-      <div className="relative flex flex-row justify-between lg:flex-col lg:justify-start lg:gap-8">
-        {steps.map(({ title, route, link }, i) => (
-          <Link
-            href={link}
-            key={link}
-            className="group z-20 flex flex-col items-center gap-x-3 gap-y-1 lg:w-auto lg:flex-row lg:text-nowrap"
-            prefetch={true}
+      <div className="relative flex flex-row justify-between">
+        {steps.map(({ id, title, route, link }, i) => (
+          <button
+            key={id}
+            onClick={() => currentStep > i && router.push(link)}
+            disabled={currentStep <= i}
+            className="group z-20 flex flex-col items-center gap-x-3 gap-y-1"
           >
             <span
               className={cn(
-                "flex h-10 w-10 items-center justify-center rounded-full border text-sm transition-colors duration-200 lg:h-12 lg:w-12 lg:text-lg",
+                "flex h-10 w-10 items-center justify-center rounded-full border text-sm transition-colors duration-200 md:h-12 md:w-12 md:text-lg",
                 {
                   "border-none bg-primary-gradient text-background":
                     currentPath === route,
@@ -71,7 +71,7 @@ export default function StepNav() {
             </span>
             <span
               className={cn(
-                "text-foreground/75 w-min text-center text-xs transition-colors duration-200 group-hover:text-foreground md:block lg:block lg:text-start lg:text-2xl",
+                "w-min text-center text-xs text-foreground transition-colors duration-200 group-hover:text-foreground md:text-sm",
                 {
                   "font-light": currentPath !== route,
                   "font-semibold text-foreground": currentPath === route,
@@ -80,12 +80,12 @@ export default function StepNav() {
             >
               {title}
             </span>
-          </Link>
+          </button>
         ))}
         {/* mobile background dashes */}
         <div
           className={cn(
-            "absolute top-[18px] mx-auto flex h-1 w-full lg:hidden",
+            "absolute top-[18px] mx-auto flex h-1 w-full md:top-[24px]",
             {
               "bg-[linear-gradient(to_right,transparent_0%,transparent_10px,var(--muted)_10px,var(--muted)_calc(100%-40px),transparent_100%)]":
                 currentStep === 0,

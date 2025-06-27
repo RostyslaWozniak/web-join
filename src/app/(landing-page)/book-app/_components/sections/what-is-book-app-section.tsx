@@ -42,9 +42,9 @@ const benefitCardsData = [
   },
 ];
 
-export function WhatIsVetAppSection() {
+export function WhatIsBookAppSection() {
   return (
-    <section className="bg-white py-20">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-6xl">
           <div className="mb-16 text-center">
