@@ -19,9 +19,9 @@ export const posts = [
     image:
       "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vYXiLTPrQZ98h0LwPKCzueVbyGtp5Rqvd3lkD",
     metadata: {
-      title: "Strona Internetowa: Czy Twój Biznes Istnieje Online?",
+      title: "Strona Internetowa Warszawa: Biznes Online 24/7",
       description:
-        "Czy Twoja firma jest widoczna w Internecie? Dowiedz się, dlaczego strona internetowa to absolutna konieczność dla każdego biznesu",
+        "Strona internetowa dla lokalnego biznesu w Warszawie. Zwiększ widoczność online, pozyskaj klientów 24/7. Agencja SEO, strony WWW.",
     },
     tag: tags.seo,
     createdAt: new Date("2025-06-22"),
@@ -32,8 +32,7 @@ export const posts = [
   {
     id: 2,
     slug: "strona-na-facebooku-to-za-malo",
-    title:
-      "Strona na Facebooku to Za Mało? Ograniczenia Social Mediów dla Firm",
+    title: "Facebook to Za Mało? Strona WWW dla Firmy Warszawa",
     description:
       "Czy obecność wyłącznie na Facebooku czy Instagramie wystarcza, aby Twoja firma w Warszawie w pełni rozwinęła swój potencjał? Zobacz, dlaczego własna strona internetowa to fundament stabilności i kontroli Twojej marki.",
     image:
@@ -42,7 +41,7 @@ export const posts = [
       title:
         "Facebook/Instagram to za mało? Dlaczego firma potrzebuje własnej strony WWW",
       description:
-        "Dowiedz się, dlaczego poleganie tylko na social mediach ogranicza Twój biznes w Warszawie. Własna strona internetowa daje kontrolę, profesjonalizm i skuteczne SEO.",
+        "Ograniczenia social mediów dla biznesu. Własna strona internetowa Warszawa: kontrola, SEO, profesjonalizm. Agencja WWW.",
     },
     tag: tags["strony-internetowe"],
     createdAt: new Date("2025-06-25"),
@@ -60,10 +59,9 @@ export const posts = [
     image:
       "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vU8cCH1vwyKEDPzcdYMOiL8j1u2WbqsVwBN07",
     metadata: {
-      title:
-        "Google Moja Firma: Przewodnik Optymalizacji dla Lokalnego Biznesu",
+      title: "Google Moja Firma Warszawa: Optymalizacja i Wizytówka Google",
       description:
-        "Odkryj potęgę darmowej wizytówki Google Moja Firma i dowiedz się, jak przyciągać lokalnych klientów w Warszawie 24/7. Praktyczne wskazówki optymalizacji Twojej firmy w Google Maps.",
+        "Google Moja Firma dla lokalnego biznesu w Warszawie. Darmowa wizytówka Google Maps. Pozyskiwanie klientów 24/7. Agencja SEO.",
     },
     tag: tags.google,
     createdAt: new Date("2025-06-25"),
@@ -81,10 +79,9 @@ export const posts = [
     image:
       "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vKDwuKIReMY6VDm8WNosJjy91SA7OxLhIH5Qz",
     metadata: {
-      title:
-        "Next.js vs Shopify/WooCommerce: Sklep internetowy bez kompromisów",
+      title: "Next.js E-commerce: Sklepy Internetowe Bez Kompromisów",
       description:
-        "Poznaj ograniczenia Shopify, WooCommerce i PrestaShop. Dowiedz się, dlaczego Next.js to przyszłość e-commerce dla firm potrzebujących topowej wydajności, pełnej personalizacji i kontroli nad sklepem internetowym. Custom development dla wymagających.",
+        "Next.js vs Shopify/WooCommerce. Tworzenie sklepów internetowych dla firm. Szybki, spersonalizowany e-commerce. Agencja Next.js.",
     },
 
     tag: tags["e-commerce"],

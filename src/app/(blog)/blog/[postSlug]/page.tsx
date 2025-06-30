@@ -11,6 +11,8 @@ import { BlogSidebar } from "../_components/blog-sidebar";
 import { Avatar } from "@/components/avatar";
 import { cache } from "react";
 import { generatePostJsonLd } from "../lib/generate-post-json-ld";
+import { type Metadata } from "next";
+import { env } from "@/env";
 
 export const dynamic = "force-static";
 
@@ -22,25 +24,34 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ postSlug: string }>;
-}) {
+}): Promise<Metadata> {
   const { postSlug } = await params;
   const post = getPost(postSlug);
 
   if (!post) return notFound();
   return {
-    title: post.title,
-    description: post.description,
-    image: post.image,
+    title: post.metadata.title,
+    description: post.metadata.description,
+    authors: [{ name: post.author.name, url: post.author.image }],
     openGraph: {
+      url: `${env.NEXT_PUBLIC_BASE_URL}/blog/${post.slug}`,
       title: post.title,
       description: post.description,
-      image: post?.image,
+      siteName: "Web Join",
+      locale: "pl-PL",
+      countryName: "Poland",
+      type: "article",
+      images: {
+        url: post.image,
+        width: 1200,
+        height: 630,
+        alt: "Nowoczesne strony internetowe i sklepy online - Web Join",
+      },
     },
     twitter: {
       title: post.title,
       description: post.description,
-      image: post.image,
-      type: "website",
+
       images: {
         url: post.image,
         width: 1200,

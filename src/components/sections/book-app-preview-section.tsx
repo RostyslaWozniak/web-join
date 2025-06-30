@@ -19,12 +19,12 @@ export function BookAppPreviewSection() {
             ✨ Nowość!
           </Badge>
 
-          <h1 className="mb-6 text-4xl font-bold leading-tight text-foreground md:text-5xl">
+          <h2 className="mb-6 text-4xl font-bold leading-tight text-foreground md:text-5xl">
             <span className="bg-primary-gradient bg-clip-text text-transparent">
               BookApp
             </span>{" "}
             – Twoje wizyty. <br /> Twój system. Twoja marka.
-          </h1>
+          </h2>
 
           <p className="mx-auto mb-8 max-w-4xl text-xl leading-relaxed text-gray-600">
             Masz firmę, która pracuje na wizytach? Fryzjer? Weterynarz?
