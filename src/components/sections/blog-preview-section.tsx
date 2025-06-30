@@ -8,7 +8,7 @@ import { GradientButton } from "../ui/gradient-button";
 
 export default function BlogPreviewSection() {
   return (
-    <section className="bg-gray-50 px-4 py-16">
+    <section className="px-4 py-16">
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 text-center">
           <Badge className="mb-4 rounded-full bg-card-gradient px-4 py-2 text-sm font-medium text-foreground">

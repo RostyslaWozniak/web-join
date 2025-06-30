@@ -25,7 +25,7 @@ export default function BookAppPage() {
       </div>
 
       <DemoSection />
-      <div id="pakiety">
+      <div id="ceny">
         <PricingSection />
       </div>
       <AboutSection />

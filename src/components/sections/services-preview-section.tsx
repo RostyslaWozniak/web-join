@@ -29,17 +29,6 @@ const servicesData = [
     color: "bg-radial-gradient-primary-cyan",
   },
   {
-    title: "Responsywność i UX",
-    features: [
-      "📱 Perfekcyjny wygląd na każdym urządzeniu",
-      "🖥️ Intuicyjna nawigacja i UX",
-      "🎨 Dopasowanie do Twojej marki",
-    ],
-    text: "Twoja strona musi być czytelna i funkcjonalna na każdym ekranie – od smartfona po duży monitor.",
-    href: "#",
-    color: "bg-radial-gradient-accent-yellow",
-  },
-  {
     title: "SEO i optymalizacja",
     features: [
       "🔍 Wyższe pozycje w Google",
@@ -50,28 +39,6 @@ const servicesData = [
     href: "#",
     color: "bg-radial-gradient-accent-green",
   },
-  {
-    title: "Publikacja strony",
-    features: [
-      "🌎 Konfiguracja domeny i hostingu",
-      "🚀 Wdrożenie bez błędów",
-      "🔄 Automatyczne aktualizacje",
-    ],
-    text: "Zajmę się pełnym wdrożeniem Twojej strony, aby działała szybko, stabilnie i była zawsze online.",
-    href: "#",
-    color: "bg-radial-gradient-primary-cyan",
-  },
-  {
-    title: "Wsparcie techniczne",
-    features: [
-      "🛠️ Aktualizacje i rozwój strony",
-      "🚨 Szybka reakcja na problemy",
-      "🔒 Stałe zabezpieczenia",
-    ],
-    text: "Zapewniam stałą opiekę nad Twoją stroną – od aktualizacji po wsparcie techniczne.",
-    href: "#",
-    color: "bg-radial-gradient-primary-green",
-  },
 ];
 
 export function ServicesPreviewSection() {
@@ -79,7 +46,7 @@ export function ServicesPreviewSection() {
     <section id="uslugi">
       <MaxWidthWrapper className="flex flex-col items-center gap-y-8 py-16 md:gap-y-14 md:py-20">
         <H2 className="text-start md:text-center">Co mogę Tobie zaoferować?</H2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {servicesData.map(({ title, href, color, features }, index) => (
             <CardWithAnimatedSphere
               key={index}

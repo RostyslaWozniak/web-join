@@ -7,29 +7,43 @@ import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { env } from "@/env";
 import type { WebSite, WithContext } from "schema-dts";
-import { bookAppNav } from "./book-app/data/book-app-nav";
+import { bookAppNav } from "./data/book-app-nav";
 import { MobileNav } from "@/components/mobile-nav";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
-  title: {
-    default: "Zarządzaj wizytami w swojej firmie | Web Join",
-    template: "%s | Web Join -  Zarządzaj wizytami w swojej firmie",
-  },
+  title:
+    "System rezerwacji online dla lokalnych firm usługowych - BookApp | Web Join",
   description:
     "BookApp to nowoczesna strona internetowa z wbudowanym systemem rezerwacji, stworzona specjalnie dla lokalnych firm usługowych.",
   keywords: [],
   icons: [{ rel: "icon", url: "/icon.ico" }],
   alternates: {
+    languages: {
+      pl: "./",
+    },
     canonical: "./",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  authors: {
+    name: "Rostyslav Vozniak",
+    url: "https://www.rostyslavvozniak.com/",
   },
   openGraph: {
     url: "./",
+    title:
+      "System rezerwacji online dla lokalnych firm usługowych - BookApp | Web Join",
     description:
-      "System rezerwacji online i nowoczesna strona internetowa, stworzone specjalnie dla lokalnych firm. Więcej czasu dla Twojego personelu, mniej telefonów i dynamiczny wzrost liczby wizyt.",
+      "BookApp to nowoczesna strona internetowa z wbudowanym systemem rezerwacji, stworzona specjalnie dla lokalnych firm usługowych.",
+    siteName: "Web Join",
+    locale: "pl-PL",
+    countryName: "Poland",
     type: "website",
     images: {
-      url: "/images/vet-app/vet-app-hero-img.png",
+      url: "/images/book-app/book-app-hero-2.png",
       width: 1200,
       height: 630,
       alt: "System rezerwacji online i nowoczesna strona internetowa",
@@ -41,9 +55,15 @@ const jsonLd: WithContext<WebSite> = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   url: "./",
-  name: "Web Join",
+  name: "System rezerwacji online dla lokalnych firm usługowych - BookApp",
   image: "./opengraph-image.jpg",
-  description: "Tworzę strony internetowe dla twojego biznesu",
+  description:
+    "BookApp to nowoczesna strona internetowa z wbudowanym systemem rezerwacji, stworzona specjalnie dla lokalnych firm usługowych.",
+  publisher: {
+    "@type": "Organization",
+    name: "Web Join",
+    url: `${env.NEXT_PUBLIC_BASE_URL}`,
+  },
 };
 
 export default function LandingPageLayout({

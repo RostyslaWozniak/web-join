@@ -1,6 +1,6 @@
 import {
   HomeHeroSection,
-  WhyInvestSection,
+  // WhyInvestSection,
   ServicesPreviewSection,
   PortfolioSection,
 } from "@/components/sections";
@@ -14,9 +14,8 @@ export default function HomePage() {
   return (
     <>
       <HomeHeroSection />
-      <WhyInvestSection />
       {/* SEPARATOR */}
-      <SectionSeparator />
+      {/* <SectionSeparator /> */}
       <ServicesPreviewSection />
       {/* SEPARATOR */}
       <BookAppPreviewSection />

@@ -3,8 +3,6 @@ import PageHeader from "../_components/form-header";
 import { AdditionalFaturesForm } from "./additional-features-form";
 import { formAnimationVariants } from "../_components/form-animation-variants";
 
-export const dynamic = "force-static";
-
 export default async function ContactMethodPage({
   searchParams,
 }: {

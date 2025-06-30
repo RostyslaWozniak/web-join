@@ -1,4 +1,3 @@
-import { MotionWrapper } from "@/components/motion-wrapper";
 import { Card, CardContent } from "@/components/ui/card";
 import { H2 } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
@@ -23,14 +22,8 @@ export function UspSection() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {sectionData.map((data, i) => (
-              <MotionWrapper
-                key={data.id}
-                transition={{ delay: 0.1 * i }}
-                className=""
-              >
-                <CardItem {...data} />
-              </MotionWrapper>
+            {sectionData.map((data) => (
+              <CardItem key={data.id} {...data} />
             ))}
           </div>
         </div>

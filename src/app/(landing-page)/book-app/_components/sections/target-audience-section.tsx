@@ -1,6 +1,7 @@
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { Card, CardContent } from "@/components/ui/card";
 import { H2, H3 } from "@/components/ui/typography";
+import { cn } from "@/lib/utils";
 import {
   BriefcaseIcon,
   CarIcon,
@@ -14,7 +15,7 @@ import {
 
 export function TargetAudienceSection() {
   return (
-    <section className="bg-white px-4 py-16" id="dla-kogo">
+    <section className="bg-white py-16" id="dla-kogo">
       <MaxWidthWrapper>
         {/* Header */}
         <div className="mb-16 text-center">
@@ -39,7 +40,10 @@ export function TargetAudienceSection() {
               return (
                 <Card
                   key={index}
-                  className="border-0 bg-white shadow-md transition-all duration-300 hover:shadow-lg"
+                  className={cn(
+                    business.color,
+                    "bg-white shadow-md transition-all duration-300 hover:shadow-lg",
+                  )}
                 >
                   <CardContent className="p-6">
                     <div
@@ -72,55 +76,55 @@ const businessTypes = [
     description:
       "Uwolnij recepcję od ciągłych telefonów, pozwól klientom umawiać wizyty online 24/7 i zaoferuj im wygodne przypomnienia o zabiegach.",
     icon: ScissorsIcon,
-    color: "bg-pink-100 text-pink-600",
+    color: "bg-pink-100 text-pink-600 border-pink-600",
   },
   {
     title: "Przychodni Medycznych i Dentystycznych",
     description:
       "Zarządzaj harmonogramem lekarzy i specjalistów, oferując pacjentom szybkie i intuicyjne rezerwacje wizyt, bez konieczności dzwonienia.",
     icon: StethoscopeIcon,
-    color: "bg-blue-100 text-blue-600",
+    color: "bg-blue-100 text-blue-600 border-blue-600",
   },
   {
     title: "Gabinetów Weterynaryjnych",
     description:
       "Usprawnij umawianie wizyt dla właścicieli zwierząt, wysyłaj automatyczne przypomnienia o szczepieniach czy kontrolach, a także buduj bazę stałych klientów.",
     icon: PawPrintIcon,
-    color: "bg-green-100 text-green-600",
+    color: "bg-green-100 text-green-600 border-green-600",
   },
   {
     title: "Gabinetów Masażu i Fizjoterapii",
     description:
       "Zapewnij klientom łatwy dostęp do kalendarza terapeutów, uprość proces rezerwacji i pozwól im na samodzielne zarządzanie swoimi terminami.",
     icon: HeartIcon,
-    color: "bg-purple-100 text-purple-600",
+    color: "bg-purple-100 text-purple-600 border-purple-600",
   },
   {
     title: "Trenerów Personalnych i Siłowni",
     description:
       "Zautomatyzuj zapisy na treningi indywidualne i grupowe, zarządzaj dostępnością trenerów i oferuj elastyczne opcje rezerwacji.",
     icon: DumbbellIcon,
-    color: "bg-orange-100 text-orange-600",
+    color: "bg-orange-100 text-orange-600 border-orange-600",
   },
   {
     title: "Serwisów Samochodowych i Myjni",
     description:
       "Pozwól klientom na rezerwację terminów przeglądów, napraw czy mycia samochodu online, oszczędzając czas pracowników i klientów.",
     icon: CarIcon,
-    color: "bg-gray-100 text-gray-600",
+    color: "bg-gray-100 text-gray-600   border-gray-600",
   },
   {
     title: "Doradców i Konsultantów",
     description:
       "Udostępnij swój kalendarz online, umożliwiając klientom wygodne umawianie spotkań i konsultacji w dogodnym dla obu stron terminie.",
     icon: BriefcaseIcon,
-    color: "bg-indigo-100 text-indigo-600",
+    color: "bg-indigo-100 text-indigo-600 border-indigo-600",
   },
   {
     title: "Każdej Innej Firmy Usługowej...",
     description:
       "...gdzie umawianie wizyt jest kluczowe dla sprawnego funkcjonowania i rozwoju biznesu!",
     icon: UsersIcon,
-    color: "bg-teal-100 text-teal-600",
+    color: "bg-teal-100 text-teal-600 border-teal-600",
   },
 ];

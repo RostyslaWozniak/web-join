@@ -13,24 +13,37 @@ import { homePageNav } from "@/components/header/home-page-nav";
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
   title: {
-    default: "Blog o stronach internetowych | Web Join",
-    template: "%s | Web Join – Blog o stronach internetowych",
+    default: "Blog o stronach internetowych dla lokalnych firm | Web Join",
+    template: "%s - Blog | Web Join",
   },
   description:
-    "Porady, inspiracje i wskazówki dotyczące tworzenia nowoczesnych stron internetowych i sklepów online.",
+    "Porady, inspiracje i wskazówki dotyczące tworzenia nowoczesnych stron internetowych i sklepów online dla lokalnych firm.",
   keywords: [],
   icons: [{ rel: "icon", url: "/icon.ico" }],
+  alternates: {
+    languages: {
+      pl: "./",
+    },
+    canonical: "./",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     url: `${env.NEXT_PUBLIC_BASE_URL}/blog`,
-    title: "Blog | Web Join",
+    title: "Blog o stronach internetowych dla lokalnych firm | Web Join",
     description:
-      "Porady, inspiracje i wskazówki dotyczące tworzenia nowoczesnych stron internetowych i sklepów online.",
+      "Porady, inspiracje i wskazówki dotyczące tworzenia nowoczesnych stron internetowych i sklepów online dla lokalnych firm.",
+    siteName: "Web Join",
+    locale: "pl-PL",
+    countryName: "Poland",
     type: "article",
     images: {
       url: `${env.NEXT_PUBLIC_BASE_URL}/opengraph-image.jpg`,
       width: 1200,
       height: 630,
-      alt: "Web Join - Tworzenie nowoczesnych stron",
+      alt: "Blog o stronach internetowych dla lokalnych firm | Web Join",
     },
   },
 };
@@ -40,8 +53,7 @@ const jsonLd: WithContext<Blog> = {
   "@type": "Blog",
   url: `${env.NEXT_PUBLIC_BASE_URL}/blog`,
   name: "Web Join Blog",
-  description:
-    "Blog Web Join – Tworzenie nowoczesnych stron internetowych, SEO i e-commerce",
+  description: "Blog o stronach internetowych dla lokalnych firm | Web Join",
   image: `${env.NEXT_PUBLIC_BASE_URL}/opengraph-image.jpg`,
   publisher: {
     "@type": "Organization",

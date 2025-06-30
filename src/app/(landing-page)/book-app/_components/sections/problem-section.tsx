@@ -1,4 +1,3 @@
-import { MotionWrapper } from "@/components/motion-wrapper";
 import { Card, CardContent } from "@/components/ui/card";
 import { H2 } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
@@ -53,15 +52,13 @@ export function ProblemSection() {
             <p className="text-start text-2xl font-semibold">Masz dość:</p>
 
             <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {sectionData.map(({ id, icon: Icon, text, style }, i) => (
-                <MotionWrapper transition={{ delay: 0.1 * i + 1 }} key={id}>
-                  <Card className={cn("bg-transparent", style)}>
-                    <CardContent className="p-6 text-center">
-                      <Icon className="mx-auto mb-4 h-8 w-8" />
-                      <p className="text-foreground">{text}</p>
-                    </CardContent>
-                  </Card>
-                </MotionWrapper>
+              {sectionData.map(({ id, icon: Icon, text, style }) => (
+                <Card key={id} className={cn("bg-transparent", style)}>
+                  <CardContent className="p-6 text-center">
+                    <Icon className="mx-auto mb-4 h-8 w-8" />
+                    <p className="text-foreground">{text}</p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>

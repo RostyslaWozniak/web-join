@@ -13,7 +13,8 @@ export function MobileNav({
     <nav className="bg-background/70 fixed bottom-2 left-2 right-2 z-50 mx-auto max-w-[400px] rounded-full bg-[#22D3EE30] text-foreground shadow-[0px_0px_20px_6px_#22D3EE20] backdrop-blur-lg md:hidden">
       <div
         className={cn("grid translate-y-2 grid-cols-4", {
-          "grid-cols-5": actionButton && navigation.length > 3,
+          "grid-cols-5":
+            (actionButton && navigation.length > 3) || navigation.length > 4,
         })}
       >
         {navigation.map(

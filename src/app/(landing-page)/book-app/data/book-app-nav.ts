@@ -22,8 +22,8 @@ export const bookAppNav = [
     icon: MessageCircleQuestionIcon,
   },
   {
-    label: "Pakiety",
-    href: "/book-app#pakiety",
+    label: "Cena",
+    href: "/book-app#ceny",
     icon: GemIcon,
   },
 ];

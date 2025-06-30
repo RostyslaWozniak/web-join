@@ -5,10 +5,9 @@ import { MotionWrapper } from "@/components/motion-wrapper";
 import { Badge } from "@/components/ui/badge";
 import { GradientButton } from "@/components/ui/gradient-button";
 import { CalendarIcon, CheckCircleIcon, ExternalLinkIcon } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
-export function BookAppHeroSection() {
+export default function WebsiteServiceHeroSection() {
   return (
     <section>
       <GridBackground className="py-8 xl:py-12">
@@ -23,24 +22,23 @@ export function BookAppHeroSection() {
                 <Heading />
               </MotionWrapper>
               <Benefits />
-              <MotionWrapper className="w-full">
+              <MotionWrapper>
                 <CTAButtons />
               </MotionWrapper>
             </div>
 
-            {/* Main placeholder image */}
-            <MotionWrapper>
-              <div className="pointer-events-none relative mx-auto max-w-3xl rounded-2xl">
-                <Image
-                  priority
-                  src="/images/book-app/book-app-hero-2.png"
-                  alt="VetApp Dashboard Preview"
-                  className="w-full rounded-lg object-cover lg:scale-110"
-                  width="900"
-                  height="900"
-                />
-              </div>
-            </MotionWrapper>
+            {/* <MotionWrapper>
+                      <div className="pointer-events-none relative mx-auto max-w-3xl rounded-2xl">
+                        <Image
+                          priority
+                          src="/images/book-app/book-app-hero.png"
+                          alt="VetApp Dashboard Preview"
+                          className="w-full rounded-lg object-cover lg:scale-110"
+                          width="900"
+                          height="900"
+                        />
+                      </div>
+                    </MotionWrapper> */}
           </div>
         </MaxWidthWrapper>
       </GridBackground>
@@ -61,8 +59,8 @@ function Heading() {
     <h1 className="mb-6 max-w-2xl text-4xl font-bold leading-tight text-foreground sm:text-center sm:text-5xl lg:max-w-full lg:text-7xl">
       <AnimatedText
         className="md:justify-center"
-        text="Zautomatyzuj rezerwacje i zdobywaj klientów nawet gdy śpisz"
-        accentWords={["zdobywaj", "klientów"]}
+        text="Profesjonalne Sklepy Internetowe – Sprzedawaj Online Skutecznie!"
+        accentWords={["Sklepy", "Online"]}
       />
     </h1>
   );
@@ -91,7 +89,7 @@ function Benefits() {
 
 function CTAButtons() {
   return (
-    <div className="flex flex-col gap-4 sm:w-auto sm:flex-row">
+    <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
       <Link
         href="https://vet-app-demo.vercel.app/"
         target="_blank"

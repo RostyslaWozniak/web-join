@@ -14,8 +14,8 @@ export default async function BlogPage() {
             <H1 className="max-w-sm sm:text-center md:max-w-6xl">
               <AnimatedText
                 className="md:justify-center"
-                text="Witam Ciebie na moim blogu!"
-                accentWords={["blogu!"]}
+                text="Blog o stronach internetowych dla lokalnych firm"
+                accentWords={["stronach", "lokalnych", "firm"]}
               />
             </H1>
           </MaxWidthWrapper>
