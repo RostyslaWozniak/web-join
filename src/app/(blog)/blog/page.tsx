@@ -24,9 +24,11 @@ export default async function BlogPage() {
       <section>
         <MaxWidthWrapper className="mx-auto flex flex-col items-center px-4 pb-12 pt-20 md:py-20 lg:px-0">
           <div className="mb-12 grid gap-8 md:grid-cols-3">
-            {posts.map((post) => (
-              <PostCard key={post.slug} post={post} />
-            ))}
+            {posts
+              .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
+              .map((post) => (
+                <PostCard key={post.slug} post={post} />
+              ))}
           </div>
         </MaxWidthWrapper>
       </section>

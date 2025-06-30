@@ -33,7 +33,7 @@ export function BookAppHeroSection() {
               <div className="pointer-events-none relative mx-auto max-w-3xl rounded-2xl">
                 <Image
                   priority
-                  src="/images/book-app/book-app-hero-2.png"
+                  src="https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vcrmwkf42Ceq1RWILG3fczmyvMhgQnO4VHDwx"
                   alt="VetApp Dashboard Preview"
                   className="w-full rounded-lg object-cover lg:scale-110"
                   width="900"

@@ -11,11 +11,13 @@ export type Post = (typeof posts)[number];
 
 export const posts = [
   {
+    id: 1,
     slug: "dlaczego-biznes-potrzebuje-strony-internetowej",
     title: "Strona Internetowa dla Biznesu w Warszawie: Konieczność?",
     description:
       "W dzisiejszym świecie online, czy Twoja firma naprawdę istnieje, jeśli nie ma własnej strony internetowej? Dowiedz się, dlaczego obecność online 24/7 to klucz do sukcesu każdego lokalnego biznesu.",
-    image: "/images/blog/post-1.jpg",
+    image:
+      "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vYXiLTPrQZ98h0LwPKCzueVbyGtp5Rqvd3lkD",
     metadata: {
       title: "Strona Internetowa: Czy Twój Biznes Istnieje Online?",
       description:
@@ -28,12 +30,14 @@ export const posts = [
     markdown: post1,
   },
   {
+    id: 2,
     slug: "strona-na-facebooku-to-za-malo",
     title:
       "Strona na Facebooku to Za Mało? Ograniczenia Social Mediów dla Firm",
     description:
       "Czy obecność wyłącznie na Facebooku czy Instagramie wystarcza, aby Twoja firma w Warszawie w pełni rozwinęła swój potencjał? Zobacz, dlaczego własna strona internetowa to fundament stabilności i kontroli Twojej marki.",
-    image: "/images/blog/post-2.jpg",
+    image:
+      "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5v68xBVGkpfa7xwXU5bDsZdNIk8ci3jSByePJr",
     metadata: {
       title:
         "Facebook/Instagram to za mało? Dlaczego firma potrzebuje własnej strony WWW",
@@ -47,12 +51,14 @@ export const posts = [
     markdown: post2,
   },
   {
+    id: 3,
     slug: "google-moja-firma-przewodnik",
     title:
       "Google Moja Firma: Twój Darmowy Asystent Sprzedaży w Google Maps – Jak Go Używać?",
     description:
       "Odkryj potęgę Google Moja Firma dla lokalnego biznesu w Warszawie. Darmowa wizytówka w Google Maps, która przyciąga klientów 24/7. Praktyczne wskazówki optymalizacji.",
-    image: "/images/blog/post-3.jpg",
+    image:
+      "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vU8cCH1vwyKEDPzcdYMOiL8j1u2WbqsVwBN07",
     metadata: {
       title:
         "Google Moja Firma: Przewodnik Optymalizacji dla Lokalnego Biznesu",
@@ -66,12 +72,14 @@ export const posts = [
     markdown: post3,
   },
   {
+    id: 4,
     slug: "nextjs-vs-gotowe-platformy-ecommerce",
     title:
       'Koniec z kompromisami: Dlaczego Twój biznes potrzebuje Next.js, a nie kolejnego sklepu "z pudełka"?',
     description:
       "Czy gotowe platformy e-commerce ograniczają rozwój Twojego biznesu? Dowiedz się, dlaczego Next.js to potężne narzędzie, które pozwala budować ultra-szybkie i w pełni spersonalizowane sklepy internetowe dla wymagających firm.",
-    image: "/images/blog/post-4.jpg",
+    image:
+      "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vKDwuKIReMY6VDm8WNosJjy91SA7OxLhIH5Qz",
     metadata: {
       title:
         "Next.js vs Shopify/WooCommerce: Sklep internetowy bez kompromisów",
