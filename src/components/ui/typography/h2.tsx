@@ -11,7 +11,7 @@ export function H2({
   return (
     <h2
       className={cn(
-        "text-center text-3xl font-bold text-foreground sm:text-center lg:text-4xl",
+        "text-center text-3xl font-bold text-foreground lg:text-4xl",
         className,
       )}
     >

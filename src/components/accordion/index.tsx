@@ -19,11 +19,12 @@ export function Accordion({ questions, className }: AccorderonProps) {
     <div className={cn("w-full", className)}>
       {questions.map(({ question, answer }, index) => (
         <MotionWrapper
-          key={index}
-          transition={{ duration: 0.5, delay: 0.2 * index }}
+          key={question}
+          transition={{ duration: 1 }}
+          viewport={{ once: true, margin: "0px 0px -100px 0px" }}
         >
           <CardWrapper className="relative flex items-center justify-between rounded-2xl">
-            <Text size="subtitle" className="flex-grow">
+            <Text size="lg" className="flex-grow">
               {question}
             </Text>
             <button

@@ -19,8 +19,6 @@ const projects = [
       "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vyqaQgCnHcw0fJdlM8hvzP2TEymuCLpqOaSkW",
     image2:
       "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vcoYXej42Ceq1RWILG3fczmyvMhgQnO4VHDwx",
-    // image1: "/images/portfolio/swoje-sciany-1.jpg",
-    // image2: "/images/portfolio/swoje-sciany-2.jpg",
     logo: SwojeScianyLogo,
     category: "website",
   },
@@ -31,8 +29,6 @@ const projects = [
       "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5v2SyRXVdXAGgflnWhTOrC3m0sScIpKe6JYE8Q",
     image2:
       "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vPjT1AwutDy2sepuvni7lBTdHCRMwJ1GkNgq3",
-    // image1: "/images/portfolio/eleven-studio-1.jpg",
-    // image2: "/images/portfolio/eleven-studio-2.jpg",
     logo: ElevenStudioLogo,
     category: "e-commerse",
   },
@@ -43,8 +39,6 @@ const projects = [
       "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5v74WQEIs9SIL2eXMUvbiKtwpYPNEkuxRWcFy0",
     image2:
       "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vJ1dv4DZEjYiLoH5Qad4IylPzDsmkgNUu1tSZ",
-    // image1: "/images/portfolio/season-chai-1.jpg",
-    // image2: "/images/portfolio/season-chai-2.jpg",
     logo: SeasonChaiIcon,
     category: "e-commerse",
   },
