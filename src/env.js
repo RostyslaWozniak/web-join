@@ -21,6 +21,8 @@ export const env = createEnv({
 
   client: {
     NEXT_PUBLIC_BASE_URL: z.string().url(),
+    // google
+    NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: z.string().min(1),
   },
 
   runtimeEnv: {
@@ -37,6 +39,9 @@ export const env = createEnv({
     TWILIO_ACCOUNT_SID: process.env.TWILIO_ACCOUNT_SID,
     TWILIO_PHONE_NUMBER: process.env.TWILIO_PHONE_NUMBER,
     RECEIVE_SMS_NUMBER: process.env.RECEIVE_SMS_NUMBER,
+    // google
+    NEXT_PUBLIC_GOOGLE_ANALYTICS_ID:
+      process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID,
   },
 
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,

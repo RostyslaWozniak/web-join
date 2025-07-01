@@ -1,3 +1,4 @@
+import { CookieBanner } from "@/features/cookie-banner";
 import "@/styles/globals.css";
 import { type Viewport } from "next";
 import { Space_Grotesk } from "next/font/google";
@@ -28,6 +29,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-screen flex-col overflow-x-hidden selection:bg-accent-cyan selection:text-background">
         {children}
+        <CookieBanner />
       </body>
     </html>
   );
