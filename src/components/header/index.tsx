@@ -23,7 +23,7 @@ export function Header({
           <Nav navigation={navigation} />
           {ActionButton}
         </nav>
-        <div className="md:hidden">
+        <div className="hidden">
           <BurgerNav />
         </div>
       </MaxWidthWrapper>

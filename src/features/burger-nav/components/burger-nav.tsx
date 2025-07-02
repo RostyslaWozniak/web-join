@@ -35,9 +35,10 @@ export function BurgerNav() {
 
       <div
         onClick={() => setOpen(false)}
-        className={cn(
-          "fixed inset-0 top-14 -z-10 h-screen w-screen overflow-hidden",
-        )}
+        className={cn("", {
+          "-z-50": !open,
+          "fixed inset-0 top-14 -z-10 h-screen w-screen": open,
+        })}
       >
         <div
           className={cn(
