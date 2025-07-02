@@ -16,7 +16,7 @@ type AccorderonProps = {
 export function Accordion({ questions, className }: AccorderonProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   return (
-    <div className={cn("w-full", className)}>
+    <div className={cn("grid w-full gap-6", className)}>
       {questions.map(({ question, answer }, index) => (
         <MotionWrapper
           key={question}
@@ -64,13 +64,14 @@ export function Accordion({ questions, className }: AccorderonProps) {
           >
             <div
               className={cn(
-                "overflow-hidden py-2 opacity-0 transition-all duration-300 md:px-8",
+                "overflow-hidden opacity-0 transition-all duration-300 md:px-8",
                 {
                   "opacity-1 pb-8": index === activeIndex,
                 },
               )}
             >
               <Markdown
+                className="p-4"
                 components={{
                   li: ({ children }) => (
                     <li className="ml-6 list-disc md:text-lg">{children}</li>

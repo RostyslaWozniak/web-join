@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -18,8 +18,9 @@ import {
   Settings,
   Shield,
   BarChart3,
-  Target,
+  // Target,
   ArrowLeftIcon,
+  CookieIcon,
 } from "lucide-react";
 import {
   useCookieConsent,
@@ -27,8 +28,14 @@ import {
 } from "../hooks/use-cookie-consent";
 
 export function CookieBanner() {
-  const { hasConsented, isLoading, acceptAll, rejectAll, updatePreferences } =
-    useCookieConsent();
+  const {
+    hasConsented,
+    isLoading,
+    acceptAll,
+    rejectAll,
+    updatePreferences,
+    preferences,
+  } = useCookieConsent();
   const [showCustomize, setShowCustomize] = useState(false);
   const [customPreferences, setCustomPreferences] = useState<CookiePreferences>(
     {
@@ -38,8 +45,14 @@ export function CookieBanner() {
     },
   );
 
+  useEffect(() => {
+    if (preferences) {
+      setCustomPreferences(preferences);
+    }
+  }, [preferences]);
+
   // Don't render if still loading or user has already consented
-  if (isLoading || hasConsented) {
+  if (isLoading) {
     return null;
   }
 
@@ -55,12 +68,13 @@ export function CookieBanner() {
 
   const handleSaveCustom = () => {
     updatePreferences(customPreferences);
+    setShowCustomize(false);
   };
 
   if (showCustomize) {
     return (
       <div className="fixed inset-0 z-50 flex w-full items-end justify-center bg-black/40 p-2 backdrop-blur-sm sm:items-center">
-        <Card className="mx-auto max-h-[calc(100vh-16px)] max-w-4xl overflow-y-auto">
+        <Card className="mx-auto max-h-[calc(100vh-16px)] max-w-2xl overflow-y-auto">
           <CardHeader>
             <div className="flex items-start gap-2">
               <Settings className="h-5 w-5" />
@@ -121,10 +135,10 @@ export function CookieBanner() {
               />
             </div>
 
-            <Separator />
-
             {/* Marketing Cookies */}
-            <div className="flex items-start justify-between gap-4">
+
+            {/* <Separator /> */}
+            {/* <div className="flex items-start justify-between gap-4">
               <div className="flex flex-1 items-start gap-3">
                 <Target className="mt-0.5 h-5 min-h-5 w-5 min-w-5 text-purple-600" />
                 <div className="space-y-1">
@@ -144,7 +158,7 @@ export function CookieBanner() {
                 }
                 aria-label="Marketing cookies"
               />
-            </div>
+            </div> */}
           </CardContent>
           <CardFooter className="flex flex-col gap-2 sm:flex-row">
             <Button
@@ -155,24 +169,28 @@ export function CookieBanner() {
               <ArrowLeftIcon />
               Powrót
             </Button>
-            <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
-              <Button
-                variant="outline"
-                onClick={rejectAll}
-                className="w-full bg-transparent sm:w-auto"
-              >
-                Odrzuć wszystko
-              </Button>
-              <Button
-                onClick={handleSaveCustom}
-                className="w-full border border-transparent text-white sm:w-auto"
-              >
-                Zapisz preferencje
-              </Button>
-            </div>
+            <Button
+              onClick={handleSaveCustom}
+              className="w-full border border-transparent text-white sm:w-auto"
+            >
+              Zapisz preferencje
+            </Button>
           </CardFooter>
         </Card>
       </div>
+    );
+  }
+
+  if (hasConsented) {
+    return (
+      <Button
+        size="icon"
+        variant="ghost"
+        className="fixed bottom-24 left-2 z-50 h-10 w-10 rounded-full text-accent-cyan backdrop-blur-md sm:right-2 sm:top-20 sm:h-12 sm:w-12"
+        onClick={() => setShowCustomize(true)}
+      >
+        <CookieIcon className="min-h-8 min-w-8 sm:min-h-10 sm:min-w-10" />
+      </Button>
     );
   }
 

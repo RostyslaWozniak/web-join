@@ -1,7 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { loadGoogleAnalytics } from "../lib/load-google-analytics";
+import {
+  googleAnaliticsCookieNames,
+  loadGoogleAnalytics,
+} from "../lib/google-analytics";
+import { removeCookies } from "../lib/cookies";
 
 export interface CookiePreferences {
   necessary: boolean;
@@ -30,6 +34,12 @@ export function useCookieConsent() {
       try {
         const parsedPreferences = JSON.parse(stored) as CookiePreferences;
         setPreferences(parsedPreferences);
+        if (parsedPreferences.analytics) {
+          loadGoogleAnalytics();
+        }
+        if (!parsedPreferences.analytics) {
+          removeCookies(googleAnaliticsCookieNames);
+        }
 
         setHasConsented(true);
       } catch (error) {
@@ -48,6 +58,10 @@ export function useCookieConsent() {
     setPreferences(updatedPreferences);
     setHasConsented(true);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedPreferences));
+
+    if (!newPreferences.analytics && preferences.analytics) {
+      removeCookies(googleAnaliticsCookieNames);
+    }
     if (newPreferences.analytics) {
       loadGoogleAnalytics();
     }
@@ -76,9 +90,5 @@ export function useCookieConsent() {
     updatePreferences,
     acceptAll,
     rejectAll,
-    // Helper functions for checking specific consent
-    canUseAnalytics: preferences.analytics,
-    canUseMarketing: preferences.marketing,
-    canUseNecessary: preferences.necessary,
   };
 }

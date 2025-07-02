@@ -2,22 +2,26 @@ Home
 
 Usługi
 
-    - strony internetowe
+    - Tworzenie oprogramowania
 
-    - landing pages
+    - Projektowanie stron internetowych
 
-    - blog
+    - Optymalizacja SEO
 
-    - SEO
+    - Sklepy internetowe i e-commerce
 
-    - e-commerce
+    - Konsultacje marketingowe
 
-    - BookApp
+    - Projektowanie graficzne i UX/UI
+
+    - Book App
 
 Blog
 
     - tags
 
     - search
+
+    - [posts]
 
 Kontakt

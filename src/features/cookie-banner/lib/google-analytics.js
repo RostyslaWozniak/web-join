@@ -2,6 +2,8 @@
 // @ts-nocheck
 import { env } from "@/env";
 
+export const googleAnaliticsCookieNames = ["_ga", "_ga_2KJ9X0CKCB"];
+
 export function loadGoogleAnalytics() {
   const script = document.createElement("script");
   script.src = `https://www.googletagmanager.com/gtag/js?id=${env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`;
