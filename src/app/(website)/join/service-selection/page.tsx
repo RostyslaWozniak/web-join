@@ -2,17 +2,10 @@ import { MotionWrapper } from "@/components/motion-wrapper";
 import PageHeader from "../_components/form-header";
 import { ServiceSelectionForm } from "./service-selection-form";
 import { formAnimationVariants } from "../_components/form-animation-variants";
-import { type ServiceSelectionSchema } from "@/lib/validation/contact-form-schema";
 
-export default async function ContactMethodPage({
-  searchParams,
-}: {
-  searchParams: Promise<{
-    edit: string;
-    service: ServiceSelectionSchema["serviceType"] | undefined;
-  }>;
-}) {
-  const { edit, service } = await searchParams;
+export const dynamic = "force-static";
+
+export default async function ContactMethodPage() {
   return (
     <MotionWrapper
       animate={"animate"}
@@ -24,7 +17,7 @@ export default async function ContactMethodPage({
         title="Co Cię interesuje?"
         subtitle="Zaznacz, jakiego rodzaju stronę potrzebujesz. Omówimy wszystko na darmowej konsultacji i rozwieję twoje wątpliwości."
       />
-      <ServiceSelectionForm edit={!!edit} service={service} />
+      <ServiceSelectionForm />
     </MotionWrapper>
   );
 }

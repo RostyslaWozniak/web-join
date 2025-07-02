@@ -58,20 +58,20 @@ function TopBadge() {
 
 function Heading() {
   return (
-    <h1 className="mb-6 max-w-2xl text-4xl font-bold leading-tight text-foreground sm:text-center sm:text-5xl lg:max-w-full lg:text-7xl">
+    <h1 className="tra mb-6 max-w-2xl text-4xl font-bold tracking-tighter text-foreground sm:text-center sm:text-5xl lg:max-w-full lg:text-7xl">
       <AnimatedText
-        className="md:justify-center"
-        text="Zautomatyzuj rezerwacje i zdobywaj klientów nawet gdy śpisz"
-        accentWords={["zdobywaj", "klientów"]}
+        className="gap-x-2 sm:gap-x-4 md:justify-center"
+        text="Strona internetowa i rezerwacje online dla Twojej firmy usługowej"
+        accentWords={["rezerwacje", "online"]}
       />
     </h1>
   );
 }
 
 const benefits = [
+  "Zyskaj klientów 24/7",
   "Mniej telefonów",
-  "Więcej klientów",
-  "Więcej czasu dla zespołu",
+  "Działaj lokalnie – bez prowizji",
 ];
 
 function Benefits() {
@@ -81,7 +81,7 @@ function Benefits() {
         <MotionWrapper key={benefit} transition={{ delay: 0.1 * i }}>
           <div className="flex items-center gap-2" key={benefit}>
             <CheckCircleIcon className="h-5 w-5 text-emerald-600" />
-            <span>{benefit}</span>
+            <span className="_font-semibold text-lg">{benefit}</span>
           </div>
         </MotionWrapper>
       ))}
@@ -91,7 +91,7 @@ function Benefits() {
 
 function CTAButtons() {
   return (
-    <div className="flex flex-col gap-4 sm:w-auto sm:flex-row">
+    <div className="flex flex-col gap-4 sm:w-auto sm:flex-row sm:justify-center">
       <Link
         href="https://vet-app-demo.vercel.app/"
         target="_blank"

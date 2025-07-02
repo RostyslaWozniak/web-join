@@ -3,12 +3,9 @@ import PageHeader from "../_components/form-header";
 import { AdditionalFaturesForm } from "./additional-features-form";
 import { formAnimationVariants } from "../_components/form-animation-variants";
 
-export default async function ContactMethodPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ edit: string }>;
-}) {
-  const { edit } = await searchParams;
+export const dynamic = "force-static";
+
+export default async function ContactMethodPage() {
   return (
     <MotionWrapper
       animate={"animate"}
@@ -20,7 +17,7 @@ export default async function ContactMethodPage({
         title="Potrzebujesz dodatkowych opcji?"
         subtitle="Zaznacz funkcje, które mogą być przydatne dla Twojej strony. Jeśli nie wiesz, które wybrać – pomogę Ci to ustalić podczas darmowej konsultacji!"
       />
-      <AdditionalFaturesForm edit={!!edit} />
+      <AdditionalFaturesForm />
     </MotionWrapper>
   );
 }

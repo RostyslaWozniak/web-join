@@ -6,7 +6,7 @@ import {
   additionalFeaturesSchema,
 } from "@/lib/validation/contact-form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { features } from "./data";
 import { SelectCard } from "../_components/select-card";
@@ -16,8 +16,10 @@ import { Text } from "@/components/ui/typography";
 import { useContactFormContext } from "@/context/contact-form-context";
 import { useEffect } from "react";
 
-export function AdditionalFaturesForm({ edit }: { edit: boolean }) {
+export function AdditionalFaturesForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const edit = searchParams.get("edit") === "true";
   const { newContactFormData, updateContactForm, dataLoaded } =
     useContactFormContext();
 

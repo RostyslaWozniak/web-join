@@ -6,7 +6,7 @@ import {
   type ServiceSelectionSchema,
 } from "@/lib/validation/contact-form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { services } from "./data";
 import { SelectCard } from "../_components/select-card";
@@ -17,13 +17,12 @@ import { useContactFormContext } from "@/context/contact-form-context";
 import { useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-is-mobile";
 
-export function ServiceSelectionForm({
-  edit,
-  service,
-}: {
-  edit: boolean;
-  service: ServiceSelectionSchema["serviceType"] | undefined;
-}) {
+export function ServiceSelectionForm() {
+  const searchParams = useSearchParams();
+  const edit = searchParams.get("edit") === "true";
+  const service =
+    (searchParams.get("service") as ServiceSelectionSchema["serviceType"]) ??
+    undefined;
   const router = useRouter();
   const isMobile = useIsMobile();
   const { newContactFormData, updateContactForm, dataLoaded } =

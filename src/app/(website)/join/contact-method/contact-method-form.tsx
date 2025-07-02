@@ -18,15 +18,17 @@ import { ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { GradientButton } from "@/components/ui/gradient-button";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { SelectCard } from "@/app/(website)/join/_components/select-card";
 import { useContactFormContext } from "@/context/contact-form-context";
 import { contactMethods } from "./data";
 
-export function ContactMethodForm({ edit }: { edit?: boolean }) {
+export function ContactMethodForm() {
   const [selectedMethod, setSelectedMethod] = useState<
     keyof ContactMethodSchema | null
   >("phone");
+  const searchParams = useSearchParams();
+  const edit = searchParams.get("edit") === "true";
 
   const { newContactFormData, updateContactForm } = useContactFormContext();
 

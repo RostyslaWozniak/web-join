@@ -18,9 +18,7 @@ import {
   Settings,
   Shield,
   BarChart3,
-  // Target,
   ArrowLeftIcon,
-  CookieIcon,
 } from "lucide-react";
 import {
   useCookieConsent,
@@ -28,14 +26,8 @@ import {
 } from "../hooks/use-cookie-consent";
 
 export function CookieBanner() {
-  const {
-    hasConsented,
-    isLoading,
-    acceptAll,
-    rejectAll,
-    updatePreferences,
-    preferences,
-  } = useCookieConsent();
+  const { isLoading, acceptAll, rejectAll, updatePreferences, preferences } =
+    useCookieConsent();
   const [showCustomize, setShowCustomize] = useState(false);
   const [customPreferences, setCustomPreferences] = useState<CookiePreferences>(
     {
@@ -52,7 +44,7 @@ export function CookieBanner() {
   }, [preferences]);
 
   // Don't render if still loading or user has already consented
-  if (isLoading) {
+  if (isLoading || preferences) {
     return null;
   }
 
@@ -181,18 +173,18 @@ export function CookieBanner() {
     );
   }
 
-  if (hasConsented) {
-    return (
-      <Button
-        size="icon"
-        variant="ghost"
-        className="fixed bottom-24 left-2 z-50 h-10 w-10 rounded-full text-accent-cyan backdrop-blur-md sm:right-2 sm:top-20 sm:h-12 sm:w-12"
-        onClick={() => setShowCustomize(true)}
-      >
-        <CookieIcon className="min-h-8 min-w-8 sm:min-h-10 sm:min-w-10" />
-      </Button>
-    );
-  }
+  // if (hasConsented) {
+  //   return (
+  //     <Button
+  //       size="icon"
+  //       variant="ghost"
+  //       className="fixed bottom-24 left-2 z-50 h-10 w-10 rounded-full text-accent-cyan backdrop-blur-md sm:left-auto sm:right-2 sm:top-20 sm:h-12 sm:w-12"
+  //       onClick={() => setShowCustomize(true)}
+  //     >
+  //       <CookieIcon className="min-h-8 min-w-8 sm:min-h-10 sm:min-w-10" />
+  //     </Button>
+  //   );
+  // }
 
   return (
     <div className="fixed inset-0 z-50 flex w-full items-end justify-center bg-black/40 p-2 backdrop-blur-sm sm:items-center">

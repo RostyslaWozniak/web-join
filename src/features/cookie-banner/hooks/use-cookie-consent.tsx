@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react";
 import {
-  googleAnaliticsCookieNames,
+  // googleAnaliticsCookieNames,
   loadGoogleAnalytics,
 } from "../lib/google-analytics";
-import { removeCookies } from "../lib/cookies";
+// import { removeCookies } from "../lib/cookies";
 
 export interface CookiePreferences {
   necessary: boolean;
@@ -37,9 +37,9 @@ export function useCookieConsent() {
         if (parsedPreferences.analytics) {
           loadGoogleAnalytics();
         }
-        if (!parsedPreferences.analytics) {
-          removeCookies(googleAnaliticsCookieNames);
-        }
+        // if (!parsedPreferences.analytics) {
+        //   removeCookies(googleAnaliticsCookieNames);
+        // }
 
         setHasConsented(true);
       } catch (error) {
@@ -59,9 +59,9 @@ export function useCookieConsent() {
     setHasConsented(true);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedPreferences));
 
-    if (!newPreferences.analytics && preferences.analytics) {
-      removeCookies(googleAnaliticsCookieNames);
-    }
+    // if (!newPreferences.analytics && preferences.analytics) {
+    //   removeCookies(googleAnaliticsCookieNames);
+    // }
     if (newPreferences.analytics) {
       loadGoogleAnalytics();
     }

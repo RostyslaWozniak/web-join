@@ -2,7 +2,7 @@ import {
   ArrowRightIcon,
   CodeIcon,
   GlobeIcon,
-  PaintRollerIcon,
+  PaletteIcon,
   SearchIcon,
   ShoppingCartIcon,
   TrendingUpIcon,
@@ -25,7 +25,7 @@ const servicesData = [
   },
   {
     title: "Projektowanie graficzne i UX/UI",
-    icon: PaintRollerIcon,
+    icon: PaletteIcon,
     text: "Tworzę nowoczesne, estetyczne i funkcjonalne projekty graficzne, które budują markę i przyciągają uwagę. UI/UX dopasowane do Twoich klientów, z myślą o konwersji. Profesjonalny design od podstaw, zaprojektowany w Figma.",
     href: "#",
     color: "bg-lime-100 text-lime-600 border-lime-600",
