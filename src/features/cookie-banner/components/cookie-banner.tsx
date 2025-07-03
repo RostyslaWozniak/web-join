@@ -26,8 +26,14 @@ import {
 } from "../hooks/use-cookie-consent";
 
 export function CookieBanner() {
-  const { isLoading, acceptAll, rejectAll, updatePreferences, preferences } =
-    useCookieConsent();
+  const {
+    isLoading,
+    acceptAll,
+    rejectAll,
+    updatePreferences,
+    preferences,
+    hasConsented,
+  } = useCookieConsent();
   const [showCustomize, setShowCustomize] = useState(false);
   const [customPreferences, setCustomPreferences] = useState<CookiePreferences>(
     {
@@ -44,7 +50,7 @@ export function CookieBanner() {
   }, [preferences]);
 
   // Don't render if still loading or user has already consented
-  if (isLoading || preferences) {
+  if (isLoading || hasConsented) {
     return null;
   }
 

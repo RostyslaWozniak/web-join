@@ -37,9 +37,6 @@ export function useCookieConsent() {
         if (parsedPreferences.analytics) {
           loadGoogleAnalytics();
         }
-        // if (!parsedPreferences.analytics) {
-        //   removeCookies(googleAnaliticsCookieNames);
-        // }
 
         setHasConsented(true);
       } catch (error) {
