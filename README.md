@@ -1,5 +1,7 @@
 Home
 
+    title: Strony internetowe dla firm usługowych w Warszawie i okolicy
+
 Usługi
 
     - Tworzenie oprogramowania
@@ -25,3 +27,12 @@ Blog
     - [posts]
 
 Kontakt
+
+Key words:
+
+- internet marketing service
+- advertising agency
+- e-commerce agency
+- marketing agency
+- software company
+- website designer

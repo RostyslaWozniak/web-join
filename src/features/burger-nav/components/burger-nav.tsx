@@ -10,10 +10,13 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export function BurgerNav() {
   const [open, setOpen] = useState(false);
+
   return (
     <>
       <Button
-        onClick={() => setOpen(!open)}
+        onClick={async () => {
+          setOpen(!open);
+        }}
         variant="ghost"
         size="icon"
         className="relative z-50 mt-1 md:hidden"
@@ -32,45 +35,52 @@ export function BurgerNav() {
         />
         <span className="absolute -inset-2" />
       </Button>
-
-      <div
-        onClick={() => setOpen(false)}
-        className={cn("", {
-          "-z-50": !open,
-          "fixed inset-0 top-14 -z-10 h-screen w-screen": open,
-        })}
-      >
-        <div
-          className={cn(
-            "absolute -top-8 right-10 -z-10 aspect-square w-0 rounded-full bg-card-gradient duration-1000",
-            {
-              "aspect-square w-10 scale-[50]": open,
-            },
-          )}
-        />
-        <AnimatePresence>
-          {open && (
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            onClick={() => setOpen(false)}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+            }}
+            exit={{
+              opacity: 0,
+            }}
+            transition={{
+              duration: 0.3,
+              delay: 0,
+            }}
+            className={cn(
+              "fixed inset-0 top-14 -z-10 h-screen w-screen bg-card-gradient",
+            )}
+          >
             <ul className="mt-12 flex flex-col items-center gap-8 p-4">
               {burgerNavigation.map(({ label, ...item }, i) => (
                 <motion.li
                   className="relative w-full px-12 text-xl"
                   key={label}
-                  transition={
-                    open
-                      ? { delay: i * 0.1, duration: 0.3 }
-                      : { delay: i * 0.1, duration: 0.3 }
-                  }
-                  initial={{ y: 50, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -50, opacity: 0 }}
+                  transition={{ delay: i * 0.1, duration: 0.3 }}
+                  initial={{
+                    y: 50,
+                    opacity: 0,
+                  }}
+                  animate={{
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  exit={{
+                    y: -50,
+                    opacity: 0,
+                    transition: { staggerChildren: 0.5, staggerDirection: 4 },
+                  }}
                 >
                   <BurgerNavItem {...item}>{label}</BurgerNavItem>
                 </motion.li>
               ))}
             </ul>
-          )}
-        </AnimatePresence>
-      </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
