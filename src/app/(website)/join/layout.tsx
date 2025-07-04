@@ -13,7 +13,7 @@ export default function JoinLayout({
   children: React.ReactNode;
 }) {
   return (
-    <MaxWidthWrapper className="flex max-w-5xl flex-grow flex-col bg-background pb-8">
+    <MaxWidthWrapper className="flex w-full max-w-5xl flex-grow flex-col bg-background pb-8">
       <div className="flex max-h-48 flex-grow flex-col justify-center">
         <StepNav />
       </div>
