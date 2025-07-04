@@ -68,7 +68,7 @@ export function ServiceSelectionForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
           {services.map(({ id, label, value, icon, description }) => (
             <SelectCard
               key={id}
