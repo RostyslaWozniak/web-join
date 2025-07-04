@@ -14,7 +14,11 @@ import { useContactFormContext } from "@/context/contact-form-context";
 import { useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-is-mobile";
 import { toast } from "sonner";
-import { NextButton } from "../_components/next-button";
+import { FormButton } from "../_components/form-button";
+import PageHeader from "../_components/form-header";
+import { formAnimationVariants } from "../_components/form-animation-variants";
+import { MotionWrapper } from "@/components/motion-wrapper";
+import { ChevronRightIcon } from "lucide-react";
 
 export function ServiceSelectionForm() {
   const searchParams = useSearchParams();
@@ -68,21 +72,38 @@ export function ServiceSelectionForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-          {services.map(({ id, label, value, icon, description }) => (
-            <SelectCard
-              key={id}
-              onClick={() => form.setValue("serviceType", value)}
-              isSelected={form.watch("serviceType")?.includes(value)}
-              error={!!form.formState.errors.serviceType}
-              label={label}
-              icon={icon}
-              description={description}
-            />
-          ))}
-        </div>
+        <MotionWrapper
+          animate={"animate"}
+          initial={"initial"}
+          variants={formAnimationVariants}
+          className="space-y-4 md:space-y-8"
+        >
+          <PageHeader
+            title="Co Cię interesuje?"
+            subtitle="Zaznacz, jakiego rodzaju stronę potrzebujesz. Omówimy wszystko na darmowej konsultacji i rozwieję twoje wątpliwości."
+          />
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+            {services.map(({ id, label, value, icon, description }) => (
+              <SelectCard
+                key={id}
+                onClick={() => form.setValue("serviceType", value)}
+                isSelected={form.watch("serviceType")?.includes(value)}
+                error={!!form.formState.errors.serviceType}
+                label={label}
+                icon={icon}
+                description={description}
+              />
+            ))}
+          </div>
+        </MotionWrapper>
         <div>
-          <NextButton edit={edit} />
+          <FormButton>
+            {" "}
+            <span className="text-base">
+              {edit ? "Zapisz" : "Kontynuuj"}
+            </span>{" "}
+            <ChevronRightIcon className="min-h-5 min-w-5" />
+          </FormButton>
         </div>
       </form>
     </Form>

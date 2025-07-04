@@ -62,7 +62,7 @@ export default function RootLayout({
       />
       <Providers>
         <Header navigation={homePageNav} />
-        <main className="flex-grow">{children}</main>
+        <main className="flex flex-grow flex-col">{children}</main>
 
         <HideOnPath
           condition={{

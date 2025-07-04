@@ -20,7 +20,11 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { SelectCard } from "@/app/(website)/join/_components/select-card";
 import { useContactFormContext } from "@/context/contact-form-context";
 import { contactMethods } from "./data";
-import { NextButton } from "../_components/next-button";
+import { FormButton } from "../_components/form-button";
+import { MotionWrapper } from "@/components/motion-wrapper";
+import { formAnimationVariants } from "../_components/form-animation-variants";
+import PageHeader from "../_components/form-header";
+import { ChevronRightIcon } from "lucide-react";
 
 export function ContactMethodForm() {
   const [selectedMethod, setSelectedMethod] = useState<
@@ -61,67 +65,84 @@ export function ContactMethodForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <div className="grid grid-cols-2 gap-4">
-          {contactMethods.map(({ id, label, value, icon }) => (
-            <SelectCard
-              key={id}
-              onClick={() => setSelectedMethod(value)}
-              isSelected={selectedMethod === value}
-              error={
-                selectedMethod
-                  ? !!(
-                      form.formState.errors[selectedMethod] &&
-                      selectedMethod === value
-                    )
-                  : !!form.formState.errors[value]
-              }
-              label={label}
-              icon={icon}
+        <MotionWrapper
+          animate={"animate"}
+          initial={"initial"}
+          variants={formAnimationVariants}
+          className="space-y-4 md:space-y-8"
+        >
+          <PageHeader
+            title="Jak najlepiej się z Tobą skontaktować?"
+            subtitle="Wybierz swój preferowany sposób kontaktu – skontaktuję się z Tobą w ciągu 24h, aby odpowiedzieć na Twoje pytania i omówić szczegóły."
+          />
+          <div className="grid grid-cols-2 gap-4">
+            {contactMethods.map(({ id, label, value, icon }) => (
+              <SelectCard
+                key={id}
+                onClick={() => setSelectedMethod(value)}
+                isSelected={selectedMethod === value}
+                error={
+                  selectedMethod
+                    ? !!(
+                        form.formState.errors[selectedMethod] &&
+                        selectedMethod === value
+                      )
+                    : !!form.formState.errors[value]
+                }
+                label={label}
+                icon={icon}
+              />
+            ))}
+          </div>
+          {selectedMethod === "phone" && (
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Wpisz swój numer telefonu</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="+48 123 456 789"
+                      {...field}
+                      name="phone"
+                      type="tel"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          ))}
-        </div>
-        {selectedMethod === "phone" && (
-          <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Wpisz swój numer telefonu</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="+48 123 456 789"
-                    {...field}
-                    name="phone"
-                    type="tel"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        )}
+          )}
 
-        {selectedMethod === "email" && (
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Wpisz swój email</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="example@gmail.com"
-                    type="email"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        )}
+          {selectedMethod === "email" && (
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Wpisz swój email</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="example@gmail.com"
+                      type="email"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          )}
+        </MotionWrapper>
         <div>
-          <NextButton edit={edit} />
+          <FormButton>
+            {" "}
+            <span className="text-base">
+              {edit ? "Zapisz" : "Kontynuuj"}
+            </span>{" "}
+            <ChevronRightIcon className="min-h-5 min-w-5" />
+          </FormButton>
         </div>
       </form>
     </Form>

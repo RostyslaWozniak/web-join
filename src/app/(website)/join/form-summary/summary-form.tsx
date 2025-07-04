@@ -8,7 +8,6 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { GradientButton } from "@/components/ui/gradient-button";
 import { CheckCircle, Edit2, Loader2, PlayCircle } from "lucide-react";
 import { useContactFormContext } from "@/context/contact-form-context";
 import { Text } from "@/components/ui/typography";
@@ -18,6 +17,10 @@ import { useEffect, useTransition } from "react";
 import { sendForm } from "./action";
 import { toast } from "sonner";
 import Link from "next/link";
+import { FormButton } from "../_components/form-button";
+import { MotionWrapper } from "@/components/motion-wrapper";
+import { formAnimationVariants } from "../_components/form-animation-variants";
+import PageHeader from "../_components/form-header";
 
 export function SummaryForm() {
   const { newContactFormData, resetLocalStorage } = useContactFormContext();
@@ -84,43 +87,50 @@ export function SummaryForm() {
             {form.formState.errors.serviceType.message}
           </p>
         )}
-        <Summary
-          contact={[
-            {
-              method: "Telefon",
-              value: newContactFormData.phone,
-            },
-            {
-              method: "Email",
-              value: newContactFormData.email,
-            },
-          ]}
-          service={
-            services.find((s) => s.value === newContactFormData.serviceType)
-              ?.label ?? ""
-          }
-          features={
-            newContactFormData.additionalFeatures?.map(
-              (feature) =>
-                features.find((f) => f.value === feature)?.label ?? "",
-            ) ?? []
-          }
-        />
-
-        <GradientButton
-          type="submit"
-          size="default"
-          className="float-end"
-          textSize="text-base"
-          disabled={isPending}
+        <MotionWrapper
+          animate={"animate"}
+          initial={"initial"}
+          variants={formAnimationVariants}
+          className="space-y-4 md:space-y-8"
         >
-          {isPending ? (
-            <Loader2 className="mr-2 min-h-7 min-w-7 animate-spin" />
-          ) : (
-            <PlayCircle className="mr-2 min-h-7 min-w-7" />
-          )}
-          <span className="">Dołącz</span>{" "}
-        </GradientButton>
+          <PageHeader
+            title="Prawie gotowe!"
+            subtitle='Sprawdź swoje wybory i wyślij formularz klikając "Dołącz". To nic nie kosztuje i do niczego Cię nie zobowiązuje. W ciągu 24 godzin skontaktuję się z Tobą, aby omówić szczegóły i zaproponować najlepsze rozwiązanie dla Twojej firmy.'
+          />
+          <Summary
+            contact={[
+              {
+                method: "Telefon",
+                value: newContactFormData.phone,
+              },
+              {
+                method: "Email",
+                value: newContactFormData.email,
+              },
+            ]}
+            service={
+              services.find((s) => s.value === newContactFormData.serviceType)
+                ?.label ?? ""
+            }
+            features={
+              newContactFormData.additionalFeatures?.map(
+                (feature) =>
+                  features.find((f) => f.value === feature)?.label ?? "",
+              ) ?? []
+            }
+          />
+        </MotionWrapper>
+
+        <div className="min-h-8">
+          <FormButton disabled={isPending}>
+            {isPending ? (
+              <Loader2 className="mr-2 min-h-7 min-w-7 animate-spin" />
+            ) : (
+              <PlayCircle className="mr-2 min-h-7 min-w-7" />
+            )}
+            Wyślij
+          </FormButton>
+        </div>
       </form>
     </Form>
   );

@@ -14,23 +14,23 @@ export const services = [
     value: "book-app",
     icon: StarIcon,
     description:
-      "Nowoczesny system do zarządzania wizytami i stroną dla lokalnych firm.",
+      "System do umawiania wizyt i zarządzania stroną — idealny dla salonów, gabinetów i usług lokalnych.",
   },
   {
     id: 2,
-    label: "Strona internetowa",
+    label: "Strona",
     value: "website",
     icon: Globe,
     description:
-      "Profesjonalna, rozbudowana strona internetowa z podstronami i SEO.",
+      "Profesjonalna strona internetowa z wieloma podstronami, SEO i nowoczesnym wyglądem.",
   },
   {
     id: 3,
-    label: "Sklep internetowy",
+    label: "Sklep",
     value: "e-commerce",
     icon: ShoppingBasket,
     description:
-      "Pełnoprawny sklep online z koszykiem, płatnościami i zarządzaniem produktami.",
+      "Sklep online z koszykiem, płatnościami i panelem do zarządzania produktami — gotowy do sprzedaży.",
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ export const services = [
     value: "landing",
     icon: Layout,
     description:
-      "Strona sprzedażowa typu one-page — idealna do kampanii reklamowej.",
+      "Jednostronicowa strona sprzedażowa — idealna do kampanii, promocji i szybkiej prezentacji oferty.",
   },
   {
     id: 5,
@@ -46,14 +46,14 @@ export const services = [
     value: "blog",
     icon: Notebook,
     description:
-      "Funkcjonalny blog do dzielenia się wiedzą, z opcją edycji treści.",
+      "Blog z panelem do edycji treści — świetny do dzielenia się wiedzą, nowościami i pozycjonowania SEO.",
   },
   {
     id: 6,
-    label: "Darmowa konsultacja",
+    label: "Konsultacja",
     value: "consultation",
     icon: MessageCircle,
     description:
-      "Bezpłatna rozmowa, w której omówimy Twoje potrzeby i dobierzemy rozwiązanie.",
+      "Bezpłatna rozmowa, w której doradzimy Ci najlepsze rozwiązanie dopasowane do Twoich potrzeb.",
   },
 ] as const;

@@ -14,46 +14,46 @@ export const features = [
     value: "seo",
     icon: ChartNoAxesCombined,
     description:
-      "Zoptymalizowana widoczność w Google — więcej klientów trafia na Twoją stronę.",
+      "Pomagamy Twojej stronie wybić się w Google. Dzięki SEO więcej osób trafi do Ciebie z wyszukiwarki, bez płatnych reklam.",
   },
   {
     id: 2,
-    label: "Wersje językowe",
+    label: "Języki",
     value: "multilingual",
     icon: Languages,
     description:
-      "Strona dostępna w wielu językach — docieraj do szerszego grona odbiorców.",
+      "Twoja strona może działać w wielu językach. Świetne rozwiązanie, jeśli kierujesz ofertę do klientów z różnych krajów.",
   },
   {
     id: 3,
-    label: "System zarządzania treścią (CMS)",
+    label: "CMS",
     value: "cms",
     icon: MonitorCog,
     description:
-      "Łatwe samodzielne zarządzanie treściami na stronie, bez potrzeby kodowania.",
+      "Chcesz samodzielnie edytować treści na stronie? Dzięki CMS (System zarządzania treścią) zrobisz to łatwo, bez kodowania i pomocy programisty.",
   },
   {
     id: 4,
-    label: "Płatności online",
+    label: "Płatności",
     value: "paymentIntegration",
     icon: Wallet,
     description:
-      "Integracja z systemami płatności — idealna do rezerwacji lub sklepów.",
+      "Umożliwiamy płatności online — idealne, jeśli chcesz sprzedawać produkty, usługi lub przyjmować rezerwacje przez stronę.",
   },
   {
     id: 5,
-    label: "Szybkość i optymalizacja ładowania",
+    label: "Szybkość",
     value: "fastLoading",
     icon: ZapIcon,
     description:
-      "Ekstremalnie szybkie ładowanie strony — lepsze UX i wyższe pozycje w Google.",
+      "Strona wczytuje się błyskawicznie, nawet na słabszym internecie. To wpływa na komfort użytkownika i pozycję w Google.",
   },
   {
     id: 6,
-    label: "Pełna responsywność i optymalne UX",
+    label: "Responsywność",
     value: "responsiveUx",
     icon: LayoutPanelLeft,
     description:
-      "Doskonałe działanie na telefonach, tabletach i komputerach — zawsze wygodnie.",
+      "Twoja strona będzie wyglądać świetnie na telefonie, tablecie i komputerze. Intuicyjna na każdym ekranie.",
   },
 ] as const;
