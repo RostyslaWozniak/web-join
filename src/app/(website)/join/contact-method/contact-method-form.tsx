@@ -14,14 +14,13 @@ import {
   type ContactMethodSchema,
 } from "@/lib/validation/contact-form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { GradientButton } from "@/components/ui/gradient-button";
 import { useRouter, useSearchParams } from "next/navigation";
 import { SelectCard } from "@/app/(website)/join/_components/select-card";
 import { useContactFormContext } from "@/context/contact-form-context";
 import { contactMethods } from "./data";
+import { NextButton } from "../_components/next-button";
 
 export function ContactMethodForm() {
   const [selectedMethod, setSelectedMethod] = useState<
@@ -121,11 +120,9 @@ export function ContactMethodForm() {
             )}
           />
         )}
-
-        <GradientButton type="submit" size="default" className="float-end">
-          <span className="text-base">{edit ? "Zapisz" : "Kontynuuj"}</span>{" "}
-          <ChevronRight className="min-h-5 min-w-5" />
-        </GradientButton>
+        <div>
+          <NextButton edit={edit} />
+        </div>
       </form>
     </Form>
   );

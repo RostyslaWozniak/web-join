@@ -10,12 +10,11 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { services } from "./data";
 import { SelectCard } from "../_components/select-card";
-import { GradientButton } from "@/components/ui/gradient-button";
-import { ChevronRight } from "lucide-react";
-import { Text } from "@/components/ui/typography";
 import { useContactFormContext } from "@/context/contact-form-context";
 import { useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-is-mobile";
+import { toast } from "sonner";
+import { NextButton } from "../_components/next-button";
 
 export function ServiceSelectionForm() {
   const searchParams = useSearchParams();
@@ -59,6 +58,13 @@ export function ServiceSelectionForm() {
       });
     }
   }, [isMobile]);
+
+  useEffect(() => {
+    if (form.formState.errors.serviceType?.message == null) return;
+    toast.error(form.formState.errors.serviceType?.message, {
+      position: "top-center",
+    });
+  }, [form.formState.errors.serviceType?.message]);
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -75,14 +81,8 @@ export function ServiceSelectionForm() {
             />
           ))}
         </div>
-        <div className="flex flex-col items-center justify-between sm:flex-row">
-          <Text size="sm" className="mb-2 text-destructive">
-            {form.formState.errors.serviceType?.message}
-          </Text>
-          <GradientButton type="submit" size="default" className="float-end">
-            <span className="text-base">{edit ? "Zapisz" : "Kontynuuj"}</span>{" "}
-            <ChevronRight className="min-h-5 min-w-5" />
-          </GradientButton>
+        <div>
+          <NextButton edit={edit} />
         </div>
       </form>
     </Form>

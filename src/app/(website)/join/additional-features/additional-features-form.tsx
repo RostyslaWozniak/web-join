@@ -10,11 +10,9 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { features } from "./data";
 import { SelectCard } from "../_components/select-card";
-import { GradientButton } from "@/components/ui/gradient-button";
-import { ChevronRight } from "lucide-react";
-import { Text } from "@/components/ui/typography";
 import { useContactFormContext } from "@/context/contact-form-context";
 import { useEffect } from "react";
+import { NextButton } from "../_components/next-button";
 
 export function AdditionalFaturesForm() {
   const router = useRouter();
@@ -48,41 +46,35 @@ export function AdditionalFaturesForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <div>
-          <Text size="sm" className="mb-2 text-destructive">
-            {form.formState.errors.additionalFeatures?.message}
-          </Text>
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-            {features.map(({ id, label, value, icon, description }) => (
-              <SelectCard
-                key={id}
-                onClick={() => {
-                  if (form.watch("additionalFeatures")?.includes(value)) {
-                    form.setValue("additionalFeatures", [
-                      ...form
-                        .watch("additionalFeatures")
-                        .filter((item) => item !== value),
-                    ]);
-                  } else {
-                    form.setValue("additionalFeatures", [
-                      ...form.watch("additionalFeatures"),
-                      value,
-                    ]);
-                  }
-                }}
-                isSelected={form.watch("additionalFeatures")?.includes(value)}
-                error={!!form.formState.errors.additionalFeatures}
-                label={label}
-                icon={icon}
-                description={description}
-              />
-            ))}
-          </div>
+        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+          {features.map(({ id, label, value, icon, description }) => (
+            <SelectCard
+              key={id}
+              onClick={() => {
+                if (form.watch("additionalFeatures")?.includes(value)) {
+                  form.setValue("additionalFeatures", [
+                    ...form
+                      .watch("additionalFeatures")
+                      .filter((item) => item !== value),
+                  ]);
+                } else {
+                  form.setValue("additionalFeatures", [
+                    ...form.watch("additionalFeatures"),
+                    value,
+                  ]);
+                }
+              }}
+              isSelected={form.watch("additionalFeatures")?.includes(value)}
+              error={!!form.formState.errors.additionalFeatures}
+              label={label}
+              icon={icon}
+              description={description}
+            />
+          ))}
         </div>
-        <GradientButton type="submit" size="default" className="float-end">
-          <span className="text-base">{edit ? "Zapisz" : "Kontynuuj"}</span>{" "}
-          <ChevronRight className="min-h-5 min-w-5" />
-        </GradientButton>
+        <div>
+          <NextButton edit={edit} />
+        </div>
       </form>
     </Form>
   );

@@ -5,7 +5,7 @@ import { Header } from "@/components/header";
 import { Providers } from "@/components/providers";
 import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner";
-import { MobileNav } from "@/components/mobile-nav";
+// import { MobileNav } from "@/components/mobile-nav";
 import { env } from "@/env";
 import type { Blog, WithContext } from "schema-dts";
 import { homePageNav } from "@/components/header/home-page-nav";
@@ -79,7 +79,7 @@ export default function BlogLayout({
 
         <main className="flex-grow">{children}</main>
         <Footer />
-        <MobileNav navigation={homePageNav} />
+        {/* <MobileNav navigation={homePageNav} /> */}
         <Toaster />
       </Providers>
     </>
