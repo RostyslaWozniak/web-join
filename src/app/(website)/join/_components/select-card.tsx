@@ -2,14 +2,16 @@
 
 import { Text } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
-import { type LucideIcon } from "lucide-react";
+import { CheckCircleIcon, type LucideIcon } from "lucide-react";
 import { DialogWrapper } from "@/components/dialog-wrapper";
 import { Button } from "@/components/ui/button";
 import { InfoIcon } from "lucide-react";
 import { useState } from "react";
+import { ToggleIconsAnimation } from "@/components/animations/toggle-icons-animation";
 
 type SelectCardProps = {
   label: string;
+  fullLabel?: string;
   error: boolean;
   isSelected: boolean;
   icon: LucideIcon;
@@ -18,6 +20,7 @@ type SelectCardProps = {
 
 export function SelectCard({
   label,
+  fullLabel,
   isSelected,
   error,
   icon: Icon,
@@ -26,43 +29,47 @@ export function SelectCard({
   ...props
 }: SelectCardProps) {
   return (
-    <div
-      className={cn(
-        "relative grid cursor-pointer place-items-center space-y-1 rounded-2xl border-2 bg-background p-4 md:p-6",
-        {
-          "border-accent-cyan bg-[#22D3EE10] text-foreground": isSelected,
-          "border-destructive": error,
-        },
-        className,
-      )}
-      {...props}
-    >
-      <div className="md:hidden">
+    <div className="relative">
+      <div
+        className={cn(
+          "relative grid h-full cursor-pointer place-items-center space-y-1 rounded-2xl border-2 bg-background p-4 md:p-6",
+          {
+            "border-accent-cyan bg-[#22D3EE10] text-foreground": isSelected,
+            "border-destructive": error,
+          },
+          className,
+        )}
+        {...props}
+      >
+        <div className="flex flex-col items-center gap-1">
+          <div>
+            <ToggleIconsAnimation
+              icon1={Icon}
+              icon2={CheckCircleIcon}
+              isActive={isSelected}
+              icon2ClassName="text-accent-cyan"
+            />
+          </div>
+          <Text
+            className={cn("text-center font-semibold duration-300 md:text-lg", {
+              "scale-105 text-accent-cyan transition-transform duration-300":
+                isSelected,
+            })}
+          >
+            {label}
+          </Text>
+        </div>
         {description && (
-          <SelectCardIfo label={label} description={description} />
+          <Text className="hidden text-center !text-sm md:block">
+            {description}
+          </Text>
         )}
       </div>
-      <div className="flex flex-col items-center gap-1">
-        <Icon
-          className={cn("h-6 w-6 duration-300", {
-            "scale-105 stroke-accent-cyan transition-transform ease-in-out":
-              isSelected,
-          })}
-        />
-        <Text
-          className={cn("text-center font-semibold duration-300 md:text-lg", {
-            "scale-105 text-accent-cyan transition-transform duration-300":
-              isSelected,
-          })}
-        >
-          {label}
-        </Text>
+      <div className="md:hidden">
+        {fullLabel && description && (
+          <SelectCardIfo label={fullLabel} description={description} />
+        )}
       </div>
-      {description && (
-        <Text className="hidden text-center !text-sm md:block">
-          {description}
-        </Text>
-      )}
     </div>
   );
 }
@@ -89,7 +96,12 @@ function SelectCardIfo({
       >
         <InfoIcon className="min-h-5 min-w-5 text-gray-500" />
       </Button>
-      <DialogWrapper isOpen={open} setIsOpen={setOpen} title={label}>
+      <DialogWrapper
+        isOpen={open}
+        setIsOpen={setOpen}
+        title={label}
+        contentClassName="pb-10"
+      >
         {description}
       </DialogWrapper>
     </>

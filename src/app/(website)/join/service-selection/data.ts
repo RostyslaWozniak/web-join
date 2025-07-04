@@ -11,6 +11,7 @@ export const services = [
   {
     id: 1,
     label: "BookApp",
+    fullLabel: "BookApp — system rezerwacji i strona dla lokalnych firm",
     value: "book-app",
     icon: StarIcon,
     description:
@@ -19,6 +20,7 @@ export const services = [
   {
     id: 2,
     label: "Strona",
+    fullLabel: "Strona internetowa",
     value: "website",
     icon: Globe,
     description:
@@ -27,6 +29,7 @@ export const services = [
   {
     id: 3,
     label: "Sklep",
+    fullLabel: "Sklep internetowy",
     value: "e-commerce",
     icon: ShoppingBasket,
     description:
@@ -35,6 +38,7 @@ export const services = [
   {
     id: 4,
     label: "Landing page",
+    fullLabel: "Landing page — strona sprzedażowa",
     value: "landing",
     icon: Layout,
     description:
@@ -43,6 +47,7 @@ export const services = [
   {
     id: 5,
     label: "Blog",
+    fullLabel: "Blog z panelem zarządzania treścią",
     value: "blog",
     icon: Notebook,
     description:
@@ -51,6 +56,7 @@ export const services = [
   {
     id: 6,
     label: "Konsultacja",
+    fullLabel: "Darmowa konsultacja",
     value: "consultation",
     icon: MessageCircle,
     description:

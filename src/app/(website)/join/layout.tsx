@@ -13,15 +13,18 @@ export default function JoinLayout({
   children: React.ReactNode;
 }) {
   return (
-    <MaxWidthWrapper className="flex w-full max-w-5xl flex-grow flex-col bg-background pb-8">
-      <div className="flex max-h-48 flex-grow flex-col justify-center">
-        <StepNav />
-      </div>
-      <ContactFormProvider>
-        <div className="_justify-center relative flex min-h-[500px] flex-grow flex-col">
-          {children}
+    <div className="w-screen">
+      <MaxWidthWrapper className="flex max-w-5xl flex-grow flex-col bg-background pb-8">
+        <div className="my-8">
+          <StepNav />
         </div>
-      </ContactFormProvider>
-    </MaxWidthWrapper>
+
+        <ContactFormProvider>
+          <div className="relative flex min-h-[500px] flex-grow flex-col">
+            {children}
+          </div>
+        </ContactFormProvider>
+      </MaxWidthWrapper>
+    </div>
   );
 }

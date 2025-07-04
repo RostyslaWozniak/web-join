@@ -61,30 +61,33 @@ export function AdditionalFaturesForm() {
             subtitle="Zaznacz funkcje, które mogą być przydatne dla Twojej strony. Jeśli nie wiesz, które wybrać – pomogę Ci to ustalić podczas darmowej konsultacji!"
           />
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-            {features.map(({ id, label, value, icon, description }) => (
-              <SelectCard
-                key={id}
-                onClick={() => {
-                  if (form.watch("additionalFeatures")?.includes(value)) {
-                    form.setValue("additionalFeatures", [
-                      ...form
-                        .watch("additionalFeatures")
-                        .filter((item) => item !== value),
-                    ]);
-                  } else {
-                    form.setValue("additionalFeatures", [
-                      ...form.watch("additionalFeatures"),
-                      value,
-                    ]);
-                  }
-                }}
-                isSelected={form.watch("additionalFeatures")?.includes(value)}
-                error={!!form.formState.errors.additionalFeatures}
-                label={label}
-                icon={icon}
-                description={description}
-              />
-            ))}
+            {features.map(
+              ({ id, label, fullLabel, value, icon, description }) => (
+                <SelectCard
+                  key={id}
+                  onClick={() => {
+                    if (form.watch("additionalFeatures")?.includes(value)) {
+                      form.setValue("additionalFeatures", [
+                        ...form
+                          .watch("additionalFeatures")
+                          .filter((item) => item !== value),
+                      ]);
+                    } else {
+                      form.setValue("additionalFeatures", [
+                        ...form.watch("additionalFeatures"),
+                        value,
+                      ]);
+                    }
+                  }}
+                  isSelected={form.watch("additionalFeatures")?.includes(value)}
+                  error={!!form.formState.errors.additionalFeatures}
+                  label={label}
+                  fullLabel={fullLabel}
+                  icon={icon}
+                  description={description}
+                />
+              ),
+            )}
           </div>
         </MotionWrapper>
         <div className="min-h-6">

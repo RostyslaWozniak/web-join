@@ -82,11 +82,6 @@ export function SummaryForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        {form.formState.errors.serviceType && (
-          <p className="text-destructive">
-            {form.formState.errors.serviceType.message}
-          </p>
-        )}
         <MotionWrapper
           animate={"animate"}
           initial={"initial"}
@@ -97,6 +92,7 @@ export function SummaryForm() {
             title="Prawie gotowe!"
             subtitle='Sprawdź swoje wybory i wyślij formularz klikając "Dołącz". To nic nie kosztuje i do niczego Cię nie zobowiązuje. W ciągu 24 godzin skontaktuję się z Tobą, aby omówić szczegóły i zaproponować najlepsze rozwiązanie dla Twojej firmy.'
           />
+
           <Summary
             contact={[
               {
@@ -110,12 +106,12 @@ export function SummaryForm() {
             ]}
             service={
               services.find((s) => s.value === newContactFormData.serviceType)
-                ?.label ?? ""
+                ?.fullLabel ?? ""
             }
             features={
               newContactFormData.additionalFeatures?.map(
                 (feature) =>
-                  features.find((f) => f.value === feature)?.label ?? "",
+                  features.find((f) => f.value === feature)?.fullLabel ?? "",
               ) ?? []
             }
           />

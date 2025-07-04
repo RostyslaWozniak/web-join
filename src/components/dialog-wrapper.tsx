@@ -48,8 +48,8 @@ export const DialogWrapper = ({
     <>
       {isMobile ? (
         <Drawer open={isOpen} onOpenChange={setIsOpen} disablePreventScroll>
-          <DrawerContent className={cn("px-2.5", contentClassName)}>
-            <DrawerHeader className="text-left">
+          <DrawerContent className={cn("px-4", contentClassName)}>
+            <DrawerHeader className="px-0 text-left">
               <DrawerTitle className="text-xl">{title}</DrawerTitle>
               <DrawerDescription className="text-base">
                 {description}
@@ -84,20 +84,18 @@ export const DialogWrapper = ({
               <DialogTitle>{title}</DialogTitle>
               <DialogDescription>{description}</DialogDescription>
             </DialogHeader>
-            <div className={cn("grow", className)}>
-              {closeButton && (
-                <DialogClose
-                  className={cn(
-                    "mr-2 self-end justify-self-end",
-                    buttonVariants(closeButtonVariant),
-                  )}
-                  type="button"
-                >
-                  {closeButton}
-                </DialogClose>
-              )}
-              {children}
-            </div>
+            <div className={cn("grow", className)}>{children}</div>
+            {closeButton && (
+              <DialogClose
+                className={cn(
+                  "mr-2 self-end justify-self-end",
+                  buttonVariants(closeButtonVariant),
+                )}
+                type="button"
+              >
+                {closeButton}
+              </DialogClose>
+            )}
           </DialogContent>
         </Dialog>
       )}

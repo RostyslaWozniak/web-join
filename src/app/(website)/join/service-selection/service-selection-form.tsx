@@ -83,17 +83,20 @@ export function ServiceSelectionForm() {
             subtitle="Zaznacz, jakiego rodzaju stronę potrzebujesz. Omówimy wszystko na darmowej konsultacji i rozwieję twoje wątpliwości."
           />
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-            {services.map(({ id, label, value, icon, description }) => (
-              <SelectCard
-                key={id}
-                onClick={() => form.setValue("serviceType", value)}
-                isSelected={form.watch("serviceType")?.includes(value)}
-                error={!!form.formState.errors.serviceType}
-                label={label}
-                icon={icon}
-                description={description}
-              />
-            ))}
+            {services.map(
+              ({ id, label, fullLabel, value, icon, description }) => (
+                <SelectCard
+                  key={id}
+                  onClick={() => form.setValue("serviceType", value)}
+                  isSelected={form.watch("serviceType")?.includes(value)}
+                  error={!!form.formState.errors.serviceType}
+                  label={label}
+                  fullLabel={fullLabel}
+                  icon={icon}
+                  description={description}
+                />
+              ),
+            )}
           </div>
         </MotionWrapper>
         <div>

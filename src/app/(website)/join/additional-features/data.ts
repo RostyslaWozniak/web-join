@@ -11,6 +11,7 @@ export const features = [
   {
     id: 1,
     label: "SEO",
+    fullLabel: "SEO — optymalizacja pod wyszukiwarki",
     value: "seo",
     icon: ChartNoAxesCombined,
     description:
@@ -19,6 +20,7 @@ export const features = [
   {
     id: 2,
     label: "Języki",
+    fullLabel: "Wersje językowe",
     value: "multilingual",
     icon: Languages,
     description:
@@ -27,14 +29,16 @@ export const features = [
   {
     id: 3,
     label: "CMS",
+    fullLabel: "System zarządzania treścią (CMS)",
     value: "cms",
     icon: MonitorCog,
     description:
-      "Chcesz samodzielnie edytować treści na stronie? Dzięki CMS (System zarządzania treścią) zrobisz to łatwo, bez kodowania i pomocy programisty.",
+      "Chcesz samodzielnie edytować treści na stronie? Dzięki CMS zrobisz to łatwo, bez kodowania i pomocy programisty.",
   },
   {
     id: 4,
     label: "Płatności",
+    fullLabel: "Płatności online",
     value: "paymentIntegration",
     icon: Wallet,
     description:
@@ -43,6 +47,7 @@ export const features = [
   {
     id: 5,
     label: "Szybkość",
+    fullLabel: "Szybkość i optymalizacja ładowania",
     value: "fastLoading",
     icon: ZapIcon,
     description:
@@ -51,6 +56,7 @@ export const features = [
   {
     id: 6,
     label: "Responsywność",
+    fullLabel: "Pełna responsywność i optymalne UX",
     value: "responsiveUx",
     icon: LayoutPanelLeft,
     description:
