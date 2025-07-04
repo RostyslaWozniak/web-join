@@ -44,7 +44,7 @@ export default function StepNav() {
   }, [currentPath]);
 
   return (
-    <div className="sticky isolate min-w-72">
+    <div className="isolate min-w-72">
       {/* list of form steps */}
       <div className="relative flex flex-row justify-between">
         {steps.map(({ id, title, route, link }, i) => (

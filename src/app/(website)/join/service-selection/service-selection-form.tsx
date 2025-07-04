@@ -99,7 +99,7 @@ export function ServiceSelectionForm() {
             )}
           </div>
         </MotionWrapper>
-        <div>
+        <div className="h-8">
           <FormButton>
             {" "}
             <span className="text-base">

@@ -20,7 +20,7 @@ export default function JoinLayout({
         </div>
 
         <ContactFormProvider>
-          <div className="relative flex min-h-[500px] flex-grow flex-col">
+          <div className="relative flex min-h-[200px] flex-grow flex-col">
             {children}
           </div>
         </ContactFormProvider>
