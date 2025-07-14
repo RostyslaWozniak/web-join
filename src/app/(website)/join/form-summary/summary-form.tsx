@@ -38,8 +38,6 @@ export function SummaryForm() {
   });
 
   async function onSubmit(values: ContactFormSchema) {
-    setIsFormVisible(false);
-    await wait(exitAnimationWaitInMs);
     if (!newContactFormData.phone && !newContactFormData.email) {
       router.push("/join/contact-method?edit=true");
       return;
@@ -59,6 +57,8 @@ export function SummaryForm() {
           });
         }
         if (res.success) {
+          setIsFormVisible(false);
+          await wait(exitAnimationWaitInMs);
           startTransition(() => {
             resetLocalStorage();
             router.push("/success");
