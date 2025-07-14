@@ -11,12 +11,16 @@ import { useForm } from "react-hook-form";
 import { features } from "./data";
 import { SelectCard } from "../_components/select-card";
 import { useContactFormContext } from "@/context/contact-form-context";
-import { useEffect, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { FormButton } from "../_components/form-button";
 
 import PageHeader from "../_components/form-header";
 import { ChevronRightIcon } from "lucide-react";
-import { FormAnimateWrapper } from "../_components/form-animate-wrapper";
+import {
+  exitAnimationWaitInMs,
+  FormAnimateWrapper,
+} from "../_components/form-animate-wrapper";
+import { wait } from "@/lib/utils";
 
 export function AdditionalFaturesForm() {
   const router = useRouter();
@@ -28,6 +32,8 @@ export function AdditionalFaturesForm() {
 
   const [isPending, startTransition] = useTransition();
 
+  const [isFormVisible, setIsFormVisible] = useState(true);
+
   const form = useForm<AdditionalFeaturesSchema>({
     resolver: zodResolver(additionalFeaturesSchema),
 
@@ -36,7 +42,9 @@ export function AdditionalFaturesForm() {
     },
   });
 
-  function onSubmit(values: AdditionalFeaturesSchema) {
+  async function onSubmit(values: AdditionalFeaturesSchema) {
+    setIsFormVisible(false);
+    await wait(exitAnimationWaitInMs);
     startTransition(() => {
       updateContactForm(values);
       router.push(edit ? "/join/form-summary" : "/join/contact-method");
@@ -55,7 +63,7 @@ export function AdditionalFaturesForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormAnimateWrapper show={!isPending}>
+        <FormAnimateWrapper show={isFormVisible}>
           <PageHeader
             title="Potrzebujesz dodatkowych opcji?"
             subtitle="Zaznacz funkcje, które mogą być przydatne dla Twojej strony. Jeśli nie wiesz, które wybrać – pomogę Ci to ustalić podczas darmowej konsultacji!"

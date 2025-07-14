@@ -11,13 +11,17 @@ import { useForm } from "react-hook-form";
 import { services } from "./data";
 import { SelectCard } from "../_components/select-card";
 import { useContactFormContext } from "@/context/contact-form-context";
-import { useEffect, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { useIsMobile } from "@/hooks/use-is-mobile";
 import { toast } from "sonner";
 import { FormButton } from "../_components/form-button";
 import PageHeader from "../_components/form-header";
 import { ChevronRightIcon } from "lucide-react";
-import { FormAnimateWrapper } from "../_components/form-animate-wrapper";
+import {
+  exitAnimationWaitInMs,
+  FormAnimateWrapper,
+} from "../_components/form-animate-wrapper";
+import { wait } from "@/lib/utils";
 
 export function ServiceSelectionForm() {
   const isMobile = useIsMobile();
@@ -32,6 +36,8 @@ export function ServiceSelectionForm() {
 
   const [isPending, startTransition] = useTransition();
 
+  const [isFormVisible, setIsFormVisible] = useState(true);
+
   const form = useForm<ServiceSelectionSchema>({
     resolver: zodResolver(serviceSelectionSchema),
     defaultValues: {
@@ -39,7 +45,9 @@ export function ServiceSelectionForm() {
     },
   });
 
-  function onSubmit(values: ServiceSelectionSchema) {
+  async function onSubmit(values: ServiceSelectionSchema) {
+    setIsFormVisible(false);
+    await wait(exitAnimationWaitInMs);
     startTransition(() => {
       updateContactForm(values);
       router.push(edit ? "/join/form-summary" : "/join/additional-features");
@@ -75,7 +83,7 @@ export function ServiceSelectionForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormAnimateWrapper show={!isPending}>
+        <FormAnimateWrapper show={isFormVisible}>
           <PageHeader
             title="Co Cię interesuje?"
             subtitle="Zaznacz, jakiego rodzaju stronę potrzebujesz. Omówimy wszystko na darmowej konsultacji i rozwieję twoje wątpliwości."

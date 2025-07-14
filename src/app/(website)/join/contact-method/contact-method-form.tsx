@@ -24,7 +24,11 @@ import { FormButton } from "../_components/form-button";
 
 import PageHeader from "../_components/form-header";
 import { ChevronRightIcon } from "lucide-react";
-import { FormAnimateWrapper } from "../_components/form-animate-wrapper";
+import {
+  exitAnimationWaitInMs,
+  FormAnimateWrapper,
+} from "../_components/form-animate-wrapper";
+import { wait } from "@/lib/utils";
 
 export function ContactMethodForm() {
   const [selectedMethod, setSelectedMethod] = useState<
@@ -37,6 +41,8 @@ export function ContactMethodForm() {
 
   const [isPending, startTransition] = useTransition();
 
+  const [isFormVisible, setIsFormVisible] = useState(true);
+
   const router = useRouter();
 
   const form = useForm<ContactMethodSchema>({
@@ -48,7 +54,9 @@ export function ContactMethodForm() {
     },
   });
 
-  function onSubmit(values: ContactMethodSchema) {
+  async function onSubmit(values: ContactMethodSchema) {
+    setIsFormVisible(false);
+    await wait(exitAnimationWaitInMs);
     startTransition(() => {
       updateContactForm(values);
       router.push("/join/form-summary");
@@ -69,7 +77,7 @@ export function ContactMethodForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormAnimateWrapper show={!isPending}>
+        <FormAnimateWrapper show={isFormVisible}>
           <PageHeader
             title="Jak najlepiej się z Tobą skontaktować?"
             subtitle="Wybierz swój preferowany sposób kontaktu – skontaktuję się z Tobą w ciągu 24h, aby odpowiedzieć na Twoje pytania i omówić szczegóły."

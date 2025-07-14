@@ -13,25 +13,33 @@ import { useContactFormContext } from "@/context/contact-form-context";
 import { Text } from "@/components/ui/typography";
 import { services } from "../service-selection/data";
 import { features } from "../additional-features/data";
-import { useEffect, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { sendForm } from "./action";
 import { toast } from "sonner";
 import Link from "next/link";
 import { FormButton } from "../_components/form-button";
 
 import PageHeader from "../_components/form-header";
-import { FormAnimateWrapper } from "../_components/form-animate-wrapper";
+import {
+  exitAnimationWaitInMs,
+  FormAnimateWrapper,
+} from "../_components/form-animate-wrapper";
+import { wait } from "@/lib/utils";
 
 export function SummaryForm() {
   const { newContactFormData, resetLocalStorage } = useContactFormContext();
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
+  const [isFormVisible, setIsFormVisible] = useState(true);
+
   const form = useForm<ContactFormSchema>({
     resolver: zodResolver(contactFormSchema),
   });
 
-  function onSubmit(values: ContactFormSchema) {
+  async function onSubmit(values: ContactFormSchema) {
+    setIsFormVisible(false);
+    await wait(exitAnimationWaitInMs);
     if (!newContactFormData.phone && !newContactFormData.email) {
       router.push("/join/contact-method?edit=true");
       return;
@@ -82,7 +90,7 @@ export function SummaryForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormAnimateWrapper show={!isPending}>
+        <FormAnimateWrapper show={isFormVisible}>
           <PageHeader
             title="Prawie gotowe!"
             subtitle='Sprawdź swoje wybory i wyślij formularz klikając "Dołącz". To nic nie kosztuje i do niczego Cię nie zobowiązuje. W ciągu 24 godzin skontaktuję się z Tobą, aby omówić szczegóły i zaproponować najlepsze rozwiązanie dla Twojej firmy.'
@@ -207,7 +215,7 @@ function EditLink({ href }: { href: string }) {
     >
       <Edit2 className="size-4" />
       <span className="ml-2 text-xs">edytuj</span>
-      <span className="sr-only">edytuj kontakt</span>
+      <span className="sr-only">edytuj</span>
       <span className="absolute -inset-2 [@media(pointer:fine)]:hidden" />
     </Link>
   );
