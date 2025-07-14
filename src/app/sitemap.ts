@@ -1,7 +1,7 @@
 import { env } from "@/env";
 import { type MetadataRoute } from "next";
-import { posts } from "./(blog)/blog/data/posts";
-import { tags } from "./(blog)/blog/data/tags";
+import { posts } from "../features/blog/data/posts";
+import { tags } from "../features/blog/data/tags";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const postsSitemap = posts.map((post) => ({

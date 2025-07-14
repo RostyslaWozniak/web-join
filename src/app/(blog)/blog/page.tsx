@@ -2,8 +2,9 @@ import { AnimatedText } from "@/components/animations/animated-text";
 import { GridBackground } from "@/components/grid-background";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { H1 } from "@/components/ui/typography";
-import { posts } from "./data/posts";
-import { PostCard } from "./_components/post-card";
+import { posts } from "@/features/blog/data/posts";
+import { PostCard } from "@/features/blog/components/post-card";
+import { SearchPostForm } from "@/features/blog/components/search-post-form";
 
 export default async function BlogPage() {
   return (
@@ -22,7 +23,10 @@ export default async function BlogPage() {
         </GridBackground>
       </section>
       <section>
-        <MaxWidthWrapper className="mx-auto flex flex-col items-center px-4 pb-12 pt-20 md:py-20 lg:px-0">
+        <div className="mx-auto mt-12 max-w-lg px-4">
+          <SearchPostForm autoFocus />
+        </div>
+        <MaxWidthWrapper className="mx-auto flex items-center px-4 pb-12 pt-10 md:py-20 lg:px-0">
           <div className="mb-12 grid gap-8 md:grid-cols-3">
             {posts
               .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())

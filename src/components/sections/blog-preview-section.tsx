@@ -1,8 +1,8 @@
 import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight } from "lucide-react";
 import { H2 } from "../ui/typography";
-import { posts } from "@/app/(blog)/blog/data/posts";
-import { PostCard } from "@/app/(blog)/blog/_components/post-card";
+import { posts } from "@/features/blog/data/posts";
+import { PostCard } from "@/features/blog/components/post-card";
 import Link from "next/link";
 import { GradientButton } from "../ui/gradient-button";
 

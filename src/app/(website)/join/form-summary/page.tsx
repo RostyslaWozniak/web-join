@@ -1,4 +1,4 @@
-import { SummaryForm } from "./summary-form";
+import { SummaryForm } from "@/features/join-form/components/forms/summary.form";
 
 export const dynamic = "force-static";
 

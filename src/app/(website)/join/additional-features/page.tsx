@@ -1,4 +1,4 @@
-import { AdditionalFaturesForm } from "./additional-features-form";
+import { AdditionalFaturesForm } from "@/features/join-form/components/forms/additional-features.form";
 
 export const dynamic = "force-static";
 

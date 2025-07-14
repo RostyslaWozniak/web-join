@@ -8,19 +8,19 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { services } from "./data";
-import { SelectCard } from "../_components/select-card";
+import { services } from "../../data";
+import { SelectCard } from "../select-card";
 import { useContactFormContext } from "@/context/contact-form-context";
 import { useEffect, useState, useTransition } from "react";
 import { useIsMobile } from "@/hooks/use-is-mobile";
 import { toast } from "sonner";
-import { FormButton } from "../_components/form-button";
-import PageHeader from "../_components/form-header";
+import { FormButton } from "../form-button";
+import PageHeader from "../form-header";
 import { ChevronRightIcon } from "lucide-react";
 import {
   exitAnimationWaitInMs,
   FormAnimateWrapper,
-} from "../_components/form-animate-wrapper";
+} from "../form-animate-wrapper";
 import { wait } from "@/lib/utils";
 
 export function ServiceSelectionForm() {

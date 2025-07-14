@@ -1,18 +1,19 @@
 import { notFound } from "next/navigation";
-import { posts } from "../data/posts";
+import { posts } from "../../../../features/blog/data/posts";
 import Image from "next/image";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { H1 } from "@/components/ui/typography";
-import Markdown from "react-markdown";
+
 import { CalendarIcon, ClockIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { BlogSidebar } from "../_components/blog-sidebar";
+import { BlogSidebar } from "../../../../features/blog/components/blog-sidebar";
 import { Avatar } from "@/components/avatar";
 import { cache } from "react";
-import { generatePostJsonLd } from "../lib/generate-post-json-ld";
+import { generatePostJsonLd } from "../../../../features/blog/lib/generate-post-json-ld";
 import { type Metadata } from "next";
 import { env } from "@/env";
+import { Markdown } from "@/components/markdown-renderer";
 
 export const dynamic = "force-static";
 
@@ -98,7 +99,7 @@ export default async function PostPage({
           </H1>
         </div>
         <MaxWidthWrapper className="flex max-w-7xl flex-col items-start gap-12 lg:flex-row">
-          <div className="max-w-4xl">
+          <div className="w-full max-w-4xl">
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm lg:gap-8">
               <div className="flex items-center gap-x-2 text-foreground">
                 <Avatar
@@ -117,7 +118,7 @@ export default async function PostPage({
               </div>
             </div>
             <div className="mt-8 flex items-center justify-between">
-              <Badge className="scale-125 rounded-full bg-primary-gradient text-gray-800">
+              <Badge className="rounded-full bg-primary-gradient text-gray-800">
                 <Link
                   href={`/blog/tags/${post.tag.slug}`}
                   className="absolute inset-0"
@@ -126,40 +127,11 @@ export default async function PostPage({
                 {post.tag.name}
               </Badge>
             </div>
-            <div className="my-8 space-y-12">
-              <div>
-                <Markdown
-                  components={{
-                    h1: ({ children }) => (
-                      <h1 className="mt-6 text-3xl font-bold text-foreground">
-                        {children}
-                      </h1>
-                    ),
-                    h2: ({ children }) => (
-                      <h2 className="mt-4 text-3xl font-semibold text-foreground">
-                        {children}
-                      </h2>
-                    ),
-                    li: ({ children }) => (
-                      <li className="ml-6 list-disc">{children}</li>
-                    ),
-                    p: ({ children }) => <p className="text-lg">{children}</p>,
-                    img: ({ src }) => (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={src}
-                        className="mx-auto object-cover"
-                        alt="post image"
-                      />
-                    ),
-                  }}
-                >
-                  {post.markdown}
-                </Markdown>
-              </div>
+            <div className="my-8">
+              <Markdown>{post.markdown}</Markdown>
             </div>
           </div>
-          <div className="w-full space-y-4 lg:sticky lg:top-28 lg:mt-20">
+          <div className="space-y-4 lg:sticky lg:top-28 lg:mt-20 lg:w-[500px]">
             <BlogSidebar currentPostSlug={post.slug} />
           </div>
         </MaxWidthWrapper>

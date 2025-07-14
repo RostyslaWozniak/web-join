@@ -11,19 +11,18 @@ import { useForm } from "react-hook-form";
 import { CheckCircle, Edit2, PlayCircle } from "lucide-react";
 import { useContactFormContext } from "@/context/contact-form-context";
 import { Text } from "@/components/ui/typography";
-import { services } from "../service-selection/data";
-import { features } from "../additional-features/data";
+import { services, features } from "../../data";
 import { useEffect, useState, useTransition } from "react";
-import { sendForm } from "./action";
+import { sendForm } from "../../actions/send-form";
 import { toast } from "sonner";
 import Link from "next/link";
-import { FormButton } from "../_components/form-button";
+import { FormButton } from "../form-button";
 
-import PageHeader from "../_components/form-header";
+import PageHeader from "../form-header";
 import {
   exitAnimationWaitInMs,
   FormAnimateWrapper,
-} from "../_components/form-animate-wrapper";
+} from "../form-animate-wrapper";
 import { wait } from "@/lib/utils";
 
 export function SummaryForm() {

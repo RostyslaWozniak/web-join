@@ -1,4 +1,4 @@
-import StepNav from "@/app/(website)/join/_components/step-nav";
+import StepNav from "@/features/join-form/components/step-nav";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import dynamic from "next/dynamic";
 const ContactFormProvider = dynamic(() =>

@@ -1,4 +1,4 @@
-import { ContactMethodForm } from "./contact-method-form";
+import { ContactMethodForm } from "@/features/join-form/components/forms/contact-method.form";
 
 export const dynamic = "force-static";
 

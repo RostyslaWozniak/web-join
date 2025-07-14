@@ -17,17 +17,17 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter, useSearchParams } from "next/navigation";
-import { SelectCard } from "@/app/(website)/join/_components/select-card";
+import { SelectCard } from "@/features/join-form/components/select-card";
 import { useContactFormContext } from "@/context/contact-form-context";
-import { contactMethods } from "./data";
-import { FormButton } from "../_components/form-button";
+import { contactMethods } from "../../data";
+import { FormButton } from "../form-button";
 
-import PageHeader from "../_components/form-header";
+import PageHeader from "../form-header";
 import { ChevronRightIcon } from "lucide-react";
 import {
   exitAnimationWaitInMs,
   FormAnimateWrapper,
-} from "../_components/form-animate-wrapper";
+} from "../form-animate-wrapper";
 import { wait } from "@/lib/utils";
 
 export function ContactMethodForm() {

@@ -1,9 +1,9 @@
-import { posts } from "@/app/(blog)/blog/data/posts";
+import { posts } from "@/features/blog/data/posts";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { H1 } from "@/components/ui/typography";
 import { notFound } from "next/navigation";
-import { tags } from "../../data/tags";
-import { PostCard } from "../../_components/post-card";
+import { tags } from "../../../../../features/blog/data/tags";
+import { PostCard } from "@/features/blog/components/post-card";
 
 export const dynamic = "force-static";
 
