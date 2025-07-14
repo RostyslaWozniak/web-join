@@ -32,10 +32,12 @@ export function SelectCard({
     <div className="relative">
       <div
         className={cn(
-          "relative grid h-full cursor-pointer place-items-center space-y-1 rounded-2xl border-2 bg-background p-4 md:p-6",
+          "relative grid h-full cursor-pointer place-items-center space-y-1 rounded-2xl bg-background p-4 shadow duration-200 hover:shadow-md md:p-6",
           {
-            "border-accent-cyan bg-[#22D3EE10] text-foreground": isSelected,
-            "border-destructive": error,
+            // "border-accent-cyan bg-[#22D3EE10] text-foreground": isSelected,
+            // "border-destructive": error,
+            "bg-[#22D3EE10] text-foreground": isSelected,
+            "shadow-destructive": error,
           },
           className,
         )}
@@ -94,7 +96,7 @@ function SelectCardIfo({
           setOpen(true);
         }}
       >
-        <InfoIcon className="min-h-5 min-w-5 text-gray-500" />
+        <InfoIcon className="min-h-[18px] min-w-[18px] text-gray-500" />
       </Button>
       <DialogWrapper
         isOpen={open}

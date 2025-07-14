@@ -16,9 +16,8 @@ import { useIsMobile } from "@/hooks/use-is-mobile";
 import { toast } from "sonner";
 import { FormButton } from "../_components/form-button";
 import PageHeader from "../_components/form-header";
-import { formAnimationVariants } from "../_components/form-animation-variants";
-import { MotionWrapper } from "@/components/motion-wrapper";
 import { ChevronRightIcon } from "lucide-react";
+import { FormAnimateWrapper } from "../_components/form-animate-wrapper";
 
 export function ServiceSelectionForm() {
   const isMobile = useIsMobile();
@@ -76,12 +75,7 @@ export function ServiceSelectionForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <MotionWrapper
-          animate={"animate"}
-          initial={"initial"}
-          variants={formAnimationVariants}
-          className="space-y-4 md:space-y-8"
-        >
+        <FormAnimateWrapper show={!isPending}>
           <PageHeader
             title="Co Cię interesuje?"
             subtitle="Zaznacz, jakiego rodzaju stronę potrzebujesz. Omówimy wszystko na darmowej konsultacji i rozwieję twoje wątpliwości."
@@ -102,7 +96,7 @@ export function ServiceSelectionForm() {
               ),
             )}
           </div>
-        </MotionWrapper>
+        </FormAnimateWrapper>
         <div className="h-8">
           <FormButton loading={isPending}>
             <span className="text-base">{edit ? "Zapisz" : "Kontynuuj"}</span>{" "}

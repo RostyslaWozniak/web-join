@@ -18,9 +18,9 @@ import { sendForm } from "./action";
 import { toast } from "sonner";
 import Link from "next/link";
 import { FormButton } from "../_components/form-button";
-import { MotionWrapper } from "@/components/motion-wrapper";
-import { formAnimationVariants } from "../_components/form-animation-variants";
+
 import PageHeader from "../_components/form-header";
+import { FormAnimateWrapper } from "../_components/form-animate-wrapper";
 
 export function SummaryForm() {
   const { newContactFormData, resetLocalStorage } = useContactFormContext();
@@ -82,12 +82,7 @@ export function SummaryForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <MotionWrapper
-          animate={"animate"}
-          initial={"initial"}
-          variants={formAnimationVariants}
-          className="space-y-4 md:space-y-8"
-        >
+        <FormAnimateWrapper show={!isPending}>
           <PageHeader
             title="Prawie gotowe!"
             subtitle='Sprawdź swoje wybory i wyślij formularz klikając "Dołącz". To nic nie kosztuje i do niczego Cię nie zobowiązuje. W ciągu 24 godzin skontaktuję się z Tobą, aby omówić szczegóły i zaproponować najlepsze rozwiązanie dla Twojej firmy.'
@@ -115,12 +110,12 @@ export function SummaryForm() {
               ) ?? []
             }
           />
-        </MotionWrapper>
+        </FormAnimateWrapper>
 
         <div className="min-h-8">
           <FormButton loading={isPending}>
             Wyślij
-            <PlayCircle className="ml-2 min-h-7 min-w-7" />
+            <PlayCircle className="ml-2 min-h-6 min-w-6" />
           </FormButton>
         </div>
       </form>

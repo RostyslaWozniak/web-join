@@ -21,10 +21,10 @@ import { SelectCard } from "@/app/(website)/join/_components/select-card";
 import { useContactFormContext } from "@/context/contact-form-context";
 import { contactMethods } from "./data";
 import { FormButton } from "../_components/form-button";
-import { MotionWrapper } from "@/components/motion-wrapper";
-import { formAnimationVariants } from "../_components/form-animation-variants";
+
 import PageHeader from "../_components/form-header";
 import { ChevronRightIcon } from "lucide-react";
+import { FormAnimateWrapper } from "../_components/form-animate-wrapper";
 
 export function ContactMethodForm() {
   const [selectedMethod, setSelectedMethod] = useState<
@@ -69,12 +69,7 @@ export function ContactMethodForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <MotionWrapper
-          animate={"animate"}
-          initial={"initial"}
-          variants={formAnimationVariants}
-          className="space-y-4 md:space-y-8"
-        >
+        <FormAnimateWrapper show={!isPending}>
           <PageHeader
             title="Jak najlepiej się z Tobą skontaktować?"
             subtitle="Wybierz swój preferowany sposób kontaktu – skontaktuję się z Tobą w ciągu 24h, aby odpowiedzieć na Twoje pytania i omówić szczegóły."
@@ -138,7 +133,7 @@ export function ContactMethodForm() {
               )}
             />
           )}
-        </MotionWrapper>
+        </FormAnimateWrapper>
         <div>
           <FormButton loading={isPending}>
             {" "}
