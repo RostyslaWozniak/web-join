@@ -87,7 +87,7 @@ function SelectCardIfo({
       <Button
         size="icon"
         variant="ghost"
-        className="absolute right-0 top-0"
+        className="absolute -right-1 -top-1 p-5"
         type="button"
         onClick={(e) => {
           e.stopPropagation();
@@ -100,6 +100,7 @@ function SelectCardIfo({
         isOpen={open}
         setIsOpen={setOpen}
         title={label}
+        className="space-y-2"
         contentClassName="pb-10"
       >
         {description}

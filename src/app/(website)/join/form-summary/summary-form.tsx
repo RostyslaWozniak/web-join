@@ -8,7 +8,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { CheckCircle, Edit2, Loader2, PlayCircle } from "lucide-react";
+import { CheckCircle, Edit2, PlayCircle } from "lucide-react";
 import { useContactFormContext } from "@/context/contact-form-context";
 import { Text } from "@/components/ui/typography";
 import { services } from "../service-selection/data";
@@ -118,13 +118,9 @@ export function SummaryForm() {
         </MotionWrapper>
 
         <div className="min-h-8">
-          <FormButton disabled={isPending}>
-            {isPending ? (
-              <Loader2 className="mr-2 min-h-7 min-w-7 animate-spin" />
-            ) : (
-              <PlayCircle className="mr-2 min-h-7 min-w-7" />
-            )}
+          <FormButton loading={isPending}>
             Wyślij
+            <PlayCircle className="ml-2 min-h-7 min-w-7" />
           </FormButton>
         </div>
       </form>

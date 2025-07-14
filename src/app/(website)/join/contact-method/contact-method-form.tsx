@@ -14,7 +14,7 @@ import {
   type ContactMethodSchema,
 } from "@/lib/validation/contact-form-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter, useSearchParams } from "next/navigation";
 import { SelectCard } from "@/app/(website)/join/_components/select-card";
@@ -35,6 +35,8 @@ export function ContactMethodForm() {
 
   const { newContactFormData, updateContactForm } = useContactFormContext();
 
+  const [isPending, startTransition] = useTransition();
+
   const router = useRouter();
 
   const form = useForm<ContactMethodSchema>({
@@ -47,8 +49,10 @@ export function ContactMethodForm() {
   });
 
   function onSubmit(values: ContactMethodSchema) {
-    updateContactForm(values);
-    router.push("/join/form-summary");
+    startTransition(() => {
+      updateContactForm(values);
+      router.push("/join/form-summary");
+    });
   }
 
   useEffect(() => {
@@ -136,7 +140,7 @@ export function ContactMethodForm() {
           )}
         </MotionWrapper>
         <div>
-          <FormButton>
+          <FormButton loading={isPending}>
             {" "}
             <span className="text-base">
               {edit ? "Zapisz" : "Kontynuuj"}

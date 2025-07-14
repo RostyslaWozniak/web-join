@@ -11,7 +11,7 @@ import { useForm } from "react-hook-form";
 import { features } from "./data";
 import { SelectCard } from "../_components/select-card";
 import { useContactFormContext } from "@/context/contact-form-context";
-import { useEffect } from "react";
+import { useEffect, useTransition } from "react";
 import { FormButton } from "../_components/form-button";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { formAnimationVariants } from "../_components/form-animation-variants";
@@ -20,10 +20,13 @@ import { ChevronRightIcon } from "lucide-react";
 
 export function AdditionalFaturesForm() {
   const router = useRouter();
+
   const searchParams = useSearchParams();
   const edit = searchParams.get("edit") === "true";
   const { newContactFormData, updateContactForm, dataLoaded } =
     useContactFormContext();
+
+  const [isPending, startTransition] = useTransition();
 
   const form = useForm<AdditionalFeaturesSchema>({
     resolver: zodResolver(additionalFeaturesSchema),
@@ -34,8 +37,10 @@ export function AdditionalFaturesForm() {
   });
 
   function onSubmit(values: AdditionalFeaturesSchema) {
-    updateContactForm(values);
-    router.push(edit ? "/join/form-summary" : "/join/contact-method");
+    startTransition(() => {
+      updateContactForm(values);
+      router.push(edit ? "/join/form-summary" : "/join/contact-method");
+    });
   }
 
   useEffect(() => {
@@ -91,7 +96,7 @@ export function AdditionalFaturesForm() {
           </div>
         </MotionWrapper>
         <div className="min-h-6">
-          <FormButton>
+          <FormButton loading={isPending}>
             {" "}
             <span className="text-base">
               {edit ? "Zapisz" : "Kontynuuj"}

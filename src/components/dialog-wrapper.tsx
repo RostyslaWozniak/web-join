@@ -49,7 +49,7 @@ export const DialogWrapper = ({
       {isMobile ? (
         <Drawer open={isOpen} onOpenChange={setIsOpen} disablePreventScroll>
           <DrawerContent className={cn("px-4", contentClassName)}>
-            <DrawerHeader className="px-0 text-left">
+            <DrawerHeader className="gap-0 px-0 text-left">
               <DrawerTitle className="text-xl">{title}</DrawerTitle>
               <DrawerDescription className="text-base">
                 {description}

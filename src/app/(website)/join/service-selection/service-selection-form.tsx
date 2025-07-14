@@ -11,7 +11,7 @@ import { useForm } from "react-hook-form";
 import { services } from "./data";
 import { SelectCard } from "../_components/select-card";
 import { useContactFormContext } from "@/context/contact-form-context";
-import { useEffect } from "react";
+import { useEffect, useTransition } from "react";
 import { useIsMobile } from "@/hooks/use-is-mobile";
 import { toast } from "sonner";
 import { FormButton } from "../_components/form-button";
@@ -21,15 +21,17 @@ import { MotionWrapper } from "@/components/motion-wrapper";
 import { ChevronRightIcon } from "lucide-react";
 
 export function ServiceSelectionForm() {
+  const isMobile = useIsMobile();
+  const { newContactFormData, updateContactForm, dataLoaded } =
+    useContactFormContext();
   const searchParams = useSearchParams();
   const edit = searchParams.get("edit") === "true";
   const service =
     (searchParams.get("service") as ServiceSelectionSchema["serviceType"]) ??
     undefined;
   const router = useRouter();
-  const isMobile = useIsMobile();
-  const { newContactFormData, updateContactForm, dataLoaded } =
-    useContactFormContext();
+
+  const [isPending, startTransition] = useTransition();
 
   const form = useForm<ServiceSelectionSchema>({
     resolver: zodResolver(serviceSelectionSchema),
@@ -39,8 +41,10 @@ export function ServiceSelectionForm() {
   });
 
   function onSubmit(values: ServiceSelectionSchema) {
-    updateContactForm(values);
-    router.push(edit ? "/join/form-summary" : "/join/additional-features");
+    startTransition(() => {
+      updateContactForm(values);
+      router.push(edit ? "/join/form-summary" : "/join/additional-features");
+    });
   }
 
   useEffect(() => {
@@ -100,11 +104,8 @@ export function ServiceSelectionForm() {
           </div>
         </MotionWrapper>
         <div className="h-8">
-          <FormButton>
-            {" "}
-            <span className="text-base">
-              {edit ? "Zapisz" : "Kontynuuj"}
-            </span>{" "}
+          <FormButton loading={isPending}>
+            <span className="text-base">{edit ? "Zapisz" : "Kontynuuj"}</span>{" "}
             <ChevronRightIcon className="min-h-5 min-w-5" />
           </FormButton>
         </div>
