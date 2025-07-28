@@ -27,9 +27,8 @@ export function SearchPostForm({ q, autoFocus }: SearchPostFormProps) {
     if (!trimSearch.length) return;
 
     startTransition(() => {
-      router.push(`/blog/search?q=${trimSearch}`);
+      router.push(`/blog/search/${trimSearch}`);
     });
-    console.log({ search: trimSearch });
   }
 
   return (

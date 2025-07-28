@@ -5,6 +5,7 @@ import { H1 } from "@/components/ui/typography";
 import { posts } from "@/features/blog/data/posts";
 import { PostCard } from "@/features/blog/components/post-card";
 import { SearchPostForm } from "@/features/blog/components/search-post-form";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 export default async function BlogPage() {
   return (
@@ -23,6 +24,9 @@ export default async function BlogPage() {
         </GridBackground>
       </section>
       <section>
+        <div className="mx-auto max-w-7xl pt-6">
+          <Breadcrumb />
+        </div>
         <div className="mx-auto mt-12 max-w-lg px-4">
           <SearchPostForm autoFocus />
         </div>

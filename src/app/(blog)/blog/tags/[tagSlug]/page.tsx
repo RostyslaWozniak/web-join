@@ -4,6 +4,7 @@ import { H1 } from "@/components/ui/typography";
 import { notFound } from "next/navigation";
 import { tags } from "../../../../../features/blog/data/tags";
 import { PostCard } from "@/features/blog/components/post-card";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 export const dynamic = "force-static";
 
@@ -45,6 +46,9 @@ export default async function TagPage({
       <H1 className="mx-auto mt-12 max-w-sm text-3xl sm:text-center md:max-w-6xl lg:text-5xl">
         {filteredPosts[0]?.tag.title}
       </H1>
+      <div className="mx-auto max-w-7xl pt-6">
+        <Breadcrumb />
+      </div>
       <MaxWidthWrapper>
         <div className="mb-12 grid gap-8 md:grid-cols-3">
           {filteredPosts.map((post) => (

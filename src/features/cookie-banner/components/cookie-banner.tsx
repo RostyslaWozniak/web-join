@@ -241,7 +241,7 @@ export function CookieBanner() {
 
 function PoweredBySection() {
   return (
-    <div className="px-6 pb-4">
+    <div className="px-6 py-4 sm:pt-0">
       <div className="flex justify-center gap-2 text-xs sm:justify-end">
         Powered by{" "}
         <Link

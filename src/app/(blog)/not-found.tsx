@@ -29,6 +29,7 @@ export default function NotFound() {
             <Text variant="muted" size="lg" className="animate-slide-in-blur">
               Strona którą szukasz nie została znaleziona.
             </Text>
+
             <BackButton
               variant={"default"}
               className="h-10 px-8 text-foreground"

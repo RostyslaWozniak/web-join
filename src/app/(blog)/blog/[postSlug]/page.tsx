@@ -14,6 +14,8 @@ import { generatePostJsonLd } from "../../../../features/blog/lib/generate-post-
 import { type Metadata } from "next";
 import { env } from "@/env";
 import { Markdown } from "@/components/markdown-renderer";
+import { estimateReadingTime } from "@/features/blog/lib/estimate-reading-time";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 export const dynamic = "force-static";
 
@@ -98,9 +100,22 @@ export default async function PostPage({
             {post.title}
           </H1>
         </div>
+        <div className="mx-auto max-w-7xl py-6">
+          <Breadcrumb />
+        </div>
         <MaxWidthWrapper className="flex max-w-7xl flex-col items-start gap-12 lg:flex-row">
           <div className="w-full max-w-4xl">
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm lg:gap-8">
+            <div className="flex-grow">
+              <Badge className="relative rounded-full bg-primary-gradient text-gray-800">
+                <Link
+                  href={`/blog/tags/${post.tag.slug}`}
+                  className="absolute inset-0"
+                />
+
+                {post.tag.name}
+              </Badge>
+            </div>
+            <div className="mt-8 flex flex-col items-start justify-start gap-4 text-sm md:flex-row md:items-center lg:gap-8">
               <div className="flex items-center gap-x-2 text-foreground">
                 <Avatar
                   photo={post.author.image}
@@ -110,23 +125,15 @@ export default async function PostPage({
                 {post.author.name}
               </div>
               <div className="flex items-start text-foreground">
-                <CalendarIcon className="mr-2 h-5 w-5" />{" "}
+                <CalendarIcon className="ml-1.5 mr-3.5 h-5 w-5 md:ml-0 md:mr-2" />{" "}
                 {post.createdAt?.toLocaleDateString()}
               </div>
               <div className="flex items-start text-foreground">
-                <ClockIcon className="mr-2 h-5 w-5" /> {post.time} min czytania
+                <ClockIcon className="ml-1.5 mr-3.5 h-5 w-5 md:ml-0 md:mr-2" />{" "}
+                {estimateReadingTime(post.markdown)}
               </div>
             </div>
-            <div className="mt-8 flex items-center justify-between">
-              <Badge className="rounded-full bg-primary-gradient text-gray-800">
-                <Link
-                  href={`/blog/tags/${post.tag.slug}`}
-                  className="absolute inset-0"
-                />
 
-                {post.tag.name}
-              </Badge>
-            </div>
             <div className="my-8">
               <Markdown>{post.markdown}</Markdown>
             </div>

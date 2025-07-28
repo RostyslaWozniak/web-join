@@ -118,6 +118,8 @@
     @apply !bg-background !text-foreground;
   }
 }
-.class {
-  background-color: hsl(0, 100%, 50%);
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
