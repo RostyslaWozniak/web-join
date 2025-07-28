@@ -19,11 +19,13 @@ import {
   Shield,
   BarChart3,
   ArrowLeftIcon,
+  PlayCircleIcon,
 } from "lucide-react";
 import {
   useCookieConsent,
   type CookiePreferences,
 } from "../hooks/use-cookie-consent";
+import Link from "next/link";
 
 export function CookieBanner() {
   const {
@@ -158,7 +160,7 @@ export function CookieBanner() {
               />
             </div> */}
           </CardContent>
-          <CardFooter className="flex flex-col gap-2 sm:flex-row">
+          <CardFooter className="flex flex-col gap-2 py-0 sm:flex-row">
             <Button
               variant="outline"
               onClick={() => setShowCustomize(false)}
@@ -174,6 +176,7 @@ export function CookieBanner() {
               Zapisz preferencje
             </Button>
           </CardFooter>
+          <PoweredBySection />
         </Card>
       </div>
     );
@@ -208,7 +211,7 @@ export function CookieBanner() {
             więcej w naszej polityce prywatności.
           </CardDescription>
         </CardHeader>
-        <CardFooter className="flex flex-col gap-2 pt-0 sm:flex-row">
+        <CardFooter className="flex flex-col gap-2 py-0 sm:flex-row">
           <Button
             variant="outline"
             onClick={rejectAll}
@@ -230,7 +233,28 @@ export function CookieBanner() {
             Akceptuj wszystko
           </Button>
         </CardFooter>
+        <PoweredBySection />
       </Card>
+    </div>
+  );
+}
+
+function PoweredBySection() {
+  return (
+    <div className="px-6 pb-4">
+      <div className="flex justify-center gap-2 text-xs sm:justify-end">
+        Powered by{" "}
+        <Link
+          aria-label="link to webjoin.pl"
+          href="https://www.webjoin.pl"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex text-xs text-cyan-700 transition-colors hover:text-cyan-500 hover:underline"
+        >
+          <PlayCircleIcon size={16} className="mr-1" />
+          WebJoin
+        </Link>
+      </div>
     </div>
   );
 }

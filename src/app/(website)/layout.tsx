@@ -43,9 +43,9 @@ export const metadata: Metadata = {
 const jsonLd: WithContext<WebSite> = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  url: "./",
+  url: env.NEXT_PUBLIC_BASE_URL,
   name: "Web Join",
-  image: "./opengraph-image.jpg",
+  image: `${env.NEXT_PUBLIC_BASE_URL}/opengraph-image.jpg`,
   description: "Tworzę strony internetowe dla twojego biznesu",
 };
 

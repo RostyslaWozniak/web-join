@@ -14,7 +14,7 @@ import { MotionWrapper } from "../motion-wrapper";
 const projects = [
   {
     title: "Swoje Ściany",
-    href: "https://swojesciany.vercel.app/",
+    href: "https://www.swoje-sciany.pl/",
     image1:
       "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vyqaQgCnHcw0fJdlM8hvzP2TEymuCLpqOaSkW",
     image2:
