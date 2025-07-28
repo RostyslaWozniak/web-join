@@ -37,7 +37,7 @@ export function SearchPostForm({ q, autoFocus }: SearchPostFormProps) {
         <Input
           autoFocus={autoFocus}
           placeholder="Wyszukaj post"
-          className="h-10 border-0 bg-white pr-24 text-sm shadow-md sm:h-10"
+          className="h-10 border-0 bg-white pr-24 text-base shadow-md sm:h-10"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
