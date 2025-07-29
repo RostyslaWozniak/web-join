@@ -76,45 +76,49 @@ export function PricingSection() {
 
           <div className="grid gap-8 lg:grid-cols-3">
             {pricing.map(
-              ({ id, name, price, pricePerMonth, benefits, styles }, i) => (
-                <Card
-                  key={id}
-                  className={cn("relative flex flex-col bg-white shadow-lg", {
-                    "border-accent-cyan sm:scale-105": i === 1,
-                  })}
-                >
-                  {i === 1 && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 transform">
-                      <Badge className="bg-accent-cyan text-white">
-                        Najpopularniejszy
+              ({ id, name, price, pricePerMonth, benefits, styles }, i) => {
+                const isMostPopular = i === 4;
+                return (
+                  <Card
+                    key={id}
+                    className={cn("relative flex flex-col bg-white shadow-lg", {
+                      "border-accent-cyan sm:scale-105": isMostPopular,
+                      "scale-105": i === 1,
+                    })}
+                  >
+                    {isMostPopular && (
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 transform">
+                        <Badge className="bg-accent-cyan text-white">
+                          Najpopularniejszy
+                        </Badge>
+                      </div>
+                    )}
+                    <CardHeader className="text-center">
+                      <Badge className={cn(styles, "mx-auto mb-4 uppercase")}>
+                        {name}
                       </Badge>
-                    </div>
-                  )}
-                  <CardHeader className="text-center">
-                    <Badge className={cn(styles, "mx-auto mb-4 uppercase")}>
-                      {name}
-                    </Badge>
-                    <CardTitle className="text-2xl">
-                      wdrożenie od {price} zł
-                    </CardTitle>
-                    <CardDescription className="text-lg">
-                      + {pricePerMonth} zł/mies
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <ul className="flex-1 space-y-3">
-                      {benefits.map((benefit) => (
-                        <li key={benefit} className="flex items-start gap-2">
-                          <span className="flex h-[1lh] items-center">
-                            <CheckCircleIcon className="h-4 w-4 text-emerald-500" />
-                          </span>
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              ),
+                      <CardTitle className="text-2xl">
+                        wdrożenie od {price} zł
+                      </CardTitle>
+                      <CardDescription className="text-lg">
+                        + {pricePerMonth} zł/mies
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <ul className="flex-1 space-y-3">
+                        {benefits.map((benefit) => (
+                          <li key={benefit} className="flex items-start gap-2">
+                            <span className="flex h-[1lh] items-center">
+                              <CheckCircleIcon className="h-4 w-4 text-emerald-500" />
+                            </span>
+                            {benefit}
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                );
+              },
             )}
           </div>
 
