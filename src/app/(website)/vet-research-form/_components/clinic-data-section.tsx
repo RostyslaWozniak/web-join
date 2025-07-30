@@ -104,7 +104,7 @@ export function ClinicDataSection({ control }: ClinicDataSectionProps) {
                       <SelectValue placeholder="Wybierz wielkość" />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
+                  <SelectContent className="border-muted bg-background">
                     <SelectItem value="mala">Mała (1-2 weterynarzy)</SelectItem>
                     <SelectItem value="srednia">
                       Średnia (3-5 weterynarzy)

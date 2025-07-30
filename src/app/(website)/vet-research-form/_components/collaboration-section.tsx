@@ -33,7 +33,7 @@ export function CollaborationSection({ control }: CollaborationSectionProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>7. Zainteresowanie współpracą</CardTitle>
+        <CardTitle>5. Zainteresowanie współpracą</CardTitle>
         <CardDescription>
           Preferencje kontaktowe i źródła rekomendacji
         </CardDescription>
@@ -51,7 +51,7 @@ export function CollaborationSection({ control }: CollaborationSectionProps) {
                     <SelectValue placeholder="Wybierz preferowany kontakt" />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent>
+                <SelectContent className="border-muted bg-background">
                   <SelectItem value="telefon">Telefon</SelectItem>
                   <SelectItem value="email">Email</SelectItem>
                   <SelectItem value="wizyta">Wizyta osobista</SelectItem>

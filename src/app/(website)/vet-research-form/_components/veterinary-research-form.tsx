@@ -9,11 +9,8 @@ import { ClinicDataSection } from "./clinic-data-section";
 import { WebsiteSection } from "./website-section";
 import { MarketingSection } from "./marketing-section";
 import { BookingSystemSection } from "./booking-system-section";
-import { ProblemsNeedsSection } from "./problems-needs-section";
-import { BudgetDecisionsSection } from "./budget-decisions-section";
 import { CollaborationSection } from "./collaboration-section";
-import { ObservationsSection } from "./observations-section";
-import { EvaluationSection } from "./evaluation-section";
+
 import { useTransition } from "react";
 import { sendVetSearchForm } from "../actions";
 import { Loader } from "lucide-react";
@@ -53,31 +50,11 @@ export default function VeterinaryResearchForm() {
         hasNoShowProblem: false,
         sendsReminders: false,
       },
-      problemsNeeds: {
-        mainProblems: "",
-        painPoints: [],
-        wishlist: [],
-      },
-      budgetDecisions: {
-        budgetRange: "",
-        decisionMaker: "",
-        techOpenness: [3],
-      },
-      collaboration: {
-        contactPreference: "",
-        email: "",
-        phone: "",
-      },
-      observations: {
-        notes: "",
-        followUpActions: [],
-      },
-      evaluation: {
-        priorityLevel: "",
-        contractValue: "",
-        decisionTimeframe: "",
-        productInsights: "",
-      },
+      // problemsNeeds: {
+      //   mainProblems: "",
+      //   painPoints: [],
+      //   wishlist: [],
+      // },
     },
   });
 
@@ -99,10 +76,10 @@ export default function VeterinaryResearchForm() {
     <div className="container mx-auto max-w-4xl px-4 py-8">
       <div className="mb-8">
         <h1 className="mb-2 text-center text-3xl font-bold">
-          Badanie rynku - Przychodnię weterynaryjne
+          Przychodnię weterynaryjne
         </h1>
         <p className="text-center text-muted-foreground">
-          Formularz wywiadu z właścicielami przychodni weterynaryjnych
+          Formularz spotkania z właścicielami przychodni weterynaryjnych
         </p>
       </div>
 
@@ -112,11 +89,8 @@ export default function VeterinaryResearchForm() {
           <WebsiteSection control={form.control} />
           <MarketingSection control={form.control} />
           <BookingSystemSection control={form.control} />
-          <ProblemsNeedsSection control={form.control} />
-          <BudgetDecisionsSection control={form.control} />
+          {/* <ProblemsNeedsSection control={form.control} /> */}
           <CollaborationSection control={form.control} />
-          <ObservationsSection control={form.control} />
-          <EvaluationSection control={form.control} />
 
           <div className="flex justify-center pt-6">
             <Button

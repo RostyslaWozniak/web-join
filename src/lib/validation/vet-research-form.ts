@@ -82,11 +82,8 @@ export const formSchema = z.object({
   website: websiteSchema,
   marketing: marketingSchema,
   bookingSystem: bookingSystemSchema,
-  problemsNeeds: problemsNeedsSchema,
-  budgetDecisions: budgetDecisionsSchema,
+  // problemsNeeds: problemsNeedsSchema,
   collaboration: collaborationSchema,
-  observations: observationsSchema,
-  evaluation: evaluationSchema,
 });
 
 // Type definitions
