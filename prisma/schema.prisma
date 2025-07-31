@@ -27,3 +27,11 @@ model Subscribers {
 
     @@map("subscribers")
 }
+
+model SearchTerm {
+    id        String   @id @default(uuid())
+    term      String   @unique // The actual search term, must be unique
+    count     Int      @default(1) // How many times it has been searched
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}

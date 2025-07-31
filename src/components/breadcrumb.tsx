@@ -12,6 +12,7 @@ import {
 import { usePathname } from "next/navigation";
 import { Fragment } from "react";
 import { HomeIcon } from "lucide-react";
+import { unslugify } from "@/lib/utils/slugify";
 
 export function Breadcrumb() {
   const pathname = usePathname();
@@ -23,7 +24,7 @@ export function Breadcrumb() {
   const crumbs = pathname
     .split("/")
     .filter((crumb) => crumb !== "")
-    .map((crumb) => decodeURIComponent(crumb));
+    .map((crumb) => unslugify(crumb));
 
   return (
     <ShadcnBreadcrumb className="scrollbar-hide overflow-x-auto">

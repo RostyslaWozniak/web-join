@@ -8,3 +8,9 @@ export function slugify(text: string) {
     .replace(/\s+/g, "-") // Replace spaces with -
     .replace(/-+/g, "-"); // Collapse dashes
 }
+
+export function unslugify(slug: string): string {
+  if (!slug) return "";
+  return slug.replace(/-/g, " "); // Replace hyphens with spaces
+  // .replace(/\b\w/g, (char) => char.toUpperCase()); // Capitalize first letter of each word (optional, but nice)
+}
