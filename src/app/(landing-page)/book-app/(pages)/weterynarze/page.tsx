@@ -96,13 +96,12 @@ function HeroSection() {
             </div>
             <div className="relative hidden lg:block">
               <Image
-                src="https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vdGNjITgHqMbFvtDTpP9nw0uE6AQGyiaKVrx1"
+                src="https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vGv9hFviLmG6Bl5ZSRD14bKQUPw0uxyIj2VEM"
                 alt="System BookApp dla przychodni weterynaryjnej"
                 width={800}
                 height={500}
-                className="rounded-2xl opacity-90 shadow-2xl"
+                className="rounded-2xl opacity-90"
               />
-              <div className="absolute inset-0 bg-cyan-400/5"></div>
             </div>
           </div>
         </MaxWidthWrapper>
@@ -116,7 +115,7 @@ function WhySection() {
     <section className="bg-white py-20">
       <div className="container mx-auto px-4">
         <div className="mb-16 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
+          <h2 className="mb-4 text-3xl font-bold text-cyan-900 lg:text-4xl">
             Dlaczego Twoja przychodnia potrzebuje nowoczesnej strony?
           </h2>
           <p className="mx-auto max-w-3xl text-xl text-gray-600">
@@ -184,7 +183,7 @@ function FeaturesSection() {
     <section className="bg-gray-50 py-20">
       <div className="container mx-auto px-4">
         <div className="mb-16 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
+          <h2 className="mb-4 text-3xl font-bold text-cyan-900 lg:text-4xl">
             Co zyskujesz z naszą stroną i systemem BookApp?
           </h2>
           <p className="mx-auto max-w-3xl text-xl text-gray-600">
@@ -208,13 +207,13 @@ function FeaturesSection() {
               </div>
             ))}
           </div>
-          <div className="_lg:block relative hidden">
+          <div className="relative">
             <Image
-              src="https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vdGNjITgHqMbFvtDTpP9nw0uE6AQGyiaKVrx1"
+              src="https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vFUcNU5oBYGM0x51Xkr9t2iosJVAzI8RjdTOb"
               alt="Interfejs systemu BookApp"
-              width={600}
+              width={700}
               height={500}
-              className="rounded-2xl shadow-xl"
+              className="rounded-2xl shadow-md"
             />
           </div>
         </div>
@@ -227,7 +226,7 @@ function HowItWorksSection() {
     <section className="bg-white py-20">
       <div className="container mx-auto px-4">
         <div className="mb-16 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
+          <h2 className="mb-4 text-3xl font-bold text-cyan-900 lg:text-4xl">
             Jak to działa?
           </h2>
           <p className="text-xl text-gray-600">Prosty proces w 3 krokach</p>
@@ -256,7 +255,7 @@ function HowItWorksSection() {
               description:
                 "Lekarze widzą swoje wizyty i mogą elastycznie dostosować grafik.",
               image:
-                "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vgUG57SBDHwFPNTsfQxucJh5ly7VItpMW4Bzn",
+                "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vDYUg4gImIwaJ1zTQ5WiArgde3NYZcoP2M9hR",
             },
           ].map((step, index) => (
             <Card
@@ -294,7 +293,7 @@ function PricingSection() {
     <section className="bg-gray-50 py-20">
       <div className="container mx-auto px-4">
         <div className="mb-16 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
+          <h2 className="mb-4 text-3xl font-bold text-cyan-900 lg:text-4xl">
             Cennik i oferta
           </h2>
           <p className="text-xl text-gray-600">
@@ -304,13 +303,13 @@ function PricingSection() {
         <Card className="mx-auto max-w-2xl border-0 shadow-xl">
           <CardContent className="p-8">
             <div className="mb-8 text-center">
-              <h3 className="mb-2 text-2xl font-bold text-gray-900">
+              <h3 className="mb-2 text-2xl font-bold text-cyan-900">
                 Strona + BookApp dla przychodni weterynaryjnej
               </h3>
               <p className="mb-6 text-gray-600">
                 Gotowy do wdrożenia system rezerwacji i strona wizytówka
               </p>
-              <div className="mb-2 text-4xl font-bold text-emerald-600">
+              <div className="mb-2 text-4xl font-bold text-cyan-700">
                 wdrożenie od 3900 zł
               </div>
               <p className="text-gray-600">Czas realizacji: 14–21 dni</p>

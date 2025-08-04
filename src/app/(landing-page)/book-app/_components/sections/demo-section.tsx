@@ -11,7 +11,7 @@ export function DemoSection({
     <section id="demo" className="bg-emerald-50 py-20">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="mb-6 text-3xl font-bold text-gray-900 lg:text-4xl">
+          <h2 className="mb-6 text-3xl font-bold text-cyan-900 lg:text-4xl">
             🎯 Zobacz demo w akcji
           </h2>
           <p className="mb-8 text-xl text-gray-600">

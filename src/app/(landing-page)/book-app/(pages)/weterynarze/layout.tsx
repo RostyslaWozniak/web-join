@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     countryName: "Poland",
     type: "website",
     images: {
-      url: "/images/book-app/book-app-hero-2.png",
+      url: "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vGv9hFviLmG6Bl5ZSRD14bKQUPw0uxyIj2VEM",
       width: 1200,
       height: 630,
       alt: "System rezerwacji online i nowoczesna strona internetowa dla weterynarzy",
@@ -85,7 +85,8 @@ const jsonLd: WithContext<WebSite> = {
   "@type": "WebSite",
   url: "./",
   name: "Strona i system rezerwacji online dla przychodni weterynaryjnych - BookApp",
-  image: "./opengraph-image.jpg",
+  image:
+    "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vGv9hFviLmG6Bl5ZSRD14bKQUPw0uxyIj2VEM",
   description:
     "BookApp to nowoczesna strona internetowa z systemem rezerwacji wizyt dla przychodni weterynaryjnych. Ułatw klientom umawianie wizyt online 24/7 i zwiększ widoczność w Google.",
   publisher: {

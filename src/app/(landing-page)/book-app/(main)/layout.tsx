@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     countryName: "Poland",
     type: "website",
     images: {
-      url: "/images/book-app/book-app-hero-2.png",
+      url: "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vcrmwkf42Ceq1RWILG3fczmyvMhgQnO4VHDwx",
       width: 1200,
       height: 630,
       alt: "System rezerwacji online i nowoczesna strona internetowa",
@@ -56,7 +56,8 @@ const jsonLd: WithContext<WebSite> = {
   "@type": "WebSite",
   url: "./",
   name: "System rezerwacji online dla lokalnych firm usługowych - BookApp",
-  image: "./opengraph-image.jpg",
+  image:
+    "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vcrmwkf42Ceq1RWILG3fczmyvMhgQnO4VHDwx",
   description:
     "BookApp to nowoczesna strona internetowa z wbudowanym systemem rezerwacji, stworzona specjalnie dla lokalnych firm usługowych.",
   publisher: {
