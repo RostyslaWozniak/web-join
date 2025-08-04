@@ -1,0 +1,116 @@
+import "@/styles/globals.css";
+
+import { type Metadata } from "next";
+import { Header } from "@/components/header";
+import { Providers } from "@/components/providers";
+import { Footer } from "@/components/footer";
+import { Toaster } from "@/components/ui/sonner";
+import { env } from "@/env";
+import type { WebSite, WithContext } from "schema-dts";
+
+import { MobileNav } from "@/components/mobile-nav";
+import {
+  GemIcon,
+  HandshakeIcon,
+  MonitorCogIcon,
+  ShieldQuestionIcon,
+} from "lucide-react";
+const servicePath = "weterynarze";
+
+const nav = [
+  {
+    label: "Dla czego?",
+    href: `/book-app/${servicePath}#dla-czego`,
+    icon: ShieldQuestionIcon,
+  },
+  {
+    label: "Co zyskujesz",
+    href: `/book-app/${servicePath}#co-zyskujesz`,
+    icon: HandshakeIcon,
+  },
+  {
+    label: "Jak to działa",
+    href: `/book-app/${servicePath}#jak-to-dziala`,
+    icon: MonitorCogIcon,
+  },
+  {
+    label: "Cena",
+    href: `/book-app/${servicePath}#ceny`,
+    icon: GemIcon,
+  },
+];
+
+export const metadata: Metadata = {
+  metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
+  title:
+    "Strona i system rezerwacji online dla przychodni weterynaryjnych - BookApp | Web Join",
+  description:
+    "BookApp to nowoczesna strona internetowa z systemem rezerwacji wizyt dla przychodni weterynaryjnych. Ułatw klientom umawianie wizyt online 24/7 i zwiększ widoczność w Google.",
+  icons: [{ rel: "icon", url: "/icon.ico" }],
+  alternates: {
+    languages: {
+      pl: "./",
+    },
+    canonical: "./",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  authors: {
+    name: "Rostyslav Vozniak",
+    url: "https://www.rostyslavvozniak.com/",
+  },
+  openGraph: {
+    url: "./",
+    title:
+      "Strona i system rezerwacji online dla przychodni weterynaryjnych - BookApp | Web Join",
+    description:
+      "BookApp to nowoczesna strona internetowa z systemem rezerwacji wizyt dla przychodni weterynaryjnych. Ułatw klientom umawianie wizyt online 24/7 i zwiększ widoczność w Google.",
+    siteName: "Web Join",
+    locale: "pl-PL",
+    countryName: "Poland",
+    type: "website",
+    images: {
+      url: "/images/book-app/book-app-hero-2.png",
+      width: 1200,
+      height: 630,
+      alt: "System rezerwacji online i nowoczesna strona internetowa dla weterynarzy",
+    },
+  },
+};
+
+const jsonLd: WithContext<WebSite> = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  url: "./",
+  name: "Strona i system rezerwacji online dla przychodni weterynaryjnych - BookApp",
+  image: "./opengraph-image.jpg",
+  description:
+    "BookApp to nowoczesna strona internetowa z systemem rezerwacji wizyt dla przychodni weterynaryjnych. Ułatw klientom umawianie wizyt online 24/7 i zwiększ widoczność w Google.",
+  publisher: {
+    "@type": "Organization",
+    name: "Web Join",
+    url: `${env.NEXT_PUBLIC_BASE_URL}`,
+  },
+};
+
+export default function LandingPageLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Providers>
+        <Header navigation={nav} />
+        <main className="flex-grow">{children}</main>
+        <Footer />
+        <MobileNav navigation={nav} />
+        <Toaster />
+      </Providers>
+    </>
+  );
+}

@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { env } from "@/env";
 import type { WebSite, WithContext } from "schema-dts";
-import { bookAppNav } from "./data/book-app-nav";
+import { bookAppNav } from "../data/book-app-nav";
 import { MobileNav } from "@/components/mobile-nav";
 
 export const metadata: Metadata = {
