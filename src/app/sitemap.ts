@@ -3,8 +3,10 @@ import { type MetadataRoute } from "next";
 import { posts } from "../features/blog/data/posts";
 import { tags } from "../features/blog/data/tags";
 import { db } from "@/server/db";
+import { problemsData } from "@/data/problems";
 
-export const revalidate = 86400; // 1 day
+// export const revalidate = 86400; // 1 day
+export const revalidate = 60;
 
 const landingPages = [
   { id: 1, href: "/book-app" },
@@ -23,6 +25,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const searchTerms = await db.searchTerm.findMany({
+    where: {
+      resultLenght: {
+        gt: 0,
+      },
+    },
     select: {
       term: true,
     },
@@ -39,6 +46,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 1,
   }));
 
+  const problemsPagesSitemap = problemsData.map(({ slug }) => ({
+    url: `${env.NEXT_PUBLIC_BASE_URL}/problemy/${slug}`,
+    lastModified: new Date(),
+    priority: 0.6,
+  }));
+
   return [
     {
       url: `${env.NEXT_PUBLIC_BASE_URL}`,
@@ -52,5 +65,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...postsSitemap,
     ...tagsSitemap,
     ...termsSitemap,
+    ...problemsPagesSitemap,
   ];
 }

@@ -11,6 +11,7 @@ import { unslugify } from "@/lib/utils/slugify";
 import { cache } from "react";
 import { type Metadata } from "next";
 import { env } from "@/env";
+import { getFilteredPosts } from "@/features/blog/lib/get-filtered-posts";
 
 export const generateMetadata = async ({
   params,
@@ -66,6 +67,8 @@ export default async function BlogSearchPage({
 
   const unslugedString = unslugify(searchQuery);
 
+  console.log({ unslugedString });
+
   const filteredPosts = getFilteredPosts(posts, unslugedString);
 
   const title =
@@ -111,33 +114,3 @@ export default async function BlogSearchPage({
     </div>
   );
 }
-
-function _getFilteredPosts(
-  posts: Post[], // Assuming Post type has title, description, markdown
-  searchQuery: string,
-): Post[] {
-  const normalizedSearchQuery = searchQuery.toLocaleLowerCase().trim();
-  const keywords = normalizedSearchQuery.split(/\s+/).filter(Boolean);
-
-  if (keywords.length === 0) {
-    return posts;
-  }
-
-  return posts.filter((post) => {
-    const postTitle = post.title.toLocaleLowerCase();
-    const postDescription = post.description.toLocaleLowerCase();
-    const postMarkdown = post.markdown.toLocaleLowerCase();
-
-    const allKeywordsMatch = keywords.every((keyword) => {
-      return (
-        postTitle.includes(keyword) ||
-        postDescription.includes(keyword) ||
-        postMarkdown.includes(keyword)
-      );
-    });
-
-    return allKeywordsMatch;
-  });
-}
-
-const getFilteredPosts = cache(_getFilteredPosts);
