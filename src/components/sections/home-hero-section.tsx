@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export function HomeHeroSection() {
   return (
-    <section id="start">
+    <section id="start" className="overflow-hidden">
       <GridBackground className="flex items-center justify-center">
         <MaxWidthWrapper className="relative flex min-h-[60vh] flex-col items-center justify-center py-8 sm:gap-y-4 md:py-16 lg:min-h-[70vh]">
           <div className="relative z-10 flex max-w-6xl flex-grow flex-col items-center justify-center sm:flex-none">

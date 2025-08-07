@@ -9,6 +9,8 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: [
           "/polityka-prywatnosci",
+          "/join",
+          "/join/*",
           "/blog/search",
           "/blog/search/*",
           "/blog/tags",
