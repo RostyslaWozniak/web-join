@@ -1,9 +1,11 @@
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { Logo } from "@/components/icons";
-import { GradientButton } from "@/components/ui/gradient-button";
 import { Nav } from "./nav";
 import Link from "next/link";
 import { BurgerNav } from "@/features/burger-nav";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "../ui/button";
+import { ArrowRightIcon } from "lucide-react";
 
 export function Header({
   navigation,
@@ -33,10 +35,14 @@ export function Header({
 
 function DefaultActionButton() {
   return (
-    <Link href="/join">
-      <GradientButton size="default" textSize="text-base" showIcon outline>
-        Dołącz
-      </GradientButton>
+    <Link
+      href="/kontakt"
+      className={cn(
+        buttonVariants({ size: "sm", variant: "outline" }),
+        "border-cyan-600",
+      )}
+    >
+      Darmowa konsultacja <ArrowRightIcon />
     </Link>
   );
 }

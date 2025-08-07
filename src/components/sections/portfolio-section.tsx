@@ -24,7 +24,7 @@ const projects = [
   },
   {
     title: "Eleven Flower Studio",
-    href: "https://eleven-studio.pl",
+    href: "https://www.eleven-studio.pl",
     image1:
       "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5v2SyRXVdXAGgflnWhTOrC3m0sScIpKe6JYE8Q",
     image2:
@@ -50,7 +50,7 @@ export function PortfolioSection() {
       <MaxWidthWrapper className="flex flex-col items-center gap-y-12 overflow-x-hidden px-0 py-16 md:gap-y-14 md:py-20">
         <div className="flex flex-col items-center gap-y-4 px-2.5">
           <H2>Portfolio</H2>
-          <Text size="subtitle" className="max-w-2xl md:text-center">
+          <Text size="subtitle" className="max-w-2xl !text-center">
             Każdy projekt to unikalne rozwiązanie stworzone z myślą o celach
             mojego klienta.
           </Text>
@@ -84,7 +84,7 @@ export function PortfolioSection() {
                   height={400}
                   alt="Eleven Flower Studio"
                 />
-                <div className="group absolute bottom-0 left-8 right-8 z-50 flex h-28 items-center justify-between gap-3 rounded-2xl bg-card-gradient p-4 md:left-12 md:right-12">
+                <div className="group absolute bottom-0 left-8 right-8 z-50 flex h-28 items-center justify-between gap-3 rounded-2xl bg-card-gradient p-4 shadow-lg md:left-12 md:right-12">
                   <div className="space-y-2">
                     <h3 className="text-nowrap text-xl">{title}</h3>
                     <div className="flex items-center gap-4">

@@ -1,4 +1,4 @@
-import { CirclePlayIcon, HomeIcon, NotebookIcon, StarIcon } from "lucide-react";
+import { HomeIcon, NotebookIcon, PhoneIcon, StarIcon } from "lucide-react";
 
 export const burgerNavigation = [
   {
@@ -21,9 +21,9 @@ export const burgerNavigation = [
     areaLabel: "Blog o stronach internetowych dla lokalnych firm",
   },
   {
-    label: "Dołącz",
-    href: "/join",
-    icon: CirclePlayIcon,
-    areaLabel: "Dołącz do świata internetu",
+    label: "Darmowa konsultacja",
+    href: "/kontakt",
+    icon: PhoneIcon,
+    areaLabel: "Zapytaj o dawmową konsultacje",
   },
 ];

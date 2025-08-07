@@ -42,10 +42,9 @@ const nav = [
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
-  title:
-    "Strona i system rezerwacji online dla przychodni weterynaryjnych - BookApp | Web Join",
+  title: "System rezerwacji online dla przychodni weterynaryjnych - BookApp",
   description:
-    "BookApp to nowoczesna strona internetowa z systemem rezerwacji wizyt dla przychodni weterynaryjnych. Ułatw klientom umawianie wizyt online 24/7 i zwiększ widoczność w Google.",
+    "BookApp to nowoczesna strona internetowa z systemem rezerwacji wizyt online dla przychodni weterynaryjnych.",
   icons: [{ rel: "icon", url: "/icon.ico" }],
   alternates: {
     languages: {
@@ -63,10 +62,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: "./",
-    title:
-      "Strona i system rezerwacji online dla przychodni weterynaryjnych - BookApp | Web Join",
+    title: "System rezerwacji online dla przychodni weterynaryjnych - BookApp",
     description:
-      "BookApp to nowoczesna strona internetowa z systemem rezerwacji wizyt dla przychodni weterynaryjnych. Ułatw klientom umawianie wizyt online 24/7 i zwiększ widoczność w Google.",
+      "BookApp to nowoczesna strona internetowa z systemem rezerwacji wizyt online dla przychodni weterynaryjnych.",
     siteName: "Web Join",
     locale: "pl-PL",
     countryName: "Poland",

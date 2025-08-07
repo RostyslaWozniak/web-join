@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { PlayIcon, type LucideIcon } from "lucide-react";
+import { PhoneIcon, type LucideIcon } from "lucide-react";
 import Link from "next/link";
 
 export function MobileNav({
@@ -26,12 +26,12 @@ export function MobileNav({
             ),
         )}
         {actionButton && (
-          <Link href="/join">
+          <Link href={`tel:+48798582849`}>
             <div className="flex flex-col items-center gap-y-0.5 pb-3">
               <div className="rounded-full bg-primary-gradient p-2 dark:bg-popover">
-                <PlayIcon className="translate-x-[1px] text-white" />
+                <PhoneIcon className="translate-x-[1px] text-white" />
               </div>
-              <div className="text-xs">Dołącz</div>
+              <div className="text-center text-xs">Zadzwoń</div>
             </div>
           </Link>
         )}

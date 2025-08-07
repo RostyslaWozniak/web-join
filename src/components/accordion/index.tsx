@@ -16,14 +16,14 @@ type AccorderonProps = {
 export function Accordion({ questions, className }: AccorderonProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   return (
-    <div className={cn("grid w-full gap-6", className)}>
+    <div className={cn("grid w-full gap-4 md:gap-6", className)}>
       {questions.map(({ question, answer }, index) => (
         <MotionWrapper
           key={question}
           transition={{ duration: 1 }}
           viewport={{ once: true, margin: "0px 0px -100px 0px" }}
         >
-          <CardWrapper className="relative flex items-center justify-between rounded-2xl">
+          <CardWrapper className="relative flex items-center justify-between rounded-2xl p-4 shadow">
             <Text size="lg" className="flex-grow">
               {question}
             </Text>

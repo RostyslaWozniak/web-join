@@ -267,18 +267,18 @@ function HowItWorksSection() {
                   <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-cyan-600 text-xl font-bold text-white">
                     {step.step}
                   </div>
-                  <Image
-                    src={step.image || "/placeholder.svg"}
-                    alt={step.title}
-                    width={400}
-                    height={300}
-                    className="mx-auto mb-4 rounded-lg"
-                  />
                 </div>
                 <h3 className="mb-2 text-xl font-semibold text-gray-900">
                   {step.title}
                 </h3>
-                <p className="text-gray-600">{step.description}</p>
+                <p className="mb-6 text-gray-600">{step.description}</p>
+                <Image
+                  src={step.image || "/placeholder.svg"}
+                  alt={step.title}
+                  width={400}
+                  height={300}
+                  className="mx-auto mb-4 rounded-lg"
+                />
               </CardContent>
               <div className="absolute inset-0 bg-card-gradient opacity-40"></div>
             </Card>
@@ -312,7 +312,6 @@ function PricingSection() {
               <div className="mb-2 text-4xl font-bold text-cyan-700">
                 wdrożenie od 3900 zł
               </div>
-              <p className="text-gray-600">Czas realizacji: 14–21 dni</p>
             </div>
             <div className="mb-8 space-y-4">
               {[

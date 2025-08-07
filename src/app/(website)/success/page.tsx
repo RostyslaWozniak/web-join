@@ -7,8 +7,26 @@ import Link from "next/link";
 import { GridBackground } from "@/components/grid-background";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { AnimatedText } from "@/components/animations/animated-text";
+import { db } from "@/server/db";
+import { notFound } from "next/navigation";
 
-export default function ThankYouPage() {
+export default async function ThankYouPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ id: string | null }>;
+}) {
+  const { id } = await searchParams;
+  if (id == null) return notFound();
+
+  const existingEmailId = await db.contactForm
+    .findUnique({
+      where: {
+        emailId: id,
+      },
+    })
+    .catch(() => notFound());
+
+  if (!existingEmailId) return notFound();
   return (
     <div className="w-full">
       <section>

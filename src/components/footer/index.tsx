@@ -11,7 +11,7 @@ export const navigation = [
 
 export function Footer() {
   return (
-    <footer className="w-screen px-4 pb-24 pt-12 text-card-foreground md:pb-8 xl:px-6">
+    <footer className="w-screen border-t px-4 pb-24 pt-12 text-card-foreground md:pb-8 xl:px-6">
       <div className="mx-auto flex max-w-[1400px] flex-col gap-8 md:flex-row md:items-start md:justify-between">
         <div>
           <SubscribeForm />

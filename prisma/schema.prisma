@@ -12,8 +12,9 @@ model ContactForm {
     id        String   @id @default(uuid())
     email     String?
     phone     String?
-    service   String
-    features  String?
+    consent   Boolean  @default(false)
+    emailId   String   @unique() @map("email_id")
+    message   String?
     createdAt DateTime @default(now()) @map("created_at")
 
     @@map("contact_form")

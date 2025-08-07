@@ -2,59 +2,73 @@
 
 import { env } from "@/env";
 import { resend } from "@/lib/services/resend";
-// import { env } from "@/env";
-// import { sendSms } from "@/lib/services/twilio";
-import { contactFormSchema } from "@/lib/validation/contact-form-schema";
+import {
+  contactFormSchema,
+  type ContactFormSchema,
+} from "@/lib/validation/contact-form-schema";
 import { db } from "@/server/db";
 
-export async function sendForm(formData: unknown) {
-  const { success, data } = contactFormSchema.safeParse(formData);
-  if (!success) {
+export async function sendForm(
+  formData: ContactFormSchema,
+): Promise<
+  { data: { id: string }; error: null } | { data: null; error: string }
+> {
+  const { success: parseSuccess, data: parsedData } =
+    contactFormSchema.safeParse(formData);
+  if (!parseSuccess || !parsedData) {
     return {
-      success: false,
-      message: "Błędnie wypełniony formularz. Spróbuj ponownie.",
+      data: null,
+      error: "Błędnie wypełniony formularz. Spróbuj ponownie.",
     };
   }
   try {
-    await db.contactForm.create({
-      data: {
-        email: data.email,
-        phone: data.phone,
-        service: data.serviceType,
-        features: data.additionalFeatures.join(", "),
-      },
-    });
-    if (data.email) {
+    if (parsedData.email) {
       const existingEmail = await db.subscribers.findUnique({
         where: {
-          email: data.email,
+          email: parsedData.email,
         },
       });
       if (!existingEmail) {
         await db.subscribers.create({
           data: {
-            email: data.email,
+            email: parsedData.email,
           },
         });
       }
     }
 
-    await resend.emails.send({
+    const { data: emailData, error: emailError } = await resend.emails.send({
       from: `Web Join <${env.RESEND_FROM_NAME}@${env.RESEND_DOMAIN}>`,
       to: "rostyslav.vozniak.dev@gmail.com",
       subject: "Oferta Web Join",
-      text: `Nowa oferta Web Join. Dane kontaktowe: ${JSON.stringify(data)}`,
+      text: `Nowa oferta Web Join. Dane kontaktowe: ${JSON.stringify(parsedData)}`,
+    });
+    if (emailError || !emailData) {
+      return {
+        data: null,
+        error: "Nie udało się wysłać formularz. Spróbuj ponownie.",
+      };
+    }
+
+    await db.contactForm.create({
+      data: {
+        email: parsedData.email,
+        phone: parsedData.phone,
+        message: JSON.stringify(parsedData),
+        consent: true,
+        emailId: emailData.id,
+      },
     });
 
     return {
-      success: true,
-      message: "Twoja wiadomość została wysłana.",
+      data: emailData,
+      error: null,
     };
   } catch (err) {
     console.log(err);
     return {
-      success: false,
-      message: "Coś poszło nie tak. Spróbuj wysłać ponownie.",
+      data: null,
+      error: "Coś poszło nie tak. Spróbuj wysłać ponownie.",
     };
   }
 }

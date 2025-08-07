@@ -20,15 +20,15 @@ export function Logo({ className }: LogoProps) {
       >
         <g clipPath="url(#clip0_13_722)">
           <path
+            stroke="var(--accent-cyan)"
             d="M15.9752 3.43024L2.52246 18.5L15.9752 33.5698"
-            stroke="#31D6DE"
             strokeWidth="4"
             strokeLinecap="square"
             strokeLinejoin="round"
           />
           <path
+            stroke="var(--accent-emerald)"
             d="M149.975 33.5698L164.269 18.5L149.975 3.43024"
-            stroke="#31DEAB"
             strokeWidth="4"
             strokeLinecap="square"
             strokeLinejoin="round"
@@ -47,8 +47,8 @@ export function Logo({ className }: LogoProps) {
             y2="18.5"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#31DEAB" />
-            <stop offset="1" stopColor="#31D6DE" />
+            <stop stopColor="var(--accent-emerald)" />
+            <stop offset="1" stopColor="var(--accent-cyan)" />
           </linearGradient>
           <clipPath id="clip0_13_722">
             <rect

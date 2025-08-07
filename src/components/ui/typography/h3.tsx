@@ -11,7 +11,7 @@ export function H3({
   return (
     <h3
       className={cn(
-        "text-2xl font-semibold text-foreground sm:text-3xl",
+        "text-xl font-semibold text-foreground sm:text-2xl",
         className,
       )}
     >

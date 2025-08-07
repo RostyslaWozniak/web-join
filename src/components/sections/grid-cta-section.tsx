@@ -24,9 +24,9 @@ export function GridCTASection() {
               </div>
             </H2>
           </div>
-          <Link href="/join" className="w-full sm:w-auto">
+          <Link href="/kontakt" className="w-full sm:w-auto">
             <GradientButton size="default" showIcon>
-              Dołącz
+              Wyślij zapytanie
             </GradientButton>
           </Link>
         </MaxWidthWrapper>

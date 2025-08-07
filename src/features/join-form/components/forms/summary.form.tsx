@@ -47,22 +47,21 @@ export function SummaryForm() {
     }
     try {
       startTransition(async () => {
-        const res = await sendForm(values);
+        const { data, error } = await sendForm(values);
 
-        if (!res.success) {
+        if (error || !data) {
           startTransition(() => {
-            toast.error(res.message);
+            toast.error(error);
             router.push("/");
           });
+          return;
         }
-        if (res.success) {
-          setIsFormVisible(false);
-          await wait(exitAnimationWaitInMs);
-          startTransition(() => {
-            resetLocalStorage();
-            router.push("/success");
-          });
-        }
+        setIsFormVisible(false);
+        await wait(exitAnimationWaitInMs);
+        startTransition(() => {
+          resetLocalStorage();
+          router.push(`/success?id=${data.id}`);
+        });
       });
     } catch {
       toast.error("Coś poszło nie tak. Spróbuj wysłać ponownie.");

@@ -58,9 +58,7 @@ const faqs = [
 
 - **Kodowanie** – Przenoszę projekt na działającą stronę (**Next.js, Tailwind**).
 
-- **Publikacja** – Umieszczam stronę na serwerze i dbam, by działała idealnie.
-
- **Wszystko zajmuje od 5 do 14 dni – szybciej niż na WordPressie!**`,
+- **Publikacja** – Umieszczam stronę na serwerze i dbam, by działała idealnie.`,
   },
   {
     question: "Ile kosztuje strona?",
