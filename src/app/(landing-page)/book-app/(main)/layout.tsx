@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     url: "./",
     title:
-      "System rezerwacji online dla lokalnych firm usługowych - BookApp | Web Join",
+      "System do Rezerwacji Wizyt Online dla Twojego Biznesu - BookApp | Web Join",
     description:
       "BookApp to nowoczesna strona internetowa z wbudowanym systemem rezerwacji, stworzona specjalnie dla lokalnych firm usługowych.",
     siteName: "Web Join",
@@ -55,7 +55,7 @@ const jsonLd: WithContext<WebSite> = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   url: "./",
-  name: "System rezerwacji online dla lokalnych firm usługowych - BookApp",
+  name: "System do Rezerwacji Wizyt Online dla Twojego Biznesu - BookApp",
   image:
     "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vcrmwkf42Ceq1RWILG3fczmyvMhgQnO4VHDwx",
   description:
