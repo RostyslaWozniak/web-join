@@ -1,11 +1,20 @@
 import StepNav from "@/features/join-form/components/step-nav";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import dynamic from "next/dynamic";
+import { type Metadata } from "next";
 const ContactFormProvider = dynamic(() =>
   import("@/context/contact-form-context").then(
     (mod) => mod.ContactFormProvider,
   ),
 );
+
+export const metadata: Metadata = {
+  title: "Join Form - Web Join",
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default function JoinLayout({
   children,
