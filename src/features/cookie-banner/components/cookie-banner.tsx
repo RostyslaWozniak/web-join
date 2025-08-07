@@ -213,7 +213,7 @@ export function CookieBanner() {
         </CardHeader>
         <CardFooter className="flex flex-col gap-2 py-0 sm:flex-row">
           <Button
-            size="md"
+            size="sm"
             variant="outline"
             onClick={rejectAll}
             className="order-2 w-full sm:order-1 sm:w-auto"
@@ -222,14 +222,14 @@ export function CookieBanner() {
           </Button>
           <Button
             variant="outline"
-            size="md"
+            size="sm"
             onClick={() => setShowCustomize(true)}
             className="order-3 w-full sm:order-2 sm:w-auto"
           >
             Dostosuj
           </Button>
           <Button
-            size="md"
+            size="sm"
             onClick={acceptAll}
             className="order-1 w-full border border-transparent text-white sm:order-3 sm:w-auto"
           >
