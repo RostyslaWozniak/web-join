@@ -9,6 +9,15 @@ import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { AnimatedText } from "@/components/animations/animated-text";
 import { db } from "@/server/db";
 import { notFound } from "next/navigation";
+import { type Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dziękuję za kontakt! Twoja wiadomość została wysłana.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default async function ThankYouPage({
   searchParams,

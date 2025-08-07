@@ -5,14 +5,13 @@ import { notFound } from "next/navigation";
 import { tags } from "../../../../../features/blog/data/tags";
 import { PostCard } from "@/features/blog/components/post-card";
 import { Breadcrumb } from "@/components/breadcrumb";
-
-export const dynamic = "force-static";
+import { type Metadata } from "next";
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ tagSlug: string }>;
-}) {
+}): Promise<Metadata> {
   const { tagSlug } = await params;
   const tag = Object.values(tags).find((tag) => tag.slug === tagSlug);
 
@@ -27,6 +26,10 @@ export async function generateMetadata({
     twitter: {
       title: tag.title,
       description: tag.description,
+    },
+    robots: {
+      index: false,
+      follow: true,
     },
   };
 }

@@ -6,6 +6,14 @@ import { EmptyResult } from "@/components/empty-result";
 import { FrownIcon } from "lucide-react";
 import { SearchPostForm } from "@/features/blog/components/search-post-form";
 import { Breadcrumb } from "@/components/breadcrumb";
+import { type Metadata } from "next";
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default async function BlogSearchPage() {
   return (

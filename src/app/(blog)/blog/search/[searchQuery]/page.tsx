@@ -1,6 +1,6 @@
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { H1 } from "@/components/ui/typography";
-import { type Post, posts } from "@/features/blog/data/posts";
+import { posts } from "@/features/blog/data/posts";
 import { PostCard } from "@/features/blog/components/post-card";
 import { EmptyResult } from "@/components/empty-result";
 import { FrownIcon } from "lucide-react";
@@ -8,7 +8,6 @@ import { SearchPostForm } from "@/features/blog/components/search-post-form";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { db } from "@/server/db";
 import { unslugify } from "@/lib/utils/slugify";
-import { cache } from "react";
 import { type Metadata } from "next";
 import { env } from "@/env";
 import { getFilteredPosts } from "@/features/blog/lib/get-filtered-posts";
@@ -41,6 +40,10 @@ export const generateMetadata = async ({
       description: title,
       url: `${env.NEXT_PUBLIC_BASE_URL}/blog/search/${searchQuery}`,
       images: ["./opengraph-image.jpg"],
+    },
+    robots: {
+      index: false,
+      follow: true,
     },
   };
 };

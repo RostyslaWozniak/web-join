@@ -7,7 +7,16 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/polityka-prywatnosci"],
+        disallow: [
+          "/polityka-prywatnosci",
+          "/blog/search",
+          "/blog/search/*",
+          "/blog/tags",
+          "/blog/tags/*",
+          "/success",
+          "/api",
+          "/api/*",
+        ],
       },
     ],
     sitemap: `${env.NEXT_PUBLIC_BASE_URL}/sitemap.xml`,

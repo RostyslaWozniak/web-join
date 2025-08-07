@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import { Markdown } from "@/components/markdown-renderer";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { problemsData } from "@/data/problems";
-import { Metadata } from "next";
+import { type Metadata } from "next";
 
 import { notFound } from "next/navigation";
 import { cache } from "react";
