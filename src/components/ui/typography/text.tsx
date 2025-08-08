@@ -13,7 +13,7 @@ const textVariants = cva("leading-7 text-pretty font-manrope ", {
     },
     variant: {
       default: "text-foreground",
-      muted: "text-muted-foreground font-semibold",
+      muted: "text-cyan-900 font-semibold",
     },
   },
   defaultVariants: {

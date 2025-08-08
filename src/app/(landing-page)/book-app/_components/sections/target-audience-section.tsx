@@ -54,7 +54,14 @@ export function TargetAudienceSection() {
                       <IconComponent className="h-6 w-6" />
                     </div>
 
-                    <h4 className="mb-3 font-semibold leading-tight text-foreground">
+                    <h4
+                      className={cn(
+                        "mb-3 font-semibold leading-tight text-foreground",
+                        {
+                          "group-hover:underline": business.href,
+                        },
+                      )}
+                    >
                       {business.title}
                     </h4>
 
@@ -70,7 +77,7 @@ export function TargetAudienceSection() {
                             "absolute inset-0 min-h-full min-w-full",
                           )}
                         />
-                        <ArrowUpRightIcon className="absolute right-4 top-4 opacity-0 duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:opacity-100" />
+                        <ArrowUpRightIcon className="absolute right-4 top-4 duration-300 group-hover:opacity-100 md:opacity-0 md:group-hover:-translate-y-1 md:group-hover:translate-x-1" />
                       </>
                     )}
                   </CardContent>

@@ -3,7 +3,9 @@ import VeterinaryResearchForm from "./_components/veterinary-research-form";
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 
-const ALLOWED_IPS = ["88.156.143.29", "::1"];
+const ALLOWED_IPS = ["88.156.143.29"];
+
+export const dynamic = "forse-dynamic";
 
 function getClientIP(headersList: Headers): string {
   const forwarded = headersList.get("x-forwarded-for");

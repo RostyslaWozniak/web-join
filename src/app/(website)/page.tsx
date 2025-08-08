@@ -13,7 +13,6 @@ import { cn } from "@/lib/utils";
 
 import { problemsData } from "@/data/problems";
 import {
-  ArrowRightIcon,
   ArrowUpRightIcon,
   Clock10Icon,
   PhoneIcon,
@@ -81,10 +80,12 @@ function IsYourWebsiteBad() {
                         >
                           <Icon className="h-6 w-6" />
                         </div>
-                        <ArrowRightIcon className="duration-200 group-hover:translate-x-1" />
+                        <ArrowUpRightIcon className="duration-200 group-hover:-translate-y-1 group-hover:translate-x-1 md:opacity-0 md:group-hover:opacity-100" />
                       </div>
 
-                      <H3 className="text-start">{title}</H3>
+                      <H3 className="text-start group-hover:underline">
+                        {title}
+                      </H3>
 
                       <p className="flex-grow text-sm leading-relaxed text-gray-600">
                         {content}

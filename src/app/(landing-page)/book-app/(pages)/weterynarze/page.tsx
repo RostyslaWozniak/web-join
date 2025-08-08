@@ -73,7 +73,7 @@ function HeroSection() {
                   widoczność w Google i zyskaj nowych klientów.
                 </Text>
               </div>
-              <div className="mx-auto flex flex-col gap-4 sm:w-min sm:flex-row sm:justify-center">
+              <div className="mx-auto flex flex-col gap-4 sm:mx-0 sm:w-min sm:flex-row sm:justify-center">
                 <AccessibleLink
                   href="/kontakt#form"
                   aria-label="Umów darmową prezentację"

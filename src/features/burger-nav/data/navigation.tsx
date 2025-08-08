@@ -21,7 +21,7 @@ export const burgerNavigation = [
     areaLabel: "Blog o stronach internetowych dla lokalnych firm",
   },
   {
-    label: "Darmowa konsultacja",
+    label: "Kontakt",
     href: "/kontakt",
     icon: PhoneIcon,
     areaLabel: "Zapytaj o dawmową konsultacje",

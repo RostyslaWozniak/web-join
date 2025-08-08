@@ -1,8 +1,8 @@
 "use client";
 
+import { AccessibleLink } from "@/components/accesible-link";
 import { cn } from "@/lib/utils";
 import { type LucideIcon } from "lucide-react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 type BurgerNavItemProps = {
@@ -21,17 +21,18 @@ export function BurgerNavItem({
   const pathname = usePathname();
   const isActiveLink = pathname === href;
   return (
-    <Link
+    <AccessibleLink
       href={href}
       aria-label={areaLabel}
-      className={cn("flex items-end gap-x-4 tracking-widest", {
-        "text-accent-cyan": isActiveLink,
-        "-mx-8 -my-2 items-center rounded-full bg-primary-gradient py-2 pl-8 font-bold text-foreground text-white":
-          href === "/join",
-      })}
+      className={cn(
+        "flex min-h-14 w-full items-end gap-x-4 px-8 text-lg tracking-widest",
+        {
+          "text-accent-cyan": isActiveLink,
+        },
+      )}
     >
       <Icon size={32} />
       {children}
-    </Link>
+    </AccessibleLink>
   );
 }

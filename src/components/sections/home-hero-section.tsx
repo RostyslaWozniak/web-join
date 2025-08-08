@@ -21,9 +21,9 @@ export function HomeHeroSection() {
             </H1>
 
             <Text
-              size="subtitle"
               variant="muted"
-              className="mb-3 max-w-4xl text-base tracking-[1.5px] sm:text-center sm:text-lg"
+              size="subtitle"
+              className="mb-3 max-w-4xl text-lg leading-relaxed sm:text-center"
             >
               Rozwijasz firmę – ja zadbam o technologię. Tworzę szybkie,
               bezpieczne i skuteczne strony, które napędzają sprzedaż{" "}
@@ -38,17 +38,17 @@ export function HomeHeroSection() {
               <GradientButton showIcon>Wyślij zapytanie</GradientButton>
             </AccessibleLink>
             <div className="flex flex-col items-start justify-center gap-x-14 gap-y-4 sm:flex-row sm:flex-wrap sm:items-center sm:pt-12">
-              <div className="flex items-center gap-x-2 text-base sm:text-lg">
+              <div className="flex items-center gap-x-2 text-base tracking-widest">
                 <ZapIcon className="stroke-accent-lime" /> Szybkie ładowanie
               </div>
-              <div className="flex items-center gap-x-2 text-base sm:text-lg">
+              <div className="flex items-center gap-x-2 text-base tracking-widest">
                 <LockIcon className="stroke-accent-green" />
                 Bezpieczeństwo
               </div>
-              <div className="flex items-center gap-x-2 text-base sm:text-lg">
+              <div className="flex items-center gap-x-2 text-base tracking-widest">
                 <SparklesIcon className="stroke-accent-cyan" /> Modern UX
               </div>
-              <div className="flex items-center gap-x-2 text-base sm:text-lg">
+              <div className="flex items-center gap-x-2 text-base tracking-widest">
                 <SearchIcon className="stroke-accent-green" /> SEO
               </div>
             </div>
