@@ -3,7 +3,7 @@ import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { H1, Text } from "@/components/ui/typography";
 import { LockIcon, SearchIcon, SparklesIcon, ZapIcon } from "lucide-react";
 import { GradientButton } from "../ui/gradient-button";
-import Link from "next/link";
+import { AccessibleLink } from "../accesible-link";
 
 export function HomeHeroSection() {
   return (
@@ -23,7 +23,7 @@ export function HomeHeroSection() {
             <Text
               size="subtitle"
               variant="muted"
-              className="mb-3 max-w-4xl text-lg tracking-[1.5px] sm:text-center"
+              className="mb-3 max-w-4xl text-base tracking-[1.5px] sm:text-center sm:text-lg"
             >
               Rozwijasz firmę – ja zadbam o technologię. Tworzę szybkie,
               bezpieczne i skuteczne strony, które napędzają sprzedaż{" "}
@@ -31,11 +31,12 @@ export function HomeHeroSection() {
             </Text>
           </div>
           <div className="relative z-10 flex w-full flex-col-reverse gap-y-3 sm:flex-col">
-            <Link href="/kontakt" className="mx-auto w-full sm:w-auto">
-              <GradientButton size="default" showIcon>
-                Wyślij zapytanie
-              </GradientButton>
-            </Link>
+            <AccessibleLink
+              href="/kontakt"
+              aria-label="Przejdź do strony kontakt"
+            >
+              <GradientButton showIcon>Wyślij zapytanie</GradientButton>
+            </AccessibleLink>
             <div className="flex flex-col items-start justify-center gap-x-14 gap-y-4 sm:flex-row sm:flex-wrap sm:items-center sm:pt-12">
               <div className="flex items-center gap-x-2 text-base sm:text-lg">
                 <ZapIcon className="stroke-accent-lime" /> Szybkie ładowanie

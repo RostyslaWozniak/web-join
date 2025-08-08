@@ -3,8 +3,8 @@ import { ArrowUpRight } from "lucide-react";
 import { H2 } from "../ui/typography";
 import { posts } from "@/features/blog/data/posts";
 import { PostCard } from "@/features/blog/components/post-card";
-import Link from "next/link";
 import { GradientButton } from "../ui/gradient-button";
+import { AccessibleLink } from "../accesible-link";
 
 export default function BlogPreviewSection() {
   return (
@@ -15,7 +15,7 @@ export default function BlogPreviewSection() {
             📝 Z bloga
           </Badge>
 
-          <H2 className="l mb-4">Wskazówki dla lokalnych firm</H2>
+          <H2 className="mb-4">Wskazówki dla lokalnych firm</H2>
 
           <p className="mx-auto max-w-3xl text-lg text-gray-600">
             Dowiedz się, jak zdobywać więcej klientów, budować markę online i
@@ -35,13 +35,13 @@ export default function BlogPreviewSection() {
         </div>
 
         <div className="text-center">
-          <Link href="/blog" className="w-full md:w-auto">
-            <GradientButton size="default">
+          <AccessibleLink href="/blog" aria-label="Przejdź do blogu">
+            <GradientButton>
               Zobacz więcej <ArrowUpRight className="ml-2 h-4 w-4" />
             </GradientButton>
-          </Link>
+          </AccessibleLink>
 
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-gray-700">
             Nowe artykuły co tydzień • Praktyczne porady • Bezpłatne zasoby
           </p>
         </div>

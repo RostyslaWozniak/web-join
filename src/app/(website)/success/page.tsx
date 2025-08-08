@@ -106,7 +106,7 @@ export default async function ThankYouPage({
         </div>
         <div className="mt-12 flex justify-center">
           <Link href="/" className="w-full sm:w-auto">
-            <GradientButton className="mt-8 gap-2" size="default">
+            <GradientButton className="mt-8 gap-2">
               Powrót na główną
             </GradientButton>
           </Link>

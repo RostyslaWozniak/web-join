@@ -27,11 +27,16 @@ export function PostCard({ post }: { post: Post }) {
       <Badge className="absolute right-4 top-4 z-10 rounded-full bg-white">
         <Link
           href={`/blog/tags/${post.tag.slug}`}
-          className="absolute inset-0"
+          className="absolute inset-0 min-h-[44px] min-w-[44px]"
+          aria-label={`Zobacz wszystkie posty pod tagiem ${post.tag.name}`}
         />
         {post.tag.name}
       </Badge>
-      <Link href={`/blog/${post.slug}`} className="absolute inset-0" />
+      <Link
+        href={`/blog/${post.slug}`}
+        className="absolute inset-0 min-h-[44px] min-w-[44px]"
+        aria-label={`Zobacz cały post: ${post.title}`}
+      />
     </CardWrapper>
   );
 }

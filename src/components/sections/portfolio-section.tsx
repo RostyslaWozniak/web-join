@@ -3,13 +3,13 @@ import { MaxWidthWrapper } from "../max-width-wrapper";
 import { H2, Text } from "../ui/typography";
 import { Badge } from "../ui/badge";
 import { PlayCircle } from "lucide-react";
-import Link from "next/link";
 import {
   SwojeScianyLogo,
   ElevenStudioLogo,
   SeasonChaiIcon,
 } from "@/components/icons";
 import { MotionWrapper } from "../motion-wrapper";
+import { AccessibleLink } from "../accesible-link";
 
 const projects = [
   {
@@ -92,16 +92,15 @@ export function PortfolioSection() {
                       <Text size="lg" className="group-hover:underline">
                         Demo
                       </Text>
-                      <Link
+                      <AccessibleLink
                         href={href}
                         target="_blank"
-                        aria-label="przejdz do strony Eleven Flower Studio"
-                      >
-                        <span className="absolute inset-0" />
-                      </Link>
+                        aria-label={`Przejdź do strony ${title}`}
+                        className="absolute inset-0 min-w-full"
+                      />
                     </div>
                   </div>
-                  <div className="scale-75">
+                  <div className="-z-10 scale-75">
                     <Logo />
                   </div>
                 </div>

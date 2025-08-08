@@ -17,7 +17,6 @@ export function FormButton({
       type="submit"
       size="default"
       className="fixed bottom-6 left-3 right-3 w-auto py-3 sm:absolute sm:bottom-0 sm:left-auto sm:right-0 sm:w-min sm:px-6"
-      textSize="text-base"
     >
       {loading && <Loader2 className="mr-2 size-5 animate-spin" />}
       {children}

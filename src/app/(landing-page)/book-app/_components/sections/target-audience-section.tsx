@@ -1,10 +1,10 @@
+import { AccessibleLink } from "@/components/accesible-link";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
-import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { H2, H3 } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 import {
-  ArrowRight,
+  ArrowUpRightIcon,
   BriefcaseIcon,
   CarIcon,
   DumbbellIcon,
@@ -14,7 +14,6 @@ import {
   StethoscopeIcon,
   UsersIcon,
 } from "lucide-react";
-import Link from "next/link";
 
 export function TargetAudienceSection() {
   return (
@@ -45,7 +44,7 @@ export function TargetAudienceSection() {
                   key={index}
                   className={cn(
                     business.color,
-                    "relative bg-white shadow-md transition-all duration-300 hover:shadow-lg",
+                    "group relative border-gray-300 bg-white/80 shadow-xl backdrop-blur-sm",
                   )}
                 >
                   <CardContent className="p-6">
@@ -64,15 +63,14 @@ export function TargetAudienceSection() {
                     </p>
                     {business.href && (
                       <>
-                        <Link
+                        <AccessibleLink
                           href={business.href}
-                          aria-label="przejdz do podstrony weterynarze"
+                          aria-label="Przejdź do podstrony weterynarze"
                           className={cn(
-                            "absolute inset-0",
-                            buttonVariants({ variant: "link" }),
+                            "absolute inset-0 min-h-full min-w-full",
                           )}
                         />
-                        <ArrowRight className="absolute right-4 top-4" />
+                        <ArrowUpRightIcon className="absolute right-4 top-4 opacity-0 duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:opacity-100" />
                       </>
                     )}
                   </CardContent>

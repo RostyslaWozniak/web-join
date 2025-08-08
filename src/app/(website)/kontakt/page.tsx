@@ -38,8 +38,8 @@ export default function ContactPage() {
             <Link
               href="/kontakt#form"
               className={cn(
-                buttonVariants({ variant: "outline", size: "md" }),
-                "h-11 w-full bg-background sm:w-auto lg:hidden",
+                buttonVariants({ variant: "outline" }),
+                "w-full bg-background sm:w-auto lg:hidden",
               )}
             >
               Wypełnij formularz <ArrowDownIcon />

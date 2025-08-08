@@ -1,9 +1,9 @@
-import Link from "next/link";
 import { GridBackground } from "../grid-background";
 import { MaxWidthWrapper } from "../max-width-wrapper";
 import { FlipWords } from "../ui/flip-words";
 import { GradientButton } from "../ui/gradient-button";
 import { H2 } from "../ui/typography";
+import { AccessibleLink } from "../accesible-link";
 
 const words = ["landing page", "website", "e-commerce", "blog", "konsultacja"];
 
@@ -24,11 +24,12 @@ export function GridCTASection() {
               </div>
             </H2>
           </div>
-          <Link href="/kontakt" className="w-full sm:w-auto">
-            <GradientButton size="default" showIcon>
-              Wyślij zapytanie
-            </GradientButton>
-          </Link>
+          <AccessibleLink
+            href="/kontakt"
+            aria-label="Przejdź do strony kontakt"
+          >
+            <GradientButton showIcon>Wyślij zapytanie</GradientButton>
+          </AccessibleLink>
         </MaxWidthWrapper>
       </GridBackground>
     </section>

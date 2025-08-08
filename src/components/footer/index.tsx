@@ -1,12 +1,12 @@
-import Link from "next/link";
 import { SubscribeForm } from "./subscribe-form";
 import { FacebookIcon, MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
+import { AccessibleLink } from "../accesible-link";
 
 export const navigation = [
-  { name: "Start", href: "/" },
-  { name: "Usługi", href: "/#uslugi" },
-  { name: "Portfolio", href: "/#portfolio" },
-  { name: "FAQ", href: "/#faq" },
+  { name: "Strona główna", href: "/", ariaLabel: "strony głównej" },
+  { name: "Usługi", href: "/#uslugi", ariaLabel: "usług" },
+  { name: "Portfolio", href: "/#portfolio", ariaLabel: "portfolio" },
+  { name: "FAQ", href: "/#faq", ariaLabel: "najczęsciej zadawanych pytań" },
 ];
 
 export function Footer() {
@@ -17,47 +17,49 @@ export function Footer() {
           <SubscribeForm />
         </div>
 
-        <div className="space-y-4">
+        <div>
           <h2 className="text-lg font-semibold">Linki</h2>
-          <div className="flex items-start gap-x-4">
-            {navigation.map(({ href, name }) => (
-              <Link
+          <div className="flex flex-col items-start gap-x-3 text-start">
+            {navigation.map(({ href, name, ariaLabel }) => (
+              <AccessibleLink
                 key={href}
                 href={href}
-                className="capitalize hover:underline"
+                aria-label={`Przejdź do ${ariaLabel}`}
+                className="w-min px-2 capitalize hover:underline sm:mx-0"
               >
                 {name}
-              </Link>
+              </AccessibleLink>
             ))}
           </div>
         </div>
         <div>
-          <h4 className="mb-4 text-lg font-semibold">Kontakt</h4>
+          <h2 className="mb-4 text-lg font-semibold">Kontakt</h2>
           <div className="space-y-2">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 px-2">
               <PhoneIcon className="h-4 w-4" />
               <span>+48 123 456 789</span>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 px-2">
               <MailIcon className="h-4 w-4" />
               <span>kontakt@webjoin.pl</span>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 px-2">
               <MapPinIcon className="h-4 w-4" />
               <span>Warszawa, Polska</span>
             </div>
           </div>
         </div>
-        <div className="space-y-4">
+        <div>
           <h2 className="text-lg font-semibold">Social media</h2>
-          <div className="flex items-center gap-4">
-            <Link
+          <div className="flex">
+            <AccessibleLink
               href="https://www.facebook.com/webjoinpl"
               target="_blank"
-              aria-label="facebook"
+              aria-label="Przejdź do facebooka"
+              className="w-min capitalize hover:underline sm:mx-0"
             >
               <FacebookIcon />
-            </Link>
+            </AccessibleLink>
           </div>
         </div>
       </div>
@@ -65,9 +67,13 @@ export function Footer() {
         <span>
           &copy; {new Date().getFullYear()}. Wszystkie prawa zastrzeżone
         </span>
-        <Link href="/polityka-prywatnosci" className="hover:underline">
+        <AccessibleLink
+          href="/polityka-prywatnosci"
+          className="hover:underline sm:mx-0"
+          aria-label="Przejdź do polityki prywatności"
+        >
           Polityka prywatności
-        </Link>
+        </AccessibleLink>
       </div>
     </footer>
   );

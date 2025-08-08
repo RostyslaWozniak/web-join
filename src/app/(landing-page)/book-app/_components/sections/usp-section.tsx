@@ -104,7 +104,12 @@ function CardItem({
   style,
 }: Omit<(typeof sectionData)[number], "id">) {
   return (
-    <Card className={cn("h-full", style)}>
+    <Card
+      className={cn(
+        style,
+        "h-full border-gray-300 bg-white/80 shadow-xl backdrop-blur-sm",
+      )}
+    >
       <CardContent className="p-6">
         <Icon className="mb-4 h-8 w-8" />
         <h3 className="mb-2 font-semibold text-gray-600">{title}</h3>

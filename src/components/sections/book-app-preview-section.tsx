@@ -6,10 +6,10 @@ import {
   SearchIcon,
   StarIcon,
 } from "lucide-react";
-import Link from "next/link";
 import { GradientButton } from "../ui/gradient-button";
 import { Badge } from "../ui/badge";
 import { MotionWrapper } from "../motion-wrapper";
+import { AccessibleLink } from "../accesible-link";
 
 export function BookAppPreviewSection() {
   return (
@@ -114,13 +114,16 @@ export function BookAppPreviewSection() {
         </MotionWrapper>
 
         <div className="text-center">
-          <Link href="/book-app" className="w-full md:w-auto">
-            <GradientButton size="default">
+          <AccessibleLink
+            href="/book-app"
+            aria-label="Przejdź do strony book app"
+          >
+            <GradientButton>
               Zobacz więcej <ArrowUpRight className="ml-2 h-4 w-4" />
             </GradientButton>
-          </Link>
+          </AccessibleLink>
 
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-gray-700">
             Bezpłatna prezentacja • Bez zobowiązań
           </p>
         </div>

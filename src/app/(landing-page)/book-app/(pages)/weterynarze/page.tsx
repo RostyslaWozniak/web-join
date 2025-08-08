@@ -15,9 +15,10 @@ import { CTASection } from "../../_components/sections/cta-section";
 import { DemoSection } from "../../_components/sections/demo-section";
 import { GridBackground } from "@/components/grid-background";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
-import Link from "next/link";
 import { GradientButton } from "@/components/ui/gradient-button";
 import BlogPreviewSection from "@/components/sections/blog-preview-section";
+import { H1, Text } from "@/components/ui/typography";
+import { AccessibleLink } from "@/components/accesible-link";
 
 export default function VeterinaryLanding() {
   return (
@@ -38,7 +39,7 @@ export default function VeterinaryLanding() {
         <PricingSection />
       </div>
       <CTASection
-        scheduleHref="/join/service-selection?service=book-app"
+        scheduleHref="/kontakt#form"
         demoHref="https://vet-app-demo.vercel.app"
       />
       <BlogPreviewSection />
@@ -53,48 +54,48 @@ function HeroSection() {
         <MaxWidthWrapper>
           <div className="relative grid items-center gap-12 lg:grid-cols-2">
             <div className="space-y-8">
-              <div className="space-y-4">
+              <div className="max-w-4xl space-y-4">
                 <Badge className="mb-4 rounded-full bg-card-gradient text-emerald-800">
                   Nowoczesne rozwiązania dla weterynarii
                 </Badge>
-                <h1 className="text-4xl font-bold leading-tight text-foreground lg:text-6xl">
+                <H1 className="text-4xl font-bold leading-tight text-foreground lg:text-6xl">
                   Szybka i nowoczesna strona internetowa dla Twojej{" "}
                   <span className="text-cyan-500">
                     przychodni weterynaryjnej
                   </span>
-                </h1>
-                <p className="text-xl leading-relaxed">
+                </H1>
+                <Text
+                  variant="muted"
+                  size="subtitle"
+                  className="leading-relaxed"
+                >
                   System rezerwacji wizyt online, który działa 24/7. Zwiększ
                   widoczność w Google i zyskaj nowych klientów.
-                </p>
+                </Text>
               </div>
-              <div className="flex flex-col gap-4 sm:w-auto sm:flex-row sm:justify-start">
-                <Link
+              <div className="mx-auto flex flex-col gap-4 sm:w-min sm:flex-row sm:justify-center">
+                <AccessibleLink
+                  href="/kontakt#form"
+                  aria-label="Umów darmową prezentację"
+                >
+                  <GradientButton>
+                    <CalendarIcon className="mr-2 h-5 w-5" />
+                    Umów się na prezentację
+                  </GradientButton>
+                </AccessibleLink>
+                <AccessibleLink
                   href="https://vet-app-demo.vercel.app/"
                   target="_blank"
-                  className="w-full md:w-auto"
+                  aria-label="Przejdź do demo"
                 >
-                  <GradientButton size="default">
-                    <ExternalLinkIcon className="mr-2 h-5 w-5" />
+                  <GradientButton outline>
                     Zobacz demo
+                    <ExternalLinkIcon className="ml-2 h-5 w-5 text-accent-cyan" />
                   </GradientButton>
-                </Link>
-                <Link
-                  href="/join/service-selection?service=book-app"
-                  className="w-full md:w-auto"
-                >
-                  <GradientButton
-                    size="default"
-                    outline
-                    textSize="tracking-tight text-base [@media(min-width:390px)]:tracking-normal [@media(min-width:390px)]:text-lg"
-                  >
-                    <CalendarIcon className="mr-2 h-5 w-5 text-accent-cyan" />
-                    Umów się na bezpłatną prezentację
-                  </GradientButton>
-                </Link>
+                </AccessibleLink>
               </div>
             </div>
-            <div className="relative hidden lg:block">
+            <div className="relative">
               <Image
                 src="https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vGv9hFviLmG6Bl5ZSRD14bKQUPw0uxyIj2VEM"
                 alt="System BookApp dla przychodni weterynaryjnej"

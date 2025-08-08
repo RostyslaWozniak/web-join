@@ -7,7 +7,6 @@ type GradientButtonProps = {
   showIcon?: boolean;
   outline?: boolean;
   className?: string;
-  textSize?: string;
 } & ButtonProps;
 
 export function GradientButton({
@@ -15,24 +14,21 @@ export function GradientButton({
   showIcon = false,
   outline = false,
   className,
-  textSize = "text-lg",
   ...props
 }: GradientButtonProps) {
   return (
     <Button
+      size="lg"
       className={cn(
         "group relative isolate w-full bg-primary-gradient shadow transition-shadow duration-300 hover:shadow-[0px_0px_20px_2px_#22D3EE70] sm:w-auto",
         className,
       )}
       {...props}
     >
-      {outline && (
-        <div className="absolute inset-0.5 z-10 rounded-full bg-background duration-300" />
-      )}
       {showIcon && (
         <PlayCircle
           className={cn(
-            "relative z-30 min-h-6 min-w-6 text-background duration-300",
+            "relative z-30 min-h-5 min-w-5 text-background duration-300",
             {
               "stroke-accent-cyan": outline,
               "group-hover:-translate-x-0.5 group-hover:scale-105": !outline,
@@ -43,8 +39,7 @@ export function GradientButton({
       {!outline && (
         <span
           className={cn(
-            "group-hover:translate-x-0.2 relative z-30 flex items-center text-background duration-300 group-hover:scale-[1.02] group-hover:text-white",
-            textSize,
+            "group-hover:translate-x-0.2 relative z-30 flex items-center text-white duration-300 group-hover:scale-[1.02]",
           )}
         >
           {children}
@@ -53,12 +48,14 @@ export function GradientButton({
       {outline && (
         <span
           className={cn(
-            "relative z-30 flex items-center bg-primary-gradient bg-clip-text text-2xl text-transparent",
-            textSize,
+            "relative z-30 flex items-center bg-primary-gradient bg-clip-text tracking-wider text-transparent brightness-75",
           )}
         >
           {children}
         </span>
+      )}
+      {outline && (
+        <div className="absolute inset-0.5 z-10 rounded-full bg-white duration-300" />
       )}
     </Button>
   );

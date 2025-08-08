@@ -1,5 +1,5 @@
 import { cache } from "react";
-import { Post } from "../data/posts";
+import { type Post } from "../data/posts";
 
 function _getFilteredPosts(
   posts: Post[], // Assuming Post type has title, description, markdown

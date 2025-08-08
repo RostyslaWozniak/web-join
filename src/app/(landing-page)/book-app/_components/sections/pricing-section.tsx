@@ -9,8 +9,8 @@ import { Badge } from "@/components/ui/badge";
 import { CalendarIcon, CheckCircleIcon } from "lucide-react";
 import { GradientButton } from "@/components/ui/gradient-button";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 import { H2 } from "@/components/ui/typography";
+import { AccessibleLink } from "@/components/accesible-link";
 
 const pricing = [
   {
@@ -77,18 +77,21 @@ export function PricingSection() {
           <div className="grid gap-8 lg:grid-cols-3">
             {pricing.map(
               ({ id, name, price, pricePerMonth, benefits, styles }, i) => {
-                const isMostPopular = i === 4;
+                const isMostPopular = i === 1;
                 return (
                   <Card
                     key={id}
-                    className={cn("relative flex flex-col bg-white shadow-lg", {
-                      "border-accent-cyan sm:scale-105": isMostPopular,
-                      "scale-105": i === 1,
-                    })}
+                    className={cn(
+                      "relative flex flex-col border-gray-300 bg-white/80 shadow-xl backdrop-blur-sm",
+                      {
+                        "border-accent-cyan sm:scale-105": isMostPopular,
+                        "scale-105": i === 1,
+                      },
+                    )}
                   >
                     {isMostPopular && (
                       <div className="absolute -top-4 left-1/2 -translate-x-1/2 transform">
-                        <Badge className="bg-accent-cyan text-white">
+                        <Badge className="bg-accent-cyan tracking-wider text-foreground">
                           Najpopularniejszy
                         </Badge>
                       </div>
@@ -127,19 +130,16 @@ export function PricingSection() {
               Możliwość rozbudowy krok po kroku – współpraca długoterminowa.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <Link
-                href="/join/service-selection?service=book-app"
+              <AccessibleLink
+                href="/kontakt#form"
                 className="w-full md:w-auto"
+                aria-label="Umów darmową prezentację"
               >
-                <GradientButton
-                  size="default"
-                  outline
-                  textSize="tracking-tight text-base [@media(min-width:390px)]:tracking-normal [@media(min-width:390px)]:text-lg"
-                >
+                <GradientButton outline>
                   <CalendarIcon className="mr-2 h-5 w-5 text-accent-cyan" />
-                  Umów się na bezpłatną prezentację
+                  Umów się na prezentację
                 </GradientButton>
-              </Link>
+              </AccessibleLink>
             </div>
           </div>
         </div>

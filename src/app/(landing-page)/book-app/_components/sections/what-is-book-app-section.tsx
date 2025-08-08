@@ -67,7 +67,7 @@ export function WhatIsBookAppSection() {
             {benefitCardsData.map(({ title, icon: Icon, benefits, colors }) => (
               <Card
                 key={title}
-                className="bg-transparent shadow-lg dark:border-accent-cyan"
+                className="border-none bg-white/80 shadow-xl backdrop-blur-sm"
               >
                 <CardHeader className="text-center">
                   <Icon className={cn("mx-auto mb-4 h-12 w-12", colors)} />

@@ -6,7 +6,7 @@ export function AboutSection() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center">
           <H2 className="mb-8">👋 Kim jestem i dlaczego stworzyłem BookApp?</H2>
-          <div className="rounded-lg bg-gray-50 p-8">
+          <div className="rounded-lg border border-gray-300 bg-white/80 p-8 shadow-xl backdrop-blur-sm">
             <p className="mb-6 text-lg leading-relaxed text-gray-700">
               Mam na imię Rostyslav Vozniak i jestem web developerem. Tworzę
               nowoczesne aplikacje i strony internetowe, głównie w Next.js.

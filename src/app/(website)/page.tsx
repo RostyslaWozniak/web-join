@@ -12,14 +12,15 @@ import { H2, H3, Text } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 
 import { problemsData } from "@/data/problems";
-import Link from "next/link";
 import {
   ArrowRightIcon,
+  ArrowUpRightIcon,
   Clock10Icon,
   PhoneIcon,
   SparklesIcon,
 } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
+import { GradientButton } from "@/components/ui/gradient-button";
+import { AccessibleLink } from "@/components/accesible-link";
 
 export default function HomePage() {
   return (
@@ -70,7 +71,7 @@ function IsYourWebsiteBad() {
                     key={index}
                     className={cn(
                       color,
-                      "group relative h-full overflow-hidden bg-white/50 shadow-md transition-all duration-300 hover:shadow-lg",
+                      "group relative h-full overflow-hidden border-0 bg-white/80 shadow-xl backdrop-blur-sm transition-all duration-300 hover:shadow-lg",
                     )}
                   >
                     <CardContent className="p-6 pb-8">
@@ -89,10 +90,10 @@ function IsYourWebsiteBad() {
                         {content}
                       </p>
                     </CardContent>
-                    <Link
+                    <AccessibleLink
                       href={`/problemy/${slug}`}
-                      className="absolute inset-0"
-                      aria-label="przejdz do strony"
+                      className="absolute inset-0 min-w-full"
+                      aria-label={`Przejdż do strony ${title}`}
                     />
                   </Card>
                 </MotionWrapper>
@@ -156,7 +157,12 @@ function DontHaveWebsiteSection() {
                   transition={{ duration: 0.5, delay: 0.1 * (index % 3) }}
                   viewport={{ once: true, margin: "0px 0px -100px 0px" }}
                 >
-                  <Card className={cn(style, "h-full bg-transparent")}>
+                  <Card
+                    className={cn(
+                      style,
+                      "h-full border-0 bg-white/80 shadow-xl backdrop-blur-sm",
+                    )}
+                  >
                     <CardContent className="space-y-2 p-4 md:p-6">
                       <div
                         className={cn(
@@ -175,12 +181,15 @@ function DontHaveWebsiteSection() {
             </div>
           </div>
           <div className="mx-auto mt-12 max-w-4xl">
-            <Link
+            <AccessibleLink
               href="/kontakt"
-              className={cn(buttonVariants({ size: "md", variant: "outline" }))}
+              aria-label="Przejdź do strony kontakt"
             >
-              Bezpłatna konsultacja <ArrowRightIcon />
-            </Link>
+              <GradientButton outline>
+                Bezpłatna konsultacja
+                <ArrowUpRightIcon className="ml-1 h-4 w-4 text-accent-emerald" />
+              </GradientButton>
+            </AccessibleLink>
           </div>
         </div>
       </MaxWidthWrapper>

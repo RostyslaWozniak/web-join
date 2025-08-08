@@ -1,3 +1,4 @@
+import { AccessibleLink } from "@/components/accesible-link";
 import { AnimatedText } from "@/components/animations/animated-text";
 import { GridBackground } from "@/components/grid-background";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
@@ -6,7 +7,6 @@ import { Badge } from "@/components/ui/badge";
 import { GradientButton } from "@/components/ui/gradient-button";
 import { CalendarIcon, CheckCircleIcon, ExternalLinkIcon } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 export function BookAppHeroSection() {
   return (
@@ -91,30 +91,26 @@ function Benefits() {
 
 function CTAButtons() {
   return (
-    <div className="flex flex-col gap-4 sm:w-auto sm:flex-row sm:justify-center">
-      <Link
+    <div className="mx-auto flex flex-col gap-4 sm:w-min sm:flex-row sm:justify-center">
+      <AccessibleLink
+        href="/kontakt#form"
+        aria-label="Umów darmową prezentację"
+      >
+        <GradientButton>
+          <CalendarIcon className="mr-2 h-5 w-5" />
+          Umów się na prezentację
+        </GradientButton>
+      </AccessibleLink>
+      <AccessibleLink
         href="https://vet-app-demo.vercel.app/"
         target="_blank"
-        className="w-full md:w-auto"
+        aria-label="Przejdź do demo"
       >
-        <GradientButton size="default">
-          <ExternalLinkIcon className="mr-2 h-5 w-5" />
+        <GradientButton outline>
           Zobacz demo
+          <ExternalLinkIcon className="ml-2 h-5 w-5 text-accent-cyan" />
         </GradientButton>
-      </Link>
-      <Link
-        href="/join/service-selection?service=book-app"
-        className="w-full md:w-auto"
-      >
-        <GradientButton
-          size="default"
-          outline
-          textSize="tracking-tight text-base [@media(min-width:390px)]:tracking-normal [@media(min-width:390px)]:text-lg"
-        >
-          <CalendarIcon className="mr-2 h-5 w-5 text-accent-cyan" />
-          Umów się na bezpłatną prezentację
-        </GradientButton>
-      </Link>
+      </AccessibleLink>
     </div>
   );
 }
