@@ -6,7 +6,6 @@ import { EmptyResult } from "@/components/empty-result";
 import { FrownIcon } from "lucide-react";
 import { SearchPostForm } from "@/features/blog/components/search-post-form";
 import { Breadcrumb } from "@/components/breadcrumb";
-import { db } from "@/server/db";
 import { unslugify } from "@/lib/utils/slugify";
 import { type Metadata } from "next";
 import { env } from "@/env";
@@ -49,16 +48,17 @@ export const generateMetadata = async ({
 };
 
 export const generateStaticParams = async () => {
-  const searchTerms = await db.searchTerm.findMany({
-    select: {
-      term: true,
-    },
-    orderBy: {
-      count: "desc",
-    },
-    take: 10,
-  });
-  return searchTerms.map((t) => ({ searchQuery: t.term }));
+  // const searchTerms = await db.searchTerm.findMany({
+  //   select: {
+  //     term: true,
+  //   },
+  //   orderBy: {
+  //     count: "desc",
+  //   },
+  //   take: 10,
+  // });
+  // return searchTerms.map((t) => ({ searchQuery: t.term }));
+  return [];
 };
 
 export default async function BlogSearchPage({

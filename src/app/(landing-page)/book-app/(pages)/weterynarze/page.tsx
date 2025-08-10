@@ -22,7 +22,7 @@ import { AccessibleLink } from "@/components/accesible-link";
 
 export default function VeterinaryLanding() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <HeroSection />
       <div id="dla-czego">
         <WhySection />
@@ -55,12 +55,12 @@ function HeroSection() {
           <div className="relative grid items-center gap-12 lg:grid-cols-2">
             <div className="space-y-8">
               <div className="max-w-4xl space-y-4">
-                <Badge className="mb-4 rounded-full bg-card-gradient text-emerald-800">
+                <Badge className="mb-4 rounded-full bg-card-gradient text-foreground">
                   Nowoczesne rozwiązania dla weterynarii
                 </Badge>
                 <H1 className="text-4xl font-bold leading-tight text-foreground lg:text-6xl">
                   Szybka i nowoczesna strona internetowa dla Twojej{" "}
-                  <span className="text-cyan-500">
+                  <span className="text-accent-cyan brightness-[0.95]">
                     przychodni weterynaryjnej
                   </span>
                 </H1>
@@ -113,7 +113,7 @@ function HeroSection() {
 
 function WhySection() {
   return (
-    <section className="bg-white py-20">
+    <section className="darl:bg-muted bg-white py-20">
       <div className="container mx-auto px-4">
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold text-cyan-900 lg:text-4xl">
