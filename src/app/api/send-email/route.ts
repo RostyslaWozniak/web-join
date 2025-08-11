@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
   const { data: response, error } = await tryCatch(
     resend.batch.send(
       emailsSet.map((email) => ({
-        from: `Rostyslav Vozniak <${process.env.RESEND_FROM_NAME}@${process.env.RESEND_DOMAIN}>`,
+        from: `rostyslav-vozniak@${process.env.RESEND_DOMAIN}`,
         to: email,
         subject:
           "Prosty system zapisów online dla przychodni weterynaryjnych – zaproszenie na prezentację",

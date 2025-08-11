@@ -1,6 +1,7 @@
 import { SubscribeForm } from "./subscribe-form";
 import { FacebookIcon, MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
 import { AccessibleLink } from "../accesible-link";
+import { contactData } from "@/data/contact-data";
 
 export const navigation = [
   { name: "Strona główna", href: "/", ariaLabel: "strony głównej" },
@@ -33,27 +34,44 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <h2 className="mb-4 text-lg font-semibold">Kontakt</h2>
-          <div className="space-y-2">
-            <div className="flex items-center space-x-2 px-2">
+          <h2 className="text-lg font-semibold">Kontakt</h2>
+          <div>
+            <AccessibleLink
+              href={`tel:${contactData.phone}`}
+              aria-label="Zadzwoń"
+              className="flex items-center space-x-2 hover:underline sm:w-full"
+              target="_blank"
+            >
               <PhoneIcon className="h-4 w-4" />
-              <span>+48 123 456 789</span>
-            </div>
-            <div className="flex items-center space-x-2 px-2">
+              <span>{contactData.phone}</span>
+            </AccessibleLink>
+            <AccessibleLink
+              href={`mailto:${contactData.emails.contact}`}
+              aria-label="Zadzwoń"
+              target="_blank"
+              className="flex items-center space-x-2 hover:underline sm:w-full"
+            >
               <MailIcon className="h-4 w-4" />
-              <span>kontakt@webjoin.pl</span>
-            </div>
-            <div className="flex items-center space-x-2 px-2">
+              <span>{contactData.emails.contact}</span>
+            </AccessibleLink>
+            <AccessibleLink
+              href={contactData.address.googleUrl}
+              aria-label="Zadzwoń"
+              target="_blank"
+              className="flex items-center space-x-2 hover:underline sm:w-full"
+            >
               <MapPinIcon className="h-4 w-4" />
-              <span>Warszawa, Polska</span>
-            </div>
+              <span>
+                {contactData.address.city}, {contactData.address.country}
+              </span>
+            </AccessibleLink>
           </div>
         </div>
         <div>
           <h2 className="text-lg font-semibold">Social media</h2>
           <div className="flex">
             <AccessibleLink
-              href="https://www.facebook.com/webjoinpl"
+              href={contactData.socials.facebook}
               target="_blank"
               aria-label="Przejdź do facebooka"
               className="w-min capitalize hover:underline sm:mx-0"

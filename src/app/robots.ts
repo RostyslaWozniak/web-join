@@ -17,7 +17,6 @@ export default function robots(): MetadataRoute.Robots {
           "/success",
           "/api",
           "/api/*",
-          "/vet-research-form",
         ],
       },
     ],

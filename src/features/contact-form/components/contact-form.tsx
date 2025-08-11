@@ -65,7 +65,7 @@ export function ContactForm() {
           name="username"
           render={({ field }) => (
             <FormItem className="relative">
-              <FormLabel>Twoje imię</FormLabel>
+              <FormLabel>Imię</FormLabel>
               <FormControl>
                 <Input
                   className="text-foreground"
@@ -83,7 +83,7 @@ export function ContactForm() {
           name="phoneNumber"
           render={({ field }) => (
             <FormItem className="relative">
-              <FormLabel>Twój numer telefonu</FormLabel>
+              <FormLabel>Numer telefonu</FormLabel>
               <FormControl>
                 <Input
                   className="text-foreground"
@@ -101,7 +101,7 @@ export function ContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem className="relative">
-              <FormLabel>Twój email</FormLabel>
+              <FormLabel>E-mail</FormLabel>
               <FormControl>
                 <Input
                   className="text-foreground"
@@ -123,7 +123,7 @@ export function ContactForm() {
               <FormControl>
                 <Textarea
                   className="min-h-32 resize-none rounded-2xl text-foreground"
-                  placeholder="Wpisz swoją wiadomość"
+                  placeholder="Wpisz wiadomość"
                   {...field}
                 />
               </FormControl>

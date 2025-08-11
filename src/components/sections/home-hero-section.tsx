@@ -46,7 +46,7 @@ export function HomeHeroSection() {
                 Bezpieczeństwo
               </div>
               <div className="flex items-center gap-x-2 text-base tracking-widest">
-                <SparklesIcon className="stroke-accent-cyan" /> Modern UX
+                <SparklesIcon className="stroke-accent-cyan" /> Nowoczesny UX
               </div>
               <div className="flex items-center gap-x-2 text-base tracking-widest">
                 <SearchIcon className="stroke-accent-green" /> SEO

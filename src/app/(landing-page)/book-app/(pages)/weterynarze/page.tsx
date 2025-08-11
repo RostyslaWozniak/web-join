@@ -38,10 +38,8 @@ export default function VeterinaryLanding() {
       <div id="ceny">
         <PricingSection />
       </div>
-      <CTASection
-        scheduleHref="/kontakt#form"
-        demoHref="https://vet-app-demo.vercel.app"
-      />
+      <PrezentationCTASection />
+
       <BlogPreviewSection />
     </div>
   );
@@ -334,5 +332,34 @@ function PricingSection() {
         </Card>
       </div>
     </section>
+  );
+}
+
+function PrezentationCTASection() {
+  return (
+    <CTASection
+      title="Zacznij już dziś!"
+      subtitle="Umów się na bezpłatną prezentację i poznaj możliwości systemu BookApp"
+    >
+      <AccessibleLink
+        href="/kontakt#form"
+        aria-label="Umów darmową prezentację"
+      >
+        <GradientButton>
+          <CalendarIcon className="mr-2 h-5 w-5" />
+          Umów się na prezentację
+        </GradientButton>
+      </AccessibleLink>
+      <AccessibleLink
+        href="https://vet-app-demo.vercel.app"
+        target="_blank"
+        aria-label="Przejdź do demo"
+      >
+        <GradientButton outline>
+          Zobacz demo
+          <ExternalLinkIcon className="ml-2 h-5 w-5 text-accent-cyan" />
+        </GradientButton>
+      </AccessibleLink>
+    </CTASection>
   );
 }

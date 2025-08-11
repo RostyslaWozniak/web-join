@@ -67,7 +67,7 @@ const faqs = [
 -  **Strona wizytówka** – prosta strona z najważniejszymi informacjami o Twojej firmie **od 1200 zł**
 -  **Landing Page** – pojedyncza strona do promocji produktu lub usługi, zoptymalizowana pod konwersję **od 1500 zł**
 -  **Strona firmowa** – pełna strona z kilkoma podstronami: "O nas", "Usługi", "Kontakt"  **od 2000 zł**
--  **Sklep internetowy** – od 3000 zł
+-  **Sklep internetowy** – **od 3000 zł**
 
 📌 Cena zależy od funkcjonalności – mogę dopasować stronę do Twojego budżetu.`,
   },

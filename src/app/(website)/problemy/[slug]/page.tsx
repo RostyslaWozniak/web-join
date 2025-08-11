@@ -1,7 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
+import { Alert } from "@/components/alert";
 import { Markdown } from "@/components/markdown-renderer";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
+import { SectionWrapper } from "@/components/section-wrapper";
+import { H2 } from "@/components/ui/typography";
 import { problemsData } from "@/data/problems";
+import { CtaForm } from "@/features/forms/cta-form";
 import { type Metadata } from "next";
 
 import { notFound } from "next/navigation";
@@ -22,9 +26,10 @@ export const generateMetadata = async ({
 }): Promise<Metadata> => {
   const { slug } = await params;
   const problem = getCurrentPageData(slug);
+  if (!problem) return notFound();
   return {
-    title: problem?.title,
-    description: problem?.content,
+    title: problem.title,
+    description: problem.description,
   };
 };
 
@@ -39,21 +44,53 @@ export default async function ProblemPage({
 
   if (!problem) return notFound();
   return (
-    <div className="py-12 sm:py-20">
-      <MaxWidthWrapper className="max-w-7xl">
-        <div className="grid gap-x-12 gap-y-8 md:grid-cols-2">
-          <div>
-            <Markdown>{problem.markdown}</Markdown>
+    <>
+      <SectionWrapper>
+        <MaxWidthWrapper className="max-w-7xl">
+          <div className="grid gap-x-12 gap-y-8 md:grid-cols-2">
+            <div>
+              <Markdown>{problem.markdown}</Markdown>
+            </div>
+            <div className="order-first aspect-[3/2] overflow-hidden rounded-lg shadow-xl md:order-2">
+              <img
+                src={problem.image.url}
+                alt={problem.image.url}
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
-          <div className="order-first aspect-[3/2] overflow-hidden rounded-lg shadow-xl md:order-2">
-            <img
-              src={problem.image.url}
-              alt="image"
-              className="h-full w-full object-cover"
-            />
+        </MaxWidthWrapper>
+      </SectionWrapper>
+      <SectionWrapper className="relative mb-12 md:mb-20">
+        <MaxWidthWrapper className="relative z-10">
+          <div className="text-center">
+            <H2 className="mb-4 text-3xl font-bold text-cyan-900 lg:text-4xl">
+              {problem.cta.title}
+            </H2>
+            <p className="mx-auto mb-8 max-w-2xl text-xl">
+              {problem.cta.description}
+            </p>
           </div>
-        </div>
-      </MaxWidthWrapper>
-    </div>
+
+          <div className="mx-auto max-w-5xl">
+            <CtaForm />
+          </div>
+          <div className="mx-auto max-w-5xl">
+            <Alert
+              variant="default"
+              className="mx-auto my-8 max-w-3xl space-y-2"
+            >
+              <p className="text-sm">
+                Po wysłaniu formularza odezwę się do Ciebie mailowo, żebyśmy
+                mogli wspólnie ustalić wygodny termin 30-minutowej, bezpłatnej
+                rozmowy online. Porozmawiamy wtedy o Twoim projekcie i kolejnych
+                krokach. Do zobaczenia!
+              </p>
+            </Alert>
+          </div>
+        </MaxWidthWrapper>
+        <div className="absolute inset-0 bg-card-gradient opacity-50"></div>
+      </SectionWrapper>
+    </>
   );
 }

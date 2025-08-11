@@ -47,7 +47,7 @@ export default function ContactPage() {
           </MaxWidthWrapper>
         </GridBackground>
       </section>
-      <section>
+      <section className="">
         <MaxWidthWrapper className="max-w-6xl">
           <div className="grid gap-x-4 lg:grid-cols-2 lg:gap-x-12">
             <div className="space-y-8 pt-16 lg:py-20">
@@ -58,7 +58,7 @@ export default function ContactPage() {
                     <FormAlertComponent />
                   </div>
                   <p>
-                    Po wysłaniu formularza zadzwonie do Ciebie do końca
+                    Po wysłaniu formularza zadzwonię do Ciebie do końca
                     następnego dnia roboczego.
                   </p>
                 </Alert>
