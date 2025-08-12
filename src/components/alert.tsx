@@ -17,26 +17,18 @@ export function Alert({
   icon?: LucideIcon;
   iconSize?: number;
   className?: string;
+  iconClassName?: string;
 } & AlertVariantsType) {
   return (
-    <ShadcnAlert
-      variant={variant}
-      className={cn(
-        {
-          "flex gap-x-2": Icon,
-        },
-        className,
-      )}
-    >
-      {Icon && (
-        <>
-          <div className="grid place-items-center">
-            <Icon size={iconSize} />
-          </div>
+    <ShadcnAlert variant={variant} className={cn(className)}>
+      {Icon ? (
+        <div className="flex gap-x-4">
+          <Icon size={iconSize} className="h-6 w-6 min-w-6" />
           <AlertDescription>{children}</AlertDescription>
-        </>
+        </div>
+      ) : (
+        children
       )}
-      {children}
     </ShadcnAlert>
   );
 }

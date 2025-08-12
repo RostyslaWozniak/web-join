@@ -13,12 +13,17 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { ctaFormSchema, type CtaFormSchema } from "../lib/validation";
 import { LoadingButton } from "@/components/ui/loading-button";
-import { useTransition } from "react";
-import { wait } from "@/lib/utils";
+import { useState, useTransition } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ArrowUpRightIcon } from "lucide-react";
+import { useParams } from "next/navigation";
+import { sendCtaFormAction } from "../actions/send-cta-form";
+import { CtaFormAlerts } from "./cta-form-alerts";
 
 export function CtaForm() {
+  const params = useParams<{ slug: string }>();
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
   const form = useForm<CtaFormSchema>({
     resolver: zodResolver(ctaFormSchema),
@@ -31,9 +36,26 @@ export function CtaForm() {
 
   // 2. Define a submit handler.
   function onSubmit(values: CtaFormSchema) {
+    setError(null);
+    setSuccess(null);
     startTransition(async () => {
-      await wait(3000);
-      console.log(values);
+      const { error: sendFromError, success: sendFormSuccess } =
+        await sendCtaFormAction({
+          ...values,
+          slug: params.slug,
+        });
+      if (!sendFormSuccess) {
+        startTransition(() => {
+          setError(sendFromError);
+        });
+        return;
+      }
+      startTransition(() => {
+        setSuccess(
+          "Dziękuję za wysłanie zapytania! Sprawdź swoją skrzynkę mailową — wysłałem do Ciebie szczegóły.",
+        );
+        form.reset();
+      });
     });
   }
   return (
@@ -51,7 +73,7 @@ export function CtaForm() {
               <FormControl>
                 <Input placeholder="Jan Kowalski" {...field} />
               </FormControl>
-              <FormMessage className="absolute right-0 top-0 w-min text-nowrap rounded-full px-2 text-xs font-semibold text-destructive" />
+              <FormMessage className="absolute -top-1.5 right-0 w-min text-nowrap rounded-full px-2 text-sm text-destructive" />
             </FormItem>
           )}
         />
@@ -64,15 +86,18 @@ export function CtaForm() {
               <FormControl>
                 <Input placeholder="twój-email@gmail.com" {...field} />
               </FormControl>
-              <FormMessage className="absolute right-0 top-0 w-min text-nowrap rounded-full px-2 text-xs font-semibold text-destructive" />
+              <FormMessage className="absolute -top-1.5 right-0 w-min text-nowrap rounded-full px-2 text-sm text-destructive" />
             </FormItem>
           )}
         />
+        <div className="md:col-span-3">
+          <CtaFormAlerts error={error} success={success} />
+        </div>
         <FormField
           control={form.control}
           name="consent"
           render={({ field }) => (
-            <FormItem className="flex items-start gap-x-1 md:col-span-2">
+            <FormItem className="-mt-2 flex items-start gap-x-1 md:col-span-2">
               <FormControl>
                 <Checkbox
                   className="mx-2 mt-2.5"
@@ -80,13 +105,14 @@ export function CtaForm() {
                   onCheckedChange={field.onChange}
                 />
               </FormControl>
-              <FormLabel className="col-span-11 font-normal leading-5 tracking-wider">
+              <FormLabel className="col-span-11 text-xs font-normal leading-5 tracking-wider">
                 Wyrażam zgodę na przetwarzanie moich danych osobowych w celu
                 udzielenia odpowiedzi i nawiązania kontaktu.
               </FormLabel>
             </FormItem>
           )}
         />
+
         <LoadingButton
           loading={isPending}
           type="submit"

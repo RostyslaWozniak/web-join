@@ -5,12 +5,14 @@ export const Header = ({
   subtitle,
 }: {
   title: string;
-  subtitle: string | undefined;
+  subtitle: string | null;
 }) => {
   return (
     <Section className="text-center">
-      <Text className="my-2.5 text-2xl text-[#455a63]">{title}</Text>
-      {subtitle && <Text className="text-base text-[#455a63]">{subtitle}</Text>}
+      <Text className="my-2.5 text-2xl text-foreground">{title}</Text>
+      {subtitle && (
+        <Text className="text-base text-foreground">{subtitle}</Text>
+      )}
     </Section>
   );
 };

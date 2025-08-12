@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import { Alert } from "@/components/alert";
 import { Markdown } from "@/components/markdown-renderer";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { SectionWrapper } from "@/components/section-wrapper";
+import BlogPreviewSection from "@/components/sections/blog-preview-section";
 import { H2 } from "@/components/ui/typography";
 import { problemsData } from "@/data/problems";
 import { CtaForm } from "@/features/forms/cta-form";
@@ -61,7 +61,7 @@ export default async function ProblemPage({
           </div>
         </MaxWidthWrapper>
       </SectionWrapper>
-      <SectionWrapper className="relative mb-12 md:mb-20">
+      <SectionWrapper className="relative">
         <MaxWidthWrapper className="relative z-10">
           <div className="text-center">
             <H2 className="mb-4 text-3xl font-bold text-cyan-900 lg:text-4xl">
@@ -71,25 +71,16 @@ export default async function ProblemPage({
               {problem.cta.description}
             </p>
           </div>
-
           <div className="mx-auto max-w-5xl">
             <CtaForm />
           </div>
-          <div className="mx-auto max-w-5xl">
-            <Alert
-              variant="default"
-              className="mx-auto my-8 max-w-3xl space-y-2"
-            >
-              <p className="text-sm">
-                Po wysłaniu formularza odezwę się do Ciebie mailowo, żebyśmy
-                mogli wspólnie ustalić wygodny termin 30-minutowej, bezpłatnej
-                rozmowy online. Porozmawiamy wtedy o Twoim projekcie i kolejnych
-                krokach. Do zobaczenia!
-              </p>
-            </Alert>
-          </div>
         </MaxWidthWrapper>
         <div className="absolute inset-0 bg-card-gradient opacity-50"></div>
+      </SectionWrapper>
+      <SectionWrapper>
+        <MaxWidthWrapper>
+          <BlogPreviewSection />
+        </MaxWidthWrapper>
       </SectionWrapper>
     </>
   );
