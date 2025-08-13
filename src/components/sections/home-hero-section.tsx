@@ -4,10 +4,11 @@ import { H1, Text } from "@/components/ui/typography";
 import { LockIcon, SearchIcon, SparklesIcon, ZapIcon } from "lucide-react";
 import { GradientButton } from "../ui/gradient-button";
 import { AccessibleLink } from "../accesible-link";
+import { SectionWrapper } from "../section-wrapper";
 
 export function HomeHeroSection() {
   return (
-    <section id="start" className="overflow-hidden">
+    <SectionWrapper paddingBlock="none" id="start" className="overflow-hidden">
       <GridBackground className="flex items-center justify-center">
         <MaxWidthWrapper className="relative flex min-h-[60vh] flex-col items-center justify-center py-8 sm:gap-y-4 md:py-16 lg:min-h-[70vh]">
           <div className="relative z-10 flex max-w-6xl flex-grow flex-col items-center justify-center sm:flex-none">
@@ -56,6 +57,6 @@ export function HomeHeroSection() {
           <div className="absolute -inset-10 rounded-full bg-background opacity-40 md:block" />
         </MaxWidthWrapper>
       </GridBackground>
-    </section>
+    </SectionWrapper>
   );
 }

@@ -1,6 +1,7 @@
 import { SearchIcon } from "lucide-react";
+import { type ProblemItem } from ".";
 
-export const noVisibilityOnGoogle = {
+export const noVisibilityOnGoogle: ProblemItem = {
   title: "Nie jesteś widoczny w Google?",
   description:
     "Brak optymalizacji SEO sprawia, że klienci Cię nie znajdują. Popraw widoczność i zacznij generować ruch organiczny.",
@@ -16,6 +17,9 @@ export const noVisibilityOnGoogle = {
     description:
       "Zoptymalizuję Twoją stronę, aby przyciągała klientów z darmowego ruchu organicznego.",
     button: "Popraw moje SEO",
+  },
+  email: {
+    service: "braku widoczności w Google",
   },
   markdown: `# Brak widoczności w Google
 

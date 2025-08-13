@@ -28,8 +28,8 @@ export default function CtaFormResponseEmail({
               <Text className="mt-2 text-base">Cześć {clientName},</Text>
               <Text className="mt-2 text-base">
                 Dziękuję za wysłanie zapytania
-                {service && ` w sprawie "${service}"`}. Chętnie pomogę Ci
-                znaleźć rozwiązanie — proponuję, żebyśmy umówili się na{" "}
+                {service && ` w sprawie ${service}`}. Chętnie pomogę Ci znaleźć
+                rozwiązanie — proponuję, żebyśmy umówili się na{" "}
                 <b>bezpłatną 30-minutową rozmowę online</b>.
               </Text>
               <Text className="-mx-2 mt-2 rounded-lg bg-blue-50 p-4 text-lg font-bold text-blue-800">

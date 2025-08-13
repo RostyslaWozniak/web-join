@@ -1,6 +1,7 @@
 import { UsersIcon } from "lucide-react";
+import { type ProblemItem } from ".";
 
-export const noConversion = {
+export const noConversion: ProblemItem = {
   title: "Strona nie generuje klientów?",
   description:
     "Masz ruch, ale brak zapytań? Popraw UX, treści i CTA, aby zwiększyć konwersję i zamienić odwiedzających w klientów.",
@@ -16,6 +17,9 @@ export const noConversion = {
     description:
       "Poprawię układ, treści i CTA Twojej strony, by zwiększyć ilość zapytań i sprzedaży.",
     button: "Zwiększ konwersję",
+  },
+  email: {
+    service: "braku konwersji na stronie internetowej",
   },
   markdown: `# Niska konwersja
 

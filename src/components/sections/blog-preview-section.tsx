@@ -6,7 +6,7 @@ import { PostCard } from "@/features/blog/components/post-card";
 import { GradientButton } from "../ui/gradient-button";
 import { AccessibleLink } from "../accesible-link";
 
-export default function BlogPreviewSection() {
+export function BlogPreviewSection() {
   return (
     <>
       <div className="mb-12 text-center">

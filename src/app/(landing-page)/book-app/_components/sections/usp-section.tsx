@@ -14,21 +14,14 @@ import {
 
 export function UspSection() {
   return (
-    <section className="bg-white py-20">
-      <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 text-center">
-            <H2 className="mb-6">💡 Dlaczego warto wybrać BookApp?</H2>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {sectionData.map((data) => (
-              <CardItem key={data.id} {...data} />
-            ))}
-          </div>
-        </div>
+    <>
+      <H2 className="mb-6 md:mb-12">💡 Dlaczego warto wybrać BookApp?</H2>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {sectionData.map((data) => (
+          <CardItem key={data.id} {...data} />
+        ))}
       </div>
-    </section>
+    </>
   );
 }
 

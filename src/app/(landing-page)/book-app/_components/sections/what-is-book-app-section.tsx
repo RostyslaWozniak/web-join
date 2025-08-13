@@ -44,52 +44,46 @@ const benefitCardsData = [
 
 export function WhatIsBookAppSection() {
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-16 text-center">
-            <div className="relative mb-6 flex items-center justify-center">
-              <HeartIcon className="absolute -left-20 top-0 hidden text-accent-emerald md:block md:h-16 md:w-16" />
-              <H2>
-                BookApp – Nowoczesny System Rezerwacji Online i Strona
-                Internetowa dla Wzrostu Twojej Firmy
-              </H2>
-            </div>
-            <p className="mx-auto max-w-4xl text-xl text-muted-foreground">
-              BookApp to nowoczesna aplikacja webowa, która bezproblemowo
-              połączy się z Twoją stroną. Dostępna 24/7, jest intuicyjna dla
-              personelu i klientów, stworzona by sprostać unikalnym potrzebom
-              nowoczesnych firm usługowych.
-            </p>
-          </div>
-
-          <div className="grid gap-8 lg:grid-cols-3">
-            {benefitCardsData.map(({ title, icon: Icon, benefits, colors }) => (
-              <Card
-                key={title}
-                className="border-none bg-white/80 shadow-xl backdrop-blur-sm"
-              >
-                <CardHeader className="text-center">
-                  <Icon className={cn("mx-auto mb-4 h-12 w-12", colors)} />
-                  <CardTitle className="text-xl">{title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {benefits.map((benefit) => (
-                      <li key={benefit} className="flex items-start gap-2">
-                        <span className="flex h-[1lh] items-center">
-                          <CheckCircleIcon className="h-4 w-4 text-emerald-500" />
-                        </span>
-                        {benefit}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+    <>
+      <div className="mb-6 text-center md:mb-12">
+        <H2 className="relative mb-3 md:mb-6">
+          <HeartIcon className="absolute -top-16 left-1/2 h-16 w-16 -translate-x-1/2 text-accent-emerald lg:-top-3 lg:left-0 lg:block" />
+          BookApp – Nowoczesny System Rezerwacji Online i Strona Internetowa dla
+          Wzrostu Twojej Firmy
+        </H2>
+        <p className="mx-auto max-w-4xl text-xl text-muted-foreground">
+          BookApp to nowoczesna aplikacja webowa, która bezproblemowo połączy
+          się z Twoją stroną. Dostępna 24/7, jest intuicyjna dla personelu i
+          klientów, stworzona by sprostać unikalnym potrzebom nowoczesnych firm
+          usługowych.
+        </p>
       </div>
-    </section>
+
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {benefitCardsData.map(({ title, icon: Icon, benefits, colors }) => (
+          <Card
+            key={title}
+            className="mx-auto w-full max-w-[400px] border-none bg-white/80 shadow-xl backdrop-blur-sm"
+          >
+            <CardHeader className="text-center">
+              <Icon className={cn("mx-auto mb-4 h-12 w-12", colors)} />
+              <CardTitle className="text-xl">{title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2">
+                {benefits.map((benefit) => (
+                  <li key={benefit} className="flex items-start gap-2">
+                    <span className="flex h-[1lh] items-center">
+                      <CheckCircleIcon className="h-4 w-4 text-emerald-500" />
+                    </span>
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </>
   );
 }

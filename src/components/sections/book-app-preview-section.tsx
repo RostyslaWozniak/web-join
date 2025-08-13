@@ -13,7 +13,7 @@ import { AccessibleLink } from "../accesible-link";
 
 export function BookAppPreviewSection() {
   return (
-    <div className="mx-auto max-w-4xl">
+    <>
       <div className="mb-12 text-center">
         <MotionWrapper>
           <Badge className="mb-4 rounded-full bg-card-gradient px-4 py-2 text-sm font-medium text-foreground">
@@ -124,6 +124,6 @@ export function BookAppPreviewSection() {
           Bezpłatna prezentacja • Bez zobowiązań
         </p>
       </div>
-    </div>
+    </>
   );
 }

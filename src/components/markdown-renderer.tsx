@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
 
 import ReactMarkdown from "react-markdown";
 import { ExternalLink } from "lucide-react";
@@ -14,7 +13,7 @@ export function Markdown({ children }: MarkdownProps) {
       components={{
         h1: ({ children, ...props }) => (
           <h1
-            className="group relative mb-8 mt-12 text-4xl font-bold tracking-tight text-slate-900 first:mt-0 sm:text-5xl"
+            className="group relative mb-8 mt-12 text-4xl font-bold tracking-tight text-foreground first:mt-0 sm:text-5xl"
             {...props}
           >
             {children}
@@ -22,7 +21,7 @@ export function Markdown({ children }: MarkdownProps) {
         ),
         h2: ({ children, ...props }) => (
           <h2
-            className="group relative mb-6 mt-12 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl"
+            className="group relative mb-6 mt-12 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
             {...props}
           >
             {children}
@@ -30,7 +29,7 @@ export function Markdown({ children }: MarkdownProps) {
         ),
         h3: ({ children, ...props }) => (
           <h3
-            className="group relative mb-4 mt-8 text-xl font-semibold text-slate-900 sm:text-2xl"
+            className="group relative mb-4 mt-8 text-xl font-semibold text-foreground sm:text-2xl"
             {...props}
           >
             {children}

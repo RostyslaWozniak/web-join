@@ -9,7 +9,7 @@ export function H4({
   className?: string;
 }) {
   return (
-    <h4 className={cn("text-xl font-semibold sm:text-2xl", className)}>
+    <h4 className={cn("text-lg font-semibold sm:text-xl", className)}>
       {children}
     </h4>
   );

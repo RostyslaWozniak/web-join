@@ -1,6 +1,5 @@
 "use client";
 
-import { MaxWidthWrapper } from "../max-width-wrapper";
 import { Accordion } from "../accordion";
 import { H2 } from "../ui/typography";
 
@@ -87,13 +86,11 @@ const faqs = [
 
 export function FaqSection() {
   return (
-    <section id="faq">
-      <MaxWidthWrapper className="flex flex-col items-center gap-y-8 py-16 md:gap-y-14 md:py-20">
-        <H2>
-          FAQ – <br /> Najczęściej zadawane pytania
-        </H2>
-        <Accordion questions={faqs} className="max-w-4xl" />
-      </MaxWidthWrapper>
-    </section>
+    <>
+      <H2 className="mb-6 md:mb-12">
+        FAQ – <br /> Najczęściej zadawane pytania
+      </H2>
+      <Accordion questions={faqs} />
+    </>
   );
 }

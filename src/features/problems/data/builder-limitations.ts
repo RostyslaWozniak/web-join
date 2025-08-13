@@ -1,6 +1,7 @@
 import { WrenchIcon } from "lucide-react";
+import { type ProblemItem } from ".";
 
-export const builderLimitations = {
+export const builderLimitations: ProblemItem = {
   title: "Nie możesz wdrożyć indywidualnych rozwiązań?",
   description:
     "Kreatory stron jak Wix czy Squarespace ograniczają funkcje, SEO i wydajność. Przejdź na elastyczne, szybkie rozwiązanie bez limitów.",
@@ -16,6 +17,9 @@ export const builderLimitations = {
     description:
       "Zyskaj pełną swobodę tworzenia i stronę bez kompromisów, zoptymalizowaną pod SEO i wydajność.",
     button: "Przenieś moją stronę",
+  },
+  email: {
+    service: "ograniczeń kreatora stron internetowych",
   },
   markdown: `# Builder ogranicza Twoją stronę
 

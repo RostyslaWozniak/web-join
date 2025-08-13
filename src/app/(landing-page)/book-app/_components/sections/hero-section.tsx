@@ -93,7 +93,7 @@ function CTAButtons() {
   return (
     <div className="mx-auto flex flex-col gap-4 sm:w-min sm:flex-row sm:justify-center">
       <AccessibleLink
-        href="/kontakt#form"
+        href="/book-app#form"
         aria-label="Umów darmową prezentację"
       >
         <GradientButton>

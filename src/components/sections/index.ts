@@ -2,3 +2,8 @@ export * from "./home-hero-section";
 export * from "./why-invest-section";
 export * from "./services-preview-section";
 export * from "./portfolio-section";
+export * from "./blog-preview-section";
+export * from "./book-app-preview-section";
+export * from "./faq-section";
+export * from "./grid-cta-section";
+export * from "./dont-have-website-section";

@@ -1,6 +1,7 @@
 import { SnailIcon } from "lucide-react";
+import { type ProblemItem } from ".";
 
-export const slowWbsite = {
+export const slowWbsite: ProblemItem = {
   title: "Twoja strona ładuje się za wolno?",
   description:
     "Wolna strona zniechęca klientów i obniża pozycję w Google. Zwiększ szybkość, by poprawić konwersję i widoczność.",
@@ -16,6 +17,9 @@ export const slowWbsite = {
     description:
       "Popraw prędkość ładowania do <1 sekundy i odzyskaj klientów, którzy dziś opuszczają Twój serwis.",
     button: "Przyspiesz moją stronę",
+  },
+  email: {
+    service: "wolnego ładowania strony internetowej",
   },
   markdown: `# Strona ładuje się wolno
 

@@ -1,7 +1,7 @@
 import { env } from "@/env";
 import { type MetadataRoute } from "next";
 import { posts } from "../features/blog/data/posts";
-import { problemsData } from "@/data/problems";
+import { problemsData } from "@/features/problems/data";
 
 const landingPages = [
   { id: 1, href: "/book-app" },

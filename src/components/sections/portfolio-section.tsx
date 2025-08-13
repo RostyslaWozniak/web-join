@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { MaxWidthWrapper } from "../max-width-wrapper";
 import { H2, Text } from "../ui/typography";
 import { Badge } from "../ui/badge";
 import { PlayCircle } from "lucide-react";
@@ -46,8 +45,8 @@ const projects = [
 
 export function PortfolioSection() {
   return (
-    <MaxWidthWrapper className="flex flex-col items-center gap-y-12 px-0 md:gap-y-14">
-      <div className="flex flex-col items-center gap-y-4 px-2.5">
+    <>
+      <div className="mb-6 flex flex-col items-center gap-y-4 px-2.5 md:mb-12">
         <H2>Portfolio</H2>
         <Text size="subtitle" className="max-w-2xl !text-center">
           Każdy projekt to unikalne rozwiązanie stworzone z myślą o celach
@@ -107,6 +106,6 @@ export function PortfolioSection() {
           ),
         )}
       </div>
-    </MaxWidthWrapper>
+    </>
   );
 }

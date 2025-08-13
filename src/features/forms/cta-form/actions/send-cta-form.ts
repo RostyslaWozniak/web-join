@@ -5,7 +5,7 @@ import { ctaFormSchema, type CtaFormSchema } from "../lib/validation";
 import { resend } from "@/lib/services/resend";
 import { env } from "@/env";
 import CtaFormResponseEmail from "@/components/emails/cta-form-response-email";
-import { problemsData } from "@/data/problems";
+import { problemsData } from "@/features/problems/data";
 import { db } from "@/server/db";
 
 type SendCtaFormActionArgs = CtaFormSchema & { slug: string };
@@ -28,7 +28,8 @@ export async function sendCtaFormAction(
   }
 
   const service =
-    problemsData.find((p) => p.slug === validatedData.slug)?.title ?? null;
+    problemsData.find((p) => p.slug === validatedData.slug)?.email.service ??
+    null;
 
   const { data, error } = await sendEmailToClient(
     { name: validatedData.username, email: validatedData.email },

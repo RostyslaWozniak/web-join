@@ -1,4 +1,4 @@
-import { FrownIcon, XIcon } from "lucide-react";
+import { FrownIcon, HomeIcon, XIcon } from "lucide-react";
 import { AnimatedText } from "../animations/animated-text";
 import { GridBackground } from "../grid-background";
 import { NotFoundIllustration } from "../illustrations/not-found-llustration";
@@ -26,6 +26,7 @@ export function NotFoundSection() {
             </Text>
 
             <GradientButton className="relative">
+              <HomeIcon className="mr-2" />
               Na główną <Link href="/" className="absolute inset-0" />
             </GradientButton>
           </div>

@@ -1,10 +1,6 @@
-import { AccessibleLink } from "@/components/accesible-link";
-import { MaxWidthWrapper } from "@/components/max-width-wrapper";
-import { Card, CardContent } from "@/components/ui/card";
-import { H2, H3 } from "@/components/ui/typography";
-import { cn } from "@/lib/utils";
+import { CardItem } from "@/components/card-item";
+import { H2, H3, H4 } from "@/components/ui/typography";
 import {
-  ArrowUpRightIcon,
   BriefcaseIcon,
   CarIcon,
   DumbbellIcon,
@@ -17,82 +13,46 @@ import {
 
 export function TargetAudienceSection() {
   return (
-    <section className="bg-white py-16" id="dla-kogo">
-      <MaxWidthWrapper>
-        {/* Header */}
-        <div className="mb-16 text-center">
-          <H2 className="mb-6">👨‍⚕️ Czy to rozwiązanie dla Twojej firmy?</H2>
+    <>
+      <div className="mb-6 text-center md:mb-12">
+        <H2 className="mb-6">👨‍⚕️ Czy to rozwiązanie dla Twojej firmy?</H2>
 
-          <p className="mx-auto max-w-4xl text-lg leading-relaxed text-gray-600">
-            BookApp to idealne rozwiązanie dla wszystkich firm usługowych, które
-            chcą zoptymalizować zarządzanie wizytami, zwiększyć swoją widoczność
-            online i pozyskiwać więcej klientów. Niezależnie od branży, jeśli
-            Twoja firma opiera się na rezerwacjach i spotkaniach, BookApp jest
-            dla Ciebie!
-          </p>
+        <p className="mx-auto max-w-4xl text-lg leading-relaxed text-gray-600">
+          BookApp to idealne rozwiązanie dla wszystkich firm usługowych, które
+          chcą zoptymalizować zarządzanie wizytami, zwiększyć swoją widoczność
+          online i pozyskiwać więcej klientów. Niezależnie od branży, jeśli
+          Twoja firma opiera się na rezerwacjach i spotkaniach, BookApp jest dla
+          Ciebie!
+        </p>
+      </div>
+
+      {/* Business Types */}
+      <div>
+        <H3 className="mb-4 md:mb-8">BookApp to idealny wybór dla:</H3>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {businessTypes
+            .slice(0, 6)
+            .map(({ id, title, description, icon, color, href }) => (
+              <CardItem
+                key={id}
+                title={title}
+                description={description}
+                href={href ?? undefined}
+                icon={icon}
+                iconClassName={color}
+                heading={H4}
+              />
+            ))}
         </div>
-
-        {/* Business Types */}
-        <div className="mb-16">
-          <H3 className="mb-8 !text-center">BookApp to idealny wybór dla:</H3>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {businessTypes.map((business, index) => {
-              const IconComponent = business.icon;
-              return (
-                <Card
-                  key={index}
-                  className={cn(
-                    business.color,
-                    "group relative border-gray-300 bg-white/80 shadow-xl backdrop-blur-sm",
-                  )}
-                >
-                  <CardContent className="p-6">
-                    <div
-                      className={`h-12 w-12 rounded-lg ${business.color} mb-4 flex items-center justify-center`}
-                    >
-                      <IconComponent className="h-6 w-6" />
-                    </div>
-
-                    <h4
-                      className={cn(
-                        "mb-3 font-semibold leading-tight text-foreground",
-                        {
-                          "group-hover:underline": business.href,
-                        },
-                      )}
-                    >
-                      {business.title}
-                    </h4>
-
-                    <p className="text-xs leading-relaxed text-gray-600">
-                      {business.description}
-                    </p>
-                    {business.href && (
-                      <>
-                        <AccessibleLink
-                          href={business.href}
-                          aria-label="Przejdź do podstrony weterynarze"
-                          className={cn(
-                            "absolute inset-0 min-h-full min-w-full",
-                          )}
-                        />
-                        <ArrowUpRightIcon className="absolute right-4 top-4 duration-300 group-hover:opacity-100 md:opacity-0 md:group-hover:-translate-y-1 md:group-hover:translate-x-1" />
-                      </>
-                    )}
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </MaxWidthWrapper>
-    </section>
+      </div>
+    </>
   );
 }
 
 const businessTypes = [
   {
+    id: "1",
     title: "Salonów Fryzjerskich i Kosmetycznych",
     description:
       "Uwolnij recepcję od ciągłych telefonów, pozwól klientom umawiać wizyty online 24/7 i zaoferuj im wygodne przypomnienia o zabiegach.",
@@ -101,6 +61,7 @@ const businessTypes = [
     href: null,
   },
   {
+    id: "2",
     title: "Przychodni Medycznych i Dentystycznych",
     description:
       "Zarządzaj harmonogramem lekarzy i specjalistów, oferując pacjentom szybkie i intuicyjne rezerwacje wizyt, bez konieczności dzwonienia.",
@@ -109,6 +70,7 @@ const businessTypes = [
     href: null,
   },
   {
+    id: "3",
     title: "Gabinetów Weterynaryjnych",
     description:
       "Usprawnij umawianie wizyt dla właścicieli zwierząt, wysyłaj automatyczne przypomnienia o szczepieniach czy kontrolach, a także buduj bazę stałych klientów.",
@@ -117,6 +79,7 @@ const businessTypes = [
     href: "/book-app/weterynarze",
   },
   {
+    id: "4",
     title: "Gabinetów Masażu i Fizjoterapii",
     description:
       "Zapewnij klientom łatwy dostęp do kalendarza terapeutów, uprość proces rezerwacji i pozwól im na samodzielne zarządzanie swoimi terminami.",
@@ -125,6 +88,7 @@ const businessTypes = [
     href: null,
   },
   {
+    id: "5",
     title: "Trenerów Personalnych i Siłowni",
     description:
       "Zautomatyzuj zapisy na treningi indywidualne i grupowe, zarządzaj dostępnością trenerów i oferuj elastyczne opcje rezerwacji.",
@@ -133,6 +97,7 @@ const businessTypes = [
     href: null,
   },
   {
+    id: "6",
     title: "Serwisów Samochodowych i Myjni",
     description:
       "Pozwól klientom na rezerwację terminów przeglądów, napraw czy mycia samochodu online, oszczędzając czas pracowników i klientów.",
@@ -141,6 +106,7 @@ const businessTypes = [
     href: null,
   },
   {
+    id: "7",
     title: "Doradców i Konsultantów",
     description:
       "Udostępnij swój kalendarz online, umożliwiając klientom wygodne umawianie spotkań i konsultacji w dogodnym dla obu stron terminie.",
@@ -149,6 +115,7 @@ const businessTypes = [
     href: null,
   },
   {
+    id: "8",
     title: "Każdej Innej Firmy Usługowej...",
     description:
       "...gdzie umawianie wizyt jest kluczowe dla sprawnego funkcjonowania i rozwoju biznesu!",

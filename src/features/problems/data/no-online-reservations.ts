@@ -1,6 +1,7 @@
 import { CalendarIcon } from "lucide-react";
+import { type ProblemItem } from ".";
 
-export const noOnlineReservations = {
+export const noOnlineReservations: ProblemItem = {
   title: "Brakuje automatyzacji / rezerwacji?",
   description:
     "Brak systemu rezerwacji online utrudnia klientom zapisanie się. Zautomatyzuj proces i zwiększ liczbę wizyt 24/7.",
@@ -16,6 +17,9 @@ export const noOnlineReservations = {
     description:
       "Zautomatyzuję Twój proces zapisów, by klienci mogli umawiać się w dowolnym momencie.",
     button: "Dodaj rezerwacje online",
+  },
+  email: {
+    service: "braku rezerwacji online",
   },
   markdown: `# Brak rezerwacji online
 

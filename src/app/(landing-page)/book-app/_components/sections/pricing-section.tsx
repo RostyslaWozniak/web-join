@@ -6,11 +6,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CalendarIcon, CheckCircleIcon } from "lucide-react";
-import { GradientButton } from "@/components/ui/gradient-button";
+import { CheckCircleIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { H2 } from "@/components/ui/typography";
-import { AccessibleLink } from "@/components/accesible-link";
 
 const pricing = [
   {
@@ -65,85 +63,61 @@ const pricing = [
 
 export function PricingSection() {
   return (
-    <section className="bg-gray-50 py-20">
-      <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 text-center">
-            <H2 className="mb-6">
-              💼 Dla małych i średnich firm – elastyczne opcje
-            </H2>
-          </div>
-
-          <div className="grid gap-8 lg:grid-cols-3">
-            {pricing.map(
-              ({ id, name, price, pricePerMonth, benefits, styles }, i) => {
-                const isMostPopular = i === 1;
-                return (
-                  <Card
-                    key={id}
-                    className={cn(
-                      "relative flex flex-col border-gray-300 bg-white/80 shadow-xl backdrop-blur-sm",
-                      {
-                        "border-accent-cyan sm:scale-105": isMostPopular,
-                        "scale-105": i === 1,
-                      },
-                    )}
-                  >
-                    {isMostPopular && (
-                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 transform">
-                        <Badge className="bg-accent-cyan tracking-wider text-foreground">
-                          Najpopularniejszy
-                        </Badge>
-                      </div>
-                    )}
-                    <CardHeader className="text-center">
-                      <Badge className={cn(styles, "mx-auto mb-4 uppercase")}>
-                        {name}
-                      </Badge>
-                      <CardTitle className="text-2xl">
-                        wdrożenie od {price} zł
-                      </CardTitle>
-                      <CardDescription className="text-lg">
-                        + {pricePerMonth} zł/mies
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                      <ul className="flex-1 space-y-3">
-                        {benefits.map((benefit) => (
-                          <li key={benefit} className="flex items-start gap-2">
-                            <span className="flex h-[1lh] items-center">
-                              <CheckCircleIcon className="h-4 w-4 text-emerald-500" />
-                            </span>
-                            {benefit}
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                );
-              },
-            )}
-          </div>
-
-          <div className="mt-12 text-center">
-            <p className="mb-8 text-lg text-gray-700">
-              Możliwość rozbudowy krok po kroku – współpraca długoterminowa.
-            </p>
-            <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <AccessibleLink
-                href="/kontakt#form"
-                className="w-full md:w-auto"
-                aria-label="Umów darmową prezentację"
-              >
-                <GradientButton outline>
-                  <CalendarIcon className="mr-2 h-5 w-5 text-accent-cyan" />
-                  Umów się na prezentację
-                </GradientButton>
-              </AccessibleLink>
-            </div>
-          </div>
-        </div>
+    <>
+      <div className="mb-16 text-center">
+        <H2 className="mb-6">Dla małych i średnich firm – elastyczne opcje</H2>
       </div>
-    </section>
+
+      <div className="grid gap-8 lg:grid-cols-3">
+        {pricing.map(
+          ({ id, name, price, pricePerMonth, benefits, styles }, i) => {
+            const isMostPopular = i === 1;
+            return (
+              <Card
+                key={id}
+                className={cn(
+                  "relative flex flex-col border-gray-300 bg-white/80 shadow-xl backdrop-blur-sm",
+                  {
+                    "border-accent-cyan sm:scale-105": isMostPopular,
+                    "scale-105": i === 1,
+                  },
+                )}
+              >
+                {isMostPopular && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 transform">
+                    <Badge className="bg-accent-cyan tracking-wider text-foreground">
+                      Najpopularniejszy
+                    </Badge>
+                  </div>
+                )}
+                <CardHeader className="text-center">
+                  <Badge className={cn(styles, "mx-auto mb-4 uppercase")}>
+                    {name}
+                  </Badge>
+                  <CardTitle className="text-2xl">
+                    wdrożenie od {price} zł
+                  </CardTitle>
+                  <CardDescription className="text-lg">
+                    + {pricePerMonth} zł/mies
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <ul className="flex-1 space-y-3">
+                    {benefits.map((benefit) => (
+                      <li key={benefit} className="flex items-start gap-2">
+                        <span className="flex h-[1lh] items-center">
+                          <CheckCircleIcon className="h-4 w-4 text-emerald-500" />
+                        </span>
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            );
+          },
+        )}
+      </div>
+    </>
   );
 }

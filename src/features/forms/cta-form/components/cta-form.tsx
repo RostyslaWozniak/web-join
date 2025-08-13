@@ -62,7 +62,7 @@ export function CtaForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="mx-auto grid max-w-xl gap-4 md:max-w-full md:grid-cols-3"
+        className="relative mx-auto grid max-w-xl gap-4 md:max-w-full md:grid-cols-3"
       >
         <FormField
           control={form.control}
@@ -90,9 +90,7 @@ export function CtaForm() {
             </FormItem>
           )}
         />
-        <div className="md:col-span-3">
-          <CtaFormAlerts error={error} success={success} />
-        </div>
+
         <FormField
           control={form.control}
           name="consent"
@@ -105,7 +103,7 @@ export function CtaForm() {
                   onCheckedChange={field.onChange}
                 />
               </FormControl>
-              <FormLabel className="col-span-11 text-xs font-normal leading-5 tracking-wider">
+              <FormLabel className="col-span-11 cursor-pointer text-xs font-normal leading-5 tracking-wider">
                 Wyrażam zgodę na przetwarzanie moich danych osobowych w celu
                 udzielenia odpowiedzi i nawiązania kontaktu.
               </FormLabel>
@@ -121,6 +119,9 @@ export function CtaForm() {
           Wyślij zapytanie
           <ArrowUpRightIcon className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
         </LoadingButton>
+        <div className="md:col-span-3">
+          <CtaFormAlerts error={error} success={success} />
+        </div>
       </form>
     </Form>
   );

@@ -2,9 +2,9 @@
 import { Markdown } from "@/components/markdown-renderer";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { SectionWrapper } from "@/components/section-wrapper";
-import BlogPreviewSection from "@/components/sections/blog-preview-section";
+import { BlogPreviewSection } from "@/components/sections";
 import { H2 } from "@/components/ui/typography";
-import { problemsData } from "@/data/problems";
+import { problemsData } from "@/features/problems/data";
 import { CtaForm } from "@/features/forms/cta-form";
 import { type Metadata } from "next";
 
@@ -62,7 +62,7 @@ export default async function ProblemPage({
         </MaxWidthWrapper>
       </SectionWrapper>
       <SectionWrapper className="relative">
-        <MaxWidthWrapper className="relative z-10">
+        <MaxWidthWrapper size="md" className="relative z-10">
           <div className="text-center">
             <H2 className="mb-4 text-3xl font-bold text-cyan-900 lg:text-4xl">
               {problem.cta.title}
@@ -71,7 +71,7 @@ export default async function ProblemPage({
               {problem.cta.description}
             </p>
           </div>
-          <div className="mx-auto max-w-5xl">
+          <div>
             <CtaForm />
           </div>
         </MaxWidthWrapper>

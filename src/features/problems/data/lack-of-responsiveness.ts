@@ -1,6 +1,7 @@
 import { TabletSmartphoneIcon } from "lucide-react";
+import { type ProblemItem } from ".";
 
-export const lackOfResponsiveness = {
+export const lackOfResponsiveness: ProblemItem = {
   title: "Strona nie działa dobrze na telefonie",
   description:
     "Ponad 70% ruchu pochodzi z telefonów. Brak responsywności obniża konwersję i ranking Google. Zoptymalizuj stronę pod mobile.",
@@ -16,6 +17,9 @@ export const lackOfResponsiveness = {
     description:
       "Dostosuję Twoją stronę do telefonów, by zwiększyć sprzedaż i poprawić pozycję w Google.",
     button: "Popraw responsywność",
+  },
+  email: {
+    service: "braku responsywności strony internetowej",
   },
   markdown: `# Strona nie działa dobrze na telefonie
 

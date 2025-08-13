@@ -1,6 +1,7 @@
 import { BlocksIcon } from "lucide-react";
+import { type ProblemItem } from ".";
 
-export const wordpressAndPlugins = {
+export const wordpressAndPlugins: ProblemItem = {
   title: "Masz dość WordPressa i płatnych wtyczek",
   description:
     "Zbyt wiele wtyczek spowalnia WordPress, powoduje błędy i luki. Postaw na bezpieczną, szybką stronę bez zbędnych dodatków.",
@@ -17,7 +18,9 @@ export const wordpressAndPlugins = {
       "Otrzymaj stronę bezpieczną, szybką i niezależną od przestarzałych dodatków.",
     button: "Stwórz nową stronę",
   },
-
+  email: {
+    service: "problemów z WordPressem i wtyczkami",
+  },
   markdown: `# Masz dość WordPressa i płatnych wtyczek
 
 WordPress jest popularny, ale niekoniecznie najlepszy. Zwłaszcza dla biznesów, które chcą **spokoju i niezawodności**.
