@@ -64,14 +64,14 @@ export function Accordion({ questions, className }: AccorderonProps) {
           >
             <div
               className={cn(
-                "overflow-hidden opacity-0 transition-all duration-300 md:px-8",
+                "overflow-hidden opacity-0 transition-all duration-300 md:mx-8",
                 {
-                  "opacity-1 pb-8": index === activeIndex,
+                  "opacity-1": index === activeIndex,
                 },
               )}
             >
               <Markdown
-                className="p-4"
+                className="mb-4 mt-4 rounded-lg bg-white/80 p-4 pt-0 shadow backdrop-blur-lg md:my-8 md:p-6"
                 components={{
                   li: ({ children }) => (
                     <li className="ml-6 list-disc md:text-lg">{children}</li>

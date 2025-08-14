@@ -14,7 +14,6 @@ import { useForm } from "react-hook-form";
 import { ctaFormSchema, type CtaFormSchema } from "../lib/validation";
 import { LoadingButton } from "@/components/ui/loading-button";
 import { useState, useTransition } from "react";
-import { Checkbox } from "@/components/ui/checkbox";
 import { ArrowUpRightIcon } from "lucide-react";
 import { sendCtaFormAction } from "../actions/send-cta-form";
 import { CtaFormAlerts } from "./cta-form-alerts";
@@ -28,7 +27,7 @@ export function CtaForm({ typeOfProject }: { typeOfProject?: string }) {
     defaultValues: {
       username: "",
       email: "",
-      consent: false,
+      consent: true,
     },
   });
 
@@ -92,27 +91,12 @@ export function CtaForm({ typeOfProject }: { typeOfProject?: string }) {
             </FormItem>
           )}
         />
-
-        <FormField
-          control={form.control}
-          name="consent"
-          render={({ field }) => (
-            <FormItem className="-mt-2 flex items-start gap-x-1 md:col-span-2">
-              <FormControl>
-                <Checkbox
-                  className="mx-2 mt-2.5"
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                />
-              </FormControl>
-              <FormLabel className="col-span-11 cursor-pointer text-xs font-normal leading-5 tracking-wider">
-                Wyrażam zgodę na przetwarzanie moich danych osobowych w celu
-                udzielenia odpowiedzi i nawiązania kontaktu.
-              </FormLabel>
-            </FormItem>
-          )}
-        />
-
+        <div className="md:col-span-2">
+          <p className="flex items-start px-2 text-sm font-normal leading-5 tracking-wider">
+            Wysyłając formularz wyrażasz zgodę na przetwarzanie danych osobowych
+            w celu udzielenia odpowiedzi i nawiązania kontaktu.
+          </p>
+        </div>
         <LoadingButton
           loading={isPending}
           type="submit"

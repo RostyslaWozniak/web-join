@@ -24,10 +24,14 @@ export const posts = [
         "Strona internetowa dla lokalnego biznesu w Warszawie. Zwiększ widoczność online, pozyskaj klientów 24/7. Agencja SEO, strony WWW.",
     },
     tag: tags.seo,
-    createdAt: new Date("2025-06-22"),
-    time: 10,
+    createdAt: new Date("2025-08-01"),
     author: authors.me,
     markdown: post1,
+    form: {
+      title: "Gotowy na Profesjonalną Obecność w Internecie?",
+      subtitle:
+        "Wyślij zapytanie i zobacz, jak możemy stworzyć Twoją profesjonalną wizytówkę online, która będzie pracować na Twój sukces 24h na dobę!",
+    },
   },
   {
     id: 2,
@@ -45,9 +49,13 @@ export const posts = [
     },
     tag: tags["strony-internetowe"],
     createdAt: new Date("2025-06-25"),
-    time: 12,
     author: authors.me,
     markdown: post2,
+    form: {
+      title: "Gotowy na Profesjonalną Obecność w Internecie?",
+      subtitle:
+        "Wyślij zapytanie i zobacz, jak możemy stworzyć Twoją profesjonalną wizytówkę online, która będzie pracować na Twój sukces 24h na dobę!",
+    },
   },
   {
     id: 3,
@@ -65,9 +73,13 @@ export const posts = [
     },
     tag: tags.google,
     createdAt: new Date("2025-06-25"),
-    time: 8,
     author: authors.me,
     markdown: post3,
+    form: {
+      title: "Gotowy na Profesjonalną Obecność w Internecie?",
+      subtitle:
+        "Wyślij zapytanie i zobacz, jak możemy stworzyć Twoją profesjonalną wizytówkę online, która będzie pracować na Twój sukces 24 godziny na dobę!",
+    },
   },
   {
     id: 4,
@@ -86,8 +98,12 @@ export const posts = [
 
     tag: tags["e-commerce"],
     createdAt: new Date("2025-06-26"),
-    time: 8,
     author: authors.me,
     markdown: post4,
+    form: {
+      title: "Gotowy na Profesjonalną Obecność w Internecie?",
+      subtitle:
+        "Wyślij zapytanie i zobacz, jak możemy stworzyć Twoją profesjonalną wizytówkę online, która będzie pracować na Twój sukces 24 godziny na dobę!",
+    },
   },
 ];

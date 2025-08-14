@@ -16,6 +16,9 @@ import { env } from "@/env";
 import { Markdown } from "@/components/markdown-renderer";
 import { estimateReadingTime } from "@/features/blog/lib/estimate-reading-time";
 import { Breadcrumb } from "@/components/breadcrumb";
+import { SectionWrapper } from "@/components/section-wrapper";
+import { CtaForm } from "@/features/forms/cta-form";
+import { SectionHeader } from "@/components/section-header";
 
 export const dynamic = "force-static";
 
@@ -86,23 +89,23 @@ export default async function PostPage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <div>
-        <div className="relative mx-auto h-[400px] max-w-7xl lg:h-[500px]">
-          <Image
-            src={post.image}
-            alt="post image"
-            width={1000}
-            height={400}
-            className="-z-10 h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-700/70 to-gray-700" />
-          <H1 className="absolute bottom-2 w-full max-w-[800px] px-4 !text-start text-2xl tracking-normal text-white lg:left-8 lg:text-4xl">
-            {post.title}
-          </H1>
-        </div>
-        <div className="mx-auto max-w-7xl py-6">
-          <Breadcrumb />
-        </div>
+      <div className="relative mx-auto h-[400px] max-w-7xl lg:h-[500px]">
+        <Image
+          src={post.image}
+          alt="post image"
+          width={1000}
+          height={400}
+          className="-z-10 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-700/70 to-gray-700" />
+        <H1 className="absolute bottom-2 w-full max-w-[800px] px-4 !text-start text-2xl tracking-normal text-white lg:left-8 lg:text-4xl">
+          {post.title}
+        </H1>
+      </div>
+      <div className="mx-auto max-w-7xl py-6">
+        <Breadcrumb />
+      </div>
+      <SectionWrapper className="pt-0 md:pt-0">
         <MaxWidthWrapper className="flex max-w-7xl flex-col items-start gap-12 lg:flex-row">
           <div className="w-full max-w-4xl">
             <div className="flex-grow">
@@ -142,7 +145,17 @@ export default async function PostPage({
             <BlogSidebar currentPostSlug={post.slug} />
           </div>
         </MaxWidthWrapper>
-      </div>
+      </SectionWrapper>
+      <SectionWrapper className="bg-card-gradient">
+        <MaxWidthWrapper size="sm">
+          <SectionHeader
+            className="mx-auto max-w-4xl"
+            title={post.form.title}
+            subtitle={post.form.subtitle}
+          />
+          <CtaForm />
+        </MaxWidthWrapper>
+      </SectionWrapper>
     </>
   );
 }

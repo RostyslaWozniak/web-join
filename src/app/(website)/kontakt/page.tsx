@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { H1, H2, H3, Text } from "@/components/ui/typography";
-import { ContactForm } from "@/features/contact-form";
+import { ContactForm } from "@/features/forms/contact-form";
 import { cn } from "@/lib/utils";
 import {
   ArrowDownIcon,
@@ -86,7 +86,7 @@ export default function ContactPage() {
           </div>
         </MaxWidthWrapper>
       </section>
-      <SectionWrapper className="bg-white">
+      <SectionWrapper className="">
         <MaxWidthWrapper size="sm">
           <FaqSection />
         </MaxWidthWrapper>

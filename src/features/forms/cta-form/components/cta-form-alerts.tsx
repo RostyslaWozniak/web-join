@@ -40,9 +40,9 @@ export function CtaFormAlerts({
             <p className="font-bold">Co dzieje się dalej?</p>
             <p className="text-xs md:text-sm">
               Po wysłaniu formularza odezwę się do Ciebie mailowo, żebyśmy mogli
-              wspólnie ustalić wygodny termin 30-minutowej, bezpłatnej rozmowy
-              online. Porozmawiamy wtedy o Twoim projekcie i kolejnych krokach.
-              Do zobaczenia!
+              wspólnie ustalić termin 30-minutowej, bezpłatnej rozmowy online.
+              Porozmawiamy wtedy o Twoim projekcie i kolejnych krokach. Do
+              zobaczenia!
             </p>
           </Alert>
         </div>
