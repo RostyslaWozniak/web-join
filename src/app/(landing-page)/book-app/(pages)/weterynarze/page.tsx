@@ -65,7 +65,7 @@ export default function VeterinaryLanding() {
             className="mx-auto max-w-2xl"
           />
           <div>
-            <CtaForm />
+            <CtaForm typeOfProject="rezerwacji wizyt dla weterynarzy online BookApp" />
           </div>
         </MaxWidthWrapper>
         <div className="absolute inset-0 bg-card-gradient opacity-50"></div>

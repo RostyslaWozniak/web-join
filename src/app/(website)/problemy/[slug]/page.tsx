@@ -72,7 +72,7 @@ export default async function ProblemPage({
             </p>
           </div>
           <div>
-            <CtaForm />
+            <CtaForm typeOfProject={problem.email.service} />
           </div>
         </MaxWidthWrapper>
         <div className="absolute inset-0 bg-card-gradient opacity-50"></div>

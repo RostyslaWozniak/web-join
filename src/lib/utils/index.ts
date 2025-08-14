@@ -16,3 +16,13 @@ export function getInitials(name: string) {
     .join("")
     .toUpperCase();
 }
+
+export function capitalizeString(string: string): string {
+  if (string.length === 0) return "";
+  return string
+    .trim()
+    .split(" ")
+    .filter((str) => str.trim().length > 0)
+    .map((str) => str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase())
+    .join(" ");
+}

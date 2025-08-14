@@ -55,7 +55,7 @@ export default function BookAppPage() {
             className="mx-auto max-w-2xl"
           />
           <div>
-            <CtaForm />
+            <CtaForm typeOfProject="rezerwacji wizyt online BookApp" />
           </div>
         </MaxWidthWrapper>
         <div className="absolute inset-0 bg-card-gradient opacity-50"></div>

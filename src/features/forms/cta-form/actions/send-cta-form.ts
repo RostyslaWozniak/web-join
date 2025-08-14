@@ -5,10 +5,10 @@ import { ctaFormSchema, type CtaFormSchema } from "../lib/validation";
 import { resend } from "@/lib/services/resend";
 import { env } from "@/env";
 import CtaFormResponseEmail from "@/components/emails/cta-form-response-email";
-import { problemsData } from "@/features/problems/data";
 import { db } from "@/server/db";
+import { capitalizeString } from "@/lib/utils";
 
-type SendCtaFormActionArgs = CtaFormSchema & { slug: string };
+type SendCtaFormActionArgs = CtaFormSchema & { typeOfProject?: string };
 
 type SendCtaFormActionReturnType =
   | { error: string; success: false }
@@ -18,7 +18,7 @@ export async function sendCtaFormAction(
   unsafeData: SendCtaFormActionArgs,
 ): Promise<SendCtaFormActionReturnType> {
   const { data: validatedData, success: validationSuccess } = ctaFormSchema
-    .extend({ slug: z.string() })
+    .extend({ typeOfProject: z.string().optional() })
     .safeParse(unsafeData);
   if (!validationSuccess) {
     return {
@@ -27,13 +27,11 @@ export async function sendCtaFormAction(
     };
   }
 
-  const service =
-    problemsData.find((p) => p.slug === validatedData.slug)?.email.service ??
-    null;
+  const capitalizedUserName = capitalizeString(validatedData.username);
 
   const { data, error } = await sendEmailToClient(
-    { name: validatedData.username, email: validatedData.email },
-    service,
+    { name: capitalizedUserName, email: validatedData.email },
+    validatedData.typeOfProject ?? null,
   );
   if (error || !data) {
     return {
@@ -41,13 +39,15 @@ export async function sendCtaFormAction(
       success: false,
     };
   }
+
   try {
     await db.contactForm.create({
       data: {
+        username: capitalizedUserName,
         emailId: data.id,
         consent: validatedData.consent,
         email: validatedData.email,
-        message: `Widomość wysłana przez CTA form problem: ${service}`,
+        message: `Widomość wysłana przez CTA form problem: ${validatedData.typeOfProject ?? "brak problemu"}`,
       },
     });
     return {

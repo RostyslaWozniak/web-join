@@ -16,12 +16,10 @@ import { LoadingButton } from "@/components/ui/loading-button";
 import { useState, useTransition } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ArrowUpRightIcon } from "lucide-react";
-import { useParams } from "next/navigation";
 import { sendCtaFormAction } from "../actions/send-cta-form";
 import { CtaFormAlerts } from "./cta-form-alerts";
 
-export function CtaForm() {
-  const params = useParams<{ slug: string }>();
+export function CtaForm({ typeOfProject }: { typeOfProject?: string }) {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
@@ -29,8 +27,8 @@ export function CtaForm() {
     resolver: zodResolver(ctaFormSchema),
     defaultValues: {
       username: "",
-      email: "",
-      consent: false,
+      email: "rostyslav.vozniak.dev@gmail.com",
+      consent: true,
     },
   });
 
@@ -42,7 +40,7 @@ export function CtaForm() {
       const { error: sendFromError, success: sendFormSuccess } =
         await sendCtaFormAction({
           ...values,
-          slug: params.slug,
+          typeOfProject,
         });
       if (!sendFormSuccess) {
         startTransition(() => {
@@ -71,7 +69,7 @@ export function CtaForm() {
             <FormItem className="relative md:col-span-1">
               <FormLabel>Imię</FormLabel>
               <FormControl>
-                <Input placeholder="Jan Kowalski" {...field} />
+                <Input placeholder="Jan Kowalski" type="text" {...field} />
               </FormControl>
               <FormMessage className="absolute -top-1.5 right-0 w-min text-nowrap rounded-full px-2 text-sm text-destructive" />
             </FormItem>
@@ -84,7 +82,11 @@ export function CtaForm() {
             <FormItem className="relative md:col-span-2">
               <FormLabel>E-mail</FormLabel>
               <FormControl>
-                <Input placeholder="twój-email@gmail.com" {...field} />
+                <Input
+                  placeholder="twój-email@gmail.com"
+                  type="email"
+                  {...field}
+                />
               </FormControl>
               <FormMessage className="absolute -top-1.5 right-0 w-min text-nowrap rounded-full px-2 text-sm text-destructive" />
             </FormItem>
