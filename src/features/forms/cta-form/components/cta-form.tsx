@@ -27,8 +27,8 @@ export function CtaForm({ typeOfProject }: { typeOfProject?: string }) {
     resolver: zodResolver(ctaFormSchema),
     defaultValues: {
       username: "",
-      email: "rostyslav.vozniak.dev@gmail.com",
-      consent: true,
+      email: "",
+      consent: false,
     },
   });
 

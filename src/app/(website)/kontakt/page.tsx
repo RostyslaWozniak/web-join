@@ -1,6 +1,7 @@
 import { Alert } from "@/components/alert";
 import { GridBackground } from "@/components/grid-background";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
+import { SectionWrapper } from "@/components/section-wrapper";
 import { FaqSection } from "@/components/sections/faq-section";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -85,7 +86,11 @@ export default function ContactPage() {
           </div>
         </MaxWidthWrapper>
       </section>
-      <FaqSection />
+      <SectionWrapper className="bg-white">
+        <MaxWidthWrapper size="sm">
+          <FaqSection />
+        </MaxWidthWrapper>
+      </SectionWrapper>
     </>
   );
 }

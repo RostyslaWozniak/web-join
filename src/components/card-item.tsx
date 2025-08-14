@@ -28,7 +28,7 @@ export function CardItem({
   return (
     <Card
       className={cn(
-        "group relative h-full overflow-hidden border-0 bg-white/80 shadow-xl backdrop-blur-sm transition-all duration-300 hover:shadow-lg",
+        "group relative h-full overflow-hidden border-0 bg-white/80 shadow-md backdrop-blur-sm transition-all duration-300 md:shadow-lg md:hover:shadow-xl",
         className,
       )}
     >
