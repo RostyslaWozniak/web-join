@@ -9,10 +9,12 @@ const landingPages = [
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const postsSitemap = posts.map((post) => ({
-    url: `${env.NEXT_PUBLIC_BASE_URL}/blog/${post.slug}`,
-    lastModified: new Date(post.createdAt),
-  }));
+  const postsSitemap = posts
+    .filter((post) => post.published)
+    .map((post) => ({
+      url: `${env.NEXT_PUBLIC_BASE_URL}/blog/${post.slug}`,
+      lastModified: new Date(post.createdAt),
+    }));
 
   const landingPagesSitemap = landingPages.map(({ href }) => ({
     url: `${env.NEXT_PUBLIC_BASE_URL}${href}`,

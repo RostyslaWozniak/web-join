@@ -52,7 +52,7 @@ export async function generateMetadata({
       countryName: "Poland",
       type: "article",
       images: {
-        url: post.image,
+        url: post.metadata.image,
         width: 1200,
         height: 630,
         alt: "Nowoczesne strony internetowe i sklepy online - Web Join",

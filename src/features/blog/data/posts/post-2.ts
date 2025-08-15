@@ -133,3 +133,24 @@ Twoja firma zasługuje na więcej niż bycie najemcą na cudzej platformie. Zas�
 
 **Inwestuj w przyszłość swojej firmy! Dowiedz się, dlaczego własna strona to podstawa sukcesu w świecie cyfrowym.**
 `;
+
+// const facebook = `
+// 🤔 "Mam Facebooka i Instagrama, po co mi strona?"
+// Twarde dane:
+// 📊 93% Polaków szuka usług przez Google, nie przez facebooka czy instagrama
+// 📊 78% klientów uważa firmy tylko na social za mniej profesjonalne
+// 📊 53% użytkowników opuszcza stronę ładującą się >3 sekundy
+// Realne przykłady:
+// 🏪 Salon kosmetyczny Mokotów: 15k obserwujących → blokada konta → 2 tygodnie bez klientów
+// 🍽️ Restauracja Starówka:
+
+// Tylko Facebook: 50 rezerwacji/miesiąc
+// Facebook + strona: 180 rezerwacji/miesiąc
+// +260% wzrost!
+
+// ⚖️ Kancelaria Żoliborz: po dodaniu strony +340% zapytań
+// Problem: Ty nie kontrolujesz social media. Jutro mogą zablokować Twoje konto lub zmienić algorytm - i tracisz kontakt z klientami.
+// 👉 Szczegóły i więcej przykładów w artykule:
+// www.webjoin.pl/blog/facebook-to-za-malo
+// #WebJoin #StronaInternetowa #MarketingOnline #Biznes
+// `;

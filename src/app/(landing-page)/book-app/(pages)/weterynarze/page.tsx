@@ -125,7 +125,7 @@ function HeroSection() {
           </div>
           <div className="relative">
             <Image
-              src="https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vGv9hFviLmG6Bl5ZSRD14bKQUPw0uxyIj2VEM"
+              src="https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vIlu9mSQsuw8XFMkabNAfpSTG7Kyi6xOWVh4R"
               alt="System BookApp dla przychodni weterynaryjnej"
               width={800}
               height={500}

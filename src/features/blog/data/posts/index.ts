@@ -13,9 +13,11 @@ export const posts = [
   {
     id: 1,
     metadata: {
-      title: "Strona Internetowa Warszawa: Biznes Online 24/7",
+      title: "Strona Internetowa: Biznes Online 24/7",
       description:
         "Strona internetowa dla lokalnego biznesu w Polsce. Zwiększ widoczność online, pozyskaj klientów 24/7. Agencja SEO, strony WWW.",
+      image:
+        "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5v1drHSrNe4gUXh58pqdIvclCjxAu9b23Lmfw7",
     },
     slug: "dlaczego-biznes-potrzebuje-strony-internetowej",
     title: "Strona Internetowa dla Biznesu: Konieczność?",
@@ -23,6 +25,7 @@ export const posts = [
       "W dzisiejszym świecie online, czy Twoja firma naprawdę istnieje, jeśli nie ma własnej strony internetowej? Dowiedz się, dlaczego obecność online 24/7 to klucz do sukcesu każdego lokalnego biznesu.",
     image:
       "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vYXiLTPrQZ98h0LwPKCzueVbyGtp5Rqvd3lkD",
+
     markdown: post1,
     author: authors.me,
     createdAt: new Date("2025-08-01"),
@@ -41,6 +44,8 @@ export const posts = [
         "Facebook to za mało? Dlaczego Twoja firma potrzebuje własnej strony WWW",
       description:
         "Ograniczenia social mediów dla biznesu. Własna strona internetowa: kontrola, SEO, profesjonalizm.",
+      image:
+        "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5v68xBVGkpfa7xwXU5bDsZdNIk8ci3jSByePJr",
     },
     slug: "strona-na-facebooku-to-za-malo",
     title:
@@ -67,6 +72,8 @@ export const posts = [
       title: "Google Moja Firma Warszawa: Optymalizacja i Wizytówka Google",
       description:
         "Google Moja Firma dla lokalnego biznesu w Warszawie. Darmowa wizytówka Google Maps. Pozyskiwanie klientów 24/7. Agencja SEO.",
+      image:
+        "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vU8cCH1vwyKEDPzcdYMOiL8j1u2WbqsVwBN07",
     },
     slug: "google-moja-firma-przewodnik",
     title:
@@ -92,6 +99,8 @@ export const posts = [
       title: "Next.js E-commerce: Sklepy Internetowe Bez Kompromisów",
       description:
         "Next.js vs Shopify/WooCommerce. Tworzenie sklepów internetowych dla firm. Szybki, spersonalizowany e-commerce. Agencja Next.js.",
+      image:
+        "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vKDwuKIReMY6VDm8WNosJjy91SA7OxLhIH5Qz",
     },
     slug: "nextjs-vs-gotowe-platformy-ecommerce",
     title:
@@ -111,4 +120,26 @@ export const posts = [
         "Wyślij zapytanie i zobacz, jak możemy stworzyć Twoją profesjonalną wizytówkę online, która będzie pracować na Twój sukces 24 godziny na dobę!",
     },
   },
+  // {
+  //   id: 5,
+  //   metadata: {
+  //     title: "",
+  //     description: "",
+  //     image: "",
+  //   },
+  //   slug: "nextjs-vs-gotowe-platformy-ecommerce",
+  //   title: "",
+  //   description: "",
+  //   image: "",
+  //   markdown: post4,
+  //   author: authors.me,
+  //   createdAt: new Date("2025-06-26"),
+  //   published: false,
+  //   tag: tags["e-commerce"],
+  //   cta: {
+  //     title: "Gotowy na Profesjonalną Obecność w Internecie?",
+  //     subtitle:
+  //       "Wyślij zapytanie i zobacz, jak możemy stworzyć Twoją profesjonalną wizytówkę online, która będzie pracować na Twój sukces 24 godziny na dobę!",
+  //   },
+  // },
 ];
