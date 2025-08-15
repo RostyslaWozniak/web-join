@@ -22,10 +22,12 @@ export async function generateMetadata({
     openGraph: {
       title: tag.title,
       description: tag.description,
+      images: ["opengraph-image.jpg"],
     },
     twitter: {
       title: tag.title,
       description: tag.description,
+      images: ["opengraph-image.jpg"],
     },
     robots: {
       index: false,

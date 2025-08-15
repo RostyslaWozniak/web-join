@@ -34,13 +34,15 @@ function TagsSection() {
     <section className="space-y-2">
       <H2 className="!text-start !text-2xl">Tagi</H2>
       <div className="flex flex-wrap gap-2">
-        {Object.values(tags).map(({ name, slug }) => (
-          <Link key={slug} href={`/blog/tags/${slug}`}>
-            <Badge className="rounded-full bg-primary-gradient text-gray-800">
-              {name}
-            </Badge>
-          </Link>
-        ))}
+        {Object.values(tags)
+          .slice(0, 3)
+          .map(({ name, slug }) => (
+            <Link key={slug} href={`/blog/tags/${slug}`}>
+              <Badge className="rounded-full bg-primary-gradient text-gray-800">
+                {name}
+              </Badge>
+            </Link>
+          ))}
       </div>
     </section>
   );
