@@ -10,6 +10,19 @@ import { unslugify } from "@/lib/utils/slugify";
 import { type Metadata } from "next";
 import { env } from "@/env";
 import { getFilteredPosts } from "@/features/blog/lib/get-filtered-posts";
+import { cache } from "react";
+
+const getTitle = cache((postsLength: number, searchString: string): string => {
+  const title =
+    postsLength === 0
+      ? `Nie znaleziono postów z wynnikiem - "${searchString}"`
+      : postsLength === 1
+        ? `Znaleziono ${postsLength} post  z wynnikiem - "${searchString}"`
+        : postsLength < 5
+          ? `Znaleziono ${postsLength} posty  z wynnikiem - "${searchString}"`
+          : `Znaleziono ${postsLength} postów  z wynnikiem - "${searchString}"`;
+  return title;
+});
 
 export const generateMetadata = async ({
   params,
@@ -22,14 +35,7 @@ export const generateMetadata = async ({
 
   const filteredPosts = getFilteredPosts(posts, unslugedString);
 
-  const title =
-    filteredPosts.length === 0
-      ? `Nie znaleziono postów z wynnikiem "${unslugedString}" w blogu`
-      : filteredPosts.length === 1
-        ? `Znaleziono ${filteredPosts.length} post  z wynnikiem "${unslugedString}" w blogu`
-        : filteredPosts.length < 5
-          ? `Znaleziono ${filteredPosts.length} posty  z wynnikiem "${unslugedString}" w blogu`
-          : `Znaleziono ${filteredPosts.length} postów  z wynnikiem "${unslugedString}" w blogu`;
+  const title = getTitle(filteredPosts.length, unslugedString);
 
   return {
     title,
@@ -48,16 +54,6 @@ export const generateMetadata = async ({
 };
 
 export const generateStaticParams = async () => {
-  // const searchTerms = await db.searchTerm.findMany({
-  //   select: {
-  //     term: true,
-  //   },
-  //   orderBy: {
-  //     count: "desc",
-  //   },
-  //   take: 10,
-  // });
-  // return searchTerms.map((t) => ({ searchQuery: t.term }));
   return [];
 };
 
@@ -70,18 +66,9 @@ export default async function BlogSearchPage({
 
   const unslugedString = unslugify(searchQuery);
 
-  console.log({ unslugedString });
-
   const filteredPosts = getFilteredPosts(posts, unslugedString);
 
-  const title =
-    filteredPosts.length === 0
-      ? `Nie znaleziono postów z wynnikiem "${unslugedString}" w blogu`
-      : filteredPosts.length === 1
-        ? `Znaleziono ${filteredPosts.length} post  z wynnikiem "${unslugedString}" w blogu`
-        : filteredPosts.length < 5
-          ? `Znaleziono ${filteredPosts.length} posty  z wynnikiem "${unslugedString}" w blogu`
-          : `Znaleziono ${filteredPosts.length} postów  z wynnikiem "${unslugedString}" w blogu`;
+  const title = getTitle(filteredPosts.length, unslugedString);
 
   return (
     <div>

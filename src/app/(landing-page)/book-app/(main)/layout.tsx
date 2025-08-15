@@ -9,6 +9,9 @@ import { env } from "@/env";
 import type { WebSite, WithContext } from "schema-dts";
 import { bookAppNav } from "../data/book-app-nav";
 import { MobileNav } from "@/components/mobile-nav";
+import { AccessibleLink } from "@/components/accesible-link";
+import { GradientButton } from "@/components/ui/gradient-button";
+import { CalendarIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
@@ -77,12 +80,23 @@ export default function LandingPageLayout({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Providers>
-        <Header navigation={bookAppNav} />
+        <Header navigation={bookAppNav} actionButton={<CtaHeaderButton />} />
         <main className="flex-grow">{children}</main>
         <Footer />
         <MobileNav navigation={bookAppNav} />
         <Toaster />
       </Providers>
     </>
+  );
+}
+
+function CtaHeaderButton() {
+  return (
+    <AccessibleLink href="/book-app#form" aria-label="Umów darmową prezentację">
+      <GradientButton outline size="sm" className="min-h-10">
+        <CalendarIcon className="mr-2 h-5 w-5 text-accent-cyan" />
+        Umów darmową prezentację
+      </GradientButton>
+    </AccessibleLink>
   );
 }

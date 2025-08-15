@@ -45,7 +45,7 @@ export function SearchPostForm({ q, autoFocus }: SearchPostFormProps) {
           onChange={(e) => setSearch(e.target.value.toLocaleLowerCase())}
         />
         <Button
-          className="absolute right-0 h-10 w-auto rounded-l-none border-l-0 bg-card px-3 text-xs sm:h-10 sm:text-sm"
+          className="absolute right-0 h-10 min-h-10 w-auto rounded-l-none border-l-0 bg-card px-3 text-xs text-gray-900 sm:h-10 sm:text-sm"
           onClick={handleSearchPost}
           disabled={
             !search ||

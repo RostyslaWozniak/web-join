@@ -64,11 +64,10 @@ const pricing = [
 export function PricingSection() {
   return (
     <>
-      <div className="mb-16 text-center">
-        <H2 className="mb-6">Dla małych i średnich firm – elastyczne opcje</H2>
-      </div>
-
-      <div className="grid gap-8 lg:grid-cols-3">
+      <H2 className="mb-3 text-center md:mb-6">
+        Dla małych i średnich firm – elastyczne opcje
+      </H2>
+      <div className="scrollbar-hide -mx-4 flex snap-x snap-mandatory gap-x-1 overflow-x-auto px-4 pb-12 pt-8 sm:gap-x-4 lg:gap-x-6 xl:mx-0 xl:grid xl:snap-none xl:grid-cols-3 xl:gap-x-8">
         {pricing.map(
           ({ id, name, price, pricePerMonth, benefits, styles }, i) => {
             const isMostPopular = i === 1;
@@ -76,10 +75,10 @@ export function PricingSection() {
               <Card
                 key={id}
                 className={cn(
-                  "relative flex flex-col border-gray-300 bg-white/80 shadow-xl backdrop-blur-sm",
+                  "relative flex min-w-[min(calc(100%-40px),_400px)] scale-95 snap-center flex-col border-gray-300 bg-white/80 shadow-xl backdrop-blur-sm",
                   {
                     "border-accent-cyan sm:scale-105": isMostPopular,
-                    "scale-105": i === 1,
+                    "scale-100": i === 1,
                   },
                 )}
               >
@@ -104,7 +103,10 @@ export function PricingSection() {
                 <CardContent className="flex-grow">
                   <ul className="flex-1 space-y-3">
                     {benefits.map((benefit) => (
-                      <li key={benefit} className="flex items-start gap-2">
+                      <li
+                        key={benefit}
+                        className="flex items-start gap-2 text-sm md:text-base"
+                      >
                         <span className="flex h-[1lh] items-center">
                           <CheckCircleIcon className="h-4 w-4 text-emerald-500" />
                         </span>

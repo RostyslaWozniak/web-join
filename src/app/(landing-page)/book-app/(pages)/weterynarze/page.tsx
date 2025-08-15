@@ -2,7 +2,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   CheckCircle,
-  ExternalLinkIcon,
   CalendarIcon,
   SmartphoneIcon,
   ClockIcon,
@@ -12,7 +11,6 @@ import {
   SearchIcon,
 } from "lucide-react";
 import Image from "next/image";
-import { DemoSection } from "../../_components/sections/demo-section";
 import { GridBackground } from "@/components/grid-background";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { GradientButton } from "@/components/ui/gradient-button";
@@ -47,16 +45,6 @@ export default function VeterinaryLanding() {
         </MaxWidthWrapper>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-card-gradient">
-        <MaxWidthWrapper>
-          <DemoSection />
-        </MaxWidthWrapper>
-      </SectionWrapper>
-      <SectionWrapper id="ceny">
-        <MaxWidthWrapper>
-          <PricingSection />
-        </MaxWidthWrapper>
-      </SectionWrapper>
       <SectionWrapper className="relative" id="form">
         <MaxWidthWrapper size="md" className="relative z-10">
           <SectionHeader
@@ -68,8 +56,21 @@ export default function VeterinaryLanding() {
             <CtaForm typeOfProject="rezerwacji wizyt dla weterynarzy online BookApp" />
           </div>
         </MaxWidthWrapper>
-        <div className="absolute inset-0 bg-card-gradient opacity-50"></div>
+        <div className="absolute inset-0 bg-card-gradient opacity-50" />
       </SectionWrapper>
+
+      {/* <SectionWrapper className="bg-card-gradient">
+        <MaxWidthWrapper>
+          <DemoSection />
+        </MaxWidthWrapper>
+      </SectionWrapper> */}
+
+      <SectionWrapper id="ceny">
+        <MaxWidthWrapper>
+          <PricingSection />
+        </MaxWidthWrapper>
+      </SectionWrapper>
+
       <SectionWrapper>
         <MaxWidthWrapper>
           <BlogPreviewSection />
@@ -110,7 +111,7 @@ function HeroSection() {
                   Umów się na prezentację
                 </GradientButton>
               </AccessibleLink>
-              <AccessibleLink
+              {/* <AccessibleLink
                 href="https://vet-app-demo.vercel.app/"
                 target="_blank"
                 aria-label="Przejdź do demo"
@@ -119,7 +120,7 @@ function HeroSection() {
                   Zobacz demo
                   <ExternalLinkIcon className="ml-2 h-5 w-5 text-accent-cyan" />
                 </GradientButton>
-              </AccessibleLink>
+              </AccessibleLink> */}
             </div>
           </div>
           <div className="relative">

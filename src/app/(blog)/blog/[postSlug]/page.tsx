@@ -150,8 +150,8 @@ export default async function PostPage({
         <MaxWidthWrapper size="sm">
           <SectionHeader
             className="mx-auto max-w-4xl"
-            title={post.form.title}
-            subtitle={post.form.subtitle}
+            title={post.cta.title}
+            subtitle={post.cta.subtitle}
           />
           <CtaForm />
         </MaxWidthWrapper>

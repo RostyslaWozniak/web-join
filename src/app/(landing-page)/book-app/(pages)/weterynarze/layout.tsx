@@ -10,11 +10,14 @@ import type { WebSite, WithContext } from "schema-dts";
 
 import { MobileNav } from "@/components/mobile-nav";
 import {
+  CalendarIcon,
   GemIcon,
   HandshakeIcon,
   MonitorCogIcon,
   ShieldQuestionIcon,
 } from "lucide-react";
+import { AccessibleLink } from "@/components/accesible-link";
+import { GradientButton } from "@/components/ui/gradient-button";
 const servicePath = "weterynarze";
 
 const nav = [
@@ -104,12 +107,26 @@ export default function LandingPageLayout({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Providers>
-        <Header navigation={nav} />
+        <Header navigation={nav} actionButton={<CtaHeaderButton />} />
         <main className="flex-grow">{children}</main>
         <Footer />
         <MobileNav navigation={nav} />
         <Toaster />
       </Providers>
     </>
+  );
+}
+
+function CtaHeaderButton() {
+  return (
+    <AccessibleLink
+      href="/book-app/weterynarze#form"
+      aria-label="Umów darmową prezentację"
+    >
+      <GradientButton outline size="sm" className="min-h-10">
+        <CalendarIcon className="mr-2 h-5 w-5 text-accent-cyan" />
+        Umów darmową prezentację
+      </GradientButton>
+    </AccessibleLink>
   );
 }

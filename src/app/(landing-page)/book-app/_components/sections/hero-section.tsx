@@ -5,7 +5,7 @@ import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { Badge } from "@/components/ui/badge";
 import { GradientButton } from "@/components/ui/gradient-button";
-import { CalendarIcon, CheckCircleIcon, ExternalLinkIcon } from "lucide-react";
+import { CalendarIcon, CheckCircleIcon } from "lucide-react";
 import Image from "next/image";
 
 export function BookAppHeroSection() {
@@ -101,7 +101,7 @@ function CTAButtons() {
           Umów się na prezentację
         </GradientButton>
       </AccessibleLink>
-      <AccessibleLink
+      {/* <AccessibleLink
         href="https://vet-app-demo.vercel.app/"
         target="_blank"
         aria-label="Przejdź do demo"
@@ -110,7 +110,7 @@ function CTAButtons() {
           Zobacz demo
           <ExternalLinkIcon className="ml-2 h-5 w-5 text-accent-cyan" />
         </GradientButton>
-      </AccessibleLink>
+      </AccessibleLink> */}
     </div>
   );
 }
