@@ -145,7 +145,8 @@ export default async function PostPage({
               <Markdown>{post.markdown}</Markdown>
             </div>
           </div>
-          <div className="space-y-4 lg:sticky lg:top-28 lg:mt-20 lg:w-[500px]">
+
+          <div className="hidden space-y-4 lg:sticky lg:top-28 lg:mt-20 lg:block lg:w-[500px]">
             <BlogSidebar currentPostSlug={post.slug} />
           </div>
         </MaxWidthWrapper>
@@ -158,6 +159,11 @@ export default async function PostPage({
             subtitle={post.cta.subtitle}
           />
           <CtaForm />
+        </MaxWidthWrapper>
+      </SectionWrapper>
+      <SectionWrapper className="lg:hidden">
+        <MaxWidthWrapper size="xs">
+          <BlogSidebar currentPostSlug={post.slug} />
         </MaxWidthWrapper>
       </SectionWrapper>
     </>

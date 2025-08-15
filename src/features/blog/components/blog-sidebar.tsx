@@ -12,7 +12,7 @@ export function BlogSidebar({
   currentPostSlug: string | undefined;
 }) {
   return (
-    <div className="max-w-[500px] space-y-6 lg:space-y-8">
+    <div className="space-y-6 lg:space-y-8">
       <SearchPostSection />
       <TagsSection />
       <OtherPostsSection currentPostSlug={currentPostSlug} />
@@ -59,7 +59,7 @@ function OtherPostsSection({
           Zobacz więcej
         </Link>
       </div>
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-2 gap-4">
         {posts
           .filter((post) =>
             currentPostSlug ? post.slug !== currentPostSlug : true,
@@ -71,11 +71,11 @@ function OtherPostsSection({
                 <Image
                   src={post.image}
                   alt="post image"
-                  width={200}
-                  height={100}
+                  width={300}
+                  height={150}
                   className="aspect-video w-full object-cover duration-300 group-hover:scale-105"
                 />
-                <H3 className="line-clamp-2 !text-lg lg:text-sm">
+                <H3 className="line-clamp-2 px-2 !text-base sm:px-4 lg:text-sm">
                   {post.title}
                 </H3>
               </Link>

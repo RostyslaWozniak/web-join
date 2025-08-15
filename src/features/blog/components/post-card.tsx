@@ -7,7 +7,7 @@ import Image from "next/image";
 export function PostCard({ post }: { post: Post }) {
   return (
     <CardWrapper className="group relative isolate flex h-full flex-col overflow-hidden p-0 hover:scale-100">
-      <div className="overflow-hidden">
+      <div className="relative overflow-hidden">
         <Image
           src={post.image || "/placeholder.svg"}
           alt={post.title}
@@ -15,6 +15,14 @@ export function PostCard({ post }: { post: Post }) {
           height={200}
           className="aspect-video w-full rounded-t-lg object-cover duration-300 group-hover:scale-105"
         />
+        {!post.published && (
+          <Badge
+            variant="destructive"
+            className="absolute left-4 top-4 z-10 rounded-full"
+          >
+            not published
+          </Badge>
+        )}
       </div>
       <div className="space-y-3 p-6">
         <h3 className="text-secondary-blue font-montserrat text-xl font-medium">
