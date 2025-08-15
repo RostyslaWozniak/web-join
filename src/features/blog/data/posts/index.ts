@@ -103,7 +103,7 @@ export const posts = [
     markdown: post4,
     author: authors.me,
     createdAt: new Date("2025-06-26"),
-    published: true,
+    published: false,
     tag: tags["e-commerce"],
     cta: {
       title: "Gotowy na Profesjonalną Obecność w Internecie?",

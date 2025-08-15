@@ -6,8 +6,10 @@ import { posts } from "@/features/blog/data/posts";
 import { PostCard } from "@/features/blog/components/post-card";
 import { SearchPostForm } from "@/features/blog/components/search-post-form";
 import { Breadcrumb } from "@/components/breadcrumb";
+import { env } from "@/env";
 
 export default async function BlogPage() {
+  console.log(env.NODE_ENV);
   return (
     <div>
       <section>
@@ -33,6 +35,9 @@ export default async function BlogPage() {
         <MaxWidthWrapper className="mx-auto flex items-center px-4 pb-12 pt-10 md:py-20 lg:px-0">
           <div className="mb-12 grid gap-8 md:grid-cols-3">
             {posts
+              .filter((post) =>
+                env.NODE_ENV === "production" ? post.published : true,
+              )
               .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
               .map((post) => (
                 <PostCard key={post.slug} post={post} />

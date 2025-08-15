@@ -6,7 +6,7 @@ export const env = createEnv({
     DATABASE_URL: z.string().url(),
     NODE_ENV: z
       .enum(["development", "test", "production"])
-      .default("development"),
+      .default("production"),
     // resend
     RESEND_API_KEY: z.string().min(1),
     RESEND_DOMAIN: z.string().min(1),

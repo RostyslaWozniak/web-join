@@ -23,7 +23,11 @@ import { SectionHeader } from "@/components/section-header";
 export const dynamic = "force-static";
 
 const getPost = cache((postSlug: string) =>
-  posts.find((post) => post.slug === postSlug),
+  posts.find((post) =>
+    env.NODE_ENV === "production"
+      ? post.slug === postSlug && post.published
+      : post.slug === postSlug,
+  ),
 );
 
 export async function generateMetadata({

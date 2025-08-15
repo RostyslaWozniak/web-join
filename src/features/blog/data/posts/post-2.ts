@@ -1,6 +1,6 @@
-export const post2 = `Mam Facebooka i Instagrama, po co mi strona?" – słyszę to od warszawskich przedsiębiorców prawie codziennie. **To jak mówić: "Mam rower, po co mi samochód?"** Oba środki transportu mają swoje miejsce, ale do różnych celów.
+export const post2 = `Mam Facebooka i Instagrama, po co mi strona?" – słyszę to prawie codziennie. **To jak mówić: "Mam rower, po co mi samochód?"** Oba środki transportu mają swoje miejsce, ale do różnych celów.
 
-Social media to świetne narzędzie do budowania społeczności i angażowania klientów. Ale jeśli to jedyna obecność Twojej firmy w internecie, **grasz na przegranej pozycji** w konkurencji o warszawskich klientów.
+Social media to świetne narzędzie do budowania społeczności i angażowania klientów. Ale jeśli to jedyna obecność Twojej firmy w internecie, **grasz na przegranej pozycji** w konkurencji o klientów.
 
 ## Jesteś Najemcą, Nie Właścicielem
 
