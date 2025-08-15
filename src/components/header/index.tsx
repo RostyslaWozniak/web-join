@@ -24,11 +24,11 @@ export function Header({
         >
           <Logo className="h-12 w-36 sm:h-14 sm:w-40" />
         </AccessibleLink>
-        <nav className="hidden min-h-full flex-grow items-center md:flex">
+        <nav className="hidden min-h-full flex-grow items-center lg:flex">
           <Nav navigation={navigation} />
           {ActionButton}
         </nav>
-        <div className="">
+        <div className="lg:hidden">
           <BurgerNav />
         </div>
       </MaxWidthWrapper>

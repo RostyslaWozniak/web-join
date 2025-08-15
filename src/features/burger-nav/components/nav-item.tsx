@@ -25,7 +25,7 @@ export function BurgerNavItem({
       href={href}
       aria-label={areaLabel}
       className={cn(
-        "flex min-h-14 w-full items-end gap-x-4 px-8 text-lg tracking-widest",
+        "flex min-h-14 min-w-full items-end gap-x-4 px-8 text-lg tracking-widest",
         {
           "text-accent-cyan": isActiveLink,
         },

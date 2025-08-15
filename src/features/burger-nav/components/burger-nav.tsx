@@ -19,7 +19,7 @@ export function BurgerNav() {
         }}
         variant="ghost"
         size="icon"
-        className="relative z-50 mt-1 md:hidden"
+        className="relative z-50 mt-1 bg-white"
       >
         <MenuIcon
           className={cn("absolute duration-300", {
@@ -54,7 +54,7 @@ export function BurgerNav() {
               "fixed inset-0 top-14 -z-10 h-screen w-screen bg-card-gradient",
             )}
           >
-            <ul className="mt-12 flex flex-col items-center p-4">
+            <ul className="mx-auto mt-12 flex flex-col items-start p-4">
               {burgerNavigation.map(({ label, ...item }, i) => (
                 <motion.li
                   className="relative w-full"
