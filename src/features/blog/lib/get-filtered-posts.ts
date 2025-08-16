@@ -19,9 +19,10 @@ function _getFilteredPosts(
 
     const allKeywordsMatch = keywords.every((keyword) => {
       return (
-        postTitle.includes(keyword) ||
-        postDescription.includes(keyword) ||
-        postMarkdown.includes(keyword)
+        post.published &&
+        (postTitle.includes(keyword) ||
+          postDescription.includes(keyword) ||
+          postMarkdown.includes(keyword))
       );
     });
 
