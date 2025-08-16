@@ -23,11 +23,9 @@ import { toast } from "sonner";
 import { ArrowRight } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useRouter } from "next/navigation";
 
 export function ContactForm() {
   const [isPending, startTransition] = useTransition();
-  const router = useRouter();
 
   const form = useForm<ContactFormSchema>({
     resolver: zodResolver(contactFormSchema),
@@ -42,16 +40,12 @@ export function ContactForm() {
 
   function onSubmit(values: ContactFormSchema) {
     startTransition(async () => {
-      const { data, error } = await sendContactForm(values);
-      if (error || !data) {
+      const error = await sendContactForm(values);
+      if (error) {
         toast.error(error, {
-          position: "bottom-right",
+          position: "top-center",
         });
-        return;
       }
-      startTransition(() => {
-        router.push(`/success?id=${data.id}`);
-      });
     });
   }
   return (
@@ -70,6 +64,7 @@ export function ContactForm() {
                 <Input
                   className="text-foreground"
                   placeholder="Jan Kowalski"
+                  type="text"
                   {...field}
                 />
               </FormControl>
@@ -88,6 +83,7 @@ export function ContactForm() {
                 <Input
                   className="text-foreground"
                   placeholder="+48 XXX XXX XXX"
+                  type="tel"
                   {...field}
                 />
               </FormControl>
@@ -106,6 +102,7 @@ export function ContactForm() {
                 <Input
                   className="text-foreground"
                   placeholder="twój-email@gmail.com"
+                  type="email"
                   {...field}
                 />
               </FormControl>
