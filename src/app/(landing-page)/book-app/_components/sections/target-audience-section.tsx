@@ -15,7 +15,7 @@ export function TargetAudienceSection() {
   return (
     <>
       <div className="mb-6 text-center md:mb-12">
-        <H2 className="mb-6">👨‍⚕️ Czy to rozwiązanie dla Twojej firmy?</H2>
+        <H2 className="mb-6">Czy to rozwiązanie dla Twojej firmy?</H2>
 
         <p className="mx-auto max-w-4xl text-lg leading-relaxed text-gray-600">
           BookApp to idealne rozwiązanie dla wszystkich firm usługowych, które
