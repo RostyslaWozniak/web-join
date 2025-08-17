@@ -17,7 +17,7 @@ export const posts = [
       description:
         "Strona internetowa dla lokalnego biznesu w Polsce. Zwiększ widoczność online, pozyskaj klientów 24/7. Agencja SEO, strony WWW.",
       image:
-        "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5v1drHSrNe4gUXh58pqdIvclCjxAu9b23Lmfw7",
+        "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vuXTLJvWmdBpcqIAFTi8EZ2LsnGJ1MXlzuvYK",
     },
     slug: "dlaczego-biznes-potrzebuje-strony-internetowej",
     title: "Strona Internetowa dla Biznesu: Konieczność?",
@@ -73,11 +73,10 @@ export const posts = [
       description:
         "Google Moja Firma dla lokalnego biznesu w Warszawie. Darmowa wizytówka Google Maps. Pozyskiwanie klientów 24/7. Agencja SEO.",
       image:
-        "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vU8cCH1vwyKEDPzcdYMOiL8j1u2WbqsVwBN07",
+        "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vpcR2lTIfZRnlrVAYO6E5M4Szes7QCvfU2PiH",
     },
     slug: "google-moja-firma-przewodnik",
-    title:
-      "Google Moja Firma: Twój Darmowy Asystent Sprzedaży w Google Maps – Jak Go Używać?",
+    title: "c – Jak Go Używać?",
     description:
       "Odkryj potęgę Google Moja Firma dla lokalnego biznesu w Warszawie. Darmowa wizytówka w Google Maps, która przyciąga klientów 24/7. Praktyczne wskazówki optymalizacji.",
     image:
