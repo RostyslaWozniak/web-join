@@ -8,6 +8,7 @@ type CardItemProps = {
   title?: string;
   className?: string;
   iconClassName?: string;
+  descriptionClassName?: string;
   icon?: LucideIcon;
   description?: string;
   href?: string;
@@ -19,6 +20,7 @@ export function CardItem({
   title,
   icon: Icon,
   description,
+  descriptionClassName,
   href,
   className,
   iconClassName,
@@ -65,12 +67,16 @@ export function CardItem({
 
         {description && (
           <p
-            className={cn("flex-grow text-sm leading-relaxed text-gray-600", {
-              "line-clamp-2 min-h-12": href,
-              "text-start": align === "start",
-              "text-center": align === "center",
-              "text-end": align === "end",
-            })}
+            className={cn(
+              "flex-grow text-sm leading-relaxed text-gray-600",
+              {
+                "line-clamp-2 min-h-12": href,
+                "text-start": align === "start",
+                "text-center": align === "center",
+                "text-end": align === "end",
+              },
+              descriptionClassName,
+            )}
           >
             {description}
           </p>
