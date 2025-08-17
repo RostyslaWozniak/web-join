@@ -37,7 +37,7 @@ export function Markdown({ children }: MarkdownProps) {
         ),
         p: ({ children, ...props }) => (
           <p
-            className="mb-6 leading-7 text-slate-700 [&:not(:first-child)]:mt-6"
+            className="mb-2 leading-7 text-foreground [&:not(:first-child)]:mt-4"
             {...props}
           >
             {children}

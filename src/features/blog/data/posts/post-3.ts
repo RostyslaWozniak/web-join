@@ -1,3 +1,5 @@
+import { env } from "@/env";
+
 export const post3 = `Masz **darmowego pracownika sprzedaży**, który pracuje 24/7, nie bierze urlopu i pokazuje Twoją firmę tysiącom potencjalnych klientów w Warszawie każdego dnia. **Nazywa się Google Moja Firma** i prawdopodobnie nawet nie wiesz, że dla Ciebie pracuje.
 
 Albo jeszcze gorzej – pracuje źle, bo nikt go nie wyszkolił.
@@ -8,7 +10,7 @@ Albo jeszcze gorzej – pracuje źle, bo nikt go nie wyszkolił.
 
 **Google Moja Firma (GMF) to Twoja darmowa wizytówka w największym katalogu świata – Google.**
 
-Pojawia się gdy ktoś:
+Pojawia się, gdy ktoś:
 - Szuka Twojej firmy po nazwie
 - Wpisuje "fryzjer Żoliborz" w Google
 - Używa Google Maps do znajdowania usług w pobliżu
@@ -26,9 +28,6 @@ Klient wpisuje "kawiarnia Stare Miasto Warszawa". Google pokazuje mapę z pinezk
 
 **To oznacza, że dobrze zoptymalizowana wizytówka Google to maszyna do generowania klientów.**
 
-### Prawdziwy przykład z Warszawy:
-Salon fryzjerski na Ursynowie zoptymalizował swoją wizytówkę GMF. Rezultat? **Wzrost liczby telefonów o 150% w ciągu miesiąca.** Bez wydawania złotówki na reklamę.
-
 ## Jak Założyć i Zoptymalizować Google Moja Firma?
 
 ### Krok 1: Weryfikacja podstawowych danych
@@ -36,11 +35,11 @@ Salon fryzjerski na Ursynowie zoptymalizował swoją wizytówkę GMF. Rezultat? 
 **Adres:**
 - Dokładny adres z kodem pocztowym
 - Jeśli pracujesz z domu, możesz ukryć adres i pokazać tylko obszar obsługi
-- **Konsystencja is key** – ten sam adres na stronie, wizytówkach i w GMF
+- **Konsekwencja jest kluczem** – ten sam adres na stronie internetowej, wizytówkach i w GMF
 
 **Godziny otwarcia:**
 - Aktualne godziny pracy
-- Godziny świąteczne (szczególnie ważne w Warszawie)
+- Godziny świąteczne (szczególnie ważne)
 - Możliwość ustawienia różnych godzin dla różnych dni
 
 **Kategoria biznesowa:**
@@ -60,7 +59,7 @@ Salon fryzjerski na Ursynowie zoptymalizował swoją wizytówkę GMF. Rezultat? 
 
 ### Krok 3: Opis, który sprzedaje
 
-**Nie pisz nudnego opisu korporacyjnego.** Napisz tak, żeby warszawiak pomyślał: "To jest dokładnie to, czego szukam!"
+**Nie pisz nudnego opisu korporacyjnego.** Napisz tak, żeby klient pomyślał: "To jest dokładnie to, czego szukam!"
 
 **Zamiast:** "Nasza firma świadczy usługi hydrauliczne."
 **Lepiej:** "Awaryjny hydraulik w Warszawie – 24/7, dojazd w 30 min. Specjalizujemy się w naprawach Mokotów, Wilanów, Ursynów."
@@ -77,12 +76,6 @@ Salon fryzjerski na Ursynowie zoptymalizował swoją wizytówkę GMF. Rezultat? 
 5. **Dzwoni lub pisze** – nowy klient!
 
 **Bez strony internetowej tracisz 68% potencjalnych klientów,** którzy chcą więcej informacji niż zmieści się w wizytówce Google.
-
-### Warszawski case study:
-Kancelaria prawna na Mokotowie:
-- **Tylko GMF**: 15 zapytań miesięcznie
-- **GMF + profesjonalna strona**: 47 zapytań miesięcznie
-- **Wzrost o 213%!**
 
 ## Recenzje – Twoja Reputacja w Liczbach
 
@@ -104,8 +97,14 @@ Kancelaria prawna na Mokotowie:
 - **Na pozytywne:** "Dziękujemy za miłe słowa! Cieszymy się, że usługa spełniła Państwa oczekiwania."
 - **Na negatywne:** "Przepraszamy za niedogodności. Skontaktujmy się bezpośrednio, aby rozwiązać problem."
 
-### Prawdziwy przykład z Warszawy:
-Restauracja na Starówce miała 3.2 gwiazdki. Po wdrożeniu aktywnej strategii zbierania recenzji w 6 miesięcy mieli 4.6 gwiazdki. **Rezerwacji wzrosło o 180%.**
+**4. Automatyzuj zbieranie opinii (jeśli się krępujesz):**
+
+Nie każdy przedsiębiorca czuje się komfortowo prosząc klienta o recenzję osobiście. Na szczęście są proste sposoby, aby zrobić to **automatycznie** i **profesjonalnie**:
+- [Systemy rezerwacji online](${env.NEXT_PUBLIC_BASE_URL}/book-app) mogą wysyłać wiadomość e-mail lub SMS z prośbą o opinię po zakończonej wizycie.
+- Mailing automatyczny – np. dzień po usłudze klient dostaje podziękowanie i link do wystawienia recenzji.
+- Kody QR – umieszczone na paragonie, wizytówce lub plakacie w lokalu, prowadzą bezpośrednio do formularza opinii.
+
+Dzięki temu opinie zbierają się same, a Ty nie musisz czuć się niezręcznie, pytając o nie bezpośrednio.
 
 ## Funkcje, Które Musisz Wykorzystać
 
@@ -128,19 +127,19 @@ Restauracja na Starówce miała 3.2 gwiazdki. Po wdrożeniu aktywnej strategii z
 ## Błędy, Które Niszczą Twoją Pozycję
 
 **❌ Niepełne informacje** – Brak telefonu, godzin, adresu
+
 **❌ Stare zdjęcia** – Wnętrze sprzed remontu, nieaktualny zespół
+
 **❌ Ignorowanie recenzji** – Szczególnie negatywnych
+
 **❌ Nieaktualne godziny** – Klient przyjeżdża, a zamknięte
+
 **❌ Brak powiązania ze stroną** – Utracona szansa na prezentację pełnej oferty
 
 ## Twoja Konkurencja Już To Robi
 
-**78% lokalnych firm w Warszawie ma zweryfikowaną wizytówkę Google.** Ale tylko **23% robi to dobrze.**
-
-To oznacza ogromną szansę dla Twojej firmy. **Profesjonalnie zoptymalizowana wizytówka Google może dać Ci przewagę nad 77% konkurencji.**
-
 ### Sprawdź sam:
-Wpisz w Google swoją branżę + "Warszawa". Przejrzyj wizytówki konkurencji. **Ile z nich ma:**
+Wpisz w Google "swoją branżę" + "swoje miasto". Przejrzyj wizytówki konkurencji. **Ile z nich ma:**
 - Profesjonalne zdjęcia?
 - Aktualny opis?
 - Dużo pozytywnych recenzji?
@@ -150,17 +149,24 @@ Wpisz w Google swoją branżę + "Warszawa". Przejrzyj wizytówki konkurencji. *
 
 ## Czas Uruchomić Swojego Darmowego Pracownika Sprzedaży
 
-Google Moja Firma to nie opcja – **to konieczność** dla każdego lokalnego biznesu w Warszawie. Dobrze zoptymalizowana wizytówka to różnica między byciem widzianym przez tysiące potencjalnych klientów a pozostaniem w cyfrowym niebycie.
+Google Moja Firma to nie opcja – **to konieczność** dla każdego lokalnego biznesu w Polsce. Dobrze zoptymalizowana wizytówka to różnica między byciem widzianym przez tysiące potencjalnych klientów a pozostaniem w cyfrowym niebycie.
 
 **Ale pamiętaj:** GMF to tylko pierwszy krok. **Prawdziwa magia dzieje się, gdy połączysz wizytówkę Google z profesjonalną stroną internetową.** Wtedy masz kompletny system przyciągania i przekonywania klientów.
 
-Każdy dzień zwłoki to dziesiątki potencjalnych klientów, którzy pójdą do konkurencji. **W Warszawie nikt nie czeka – albo działasz, albo giniesz.**
+Każdy dzień zwłoki to dziesiątki potencjalnych klientów, którzy pójdą do konkurencji.
 
 ---
 
 ## Potrzebujesz Profesjonalnej Pomocy?
 
 Optymalizacja Google Moja Firma wydaje się prosta, ale diabeł tkwi w szczegółach. Błędna konfiguracja może sprawić, że Twoja firma będzie **mniej widoczna** niż przed zmianami.
-
-**Potrzebujesz pomocy w optymalizacji swojej wizytówki Google? Chcesz połączyć ją z profesjonalną stroną internetową?**
 `;
+
+// 🚀 Masz darmowego pracownika sprzedaży, który działa 24/7 i pokazuje Twoją firmę setkom osób dziennie?
+// Tak! To Google Moja Firma – wizytówka, która decyduje, czy klienci wybiorą Ciebie, czy konkurencję.
+
+// 📈 Dobrze zoptymalizowana wizytówka = więcej telefonów, wizyt na stronie i nowych klientów.
+// ❌ Źle ustawiona = tracisz ich na rzecz konkurencji.
+
+// Google Moja Firma to Twój darmowy handlowiec działający 24/7.
+// Sprawdź, jak go wykorzystać 👇

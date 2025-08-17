@@ -69,16 +69,16 @@ export const posts = [
   {
     id: 3,
     metadata: {
-      title: "Google Moja Firma Warszawa: Optymalizacja i Wizytówka Google",
+      title: "Google Moja Firma: Jak Zdobywać Klientów za Darmo",
       description:
-        "Google Moja Firma dla lokalnego biznesu w Warszawie. Darmowa wizytówka Google Maps. Pozyskiwanie klientów 24/7. Agencja SEO.",
+        "Google Moja Firma dla lokalnego biznesu w Polsce. Darmowa wizytówka Google Maps.",
       image:
-        "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vpcR2lTIfZRnlrVAYO6E5M4Szes7QCvfU2PiH",
+        "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vySdkvtyCnHcw0fJdlM8hvzP2TEymuCLpqOaS",
     },
     slug: "google-moja-firma-przewodnik",
-    title: "c – Jak Go Używać?",
+    title: "Google Moja Firma: Jak Zdobywać Klientów za Darmo",
     description:
-      "Odkryj potęgę Google Moja Firma dla lokalnego biznesu w Warszawie. Darmowa wizytówka w Google Maps, która przyciąga klientów 24/7. Praktyczne wskazówki optymalizacji.",
+      "Odkryj potęgę Google Moja Firma dla lokalnego biznesu w Polsce. Darmowa wizytówka w Google Maps, która przyciąga klientów 24/7. Praktyczne wskazówki optymalizacji.",
     image:
       "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vU8cCH1vwyKEDPzcdYMOiL8j1u2WbqsVwBN07",
     markdown: post3,
@@ -87,9 +87,9 @@ export const posts = [
     createdAt: new Date("2025-08-15"),
     tag: tags.google,
     cta: {
-      title: "Gotowy na Profesjonalną Obecność w Internecie?",
+      title: "Potrzebujesz pomocy w optymalizacji swojej wizytówki Google?",
       subtitle:
-        "Wyślij zapytanie i zobacz, jak możemy stworzyć Twoją profesjonalną wizytówkę online, która będzie pracować na Twój sukces 24 godziny na dobę!",
+        "Wyślij zapytanie i zobacz, jak połączenie profesjonalnej wizytówki Google i nowoczesnej strony internetowej stworzy dla Ciebie system, który przyciąga klientów 24/7 i wyróżnia Cię na tle konkurencji.",
     },
   },
   {
