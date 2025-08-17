@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { posts } from "../data/posts";
 import Image from "next/image";
 import { SearchPostForm } from "./search-post-form";
+import { CardItem } from "@/components/card-item";
+import { CalendarIcon } from "lucide-react";
 
 export function BlogSidebar({
   currentPostSlug,
@@ -16,6 +18,7 @@ export function BlogSidebar({
       <SearchPostSection />
       <TagsSection />
       <OtherPostsSection currentPostSlug={currentPostSlug} />
+      <BookAppCta />
     </div>
   );
 }
@@ -77,7 +80,7 @@ function OtherPostsSection({
                   height={150}
                   className="aspect-video w-full object-cover duration-300 group-hover:scale-105"
                 />
-                <H3 className="line-clamp-2 px-2 !text-base sm:px-4 lg:text-sm">
+                <H3 className="line-clamp-2 px-2 !text-base lg:text-sm">
                   {post.title}
                 </H3>
               </Link>
@@ -85,5 +88,19 @@ function OtherPostsSection({
           ))}
       </div>
     </section>
+  );
+}
+
+function BookAppCta() {
+  return (
+    <CardItem
+      href="/book-app"
+      title="Twoi klienci szukają wygody."
+      className="bg-card-gradient"
+      icon={CalendarIcon}
+      iconClassName="bg-white text-cyan-600"
+      description="Daj im możliwość umawiania wizyt online z BookApp – szybciej, prościej, bez telefonów."
+      descriptionClassName="line-clamp-none"
+    />
   );
 }
