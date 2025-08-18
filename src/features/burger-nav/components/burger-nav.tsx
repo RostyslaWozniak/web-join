@@ -20,6 +20,7 @@ export function BurgerNav() {
         variant="ghost"
         size="icon"
         className="relative z-50 mt-1 bg-white"
+        aria-label="menu button"
       >
         <MenuIcon
           className={cn("absolute duration-300", {

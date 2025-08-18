@@ -31,14 +31,19 @@ export function Breadcrumb() {
       <BreadcrumbList className="w-full flex-nowrap px-4">
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link href="/" className="flex items-center gap-x-2">
-              <HomeIcon /> Start
+            <Link
+              href="/"
+              className="flex items-center gap-x-2"
+              aria-label="Przejdź do strony głównej"
+            >
+              <HomeIcon /> Strona główna
             </Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
 
         {crumbs.map((crumb, index) => {
           currentLink += `/${crumb}`;
+          const name = crumb.replaceAll("-", " ");
           return (
             <Fragment key={index}>
               <BreadcrumbSeparator />
@@ -46,8 +51,12 @@ export function Breadcrumb() {
                 <>
                   <BreadcrumbItem key={index}>
                     <BreadcrumbLink asChild>
-                      <Link href={currentLink} className="capitalize">
-                        {crumb.replaceAll("-", " ")}
+                      <Link
+                        href={currentLink}
+                        className="capitalize"
+                        aria-label={`Przejdź do strony ${name}`}
+                      >
+                        {name}
                       </Link>
                     </BreadcrumbLink>
                   </BreadcrumbItem>

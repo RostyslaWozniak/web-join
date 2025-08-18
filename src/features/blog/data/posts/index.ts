@@ -95,30 +95,57 @@ export const posts = [
   {
     id: 4,
     metadata: {
-      title: "Next.js E-commerce: Sklepy Internetowe Bez Kompromisów",
+      title: "Jak Zautomatyzować Umawianie Wizyt i Zyskać Więcej Klientów",
       description:
-        "Next.js vs Shopify/WooCommerce. Tworzenie sklepów internetowych dla firm. Szybki, spersonalizowany e-commerce. Agencja Next.js.",
+        "Dowiedz się, jak system rezerwacji online może zwiększyć liczbę klientów o 40%. Automatyzacja wizyt 24/7, mniej telefonów, zero pomyłek. Sprawdź BookApp!",
       image:
-        "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vKDwuKIReMY6VDm8WNosJjy91SA7OxLhIH5Qz",
+        "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vV3oTiH1plgK4taovOnAI7HMQxDPSs3cbrRye",
     },
-    slug: "nextjs-vs-gotowe-platformy-ecommerce",
-    title:
-      'Koniec z kompromisami: Dlaczego Twój biznes potrzebuje Next.js, a nie kolejnego sklepu "z pudełka"?',
+    slug: "system-rezerwacji-online-automatyzacja-wizyt",
+    title: "Jak Zautomatyzować Umawianie Wizyt i Zyskać Więcej Klientów",
     description:
-      "Czy gotowe platformy e-commerce ograniczają rozwój Twojego biznesu? Dowiedz się, dlaczego Next.js to potężne narzędzie, które pozwala budować ultra-szybkie i w pełni spersonalizowane sklepy internetowe dla wymagających firm.",
+      "Dowiedz się, jak system rezerwacji online może zwiększyć liczbę klientów o 40%. Automatyzacja wizyt 24/7, mniej telefonów, zero pomyłek. Sprawdź BookApp!",
     image:
-      "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vKDwuKIReMY6VDm8WNosJjy91SA7OxLhIH5Qz",
+      "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vWiTSLobV9OXzpZhUGHxRN8kK2dsED6nAv0jB",
     markdown: post4,
     author: authors.me,
-    createdAt: new Date("2025-06-26"),
-    published: false,
-    tag: tags["e-commerce"],
+    createdAt: new Date("2025-08-18"),
+    published: true,
+    tag: tags["rezerwacje-online"],
     cta: {
-      title: "Gotowy na Profesjonalną Obecność w Internecie?",
+      title:
+        "Chcesz zautomatyzować swój biznes i mieć więcej klientów bez odbierania telefonu 24/7?",
       subtitle:
-        "Wyślij zapytanie i zobacz, jak możemy stworzyć Twoją profesjonalną wizytówkę online, która będzie pracować na Twój sukces 24 godziny na dobę!",
+        "Jeśli zastanawiasz się, czy system rezerwacji online sprawdzi się w Twojej branży, warto przedyskutować to z kimś, kto zna specyfikę różnych firm usługowych. Podczas bezpłatnej rozmowy dowiesz się, jak takie rozwiązania działają w praktyce i czy pasują do Twojego modelu biznesowego.",
     },
   },
+  // {
+  //   id: 4,
+  //   metadata: {
+  //     title: "Next.js E-commerce: Sklepy Internetowe Bez Kompromisów",
+  //     description:
+  //       "Next.js vs Shopify/WooCommerce. Tworzenie sklepów internetowych dla firm. Szybki, spersonalizowany e-commerce. Agencja Next.js.",
+  //     image:
+  //       "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vKDwuKIReMY6VDm8WNosJjy91SA7OxLhIH5Qz",
+  //   },
+  //   slug: "nextjs-vs-gotowe-platformy-ecommerce",
+  //   title:
+  //     'Koniec z kompromisami: Dlaczego Twój biznes potrzebuje Next.js, a nie kolejnego sklepu "z pudełka"?',
+  //   description:
+  //     "Czy gotowe platformy e-commerce ograniczają rozwój Twojego biznesu? Dowiedz się, dlaczego Next.js to potężne narzędzie, które pozwala budować ultra-szybkie i w pełni spersonalizowane sklepy internetowe dla wymagających firm.",
+  //   image:
+  //     "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vKDwuKIReMY6VDm8WNosJjy91SA7OxLhIH5Qz",
+  //   markdown: post4,
+  //   author: authors.me,
+  //   createdAt: new Date("2025-06-26"),
+  //   published: false,
+  //   tag: tags["e-commerce"],
+  //   cta: {
+  //     title: "Gotowy na Profesjonalną Obecność w Internecie?",
+  //     subtitle:
+  //       "Wyślij zapytanie i zobacz, jak możemy stworzyć Twoją profesjonalną wizytówkę online, która będzie pracować na Twój sukces 24 godziny na dobę!",
+  //   },
+  // },
   // {
   //   id: 5,
   //   metadata: {

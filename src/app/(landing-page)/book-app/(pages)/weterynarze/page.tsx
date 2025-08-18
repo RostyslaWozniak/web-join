@@ -46,7 +46,7 @@ export default function VeterinaryLanding() {
       </SectionWrapper>
 
       <SectionWrapper className="relative" id="form">
-        <MaxWidthWrapper size="md" className="relative z-10">
+        <MaxWidthWrapper size="sm" className="relative z-10">
           <SectionHeader
             title="Zacznij już dziś!"
             subtitle="Umów się na bezpłatną prezentację i poznaj możliwości systemu BookApp"

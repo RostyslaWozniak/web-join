@@ -20,13 +20,20 @@ export const tags = {
     description:
       "Wszystko, co musisz wiedzieć o narzędziach Google dla firm. Przejrzyj porady dotyczące Google Moja Firma, Google Maps i innych funkcji, które zwiększą Twoją obecność online.",
   },
-  "e-commerce": {
-    name: "e-commerce",
-    slug: "e-commerce",
-    title: "Sklepy Online - E-commerce i Sprzedaż Internetowa",
+  "rezerwacje-online": {
+    name: "Rezerwacje online",
+    slug: "rezerwacje-online",
+    title: "Systemy Rezerwacji Online - Automatyzacja Wizyt dla Firm",
     description:
-      "Rozpocznij lub rozwijaj swój sklep internetowy! Znajdź kompleksowe porady dotyczące tworzenia sklepów online, wyboru platformy e-commerce i strategii sprzedaży produktów w sieci.",
+      "Kompleksowy przewodnik po systemach rezerwacji wizyt online. Sprawdź, jak zautomatyzować umawianie wizyt, zwiększyć liczbę klientów i zaoszczędzić czas w swojej firmie usługowej.",
   },
+  // "e-commerce": {
+  //   name: "e-commerce",
+  //   slug: "e-commerce",
+  //   title: "Sklepy Online - E-commerce i Sprzedaż Internetowa",
+  //   description:
+  //     "Rozpocznij lub rozwijaj swój sklep internetowy! Znajdź kompleksowe porady dotyczące tworzenia sklepów online, wyboru platformy e-commerce i strategii sprzedaży produktów w sieci.",
+  // },
   // "marketing-online": {
   //   name: "Marketing online",
   //   slug: "marketing-online",

@@ -8,7 +8,13 @@ import { IconCard } from "../ui/icon-card";
 import { H1, Text } from "../ui/typography";
 import Link from "next/link";
 
-export function NotFoundSection() {
+type NotFoundSectionProps = {
+  actionButton?: React.ReactNode;
+};
+
+export function NotFoundSection({
+  actionButton = <DefaultActionButton />,
+}: NotFoundSectionProps) {
   return (
     <GridBackground className="overflow-x-hidden">
       <MaxWidthWrapper className="px-2 pb-12 md:py-20">
@@ -24,11 +30,7 @@ export function NotFoundSection() {
             <Text variant="muted" size="lg" className="animate-slide-in-blur">
               Strona którą szukasz nie została znaleziona.
             </Text>
-
-            <GradientButton className="relative">
-              <HomeIcon className="mr-2" />
-              Na główną <Link href="/" className="absolute inset-0" />
-            </GradientButton>
+            {actionButton}
           </div>
           <IconCard
             icon={XIcon}
@@ -52,5 +54,14 @@ export function NotFoundSection() {
         </div>
       </MaxWidthWrapper>
     </GridBackground>
+  );
+}
+
+function DefaultActionButton() {
+  return (
+    <GradientButton className="relative">
+      <HomeIcon className="mr-2" />
+      Na główną <Link href="/" className="absolute inset-0" />
+    </GradientButton>
   );
 }

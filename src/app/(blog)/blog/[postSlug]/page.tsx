@@ -19,6 +19,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { SectionWrapper } from "@/components/section-wrapper";
 import { CtaForm } from "@/features/forms/cta-form";
 import { SectionHeader } from "@/components/section-header";
+import { BookAppPreviewSection } from "@/components/sections";
 
 export const dynamic = "force-static";
 
@@ -95,6 +96,7 @@ export default async function PostPage({
       />
       <div className="relative mx-auto h-[400px] max-w-7xl lg:h-[500px]">
         <Image
+          priority
           src={post.image}
           alt="post image"
           width={1000}
@@ -117,6 +119,7 @@ export default async function PostPage({
                 <Link
                   href={`/blog/tags/${post.tag.slug}`}
                   className="absolute inset-0"
+                  aria-label={`Prejdź do postów z tagiem ${post.tag.name}`}
                 />
 
                 {post.tag.name}
@@ -164,6 +167,11 @@ export default async function PostPage({
       <SectionWrapper className="lg:hidden">
         <MaxWidthWrapper size="xs">
           <BlogSidebar currentPostSlug={post.slug} />
+        </MaxWidthWrapper>
+      </SectionWrapper>
+      <SectionWrapper>
+        <MaxWidthWrapper size="sm">
+          <BookAppPreviewSection />
         </MaxWidthWrapper>
       </SectionWrapper>
     </>

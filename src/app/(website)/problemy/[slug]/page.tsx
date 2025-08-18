@@ -1,15 +1,14 @@
-/* eslint-disable @next/next/no-img-element */
 import { Markdown } from "@/components/markdown-renderer";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { SectionWrapper } from "@/components/section-wrapper";
 import { BlogPreviewSection } from "@/components/sections";
-import { H2 } from "@/components/ui/typography";
 import { problemsData } from "@/features/problems/data";
 import { CtaForm } from "@/features/forms/cta-form";
 import { type Metadata } from "next";
 
 import { notFound } from "next/navigation";
 import { cache } from "react";
+import { SectionHeader } from "@/components/section-header";
 
 const getCurrentPageData = cache((slug: string) => {
   return problemsData.find((p) => p.slug === slug);
@@ -54,26 +53,17 @@ export default async function ProblemPage({
             <div>
               <Markdown>{problem.markdown}</Markdown>
             </div>
-            <div className="order-first aspect-[3/2] overflow-hidden rounded-lg shadow-xl md:order-2">
-              <img
-                src={problem.image.url}
-                alt={problem.image.url}
-                className="h-full w-full object-cover"
-              />
-            </div>
+            <div className="order-first aspect-[3/2] overflow-hidden md:order-2"></div>
           </div>
         </MaxWidthWrapper>
       </SectionWrapper>
       <SectionWrapper className="relative">
-        <MaxWidthWrapper size="md" className="relative z-10">
-          <div className="text-center">
-            <H2 className="mb-4 text-3xl font-bold text-cyan-900 lg:text-4xl">
-              {problem.cta.title}
-            </H2>
-            <p className="mx-auto mb-8 max-w-2xl text-xl">
-              {problem.cta.description}
-            </p>
-          </div>
+        <MaxWidthWrapper size="sm" className="relative z-10">
+          <SectionHeader
+            className="sm:px-8"
+            title={problem.cta.title}
+            subtitle={problem.cta.description}
+          />
           <div>
             <CtaForm typeOfProject={problem.email.service} />
           </div>

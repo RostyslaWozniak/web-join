@@ -37,15 +37,17 @@ function TagsSection() {
     <section className="space-y-2">
       <H2 className="!text-start !text-2xl">Tagi</H2>
       <div className="flex flex-wrap gap-2">
-        {Object.values(tags)
-          .slice(0, 3)
-          .map(({ name, slug }) => (
-            <Link key={slug} href={`/blog/tags/${slug}`}>
-              <Badge className="rounded-full bg-primary-gradient text-gray-800">
-                {name}
-              </Badge>
-            </Link>
-          ))}
+        {Object.values(tags).map(({ name, slug }) => (
+          <Link
+            key={slug}
+            href={`/blog/tags/${slug}`}
+            aria-label={`Prejdź do postów z tagiem ${name}`}
+          >
+            <Badge className="rounded-full bg-primary-gradient text-gray-800">
+              {name}
+            </Badge>
+          </Link>
+        ))}
       </div>
     </section>
   );
@@ -60,7 +62,11 @@ function OtherPostsSection({
     <section>
       <div className="flex items-center justify-between">
         <H2 className="!text-start !text-2xl">Inne posty</H2>
-        <Link href="/blog" className="text-sm/8 text-cyan-600">
+        <Link
+          href="/blog"
+          className="text-sm/8 text-cyan-700 hover:underline"
+          aria-label="Przejdź do wszystkich postów"
+        >
           Zobacz więcej
         </Link>
       </div>
@@ -72,7 +78,11 @@ function OtherPostsSection({
           .slice(0, 2)
           .map((post) => (
             <div key={post.slug} className="my-4">
-              <Link href={`/blog/${post.slug}`} className="text-foreground">
+              <Link
+                href={`/blog/${post.slug}`}
+                className="text-foreground"
+                aria-label={`Przejdź do postu ${post.title}`}
+              >
                 <Image
                   src={post.image}
                   alt="post image"
