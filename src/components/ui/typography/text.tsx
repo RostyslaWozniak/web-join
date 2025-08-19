@@ -2,14 +2,14 @@ import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import React from "react";
 
-const textVariants = cva("leading-7 text-pretty font-manrope ", {
+const textVariants = cva("font-manrope ", {
   variants: {
     size: {
       default:
         "text-base md:text-lg font-normal leading-relaxed tracking-wide ",
-      sm: "text-base md:text-sm font-normal leading-relaxed  tracking-wider",
+      sm: "text-base md:text-sm font-normal leading-relaxed tracking-wider",
       lg: "text-lg font-semibold md:text-xl/relaxed tracking-wider",
-      subtitle: "text-xl font-semibold md:text-2xl tracking-[2.4px]",
+      subtitle: "text-base font-semibold md:text-2xl tracking-widest",
     },
     variant: {
       default: "text-foreground",

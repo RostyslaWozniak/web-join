@@ -1,4 +1,4 @@
-import { H2, Text } from "../ui/typography";
+import { Text } from "../ui/typography";
 import { MotionWrapper } from "../motion-wrapper";
 import {
   ArrowUpRightIcon,
@@ -9,21 +9,24 @@ import {
 import { AccessibleLink } from "../accesible-link";
 import { GradientButton } from "../ui/gradient-button";
 import { CardItem } from "../card-item";
+import { SectionHeader } from "../section-header";
 
 export function DontHaveWebsiteSection() {
   return (
     <>
-      <div className="relative mx-auto mb-6 max-w-4xl md:mb-12">
-        <H2>
-          Nie masz jeszcze strony?
-          <br /> Pomogę Ci zacząć od zera
-        </H2>
-        <p className="mx-auto max-w-4xl text-center text-lg leading-relaxed text-gray-600">
-          Tworzenie strony internetowej nie musi być trudne. W prostych krokach
+      <SectionHeader
+        title={
+          <>
+            Nie masz jeszcze strony? <br />
+            Pomogę Ci zacząć od zera
+          </>
+        }
+        subtitle="Tworzenie strony internetowej nie musi być trudne. W prostych krokach
           przeprowadzę Cię przez cały proces – bez technicznych komplikacji i
-          zbędnych kosztów.
-        </p>
-      </div>
+          zbędnych kosztów."
+        subtitleClassName="max-w-3xl mx-auto"
+      />
+
       <div className="mb-6 space-y-4 md:mb-12">
         <Text size="subtitle" className="!text-start">
           Jak to wygląda?

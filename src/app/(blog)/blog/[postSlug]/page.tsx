@@ -130,10 +130,22 @@ export default async function PostPage({
                 <Avatar
                   photo={post.author.image}
                   name={post.author.name}
-                  className="!h-8 !w-8"
-                />{" "}
-                {post.author.name}
+                  className="h-8 w-8 text-base md:h-8 md:w-8 md:text-base"
+                />
+                {post.author.website ? (
+                  <Link
+                    href={post.author.website}
+                    className="hover:underline"
+                    aria-label={`Przejdź do strony internetowej ${post.author.name}`}
+                    target="_blank"
+                  >
+                    {post.author.name}
+                  </Link>
+                ) : (
+                  post.author.name
+                )}
               </div>
+
               <div className="flex items-start text-foreground">
                 <CalendarIcon className="ml-1.5 mr-3.5 h-5 w-5 md:ml-0 md:mr-2" />{" "}
                 {post.createdAt?.toLocaleDateString()}

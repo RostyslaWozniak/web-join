@@ -49,11 +49,11 @@ export default async function ProblemPage({
     <>
       <SectionWrapper>
         <MaxWidthWrapper className="max-w-7xl">
-          <div className="grid gap-x-12 gap-y-8 md:grid-cols-2">
+          <div className="grid gap-x-12 gap-y-8 lg:grid-cols-2">
             <div>
               <Markdown>{problem.markdown}</Markdown>
             </div>
-            <div className="order-first aspect-[3/2] overflow-hidden md:order-2"></div>
+            <div className="order-first hidden aspect-[3/2] overflow-hidden lg:order-2 lg:block"></div>
           </div>
         </MaxWidthWrapper>
       </SectionWrapper>

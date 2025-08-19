@@ -9,7 +9,6 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { env } from "@/env";
 
 export default async function BlogPage() {
-  console.log(env.NODE_ENV);
   return (
     <div>
       <section>

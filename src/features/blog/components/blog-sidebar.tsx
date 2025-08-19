@@ -18,7 +18,9 @@ export function BlogSidebar({
       <SearchPostSection />
       <TagsSection />
       <OtherPostsSection currentPostSlug={currentPostSlug} />
-      <BookAppCta />
+      <div className="hidden lg:block">
+        <BookAppCta />
+      </div>
     </div>
   );
 }

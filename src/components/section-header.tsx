@@ -8,7 +8,7 @@ export function SectionHeader({
   titleClassName,
   subtitleClassName,
 }: {
-  title: string;
+  title: React.ReactNode;
   subtitle: string;
   className?: string;
   titleClassName?: string;

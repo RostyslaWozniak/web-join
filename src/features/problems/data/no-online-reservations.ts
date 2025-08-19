@@ -6,7 +6,7 @@ export const noOnlineReservations: ProblemItem = {
   description:
     "Brak systemu rezerwacji online utrudnia klientom zapisanie się. Zautomatyzuj proces i zwiększ liczbę wizyt 24/7.",
   icon: CalendarIcon,
-  color: "bg-blue-100 text-gray-600 border-gray-600",
+  color: "bg-cyan-100 text-gray-600 border-gray-600",
   slug: "brak-rezerwacji-online",
   image: {
     url: "https://images.pexels.com/photos/6383268/pexels-photo-6383268.jpeg",

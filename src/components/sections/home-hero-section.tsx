@@ -24,7 +24,7 @@ export function HomeHeroSection() {
             <Text
               variant="muted"
               size="subtitle"
-              className="mb-3 max-w-4xl text-lg leading-relaxed sm:text-center"
+              className="mb-3 max-w-4xl sm:text-center"
             >
               Rozwijasz firmę – ja zadbam o technologię. Tworzę szybkie,
               bezpieczne i skuteczne strony, które napędzają sprzedaż{" "}

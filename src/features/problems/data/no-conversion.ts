@@ -6,7 +6,7 @@ export const noConversion: ProblemItem = {
   description:
     "Masz ruch, ale brak zapytań? Popraw UX, treści i CTA, aby zwiększyć konwersję i zamienić odwiedzających w klientów.",
   icon: UsersIcon,
-  color: "bg-yellow-100 text-gray-600 border-gray-600",
+  color: "bg-cyan-100 text-gray-600 border-gray-600",
   slug: "brak-konwersji",
   image: {
     url: "https://cdn.optimizely.com/img/learncenter/cro-guide.jpg",
