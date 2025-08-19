@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 
 type BurgerNavItemProps = {
   children: React.ReactNode;
-  href: string;
+  href?: string;
   icon: LucideIcon;
   areaLabel: string;
 };
@@ -21,18 +21,34 @@ export function BurgerNavItem({
   const pathname = usePathname();
   const isActiveLink = pathname === href;
   return (
-    <AccessibleLink
-      href={href}
-      aria-label={areaLabel}
-      className={cn(
-        "flex min-h-14 min-w-full items-end gap-x-4 px-8 text-lg tracking-widest",
-        {
-          "text-accent-cyan": isActiveLink,
-        },
+    <>
+      {href ? (
+        <AccessibleLink
+          href={href}
+          aria-label={areaLabel}
+          className={cn(
+            "flex min-w-full items-start gap-x-4 text-wrap py-4 text-base tracking-widest",
+            {
+              "text-accent-cyan": isActiveLink,
+            },
+          )}
+        >
+          <Icon size={24} className="min-w-6" />
+          <span className="mt-0.5">{children}</span>
+        </AccessibleLink>
+      ) : (
+        <div
+          className={cn(
+            "flex min-w-full items-start gap-x-4 text-wrap py-4 text-base tracking-widest",
+            {
+              "text-accent-cyan": isActiveLink,
+            },
+          )}
+        >
+          <Icon size={24} className="min-w-6" />
+          <span className="mt-0.5 w-full">{children}</span>
+        </div>
       )}
-    >
-      <Icon size={32} />
-      {children}
-    </AccessibleLink>
+    </>
   );
 }

@@ -1,27 +1,39 @@
 import { HomeIcon, NotebookIcon, PhoneIcon, StarIcon } from "lucide-react";
+import { ExpandNavItem } from "./expand-nav-item";
 
 export const burgerNavigation = [
   {
-    label: "Home",
+    id: "1",
+    label: <>Home</>,
     href: "/",
     icon: HomeIcon,
     areaLabel: "Strona główna",
   },
   {
-    label: "BookApp",
-    href: "/book-app",
+    id: "2",
+    label: (
+      <ExpandNavItem
+        label="System rezerwacji online"
+        list={[
+          { label: "System rezerwacji BookApp", href: "/book-app" },
+          { label: "Dla Weterynarzy", href: "/book-app/weterynarze" },
+        ]}
+      />
+    ),
     icon: StarIcon,
     areaLabel:
       "System rezerwacji online dla lokalnych firm usługowych - BookApp",
   },
   {
-    label: "Blog",
+    id: "3",
+    label: <>Blog</>,
     href: "/blog",
     icon: NotebookIcon,
     areaLabel: "Blog o stronach internetowych dla lokalnych firm",
   },
   {
-    label: "Kontakt",
+    id: "4",
+    label: <>Kontakt</>,
     href: "/kontakt",
     icon: PhoneIcon,
     areaLabel: "Zapytaj o dawmową konsultacje",

@@ -1,9 +1,9 @@
 import { H2 } from "@/components/ui/typography";
 import { problemsData } from "../data";
 import { MotionWrapper } from "@/components/motion-wrapper";
-import { AccessibleLink } from "@/components/accesible-link";
-import { GradientButton } from "@/components/ui/gradient-button";
-import { ArrowUpRightIcon } from "lucide-react";
+// import { AccessibleLink } from "@/components/accesible-link";
+// import { GradientButton } from "@/components/ui/gradient-button";
+// import { ArrowUpRightIcon } from "lucide-react";
 import { CardItem } from "@/components/card-item";
 
 export function ProblemsPreviewSection() {
@@ -37,7 +37,7 @@ export function ProblemsPreviewSection() {
             </MotionWrapper>
           ))}
       </div>
-      <div className="mx-auto max-w-4xl">
+      {/* <div className="mx-auto max-w-4xl">
         <AccessibleLink
           href="/problemy"
           aria-label="Zobacz więcej problemów z którymi stykają się firmy usługowe"
@@ -47,7 +47,7 @@ export function ProblemsPreviewSection() {
             <ArrowUpRightIcon className="ml-1 h-4 w-4 text-accent-emerald" />
           </GradientButton>
         </AccessibleLink>
-      </div>
+      </div> */}
     </>
   );
 }

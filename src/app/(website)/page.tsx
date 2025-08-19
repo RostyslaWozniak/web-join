@@ -31,10 +31,8 @@ export default function HomePage() {
           <ProblemsPreviewSection />
         </MaxWidthWrapper>
       </SectionWrapper>
-      {/* SECTION SEPARATOR */}
-      <SectionSeparator />
       {/* BOOK APP PREVIEW */}
-      <SectionWrapper>
+      <SectionWrapper className="pt-0 md:pt-0">
         <MaxWidthWrapper size="sm">
           <BookAppPreviewSection />
         </MaxWidthWrapper>

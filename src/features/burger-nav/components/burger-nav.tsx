@@ -55,11 +55,12 @@ export function BurgerNav() {
               "fixed inset-0 top-14 -z-10 h-screen w-screen bg-card-gradient",
             )}
           >
-            <ul className="mx-auto mt-12 flex flex-col items-start p-4">
+            <ul className="mx-auto mt-12 flex flex-col items-start px-4">
               {burgerNavigation.map(({ label, ...item }, i) => (
                 <motion.li
+                  onClick={(e) => (item.href ? null : e.stopPropagation())}
                   className="relative w-full"
-                  key={label}
+                  key={item.id}
                   transition={{ delay: i * 0.1, duration: 0.3 }}
                   initial={{
                     y: 50,
