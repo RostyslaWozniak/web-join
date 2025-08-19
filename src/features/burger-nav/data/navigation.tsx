@@ -1,5 +1,5 @@
 import { HomeIcon, NotebookIcon, PhoneIcon, StarIcon } from "lucide-react";
-import { ExpandNavItem } from "./expand-nav-item";
+import { ExpandNavItem } from "../components/expand-nav-item";
 
 export const burgerNavigation = [
   {

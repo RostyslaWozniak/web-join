@@ -2,8 +2,9 @@
 
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, DotIcon } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 type ExpandNavItemProps = {
@@ -31,13 +32,7 @@ export function ExpandNavItem({ label, list }: ExpandNavItemProps) {
         {isOpen && (
           <MotionListWrapper listLength={list.length}>
             {list.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="flex min-h-12 items-center"
-              >
-                - {item.label}
-              </Link>
+              <ListItem key={item.href} {...item} />
             ))}
           </MotionListWrapper>
         )}
@@ -59,9 +54,25 @@ function MotionListWrapper({
       animate={{ height: listLength * 48 }}
       exit={{ height: "0px" }}
       transition={{ duration: 0.1 }}
-      className="mt-2 flex flex-col overflow-hidden rounded-md bg-white/80 px-2 text-sm shadow-sm backdrop-blur-md"
+      className="mt-2 flex flex-col overflow-hidden rounded-md bg-white/80 text-sm shadow-sm backdrop-blur-md"
     >
       {children}
     </motion.div>
+  );
+}
+
+function ListItem({ href, label }: { href: string; label: string }) {
+  const pathname = usePathname();
+  const isActive = href === pathname;
+  return (
+    <Link
+      key={href}
+      href={href}
+      className={cn("flex min-h-12 items-center px-2", {
+        "text-cyan-600 underline underline-offset-2": isActive,
+      })}
+    >
+      <DotIcon /> {label}
+    </Link>
   );
 }
