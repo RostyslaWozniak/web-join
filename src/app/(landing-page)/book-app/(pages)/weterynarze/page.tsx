@@ -1,14 +1,13 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   CheckCircle,
   CalendarIcon,
   SmartphoneIcon,
   ClockIcon,
-  CheckCircleIcon,
-  MailIcon,
-  UsersIcon,
-  SearchIcon,
+  PhoneIcon,
+  PawPrintIcon,
+  FrownIcon,
+  RocketIcon,
 } from "lucide-react";
 import Image from "next/image";
 import { GridBackground } from "@/components/grid-background";
@@ -21,6 +20,16 @@ import { SectionWrapper } from "@/components/section-wrapper";
 import { CardItem } from "@/components/card-item";
 import { CtaForm } from "@/features/forms/cta-form";
 import { SectionHeader } from "@/components/section-header";
+import { cn } from "@/lib/utils";
+import { PricingSection } from "../../_components/sections/pricing-section";
+import {
+  AppleIOIcon,
+  GoogleCalendarIcon,
+  GoogleMeetsIcon,
+  MasterCardIcon,
+  PayPalIcon,
+  StripeIcon,
+} from "@/components/icons/brands-icons";
 
 export default function VeterinaryLanding() {
   return (
@@ -28,12 +37,20 @@ export default function VeterinaryLanding() {
       <SectionWrapper paddingBlock="none">
         <HeroSection />
       </SectionWrapper>
-      <SectionWrapper id="dla-czego">
+
+      <SectionWrapper id="">
         <MaxWidthWrapper>
-          <WhySection />
+          <SolutionsSection />
         </MaxWidthWrapper>
       </SectionWrapper>
-      <SectionWrapper id="co-zyskujesz" className="bg-white">
+
+      <SectionWrapper paddingBlock="lg" className="bg-card-gradient">
+        <MaxWidthWrapper size="sm">
+          <IntegrationsSection />
+        </MaxWidthWrapper>
+      </SectionWrapper>
+
+      <SectionWrapper id="" className="bg-white">
         <MaxWidthWrapper>
           <FeaturesSection />
         </MaxWidthWrapper>
@@ -42,6 +59,18 @@ export default function VeterinaryLanding() {
       <SectionWrapper id="jak-to-dziala">
         <MaxWidthWrapper>
           <HowItWorksSection />
+        </MaxWidthWrapper>
+      </SectionWrapper>
+
+      <SectionWrapper className="bg-card-gradient">
+        <MaxWidthWrapper size="md">
+          <CtaSection />
+        </MaxWidthWrapper>
+      </SectionWrapper>
+
+      <SectionWrapper id="ceny">
+        <MaxWidthWrapper>
+          <PricingSection />
         </MaxWidthWrapper>
       </SectionWrapper>
 
@@ -59,19 +88,7 @@ export default function VeterinaryLanding() {
         <div className="absolute inset-0 bg-card-gradient opacity-50" />
       </SectionWrapper>
 
-      {/* <SectionWrapper className="bg-card-gradient">
-        <MaxWidthWrapper>
-          <DemoSection />
-        </MaxWidthWrapper>
-      </SectionWrapper> */}
-
-      <SectionWrapper id="ceny">
-        <MaxWidthWrapper>
-          <PricingSection />
-        </MaxWidthWrapper>
-      </SectionWrapper>
-
-      <SectionWrapper>
+      <SectionWrapper className="bg-white">
         <MaxWidthWrapper>
           <BlogPreviewSection />
         </MaxWidthWrapper>
@@ -85,42 +102,34 @@ function HeroSection() {
     <GridBackground className="py-8 xl:py-20">
       <MaxWidthWrapper>
         <div className="relative grid items-center gap-12 lg:grid-cols-2">
-          <div className="space-y-8">
-            <div className="max-w-4xl space-y-4">
-              <Badge className="mb-4 rounded-full bg-card-gradient text-foreground">
+          <div>
+            <div className="mb-4 max-w-4xl md:mb-8">
+              <Badge className="mb-3 rounded-full bg-card-gradient text-foreground md:mb-6">
                 Nowoczesne rozwiązania dla weterynarii
               </Badge>
-              <H1 className="text-4xl font-bold leading-tight text-foreground lg:text-6xl">
-                Szybka i nowoczesna strona internetowa dla Twojej{" "}
+              <H1 className="mb-3 font-bold text-foreground md:mb-6">
+                System rezerwacji online dla Twojej{" "}
                 <span className="text-accent-cyan brightness-[0.95]">
                   przychodni weterynaryjnej
                 </span>
               </H1>
               <Text variant="muted" size="subtitle" className="leading-relaxed">
-                System rezerwacji wizyt online, który działa 24/7. Zwiększ
-                widoczność w Google i zyskaj nowych klientów.
+                Nowoczesny system rezerwacji w połączeniu z profesjonalną stroną
+                internetową to Twoje wsparcie 24/7. Zwiększ widoczność w Google
+                i zyskaj nowych klientów.
               </Text>
             </div>
-            <div className="mx-auto flex flex-col gap-4 sm:mx-0 sm:w-min sm:flex-row sm:justify-center">
+            <div>
               <AccessibleLink
                 href="/book-app/weterynarze#form"
                 aria-label="Umów darmową prezentację"
+                className="sm:mx-0"
               >
-                <GradientButton>
-                  <CalendarIcon className="mr-2 h-5 w-5" />
-                  Umów się na prezentację
+                <GradientButton className="">
+                  <CalendarIcon className="mr-2" />
+                  Umów prezentację online
                 </GradientButton>
               </AccessibleLink>
-              {/* <AccessibleLink
-                href="https://vet-app-demo.vercel.app/"
-                target="_blank"
-                aria-label="Przejdź do demo"
-              >
-                <GradientButton outline>
-                  Zobacz demo
-                  <ExternalLinkIcon className="ml-2 h-5 w-5 text-accent-cyan" />
-                </GradientButton>
-              </AccessibleLink> */}
             </div>
           </div>
           <div className="relative">
@@ -138,84 +147,140 @@ function HeroSection() {
   );
 }
 
-function WhySection() {
+function SolutionsSection() {
   return (
     <>
       <SectionHeader
-        title="Dlaczego Twoja przychodnia potrzebuje nowoczesnej strony?"
-        subtitle=" Współczesni właściciele zwierząt oczekują wygody i szybkości. Daj im
-          to, czego potrzebują."
-        className="mx-auto max-w-2xl"
+        title="BookApp dla Przychodni Weterynaryjnych: Konkretne Rozwiązania dla Twoich Problemów"
+        className="mx-auto mb-12 max-w-4xl md:mb-24"
       />
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mb-6 grid gap-4 sm:grid-cols-2 md:mb-12 md:grid-cols-3 md:gap-6">
         {[
           {
-            icon: SmartphoneIcon,
-            title: "Wygoda dla klientów",
+            id: "1",
+            title: "Koniec z niekończącymi się telefonami",
             description:
-              "Twoi klienci chcą wygody — rezerwacji wizyty bez dzwonienia",
+              "Dzięki systemowi rezerwacji wizyt online, Twoi klienci umawiają wizyty samodzielnie, 24/7, z dowolnego miejsca. Recepcja jest odciążona, a personel może skupić się na pacjentach.",
+            icon: PhoneIcon,
+            iconClassName: "bg-green-100 text-green-600 border-green-600",
           },
           {
+            id: "2",
+            title: "Bez chaosu i nakładających się wizyt",
+            description:
+              "Inteligentne algorytmy BookApp automatycznie dopasowują dostępne sloty na podstawie czasu trwania usługi i grafiku lekarzy. Koniec z podwójnymi rezerwacjami i nieporozumieniami w kalendarzu.",
+            icon: FrownIcon,
+            iconClassName: "bg-blue-100 text-blue-600 border-blue-600",
+          },
+          {
+            id: "3",
+            title: "Mniej zapomnianych wizyt",
+            description:
+              "BookApp wysyła automatyczne przypomnienia SMS i e-mail na 24 godziny przed wizytą. To minimalizuje szansę, że klient się nie pojawi i maksymalizuje Twoje przychody, jednocześnie dbając o komfort klienta.",
             icon: ClockIcon,
-            title: "Szybkość ładowania",
+            iconClassName: "bg-pink-100 text-pink-600 border-pink-600",
+          },
+          {
+            id: "4",
+            title: "Natychmiastowa rezerwacja, bez czekania na linii",
             description:
-              "Strona ładująca się szybko na telefonie to podstawa zaufania",
+              "Klienci cenią swój czas. Dzięki aplikacji do umawiania wizyt, rezerwacja zajmuje im kilkanaście sekund, eliminując frustrację związaną z długim oczekiwaniem na połączenie.",
+            icon: SmartphoneIcon,
+            iconClassName: "bg-purple-100 text-purple-600 border-purple-600",
           },
           {
-            icon: SearchIcon,
-            title: "Lepsze SEO",
+            id: "5",
+            title: "Wygoda i nowoczesność dla opiekunów zwierząt",
             description:
-              "Lepsze SEO = więcej osób z Twojej okolicy Cię znajdzie",
+              "Zaoferuj swoim klientom intuicyjny panel, gdzie mogą przeglądać historię wizyt, umówić kolejny termin i otrzymywać personalizowane oferty. To buduje lojalność i pozytywne doświadczenia.",
+            icon: PawPrintIcon,
+            iconClassName: "bg-gray-100 text-gray-600   border-gray-600",
           },
           {
-            icon: UsersIcon,
-            title: "Zarządzanie grafikiem",
+            id: "6",
+            title: "Zwiększona widoczność w Google",
             description:
-              "Prosty system zarządzania grafikiem lekarzy i dostępnością",
+              "Strona internetowa zintegrowana z BookApp jest zoptymalizowana pod SEO i szybkość działania. Dodatkowo, system automatycznie prosi o opinie w Google po wizycie, znacząco poprawiając Twoją pozycję w wynikach wyszukiwania i na Mapach Google Moja Firma.",
+            icon: RocketIcon,
+            iconClassName: "bg-orange-100 text-orange-600 border-orange-600",
           },
-          {
-            icon: MailIcon,
-            title: "Automatyczne przypomnienia",
-            description: "Automatyczne przypomnienia e-mail/SMS dla klientów",
-          },
-          {
-            icon: CheckCircleIcon,
-            title: "Pełna kontrola",
-            description: "Kompletny system zarządzania wizytami i klientami",
-          },
-        ].map(({ title, icon, description }, index) => (
+        ].map(({ id, title, description, icon: Icon, iconClassName }) => (
           <CardItem
-            key={index}
-            align="center"
+            key={id}
             title={title}
             description={description}
-            icon={icon}
-            className="border-0 shadow-lg transition-shadow hover:shadow-xl"
-            iconClassName="min-w-14 min-h-14 text-cyan-600 bg-gray-100"
+            icon={Icon}
+            iconClassName={iconClassName}
           />
         ))}
       </div>
     </>
   );
 }
+
+const integrationsIcons = [
+  GoogleCalendarIcon,
+  GoogleMeetsIcon,
+  AppleIOIcon,
+  StripeIcon,
+  PayPalIcon,
+  MasterCardIcon,
+];
+
+function IntegrationsSection() {
+  return (
+    <>
+      <SectionHeader title="Podłącz swoje ulubione aplikacje do swojego procesu pracy." />
+      <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+        {integrationsIcons.map((Icon, i) => (
+          <div key={i} className="h-12 w-12 md:h-16 md:w-16">
+            <Icon />
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
 function FeaturesSection() {
   return (
     <>
       <SectionHeader
-        title="Co zyskujesz z naszą stroną i systemem BookApp?"
-        subtitle="Kompleksowe rozwiązanie, które zmieni sposób działania Twojej
-          przychodni"
+        title="BookApp – Dodatkowe funkcje, które Napędzą Rozwój Twojej Kliniki Weterynaryjnej"
+        className="mx-auto mb-12 max-w-4xl md:mb-24"
       />
 
-      <div className="grid items-center gap-12 lg:grid-cols-2">
+      <div className="mb-6 grid items-center gap-12 md:mb-12 lg:grid-cols-2">
         <div className="space-y-8">
           {[
-            "Intuicyjny system umawiania wizyt — klienci rezerwują 24/7",
-            "Klienci mogą dodać swoje zwierzaki i zarządzać wizytami online",
-            "Lekarze widzą pełen grafik, mogą łatwo zmieniać dostępność",
-            "Administrator ma pełną kontrolę nad usługami i harmonogramem",
-            "Szybka i responsywna strona, która działa doskonale na każdym urządzeniu",
-            "Strona zoptymalizowana pod lokalne SEO — wyższa pozycja w Google",
+            <>
+              <b>Zwiększona widoczność dzięki opiniom Google:</b> System
+              automatycznie prosi klientów o opinie po wizycie, co wzmacnia Twój
+              wizerunek online i <b>lokalne SEO</b>
+            </>,
+            <>
+              <b>Programy lojalnościowe i abonamenty:</b> Możliwość tworzenia
+              dedykowanych &quot;Pakietów Zdrowy Pupil&quot; i subskrypcji,
+              budujących długotrwałe relacje z opiekunami zwierząt i
+              zapewniających stały dopływ wizyt.
+            </>,
+            <>
+              <b>Bezpieczne płatności online:</b> Klienci mogą od razu opłacać
+              wizyty, znacząco zmniejszając liczbę
+              <b>odwołanych wizyt lub niepojawienie się klienta</b> i
+              usprawniając zarządzanie finansami Twojej kliniki weterynaryjnej.
+            </>,
+            <>
+              <b>Inteligentne dopasowanie usług i lekarzy:</b> Nasze
+              oprogramowanie do zarządzania kliniką weterynaryjną automatycznie
+              optymalizuje grafik, dopasowując terminy do konkretnego lekarza i
+              rodzaju usługi.
+            </>,
+            <>
+              <b> Szczegółowe statystyki i raporty:</b> Monitoruj popularność
+              usług, trendy i efektywność kliniki, aby podejmować świadome
+              decyzje, które napędzą rozwój Twojej placówki.
+            </>,
           ].map((feature, index) => (
             <div key={index} className="flex items-start space-x-4">
               <CheckCircle className="mt-1 h-6 w-6 flex-shrink-0 text-emerald-600" />
@@ -236,105 +301,145 @@ function FeaturesSection() {
     </>
   );
 }
+
+const howItWorksData = [
+  {
+    title: "Dla Właściciela Zwierzęcia: Szybkie Umawianie Wizyt dla Pupila",
+    image: {
+      url: "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vZnUYYy9NdUy9Ex7CYT1F6pQR5h4ct83KgBOi",
+      alt: "Panel klienta systemu BookApp",
+    },
+    features: [
+      <>
+        Wchodzi na dedykowaną stronę Twojej przychodni → wybiera usługę i
+        preferowanego lekarza.
+      </>,
+      <>Rezerwuje termin w przejrzystym kalendarzu online – dostępnym 24/7.</>,
+      <>
+        Dostaje automatyczne potwierdzenie i przyjazne przypomnienie SMS/e-mail
+        24h przed wizytą.
+      </>,
+      <>
+        Po wizycie otrzymuje prośbę o opinię w Google i możliwość rezerwacji
+        kolejnego terminu, co sprzyja budowaniu lojalności.
+      </>,
+    ],
+  },
+  {
+    title: "Dla Lekarza Weterynarii: Pełna Kontrola nad Grafikiem i Pacjentami",
+    image: {
+      url: "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vDYUg4gImIwaJ1zTQ5WiArgde3NYZcoP2M9hR",
+      alt: "Panel weterynarza systemu BookApp",
+    },
+    features: [
+      <>
+        Loguje się do intuicyjnego panelu aplikacji dla weterynarza → widzi swój
+        indywidualny kalendarz wizyt.
+      </>,
+      <>
+        Może łatwo ustawić dostępność, zaplanować urlopy czy przerwy w pracy,
+        zapewniając optymalny grafik pracy weterynarza.
+      </>,
+      <>Dostaje natychmiastowe powiadomienia o nowych rezerwacjach.</>,
+      <>
+        Ma szybki dostęp do danych kontaktowych i historii leczenia każdego
+        pacjenta, co ułatwia zarządzanie wizytami w klinice weterynaryjnej.
+      </>,
+    ],
+  },
+  {
+    title: "Dla Menedżera Przychodni: Pełny Nadzór nad Działaniem Kliniki",
+    image: {
+      url: "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vFUcNU5oBYGM0x51Xkr9t2iosJVAzI8RjdTOb",
+      alt: "Panel administratora/menedżera systemu BookApp",
+    },
+    features: [
+      <>
+        Zarządza wszystkimi lekarzami i oferowanymi usługami (np. szczepienia,
+        konsultacje, zabiegi) w ramach systemu rezerwacji dla przychodni
+        weterynaryjnej.
+      </>,
+      <>
+        Ma kompleksowy podgląd całego harmonogramu kliniki w jednym centralnym
+        kalendarzu.
+      </>,
+      <>
+        Analizuje statystyki: obroty, efektywność poszczególnych lekarzy i
+        źródła pozyskiwania klientów.
+      </>,
+      <>
+        Konfiguruje automatyczne wiadomości e-mail i SMS, personalizując
+        komunikację z klientami.
+      </>,
+    ],
+  },
+];
 function HowItWorksSection() {
   return (
     <>
       <SectionHeader
-        title="Jak to działa?"
-        subtitle="Prosty proces w 3 krokach"
+        title="BookApp w Działaniu: Prosta i Intuicyjna Rezerwacja Wizyt Online dla Każdego"
+        className="mx-auto mb-12 max-w-4xl md:mb-24"
       />
-      <div className="grid gap-8 md:grid-cols-3">
-        {[
-          {
-            step: "1",
-            title: "Wybierz termin i usługę",
-            description:
-              "Klient wybiera dogodny termin i usługę z oferty przychodni.",
-            image:
-              "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vZnUYYy9NdUy9Ex7CYT1F6pQR5h4ct83KgBOi",
-          },
-          {
-            step: "2",
-            title: "Dodaj zwierzaka i potwierdź wizytę",
-            description:
-              "Możliwość dodania zwierzaka oraz automatyczne przypomnienia.",
-            image:
-              "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vaulmEJOQBkN6lL4YuXxhyPqd0mR3FWnMrU7G",
-          },
-          {
-            step: "3",
-            title: "Weterynarz zarządza grafikiem",
-            description:
-              "Lekarze widzą swoje wizyty i mogą elastycznie dostosować grafik.",
-            image:
-              "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vDYUg4gImIwaJ1zTQ5WiArgde3NYZcoP2M9hR",
-          },
-        ].map((step, index) => (
-          <Card
-            key={index}
-            className="relative isolate overflow-hidden border-0 bg-transparent text-center shadow-lg"
+      <div className="space-y-12 md:space-y-24">
+        {howItWorksData.map(({ title, image, features }, i) => (
+          <div
+            key={title}
+            className="grid items-center gap-y-12 md:gap-x-24 lg:grid-cols-2"
           >
-            <CardContent className="relative z-20 flex h-full flex-col items-center">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-cyan-600 text-xl font-bold text-white">
-                {step.step}
+            <div
+              className={cn({
+                "md:order-last": i === 1,
+              })}
+            >
+              <H3 className="mb-6 md:mb-12">{title}</H3>
+              <div className="space-y-4 md:space-y-6">
+                {features.map((feature, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="grid aspect-square min-w-8 place-items-center rounded-full bg-cyan-100 text-xl font-bold text-cyan-800">
+                      {index + 1}
+                    </div>
+                    <Text>{feature}</Text>
+                  </div>
+                ))}
               </div>
-              <H3 className="mb-2 text-xl font-semibold">{step.title}</H3>
-              <p className="mb-6">{step.description}</p>
-              <div className="flex flex-grow items-center justify-center">
-                <Image
-                  src={step.image || "/placeholder.svg"}
-                  alt={step.title}
-                  width={400}
-                  height={300}
-                  className="rounded-lg"
-                />
-              </div>
-            </CardContent>
-            <div className="absolute inset-0 bg-card-gradient opacity-60"></div>
-          </Card>
+            </div>
+            <div className="relative">
+              <Image
+                src={image.url}
+                alt={image.alt}
+                width={700}
+                height={500}
+                className="rounded-2xl object-cover shadow-md"
+              />
+            </div>
+          </div>
         ))}
       </div>
     </>
   );
 }
-function PricingSection() {
+
+function CtaSection() {
   return (
     <>
       <SectionHeader
-        title="Cennik i oferta"
-        subtitle="Kompleksowe rozwiązanie w przystępnej cenie"
+        title="Gotowy, aby Twoja Przychodnia Weterynaryjna Działała Wydajniej?"
+        subtitle="Nie trać więcej czasu na ręczne zarządzanie wizytami. Zobacz, jak
+        oprogramowanie do rezerwacji BookApp może usprawnić Twoją codzienną
+        pracę i pozwolić Ci skupić się na tym, co najważniejsze – zdrowiu
+        zwierząt."
       />
-      <Card className="mx-auto max-w-2xl border-0 bg-white/80 shadow-xl backdrop-blur-sm hover:shadow-lg">
-        <CardContent className="p-4 md:p-8">
-          <div className="mb-8 text-center">
-            <H3 className="0 mb-2 text-2xl font-bold">
-              Strona + BookApp dla przychodni weterynaryjnej
-            </H3>
-            <p className="mb-3 md:mb-6">
-              Gotowy do wdrożenia system rezerwacji i strona wizytówka
-            </p>
-            <div className="mb-2 text-4xl font-bold text-cyan-700">
-              wdrożenie od 3900 zł
-            </div>
-          </div>
-          <div className="space-y-4">
-            {[
-              "Pełna personalizacja i optymalizacja SEO",
-              "System rezerwacji wizyt online 24/7",
-              "Panel administracyjny dla lekarzy",
-              "Zarządzanie profilami zwierząt",
-              "Automatyczne przypomnienia",
-              "Responsywny design",
-              "Wsparcie techniczne",
-            ].map((feature, index) => (
-              <div key={index} className="flex items-center space-x-3">
-                <CheckCircle className="h-5 w-5 text-emerald-600" />
-                <span className="text-gray-700">{feature}</span>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
+      <AccessibleLink
+        href="/book-app/weterynarze#form"
+        className="w-full md:w-min"
+        aria-label="Przejdź do demo"
+      >
+        <GradientButton size="default" outline>
+          <CalendarIcon className="mr-2 h-5 w-5 text-accent-cyan max-[380px]:hidden" />
+          Umów darmową prezentację online
+        </GradientButton>
+      </AccessibleLink>
     </>
   );
 }

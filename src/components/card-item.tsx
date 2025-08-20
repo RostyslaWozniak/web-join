@@ -54,7 +54,7 @@ export function CardItem({
 
         {title && (
           <Heading
-            className={cn("h-full flex-grow text-start", {
+            className={cn("mb-1 h-full flex-grow text-start", {
               "group-hover:underline": href,
               "text-start": align === "start",
               "text-center": align === "center",

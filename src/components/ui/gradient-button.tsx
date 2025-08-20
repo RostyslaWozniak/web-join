@@ -48,7 +48,7 @@ export function GradientButton({
       {outline && (
         <span
           className={cn(
-            "relative z-30 flex items-center bg-primary-gradient bg-clip-text tracking-wider text-transparent brightness-75",
+            "relative z-30 flex items-center bg-primary-gradient bg-clip-text text-transparent brightness-75",
           )}
         >
           {children}

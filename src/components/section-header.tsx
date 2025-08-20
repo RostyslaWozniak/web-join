@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { H2 } from "./ui/typography";
+import { H2, type H3 } from "./ui/typography";
 
 export function SectionHeader({
   title,
@@ -7,16 +7,18 @@ export function SectionHeader({
   className,
   titleClassName,
   subtitleClassName,
+  heading: Heading = H2,
 }: {
   title: React.ReactNode;
-  subtitle: string;
+  subtitle?: string;
   className?: string;
   titleClassName?: string;
   subtitleClassName?: string;
+  heading?: typeof H2 | typeof H3;
 }) {
   return (
     <div className={cn("mb-6 text-center md:mb-12", className)}>
-      <H2 className={cn("mb-3 md:mb-6", titleClassName)}>{title}</H2>
+      <Heading className={cn("mb-3 md:mb-6", titleClassName)}>{title}</Heading>
       {subtitle && (
         <p className={cn("text-xl", subtitleClassName)}>{subtitle}</p>
       )}

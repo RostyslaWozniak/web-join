@@ -1,4 +1,4 @@
-import "@/styles/globals.css";
+import "./weterynarze.styles.css";
 
 import { type Metadata } from "next";
 import { Header } from "@/components/header";
