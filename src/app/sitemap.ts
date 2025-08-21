@@ -4,8 +4,19 @@ import { posts } from "../features/blog/data/posts";
 import { problemsData } from "@/features/problems/data";
 
 const landingPages = [
-  { id: 1, href: "/book-app" },
-  { id: 2, href: "/book-app/weterynarze" },
+  { id: 1, href: "/book-app", lastModified: new Date("12.09.2025") },
+  {
+    id: 2,
+    href: "/book-app/weterynarze",
+    lastModified: new Date("21.09.2025"),
+    priority: 1,
+  },
+  {
+    id: 3,
+    href: "/book-app/dentysci",
+    lastModified: new Date("21.09.2025"),
+    priority: 1,
+  },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -14,6 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .map((post) => ({
       url: `${env.NEXT_PUBLIC_BASE_URL}/blog/${post.slug}`,
       lastModified: new Date(post.createdAt),
+      priority: 0.7,
     }));
 
   const landingPagesSitemap = landingPages.map(({ href }) => ({
@@ -31,15 +43,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     {
       url: `${env.NEXT_PUBLIC_BASE_URL}`,
-      lastModified: new Date(),
+      lastModified: new Date("12.09.2025"),
       priority: 1,
     },
+    ...landingPagesSitemap,
     {
       url: `${env.NEXT_PUBLIC_BASE_URL}/blog`,
-      lastModified: new Date(),
+      lastModified: new Date(
+        posts.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())[0]
+          ?.createdAt ?? new Date(),
+      ),
       priority: 0.6,
     },
-    ...landingPagesSitemap,
     ...postsSitemap,
     ...problemsPagesSitemap,
   ];

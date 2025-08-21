@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { AccessibleLink } from "@/components/accesible-link";
 import { GradientButton } from "@/components/ui/gradient-button";
-const servicePath = "weterynarze";
+const servicePath = "dentysci";
 
 const nav = [
   {
@@ -45,9 +45,10 @@ const nav = [
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
-  title: "System rezerwacji online dla przychodni weterynaryjnych - BookApp",
+  title:
+    "System rezerwacji online dla dentystów | BookApp dla Gabinetów Stomatologicznych",
   description:
-    "BookApp to nowoczesna strona internetowa z systemem rezerwacji wizyt online dla przychodni weterynaryjnych.",
+    "BookApp to nowoczesna strona internetowa z zaawansowanym systemem rezerwacji wizyt online, stworzona specjalnie dla przychodni dentystycznych.",
   icons: [{ rel: "icon", url: "/icon.ico" }],
   alternates: {
     languages: {
@@ -65,9 +66,10 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: "./",
-    title: "System rezerwacji online dla przychodni weterynaryjnych - BookApp",
+    title:
+      "BookApp: Aplikacja do rezerwacji wizyt online dla dentystów i klinik stomatologicznych",
     description:
-      "BookApp to nowoczesna strona internetowa z systemem rezerwacji wizyt online dla przychodni weterynaryjnych.",
+      "Zautomatyzuj umawianie wizyt w Twojej przychodni dentystycznej. BookApp to szybka strona i inteligentny kalendarz online, idealny dla każdego gabinetu stomatologicznego.",
     siteName: "Web Join",
     locale: "pl-PL",
     countryName: "Poland",
@@ -76,7 +78,7 @@ export const metadata: Metadata = {
       url: "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vGv9hFviLmG6Bl5ZSRD14bKQUPw0uxyIj2VEM",
       width: 1200,
       height: 630,
-      alt: "System rezerwacji online i nowoczesna strona internetowa dla weterynarzy",
+      alt: "System rezerwacji wizyt online i nowoczesna strona internetowa dla dentystów",
     },
   },
 };
@@ -85,11 +87,11 @@ const jsonLd: WithContext<WebSite> = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   url: "./",
-  name: "Strona i system rezerwacji online dla przychodni weterynaryjnych - BookApp",
+  name: "System i aplikacja rezerwacji wizyt online dla przychodni dentystycznych - BookApp",
   image:
     "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vGv9hFviLmG6Bl5ZSRD14bKQUPw0uxyIj2VEM",
   description:
-    "BookApp to nowoczesna strona internetowa z systemem rezerwacji wizyt dla przychodni weterynaryjnych. Ułatw klientom umawianie wizyt online 24/7 i zwiększ widoczność w Google.",
+    "BookApp to nowoczesne oprogramowanie do rezerwacji wizyt, stworzone dla gabinetów i klinik stomatologicznych. Ułatw pacjentom umawianie wizyt online 24/7, zautomatyzuj powiadomienia i zwiększ widoczność w Google.",
   publisher: {
     "@type": "Organization",
     name: "Web Join",

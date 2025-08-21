@@ -1,16 +1,17 @@
 import { Badge } from "@/components/ui/badge";
 import {
   CalendarIcon,
-  SmartphoneIcon,
-  ClockIcon,
   PhoneIcon,
-  PawPrintIcon,
-  FrownIcon,
   RocketIcon,
-  StarIcon,
-  CreditCardIcon,
   TargetIcon,
-  ChartColumnIcon,
+  AlarmClockCheckIcon,
+  ZapIcon,
+  UserCheckIcon,
+  UsersIcon,
+  ChartNoAxesCombinedIcon,
+  SearchIcon,
+  BellIcon,
+  ShieldCheckIcon,
 } from "lucide-react";
 import Image from "next/image";
 import { GridBackground } from "@/components/grid-background";
@@ -24,7 +25,7 @@ import { CardItem } from "@/components/card-item";
 import { CtaForm } from "@/features/forms/cta-form";
 import { SectionHeader } from "@/components/section-header";
 import { cn } from "@/lib/utils";
-import { PricingSection } from "../../../../../components/sections/pricing-section";
+import { PricingSection } from "@/components/sections/pricing-section";
 import {
   AppleIOIcon,
   GoogleCalendarIcon,
@@ -33,6 +34,7 @@ import {
   PayPalIcon,
   StripeIcon,
 } from "@/components/icons/brands-icons";
+import { MotionWrapper } from "@/components/motion-wrapper";
 
 export default function VeterinaryLanding() {
   return (
@@ -74,8 +76,8 @@ export default function VeterinaryLanding() {
       <SectionWrapper id="ceny">
         <MaxWidthWrapper>
           <PricingSection
-            title="Dla małych i średnich przychodni weterynaryjnych – elastyczne opcje"
-            pricing={vetPricing}
+            title="Elastyczny Cennik BookApp – Dopasowany do Potrzeb Twojej Przychodni Stomatologicznej"
+            pricing={dentistPricing}
           />
         </MaxWidthWrapper>
       </SectionWrapper>
@@ -83,12 +85,12 @@ export default function VeterinaryLanding() {
       <SectionWrapper className="relative" id="form">
         <MaxWidthWrapper size="sm" className="relative z-10">
           <SectionHeader
-            title="Zacznij już dziś!"
-            subtitle="Umów się na bezpłatną prezentację i poznaj możliwości systemu BookApp"
+            title="Czy jesteś gotowy na rewolucję w Umawianiu Wizyt w Twoim Gabinecie Stomatologicznym?"
+            subtitle="Program do umawiania wizyt dla dentystów czeka, aby odciążyć Twój zespół. Nie zwlekaj, zrób pierwszy krok w stronę efektywniejszej pracy i większej liczby zadowolonych pacjentów."
             className="mx-auto max-w-2xl"
           />
           <div>
-            <CtaForm typeOfProject="rezerwacji wizyt dla weterynarzy online BookApp" />
+            <CtaForm typeOfProject="rezerwacji wizyt dla dentystów online BookApp" />
           </div>
         </MaxWidthWrapper>
         <div className="absolute inset-0 bg-card-gradient opacity-50" />
@@ -105,48 +107,65 @@ export default function VeterinaryLanding() {
 
 function HeroSection() {
   return (
-    <GridBackground className="py-8 xl:py-20">
+    <GridBackground className="py-8 xl:py-12">
       <MaxWidthWrapper>
-        <div className="relative grid items-center gap-12 lg:grid-cols-2">
-          <div>
-            <div className="mb-4 max-w-4xl md:mb-8">
+        <div className="relative grid items-center gap-8 lg:gap-12">
+          <div className="mx-auto flex max-w-3xl flex-col items-start sm:mb-4 sm:items-center lg:max-w-7xl">
+            <MotionWrapper>
               <Badge className="mb-3 rounded-full bg-card-gradient text-foreground md:mb-6">
-                Nowoczesne rozwiązania dla weterynarii
+                Nowoczesne rozwiązania dla dentystów
               </Badge>
-              <H1 className="mb-3 font-bold text-foreground md:mb-6">
-                System rezerwacji online dla Twojej{" "}
-                <span className="text-accent-cyan brightness-[0.95]">
-                  przychodni weterynaryjnej
+            </MotionWrapper>
+
+            <MotionWrapper>
+              <H1 className="mb-3 font-bold text-foreground md:mb-6 md:text-center">
+                System rezerwacji online dla Twojego{" "}
+                <br className="hidden md:block" />
+                <span className="text-emerald-500 brightness-[0.95]">
+                  Gabinetu Stomatologicznego
                 </span>
+                <br />– Zyskaj Czas i Pacjentów
               </H1>
-              <Text variant="muted" size="subtitle" className="leading-relaxed">
-                Nowoczesny system rezerwacji w połączeniu z profesjonalną stroną
-                internetową to Twoje wsparcie 24/7. Zwiększ widoczność w Google
-                i zyskaj nowych klientów.
+            </MotionWrapper>
+            <MotionWrapper>
+              <Text
+                variant="muted"
+                size="subtitle"
+                className="max-w-3xl md:text-center"
+              >
+                Nowoczesny system rezerwacji wizyt BookApp w połączeniu z
+                profesjonalną stroną internetową to wsparcie 24/7 dla dentystów.
+                Zautomatyzuj umawianie wizyt i zwiększ widoczność w Google.
               </Text>
-            </div>
-            <div>
+            </MotionWrapper>
+            {/* <Benefits /> */}
+            <MotionWrapper className="w-full sm:w-auto">
               <AccessibleLink
                 href="/book-app/weterynarze#form"
                 aria-label="Umów darmową prezentację"
-                className="sm:mx-0"
+                className="mt-4 sm:mx-0 md:mt-8"
               >
-                <GradientButton className="">
+                <GradientButton>
                   <CalendarIcon className="mr-2" />
                   Umów prezentację online
                 </GradientButton>
               </AccessibleLink>
+            </MotionWrapper>
+          </div>
+
+          {/* Main placeholder image */}
+          <MotionWrapper>
+            <div className="pointer-events-none relative mx-auto max-w-3xl rounded-2xl">
+              <Image
+                priority
+                src="https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vcrmwkf42Ceq1RWILG3fczmyvMhgQnO4VHDwx"
+                alt="VetApp Dashboard Preview"
+                className="w-full rounded-lg object-cover lg:scale-110"
+                width="900"
+                height="900"
+              />
             </div>
-          </div>
-          <div className="relative">
-            <Image
-              src="https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vIlu9mSQsuw8XFMkabNAfpSTG7Kyi6xOWVh4R"
-              alt="System BookApp dla przychodni weterynaryjnej"
-              width={800}
-              height={500}
-              className="rounded-2xl opacity-90"
-            />
-          </div>
+          </MotionWrapper>
         </div>
       </MaxWidthWrapper>
     </GridBackground>
@@ -157,58 +176,63 @@ function SolutionsSection() {
   return (
     <>
       <SectionHeader
-        title="BookApp dla Przychodni Weterynaryjnych: Konkretne Rozwiązania dla Twoich Problemów"
+        title="Jak BookApp Rozwiązuje Problemy Twojego Gabinetu Stomatologicznego?"
+        subtitle="Poznaj kluczowe rozwiązania, które usprawnią zarządzanie terminami wizyt u stomatologa i pozwolą Tobie oraz Twojemu zespołowi skupić się na zapewnianiu najwyższej jakości opieki stomatologicznej."
         className="mx-auto mb-12 max-w-4xl md:mb-24"
       />
       <div className="mb-6 grid gap-4 sm:grid-cols-2 md:mb-12 md:grid-cols-3 md:gap-6">
         {[
           {
             id: "1",
-            title: "Koniec z niekończącymi się telefonami",
+            title: "Automatyczna rezerwacja wizyt 24/7",
             description:
-              "Dzięki systemowi rezerwacji wizyt online, Twoi klienci umawiają wizyty samodzielnie, 24/7, z dowolnego miejsca. Recepcja jest odciążona, a weterynarzy może skupić się na pracy.",
+              "Dzięki systemowi rezerwacji wizyt online, Twoi klienci umawiają wizyty samodzielnie, 24/7, z dowolnego miejsca. Recepcja jest odciążona, a personel może skupić się na pacjentach.",
             icon: PhoneIcon,
-            iconClassName: "bg-green-100 text-green-600 border-green-600",
+            iconClassName: "bg-orange-100 text-orange-600 border-orange-600",
           },
           {
             id: "2",
-            title: "Bez chaosu i nakładających się wizyt",
+            title: "Inteligentny kalendarz dentystyczny",
             description:
-              "Inteligentne algorytmy BookApp automatycznie dopasowują dostępne sloty na podstawie czasu trwania usługi i grafiku lekarzy. Koniec z podwójnymi rezerwacjami i nieporozumieniami w kalendarzu.",
-            icon: FrownIcon,
-            iconClassName: "bg-blue-100 text-blue-600 border-blue-600",
-          },
-          {
-            id: "3",
-            title: "Mniej zapomnianych wizyt",
-            description:
-              "BookApp wysyła automatyczne przypomnienia SMS i e-mail na 24 godziny przed wizytą. To minimalizuje szansę, że klient się nie pojawi i maksymalizuje Twoje przychody, jednocześnie dbając o komfort klienta.",
-            icon: ClockIcon,
-            iconClassName: "bg-pink-100 text-pink-600 border-pink-600",
-          },
-          {
-            id: "4",
-            title: "Natychmiastowa rezerwacja, bez czekania na linii",
-            description:
-              "Klienci cenią swój czas. Dzięki aplikacji do umawiania wizyt, rezerwacja zajmuje im kilkanaście sekund, eliminując frustrację związaną z długim oczekiwaniem na połączenie.",
-            icon: SmartphoneIcon,
+              "Program do rezerwacji wizyt dla stomatologów eliminuje nakładanie się terminów i zapewnia przejrzysty harmonogram dla każdego lekarza.",
+            icon: CalendarIcon,
+
             iconClassName: "bg-purple-100 text-purple-600 border-purple-600",
           },
           {
-            id: "5",
-            title: "Wygoda i nowoczesność dla opiekunów zwierząt",
+            id: "3",
+            title: "Skuteczne przypomnienia dla pacjentów",
             description:
-              "Zaoferuj swoim klientom intuicyjny panel, gdzie mogą przeglądać historię wizyt, umówić kolejny termin i otrzymywać personalizowane oferty. To buduje lojalność i pozytywne doświadczenia.",
-            icon: PawPrintIcon,
-            iconClassName: "bg-gray-100 text-gray-600   border-gray-600",
+              "Automatyczne powiadomienia SMS/E-mail minimalizują nieobecności na wizytach i gwarantują pełne wykorzystanie każdego slotu w Twojej przychodni dentystycznej.",
+            icon: AlarmClockCheckIcon,
+
+            iconClassName: "bg-indigo-100 text-indigo-600   border-indigo-600",
+          },
+          {
+            id: "4",
+            title: " Błyskawiczna rezerwacja bez czekania",
+            description:
+              "Pacjenci umawiają się natychmiastowo, ceniąc wygodę i dyskrecję, co poprawia ich pierwsze wrażenie o Twojej klinice.",
+            icon: ZapIcon,
+
+            iconClassName: "bg-blue-100 text-blue-600 border-blue-600",
+          },
+          {
+            id: "5",
+            title: "Wygodny panel pacjenta z historią wizyt",
+            description:
+              " Dedykowany panel pozwala pacjentom zarządzać swoimi rezerwacjami i przeglądać historię leczenia online.",
+            icon: UserCheckIcon,
+
+            iconClassName: "bg-green-100 text-green-600 border-green-600",
           },
           {
             id: "6",
-            title: "Zwiększona widoczność w Google",
+            title: "Zwiększona widoczność Twojej kliniki online",
             description:
-              "Strona internetowa zintegrowana z BookApp jest zoptymalizowana pod SEO i szybkość działania. Dodatkowo, system automatycznie prosi o opinie w Google po wizycie, znacząco poprawiając Twoją pozycję w wynikach wyszukiwania i na Mapach Google Moja Firma.",
+              "Zoptymalizowana pod SEO strona internetowa z BookApp oraz prośby o opinie wzmacniają Twoje lokalne SEO, przyciągając nowych pacjentów szukających lekarza dentysty.",
             icon: RocketIcon,
-            iconClassName: "bg-orange-100 text-orange-600 border-orange-600",
+            iconClassName: "bg-pink-100 text-pink-600 border-pink-600",
           },
         ].map(({ id, title, description, icon: Icon, iconClassName }) => (
           <CardItem
@@ -252,60 +276,61 @@ function FeaturesSection() {
   return (
     <>
       <SectionHeader
-        title="BookApp – Dodatkowe funkcje, które Napędzą Rozwój Twojej Kliniki Weterynaryjnej"
+        title="BookApp – Dodatkowe funkcje,  które Napędzą Wzrost i Efektywność Twojego Gabinetu Stomatologicznego"
+        subtitle="Odkryj unikalne funkcje oprogramowania do rezerwacji wizyt dla dentystów BookApp, które wykraczają poza standard, budując profesjonalny wizerunek i automatyzując kluczowe procesy w Twojej klinice."
         className="mx-auto mb-12 max-w-4xl md:mb-24"
       />
 
-      <div className="grid gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-6 lg:[&>*:nth-child(4)]:col-span-3 md:[&>*:nth-child(5)]:col-span-2 lg:[&>*:nth-child(5)]:col-span-3 [&>div]:col-span-2 md:[&>div]:col-span-1 lg:[&>div]:col-span-2">
+      <div className="grid gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
         {[
           {
             id: "1",
-            title: "Zwiększona widoczność dzięki opiniom Google",
+            title: "Optymalizacja wizytówki Google dla stomatologów",
             description: (
               <>
-                System automatycznie prosi klientów o opinie po wizycie, co
-                wzmacnia Twój wizerunek online i <b>lokalne SEO</b>
+                System automatycznie prosi pacjentów o opinie po wizycie, co
+                wzmacnia Twój wizerunek i <b>lokalne SEO</b> przychodni
               </>
             ),
-            icon: StarIcon,
+            icon: SearchIcon,
             iconClassName: "bg-green-100 text-green-600 border-green-600",
           },
           {
             id: "2",
-            title: "Programy lojalnościowe i abonamenty",
+            title: "Programy lojalnościowe i cykliczne kontrole",
             description: (
               <>
-                Możliwość tworzenia dedykowanych &quot;Pakietów Zdrowy
-                Pupil&quot; i subskrypcji, budujących długotrwałe relacje z
-                opiekunami zwierząt i zapewniających stały dopływ wizyt.
+                Możliwość ustawiania <b>przypomnień o cyklicznych wizytach </b>
+                kontrolnych czy higienizacji, budując długotrwałe relacje z
+                pacjentami
               </>
             ),
-            icon: PawPrintIcon,
-            iconClassName: "bg-blue-100 text-blue-600 border-blue-600",
+            icon: BellIcon,
+            iconClassName: "bg-amber-100 text-amber-600 border-amber-600",
           },
+
           {
             id: "3",
-            title: "Bezpieczne płatności online",
+            title: "Szczegółowe statystyki i raporty",
             description: (
               <>
-                Klienci mogą od razu opłacać wizyty, znacząco zmniejszając
-                liczbę
-                <b>odwołanych wizyt lub niepojawienie się klienta</b> i
-                usprawniając zarządzanie finansami Twojej kliniki
-                weterynaryjnej.
+                Monitoruj popularność usług, efektywność lekarzy i źródła
+                pozyskiwania pacjentów, aby podejmować świadome decyzje
+                strategiczne dla swojej kliniki.
               </>
             ),
-            icon: CreditCardIcon,
-            iconClassName: "bg-pink-100 text-pink-600 border-pink-600",
+            icon: ChartNoAxesCombinedIcon,
+            iconClassName: "bg-orange-100 text-orange-600 border-orange-600",
           },
           {
             id: "4",
-            title: "Inteligentne dopasowanie usług i weterynarzy",
+            title: "Inteligentne dopasowanie terminów do specjalistów",
             description: (
               <>
-                Nasze oprogramowanie do zarządzania kliniką weterynaryjną
+                <b>Program do zarządzania kliniką stomatologiczną </b>
                 automatycznie optymalizuje grafik, dopasowując terminy do
-                konkretnego lekarza i rodzaju usługi.
+                specjalizacji dentysty (np. ortodonta, chirurg) i czasu trwania
+                zabiegu.
               </>
             ),
             icon: TargetIcon,
@@ -313,16 +338,30 @@ function FeaturesSection() {
           },
           {
             id: "5",
-            title: "Szczegółowe statystyki i raporty",
+            title: "Bezpieczne płatności online za wizyty",
             description: (
               <>
-                Monitoruj popularność usług, trendy i efektywność przychodni
-                weterynaryjnej, aby podejmować świadome decyzje, które napędzą
-                rozwój Twojej placówki.
+                Pacjenci mogą od razu opłacać wizyty, znacząco zmniejszając
+                <b>liczbę odwołanych wizyt lub niepojawienie się klienta</b> i
+                usprawniając zarządzanie finansami Twojej przychodni
+                dentystycznej.
               </>
             ),
-            icon: ChartColumnIcon,
-            iconClassName: "bg-orange-100 text-orange-600 border-orange-600",
+            icon: ShieldCheckIcon,
+            iconClassName: "bg-pink-100 text-pink-600 border-pink-600",
+          },
+          {
+            id: "6",
+            title: "Wsparcie dla wielu specjalistów",
+            description: (
+              <>
+                System łatwo skaluje się, umożliwiając zarządzanie kalendarzami
+                dla dowolnej liczby dentystów, higienistek i asystentów w jednej{" "}
+                <b>aplikacji do rezerwacji wizyt u dentysty</b>.
+              </>
+            ),
+            icon: UsersIcon,
+            iconClassName: "bg-indigo-100 text-indigo-600 border-indigo-600",
           },
         ].map(({ id, title, description, icon: Icon, iconClassName }) => (
           <CardItem
@@ -340,53 +379,55 @@ function FeaturesSection() {
 
 const howItWorksData = [
   {
-    title: "Dla Właściciela Zwierzęcia: Szybkie Umawianie Wizyt dla Pupila",
+    title: "Dla Pacjenta: Szybkie Umawianie Wizyt u Dentysty",
     image: {
       url: "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vzqYJjdT6QqothpDwSr5YB8LNHEvyWmMIun40",
-      alt: "Panel klienta systemu BookApp",
+      alt: "Panel Pacjenta systemu BookApp",
     },
     features: [
       <>
-        Wchodzi na dedykowaną stronę Twojej przychodni → wybiera usługę i
-        preferowanego lekarza.
+        Wchodzi na dedykowaną stronę Twojej przychodni → wybiera usługę (np.
+        przegląd, leczenie, higienizacja) i preferowanego dentystę.
       </>,
-      <>Rezerwuje termin w przejrzystym kalendarzu online – dostępnym 24/7.</>,
       <>
-        Dostaje automatyczne potwierdzenie i przyjazne przypomnienie SMS/e-mail
-        24h przed wizytą.
+        Rezerwuje termin w przejrzystym <b>kalendarzu online</b> – dostępnym
+        24/7 z każdego urządzenia.
+      </>,
+      <>
+        Dostaje automatyczne potwierdzenie i przypomnienie SMS/e-mail 24h przed
+        wizytą.
       </>,
       <>
         Po wizycie otrzymuje prośbę o opinię w Google i możliwość rezerwacji
-        kolejnego terminu, co sprzyja budowaniu lojalności.
+        kolejnego terminu, budując zaufanie do Twojej kliniki.
       </>,
     ],
   },
   {
-    title: "Dla Lekarza Weterynarii: Pełna Kontrola nad Grafikiem i Pacjentami",
+    title: "Dla Lekarza Dentysty: Pełna Kontrola nad Grafikiem Wizyt",
     image: {
       url: "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vfN9aQv3AcEKai1sNROF2CSTYBeHqmWk4G3vg",
-      alt: "Panel weterynarza systemu BookApp",
+      alt: "Panel Dentysty systemu BookApp",
     },
     features: [
       <>
-        Loguje się do intuicyjnego panelu aplikacji dla weterynarza → widzi swój
-        indywidualny kalendarz wizyt.
+        Loguje się do intuicyjnego panelu <b>aplikacji dla dentysty</b> → widzi
+        swój indywidualny kalendarz spotkań i zabiegów.
       </>,
       <>
         Może łatwo ustawić dostępność, zaplanować urlopy czy przerwy w pracy,
-        zapewniając optymalny grafik pracy weterynarza.
+        zapewniając <b>optymalny grafik pracy dentysty</b>.
       </>,
       <>Dostaje natychmiastowe powiadomienia o nowych rezerwacjach.</>,
       <>
         Ma szybki dostęp do danych kontaktowych i historii leczenia każdego
-        pupila klientów, co ułatwia zarządzanie wizytami w klinice
-        weterynaryjnej.
+        pacjenta, co ułatwia zarządzanie wizytami w przychodni stomatologicznej.
       </>,
     ],
   },
   {
     title:
-      "Dla Menedżera Przychodni: Pełny Nadzór nad Działaniem Przychodni Weterynaryjnej",
+      "Dla Menedżera Przychodni: Pełny Nadzór nad Działaniem Kliniki Stomatologicznej",
     image: {
       url: "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5veCalen2JPzipwlqtrkLVBCHund47cRNXgFxS",
 
@@ -394,21 +435,20 @@ const howItWorksData = [
     },
     features: [
       <>
-        Zarządza wszystkimi lekarzami i oferowanymi usługami (np. szczepienia,
-        konsultacje, zabiegi) w ramach systemu rezerwacji dla przychodni
-        weterynaryjnej.
+        Zarządza wszystkimi dentystami i oferowanymi usługami w ramach{" "}
+        <b>systemu rezerwacji dla przychodni stomatologicznych</b>.
       </>,
       <>
         Ma kompleksowy podgląd całego harmonogramu kliniki w jednym centralnym
         kalendarzu.
       </>,
       <>
-        Analizuje statystyki: obroty, efektywność poszczególnych lekarzy i
-        źródła pozyskiwania klientów.
+        Analizuje statystyki: obroty, efektywność poszczególnych specjalistów i
+        źródła pozyskiwania pacjentów.
       </>,
       <>
         Konfiguruje automatyczne wiadomości e-mail i SMS, personalizując
-        komunikację z klientami.
+        komunikację z pacjentami.
       </>,
     ],
   },
@@ -417,7 +457,7 @@ function HowItWorksSection() {
   return (
     <>
       <SectionHeader
-        title="BookApp w Działaniu: Prosta i Intuicyjna Rezerwacja Wizyt Online dla Każdego"
+        title="BookApp w Działaniu: Prosta i Intuicyjna Rezerwacja Wizyt u Stomatologa"
         className="mx-auto mb-12 max-w-4xl md:mb-24"
       />
       <div className="space-y-12">
@@ -465,11 +505,8 @@ function CtaSection() {
   return (
     <>
       <SectionHeader
-        title="Gotowy, aby Twoja Przychodnia Weterynaryjna Działała Wydajniej?"
-        subtitle="Nie trać więcej czasu na ręczne zarządzanie wizytami. Zobacz, jak
-        oprogramowanie do rezerwacji BookApp może usprawnić Twoją codzienną
-        pracę i pozwolić Ci skupić się na tym, co najważniejsze – zdrowiu
-        zwierząt."
+        title="Gotowy, aby Twój Gabinet Stomatologiczny Działał Wydajniej i Nowocześniej?"
+        subtitle="Nie trać więcej czasu na ręczne zarządzanie wizytami. Zobacz, jak oprogramowanie do rezerwacji BookApp może usprawnić codzienną pracę Twojej przychodni i pozwolić Ci skupić się na zapewnianiu zdrowego uśmiechu pacjentów."
       />
       <AccessibleLink
         href="/book-app/weterynarze#form"
@@ -485,7 +522,7 @@ function CtaSection() {
   );
 }
 
-const vetPricing = [
+const dentistPricing = [
   {
     id: 1,
     name: "basic",
@@ -493,7 +530,7 @@ const vetPricing = [
     pricePerMonth: 249,
     benefits: [
       "Profesjonalna strona główna z nowoczesnym designem",
-      "System rezerwacji wizyt dla jednego weterynarza",
+      "System rezerwacji wizyt dla jednego dentysty",
       "Intuicyjny terminarz dostępny online 24/7",
       "Automatyczne potwierdzenia wizyt (SMS/e-mail)",
       "Podstawowa optymalizacja SEO (widoczność w Google)",
@@ -509,9 +546,9 @@ const vetPricing = [
     benefits: [
       "Wszystko z Basic",
       "Rozbudowana strona z podstronami (o nas, usługi, kontakt, blog, każda usługa osobno — lepsze SEO)",
-      "Możliwość zarządzania grafikami dla 2–4 weterynarzy",
-      "Panel zarządzania dla właściciela lub kierownika przychodni weterynaryjnej",
-      "Osobne widoki kalendarza dla każdego weterynarza",
+      "Możliwość zarządzania grafikami dla 2–4 stomatologów",
+      "Panel zarządzania dla właściciela lub menadżera kliniki dentystycznej",
+      "Osobne widoki kalendarza dla każdego dentysty",
       "Statystyki — ile wizyt dziennie, tygodniowo, miesięcznie",
       "Regularne wsparcie i aktualizacje",
       "Przygotowanie do dalszej rozbudowy (np. płatności online, CMS itd.)",
@@ -526,7 +563,7 @@ const vetPricing = [
     pricePerMonth: 499,
     benefits: [
       "Wszystko z pakietu Standard",
-      "Obsługa dowolnej liczby weterynarzy",
+      "Obsługa dowolnej liczby stomatologów",
       "Możliwość dodania płatności online i planów subskrypcyjnych",
       "Strona w wielu językach (jeśli potrzebna)",
       "Stała współpraca w ramach rozwoju i strategii online",

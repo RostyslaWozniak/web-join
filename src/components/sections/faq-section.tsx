@@ -49,9 +49,9 @@ const faqs = [
   },
   {
     question: "Jak wygląda proces tworzenia strony?",
-    answer: `- **Kontakt** – Kliknij "Join", aby wypełnić formularz i otrzymać darmową konsultację.
+    answer: `- **Kontakt** – Kliknij "Darmowa konsultacja" w prawym górnym rogu, wypełnij i wyślij formularz aby otrzymać darmową konsultację.
 
-- **Konsultacja** – Ustalamy, czego potrzebujesz i jaki masz budżet.
+- **Konsultacja** – to 30 min darmowej rozmowy online. Ustalamy, czego potrzebujesz i jaki masz budżet.
 
 - **Projektowanie** – Tworzę wygląd strony w programie graficznym **Figma (UI/UX)**.
 
@@ -68,7 +68,7 @@ const faqs = [
 -  **Strona firmowa** – pełna strona z kilkoma podstronami: "O nas", "Usługi", "Kontakt"  **od 2000 zł**
 -  **Sklep internetowy** – **od 3000 zł**
 
-📌 Cena zależy od funkcjonalności – mogę dopasować stronę do Twojego budżetu.`,
+📌 Cena zależy od funkcjonalności – mogę dopasować stronę do Twoich potrzeb i budżetu.`,
   },
 
   {

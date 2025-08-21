@@ -62,16 +62,16 @@ const businessTypes = [
   },
   {
     id: "2",
-    title: "Przychodni Medycznych i Dentystycznych",
+    title: "Gabinetów Stomatologicznych",
     description:
       "Zarządzaj harmonogramem lekarzy i specjalistów, oferując pacjentom szybkie i intuicyjne rezerwacje wizyt, bez konieczności dzwonienia.",
     icon: StethoscopeIcon,
     color: "bg-blue-100 text-blue-600 border-blue-600",
-    href: null,
+    href: "/book-app/dentysci",
   },
   {
     id: "3",
-    title: "Gabinetów Weterynaryjnych",
+    title: "PrzychodniWeterynaryjnych",
     description:
       "Usprawnij umawianie wizyt dla właścicieli zwierząt, wysyłaj automatyczne przypomnienia o szczepieniach czy kontrolach, a także buduj bazę stałych klientów.",
     icon: PawPrintIcon,

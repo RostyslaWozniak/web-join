@@ -17,6 +17,7 @@ export const burgerNavigation = [
         list={[
           { label: "System rezerwacji BookApp", href: "/book-app" },
           { label: "Dla Weterynarzy", href: "/book-app/weterynarze" },
+          { label: "Dla Dentystów", href: "/book-app/dentysci" },
         ]}
       />
     ),
