@@ -28,14 +28,8 @@ import {
 import Link from "next/link";
 
 export function CookieBanner() {
-  const {
-    isLoading,
-    acceptAll,
-    rejectAll,
-    updatePreferences,
-    preferences,
-    hasConsented,
-  } = useCookieConsent();
+  const { isLoading, acceptAll, updatePreferences, preferences, hasConsented } =
+    useCookieConsent();
   const [showCustomize, setShowCustomize] = useState(false);
   const [customPreferences, setCustomPreferences] = useState<CookiePreferences>(
     {
@@ -212,14 +206,14 @@ export function CookieBanner() {
           </CardDescription>
         </CardHeader>
         <CardFooter className="flex flex-col gap-2 py-0 sm:flex-row">
-          <Button
+          {/* <Button
             size="sm"
             variant="outline"
             onClick={rejectAll}
             className="order-2 w-full sm:order-1 sm:w-auto"
           >
             Odrzuć wszystko
-          </Button>
+          </Button> */}
           <Button
             variant="outline"
             size="sm"
