@@ -10,7 +10,7 @@ import { bookAppNav } from "../data/book-app-nav";
 import { MobileNav } from "@/components/mobile-nav";
 import { AccessibleLink } from "@/components/accesible-link";
 import { GradientButton } from "@/components/ui/gradient-button";
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon, NotebookIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
@@ -78,7 +78,13 @@ export default function LandingPageLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header navigation={bookAppNav} actionButton={<CtaHeaderButton />} />
+      <Header
+        navigation={[
+          ...bookAppNav,
+          { label: "Blog", href: "/blog", icon: NotebookIcon },
+        ]}
+        actionButton={<CtaHeaderButton />}
+      />
       <main className="flex-grow">{children}</main>
       <Footer />
       <MobileNav navigation={bookAppNav} />

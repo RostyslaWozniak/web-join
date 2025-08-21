@@ -70,6 +70,10 @@ export async function generateMetadata({
         alt: "Nowoczesne strony internetowe i sklepy online - Web Join",
       },
     },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 

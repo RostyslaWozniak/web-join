@@ -2,12 +2,19 @@ import { SubscribeForm } from "./subscribe-form";
 import { FacebookIcon, MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
 import { AccessibleLink } from "../accesible-link";
 import { contactData } from "@/data/contact-data";
+import Link from "next/link";
 
 export const navigation = [
   { name: "Strona główna", href: "/", ariaLabel: "strony głównej" },
   { name: "Usługi", href: "/#uslugi", ariaLabel: "usług" },
   { name: "Portfolio", href: "/#portfolio", ariaLabel: "portfolio" },
   { name: "FAQ", href: "/#faq", ariaLabel: "najczęsciej zadawanych pytań" },
+  { name: "Blog", href: "/blog", ariaLabel: "bloga" },
+  {
+    name: "Problemy lokalnych firm",
+    href: "/problemy",
+    ariaLabel: "strony z problemami lokalnych firm",
+  },
 ];
 
 export function Footer() {
@@ -20,16 +27,16 @@ export function Footer() {
 
         <div>
           <h2 className="text-lg font-semibold">Linki</h2>
-          <div className="flex flex-col items-start gap-x-3 text-start">
+          <div className="flex flex-col items-start text-start">
             {navigation.map(({ href, name, ariaLabel }) => (
-              <AccessibleLink
+              <Link
                 key={href}
                 href={href}
                 aria-label={`Przejdź do ${ariaLabel}`}
-                className="w-min px-2 capitalize hover:underline sm:mx-0"
+                className="w-min text-nowrap px-2 capitalize hover:underline sm:mx-0"
               >
                 {name}
-              </AccessibleLink>
+              </Link>
             ))}
           </div>
         </div>

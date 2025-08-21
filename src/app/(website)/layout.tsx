@@ -9,6 +9,7 @@ import { env } from "@/env";
 import type { WebSite, WithContext } from "schema-dts";
 import { homePageNav } from "@/components/header/home-page-nav";
 import { HideOnPath } from "@/components/conditional-path-renderer";
+import { NotebookIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
@@ -59,7 +60,12 @@ export default function RootLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header navigation={homePageNav} />
+      <Header
+        navigation={[
+          ...homePageNav,
+          { label: "Blog", href: "/blog", icon: NotebookIcon },
+        ]}
+      />
       <main className="flex flex-grow flex-col">{children}</main>
 
       <HideOnPath

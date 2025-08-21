@@ -13,6 +13,7 @@ import {
   GemIcon,
   HandshakeIcon,
   MonitorCogIcon,
+  NotebookIcon,
   ShieldQuestionIcon,
 } from "lucide-react";
 import { AccessibleLink } from "@/components/accesible-link";
@@ -105,7 +106,13 @@ export default function LandingPageLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header navigation={nav} actionButton={<CtaHeaderButton />} />
+      <Header
+        navigation={[
+          ...nav,
+          { label: "Blog", href: "/blog", icon: NotebookIcon },
+        ]}
+        actionButton={<CtaHeaderButton />}
+      />
       <main className="flex-grow">{children}</main>
       <Footer />
       <MobileNav navigation={nav} />
