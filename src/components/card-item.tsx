@@ -9,8 +9,8 @@ type CardItemProps = {
   className?: string;
   iconClassName?: string;
   descriptionClassName?: string;
+  description?: string | JSX.Element;
   icon?: LucideIcon;
-  description?: string;
   href?: string;
   align?: "start" | "center" | "end";
   heading?: typeof H3 | typeof H4;
@@ -21,6 +21,7 @@ export function CardItem({
   icon: Icon,
   description,
   descriptionClassName,
+
   href,
   className,
   iconClassName,

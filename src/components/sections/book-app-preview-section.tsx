@@ -10,6 +10,7 @@ import { GradientButton } from "../ui/gradient-button";
 import { Badge } from "../ui/badge";
 import { MotionWrapper } from "../motion-wrapper";
 import { AccessibleLink } from "../accesible-link";
+import { SectionHeader } from "../section-header";
 
 export function BookAppPreviewSection() {
   return (
@@ -22,21 +23,20 @@ export function BookAppPreviewSection() {
         </MotionWrapper>
 
         <MotionWrapper>
-          <h2 className="mb-6 text-4xl font-bold leading-tight text-foreground md:text-5xl">
-            <span className="bg-primary-gradient bg-clip-text text-transparent">
-              BookApp
-            </span>{" "}
-            – Twoje wizyty. <br /> Twój system. Twoja marka.
-          </h2>
-        </MotionWrapper>
-
-        <MotionWrapper>
-          <p className="mx-auto mb-8 max-w-4xl text-xl leading-relaxed text-gray-600">
-            Masz firmę usługową, która bazuje na wizytach? Fryzjer? Weterynarz?
+          <SectionHeader
+            title={
+              <>
+                <span className="bg-primary-gradient bg-clip-text text-transparent">
+                  BookApp
+                </span>{" "}
+                – Twoje wizyty. <br /> Twój system. Twoja marka.
+              </>
+            }
+            subtitle="Masz firmę usługową, która bazuje na wizytach? Fryzjer? Weterynarz?
             Kosmetyczka? Dentysta? Poznaj BookApp – nowoczesną stronę
             internetową z systemem rezerwacji online, zaprojektowaną specjalnie
-            dla lokalnych firm takich jak Twoja.
-          </p>
+            dla lokalnych firm takich jak Twoja."
+          />
         </MotionWrapper>
       </div>
       <MotionWrapper>

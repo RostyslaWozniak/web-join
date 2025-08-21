@@ -2,7 +2,6 @@ import "./weterynarze.styles.css";
 
 import { type Metadata } from "next";
 import { Header } from "@/components/header";
-import { Providers } from "@/components/providers";
 import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { env } from "@/env";
@@ -106,13 +105,11 @@ export default function LandingPageLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Providers>
-        <Header navigation={nav} actionButton={<CtaHeaderButton />} />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-        <MobileNav navigation={nav} />
-        <Toaster />
-      </Providers>
+      <Header navigation={nav} actionButton={<CtaHeaderButton />} />
+      <main className="flex-grow">{children}</main>
+      <Footer />
+      <MobileNav navigation={nav} />
+      <Toaster />
     </>
   );
 }

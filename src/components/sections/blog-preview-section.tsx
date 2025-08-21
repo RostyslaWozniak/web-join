@@ -1,10 +1,11 @@
 import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight } from "lucide-react";
-import { H2 } from "../ui/typography";
 import { posts } from "@/features/blog/data/posts";
 import { PostCard } from "@/features/blog/components/post-card";
 import { GradientButton } from "../ui/gradient-button";
 import { AccessibleLink } from "../accesible-link";
+import { MotionWrapper } from "../motion-wrapper";
+import { SectionHeader } from "../section-header";
 
 export function BlogPreviewSection() {
   return (
@@ -13,13 +14,11 @@ export function BlogPreviewSection() {
         <Badge className="mb-4 rounded-full bg-card-gradient px-4 py-2 text-sm font-medium text-foreground">
           📝 Z bloga
         </Badge>
-
-        <H2 className="mb-4">Wskazówki dla lokalnych firm</H2>
-
-        <p className="mx-auto max-w-3xl text-lg text-gray-600">
-          Dowiedz się, jak zdobywać więcej klientów, budować markę online i
-          rozwijać firmę w cyfrowym świecie.
-        </p>
+        <SectionHeader
+          title="Wskazówki dla lokalnych firm"
+          subtitle="Dowiedz się, jak zdobywać więcej klientów, budować markę online i
+          rozwijać firmę w cyfrowym świecie."
+        />
       </div>
 
       <div className="mb-12">
@@ -27,8 +26,14 @@ export function BlogPreviewSection() {
           {posts
             .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
             .slice(0, 3)
-            .map((post) => (
-              <PostCard key={post.slug} post={post} />
+            .map((post, index) => (
+              <MotionWrapper
+                key={post.slug}
+                transition={{ duration: 0.5, delay: 0.1 * (index % 3) }}
+                viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+              >
+                <PostCard post={post} />
+              </MotionWrapper>
             ))}
         </div>
       </div>

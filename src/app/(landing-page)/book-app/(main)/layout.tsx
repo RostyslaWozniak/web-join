@@ -2,7 +2,6 @@ import "@/styles/globals.css";
 
 import { type Metadata } from "next";
 import { Header } from "@/components/header";
-import { Providers } from "@/components/providers";
 import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { env } from "@/env";
@@ -79,13 +78,11 @@ export default function LandingPageLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Providers>
-        <Header navigation={bookAppNav} actionButton={<CtaHeaderButton />} />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-        <MobileNav navigation={bookAppNav} />
-        <Toaster />
-      </Providers>
+      <Header navigation={bookAppNav} actionButton={<CtaHeaderButton />} />
+      <main className="flex-grow">{children}</main>
+      <Footer />
+      <MobileNav navigation={bookAppNav} />
+      <Toaster />
     </>
   );
 }

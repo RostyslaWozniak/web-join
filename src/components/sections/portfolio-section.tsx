@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { H2, Text } from "../ui/typography";
+import { Text } from "../ui/typography";
 import { Badge } from "../ui/badge";
 import { PlayCircle } from "lucide-react";
 import {
@@ -9,6 +9,7 @@ import {
 } from "@/components/icons";
 import { MotionWrapper } from "../motion-wrapper";
 import { AccessibleLink } from "../accesible-link";
+import { SectionHeader } from "../section-header";
 
 const projects = [
   {
@@ -46,13 +47,11 @@ const projects = [
 export function PortfolioSection() {
   return (
     <>
-      <div className="mb-6 flex flex-col items-center gap-y-4 px-2.5 md:mb-12">
-        <H2>Portfolio</H2>
-        <Text size="subtitle" className="max-w-2xl !text-center">
-          Każdy projekt to unikalne rozwiązanie stworzone z myślą o celach
-          mojego klienta.
-        </Text>
-      </div>
+      <SectionHeader
+        title="Portfolio"
+        subtitle="Każdy projekt to unikalne rozwiązanie stworzone z myślą o celach
+          mojego klienta."
+      />
       <div className="isolate grid w-full place-items-center gap-x-6 gap-y-12 lg:w-auto lg:grid-cols-2 lg:gap-x-12 xl:grid-cols-3">
         {projects.map(
           ({ title, href, image1, image2, logo: Logo, category }, index) => (

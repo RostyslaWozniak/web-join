@@ -1,6 +1,5 @@
 import { Badge } from "@/components/ui/badge";
 import {
-  CheckCircle,
   CalendarIcon,
   SmartphoneIcon,
   ClockIcon,
@@ -21,7 +20,7 @@ import { CardItem } from "@/components/card-item";
 import { CtaForm } from "@/features/forms/cta-form";
 import { SectionHeader } from "@/components/section-header";
 import { cn } from "@/lib/utils";
-import { PricingSection } from "../../_components/sections/pricing-section";
+import { PricingSection } from "../../../../../components/sections/pricing-section";
 import {
   AppleIOIcon,
   GoogleCalendarIcon,
@@ -50,7 +49,7 @@ export default function VeterinaryLanding() {
         </MaxWidthWrapper>
       </SectionWrapper>
 
-      <SectionWrapper id="" className="bg-white">
+      <SectionWrapper id="">
         <MaxWidthWrapper>
           <FeaturesSection />
         </MaxWidthWrapper>
@@ -70,7 +69,10 @@ export default function VeterinaryLanding() {
 
       <SectionWrapper id="ceny">
         <MaxWidthWrapper>
-          <PricingSection />
+          <PricingSection
+            title="Dla małych i średnich przychodni weterynaryjnych – elastyczne opcje"
+            pricing={vetPricing}
+          />
         </MaxWidthWrapper>
       </SectionWrapper>
 
@@ -250,53 +252,83 @@ function FeaturesSection() {
         className="mx-auto mb-12 max-w-4xl md:mb-24"
       />
 
-      <div className="mb-6 grid items-center gap-12 md:mb-12 lg:grid-cols-2">
-        <div className="space-y-8">
-          {[
-            <>
-              <b>Zwiększona widoczność dzięki opiniom Google:</b> System
-              automatycznie prosi klientów o opinie po wizycie, co wzmacnia Twój
-              wizerunek online i <b>lokalne SEO</b>
-            </>,
-            <>
-              <b>Programy lojalnościowe i abonamenty:</b> Możliwość tworzenia
-              dedykowanych &quot;Pakietów Zdrowy Pupil&quot; i subskrypcji,
-              budujących długotrwałe relacje z opiekunami zwierząt i
-              zapewniających stały dopływ wizyt.
-            </>,
-            <>
-              <b>Bezpieczne płatności online:</b> Klienci mogą od razu opłacać
-              wizyty, znacząco zmniejszając liczbę
-              <b>odwołanych wizyt lub niepojawienie się klienta</b> i
-              usprawniając zarządzanie finansami Twojej kliniki weterynaryjnej.
-            </>,
-            <>
-              <b>Inteligentne dopasowanie usług i lekarzy:</b> Nasze
-              oprogramowanie do zarządzania kliniką weterynaryjną automatycznie
-              optymalizuje grafik, dopasowując terminy do konkretnego lekarza i
-              rodzaju usługi.
-            </>,
-            <>
-              <b> Szczegółowe statystyki i raporty:</b> Monitoruj popularność
-              usług, trendy i efektywność kliniki, aby podejmować świadome
-              decyzje, które napędzą rozwój Twojej placówki.
-            </>,
-          ].map((feature, index) => (
-            <div key={index} className="flex items-start space-x-4">
-              <CheckCircle className="mt-1 h-6 w-6 flex-shrink-0 text-emerald-600" />
-              <p className="text-lg text-gray-700">{feature}</p>
-            </div>
-          ))}
-        </div>
-        <div className="relative">
-          <Image
-            src="https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vFUcNU5oBYGM0x51Xkr9t2iosJVAzI8RjdTOb"
-            alt="Interfejs systemu BookApp"
-            width={700}
-            height={500}
-            className="rounded-2xl shadow-md"
+      <div className="grid gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-6 lg:[&>*:nth-child(4)]:col-span-3 md:[&>*:nth-child(5)]:col-span-2 lg:[&>*:nth-child(5)]:col-span-3 [&>div]:col-span-2 md:[&>div]:col-span-1 lg:[&>div]:col-span-2">
+        {[
+          {
+            id: "1",
+            title: "Zwiększona widoczność dzięki opiniom Google",
+            description: (
+              <>
+                System automatycznie prosi klientów o opinie po wizycie, co
+                wzmacnia Twój wizerunek online i <b>lokalne SEO</b>
+              </>
+            ),
+            icon: PhoneIcon,
+            iconClassName: "bg-green-100 text-green-600 border-green-600",
+          },
+          {
+            id: "2",
+            title: "Programy lojalnościowe i abonamenty",
+            description: (
+              <>
+                Możliwość tworzenia dedykowanych &quot;Pakietów Zdrowy
+                Pupil&quot; i subskrypcji, budujących długotrwałe relacje z
+                opiekunami zwierząt i zapewniających stały dopływ wizyt.
+              </>
+            ),
+            icon: FrownIcon,
+            iconClassName: "bg-blue-100 text-blue-600 border-blue-600",
+          },
+          {
+            id: "3",
+            title: "Bezpieczne płatności online",
+            description: (
+              <>
+                Klienci mogą od razu opłacać wizyty, znacząco zmniejszając
+                liczbę
+                <b>odwołanych wizyt lub niepojawienie się klienta</b> i
+                usprawniając zarządzanie finansami Twojej kliniki
+                weterynaryjnej.
+              </>
+            ),
+            icon: ClockIcon,
+            iconClassName: "bg-pink-100 text-pink-600 border-pink-600",
+          },
+          {
+            id: "4",
+            title: "Inteligentne dopasowanie usług i lekarzy",
+            description: (
+              <>
+                Nasze oprogramowanie do zarządzania kliniką weterynaryjną
+                automatycznie optymalizuje grafik, dopasowując terminy do
+                konkretnego lekarza i rodzaju usługi.
+              </>
+            ),
+            icon: SmartphoneIcon,
+            iconClassName: "bg-purple-100 text-purple-600 border-purple-600",
+          },
+          {
+            id: "5",
+            title: "Szczegółowe statystyki i raporty",
+            description: (
+              <>
+                Monitoruj popularność usług, trendy i efektywność kliniki, aby
+                podejmować świadome decyzje, które napędzą rozwój Twojej
+                placówki.
+              </>
+            ),
+            icon: PawPrintIcon,
+            iconClassName: "bg-gray-100 text-gray-600   border-gray-600",
+          },
+        ].map(({ id, title, description, icon: Icon, iconClassName }) => (
+          <CardItem
+            key={id}
+            title={title}
+            description={description}
+            icon={Icon}
+            iconClassName={iconClassName}
           />
-        </div>
+        ))}
       </div>
     </>
   );
@@ -306,7 +338,7 @@ const howItWorksData = [
   {
     title: "Dla Właściciela Zwierzęcia: Szybkie Umawianie Wizyt dla Pupila",
     image: {
-      url: "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vZnUYYy9NdUy9Ex7CYT1F6pQR5h4ct83KgBOi",
+      url: "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vzqYJjdT6QqothpDwSr5YB8LNHEvyWmMIun40",
       alt: "Panel klienta systemu BookApp",
     },
     features: [
@@ -328,7 +360,7 @@ const howItWorksData = [
   {
     title: "Dla Lekarza Weterynarii: Pełna Kontrola nad Grafikiem i Pacjentami",
     image: {
-      url: "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vDYUg4gImIwaJ1zTQ5WiArgde3NYZcoP2M9hR",
+      url: "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vfN9aQv3AcEKai1sNROF2CSTYBeHqmWk4G3vg",
       alt: "Panel weterynarza systemu BookApp",
     },
     features: [
@@ -350,7 +382,8 @@ const howItWorksData = [
   {
     title: "Dla Menedżera Przychodni: Pełny Nadzór nad Działaniem Kliniki",
     image: {
-      url: "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vFUcNU5oBYGM0x51Xkr9t2iosJVAzI8RjdTOb",
+      url: "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5veCalen2JPzipwlqtrkLVBCHund47cRNXgFxS",
+
       alt: "Panel administratora/menedżera systemu BookApp",
     },
     features: [
@@ -381,7 +414,7 @@ function HowItWorksSection() {
         title="BookApp w Działaniu: Prosta i Intuicyjna Rezerwacja Wizyt Online dla Każdego"
         className="mx-auto mb-12 max-w-4xl md:mb-24"
       />
-      <div className="space-y-12 md:space-y-24">
+      <div className="space-y-12">
         {howItWorksData.map(({ title, image, features }, i) => (
           <div
             key={title}
@@ -408,9 +441,11 @@ function HowItWorksSection() {
               <Image
                 src={image.url}
                 alt={image.alt}
-                width={700}
-                height={500}
-                className="rounded-2xl object-cover shadow-md"
+                width={1000}
+                height={650}
+                className={cn("relative", {
+                  "rounded-lg shadow-sm": i !== 0,
+                })}
               />
             </div>
           </div>
@@ -443,3 +478,55 @@ function CtaSection() {
     </>
   );
 }
+
+const vetPricing = [
+  {
+    id: 1,
+    name: "basic",
+    price: 3900,
+    pricePerMonth: 249,
+    benefits: [
+      "Profesjonalna strona główna z nowoczesnym designem",
+      "System rezerwacji wizyt dla jednego weterynarza",
+      "Intuicyjny terminarz dostępny online 24/7",
+      "Automatyczne potwierdzenia wizyt (SMS/e-mail)",
+      "Podstawowa optymalizacja SEO (widoczność w Google)",
+      "Możliwość dalszej rozbudowy w przyszłości",
+    ],
+    styles: "bg-emerald-100 text-emerald-800",
+  },
+  {
+    id: 2,
+    name: "standard",
+    price: 5900,
+    pricePerMonth: 349,
+    benefits: [
+      "Wszystko z Basic",
+      "Rozbudowana strona z podstronami (o nas, usługi, kontakt, blog, każda usługa osobno — lepsze SEO)",
+      "Możliwość zarządzania grafikami dla 2–4 weterynarzy",
+      "Panel zarządzania dla właściciela lub kierownika przychodni weterynaryjnej",
+      "Osobne widoki kalendarza dla każdego weterynarza",
+      "Statystyki — ile wizyt dziennie, tygodniowo, miesięcznie",
+      "Regularne wsparcie i aktualizacje",
+      "Przygotowanie do dalszej rozbudowy (np. płatności online, CMS itd.)",
+    ],
+    styles: "bg-blue-100 text-blue-800",
+    isMostPopular: true,
+  },
+  {
+    id: 3,
+    name: "premium",
+    price: 9900,
+    pricePerMonth: 499,
+    benefits: [
+      "Wszystko z pakietu Standard",
+      "Obsługa dowolnej liczby weterynarzy",
+      "Możliwość dodania płatności online i planów subskrypcyjnych",
+      "Strona w wielu językach (jeśli potrzebna)",
+      "Stała współpraca w ramach rozwoju i strategii online",
+      "Priorytetowe wsparcie — szybka reakcja na potrzeby i zmiany",
+      "Regularne konsultacje i analizy rozwoju strony",
+    ],
+    styles: "bg-purple-100 text-purple-800",
+  },
+];

@@ -1,7 +1,7 @@
 "use client";
 
 import { Accordion } from "../accordion";
-import { H2 } from "../ui/typography";
+import { SectionHeader } from "../section-header";
 
 const faqs = [
   {
@@ -87,9 +87,13 @@ const faqs = [
 export function FaqSection() {
   return (
     <>
-      <H2 className="mb-6 md:mb-12">
-        FAQ – <br /> Najczęściej zadawane pytania
-      </H2>
+      <SectionHeader
+        title={
+          <>
+            FAQ – <br /> Najczęściej zadawane pytania
+          </>
+        }
+      />
       <Accordion questions={faqs} />
     </>
   );

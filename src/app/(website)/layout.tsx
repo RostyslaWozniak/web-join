@@ -2,7 +2,6 @@ import "@/styles/globals.css";
 
 import { type Metadata } from "next";
 import { Header } from "@/components/header";
-import { Providers } from "@/components/providers";
 import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { MobileNav } from "@/components/mobile-nav";
@@ -60,21 +59,19 @@ export default function RootLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Providers>
-        <Header navigation={homePageNav} />
-        <main className="flex flex-grow flex-col">{children}</main>
+      <Header navigation={homePageNav} />
+      <main className="flex flex-grow flex-col">{children}</main>
 
-        <HideOnPath
-          condition={{
-            path: "/join",
-            matchType: "startsWith",
-          }}
-        >
-          <MobileNav navigation={homePageNav} actionButton />
-          <Footer />
-        </HideOnPath>
-        <Toaster />
-      </Providers>
+      <HideOnPath
+        condition={{
+          path: "/join",
+          matchType: "startsWith",
+        }}
+      >
+        <MobileNav navigation={homePageNav} actionButton />
+        <Footer />
+      </HideOnPath>
+      <Toaster />
     </>
   );
 }
