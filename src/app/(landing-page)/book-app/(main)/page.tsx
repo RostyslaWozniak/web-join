@@ -16,15 +16,15 @@ export default function BookAppPage() {
     <>
       <BookAppHeroSection />
 
-      <SectionWrapper>
+      <SectionWrapper id="dla-kogo">
         <MaxWidthWrapper>
-          <ProblemSection />
+          <TargetAudienceSection />
         </MaxWidthWrapper>
       </SectionWrapper>
 
-      <SectionWrapper id="dla-kogo" className="bg-white">
+      <SectionWrapper className="bg-white">
         <MaxWidthWrapper>
-          <TargetAudienceSection />
+          <ProblemSection />
         </MaxWidthWrapper>
       </SectionWrapper>
 
@@ -39,12 +39,6 @@ export default function BookAppPage() {
           <UspSection />
         </MaxWidthWrapper>
       </SectionWrapper>
-
-      {/* <SectionWrapper className="bg-card-gradient">
-        <MaxWidthWrapper>
-          <DemoSection />
-        </MaxWidthWrapper>
-      </SectionWrapper> */}
 
       <SectionWrapper id="form" className="relative">
         <MaxWidthWrapper size="sm" className="relative z-10">

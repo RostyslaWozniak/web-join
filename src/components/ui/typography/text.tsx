@@ -13,7 +13,7 @@ const textVariants = cva("font-manrope ", {
     },
     variant: {
       default: "text-foreground",
-      muted: "text-cyan-900 font-semibold dark:text-white/90",
+      muted: "text-gray-600 font-semibold dark:text-white/90",
     },
   },
   defaultVariants: {

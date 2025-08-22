@@ -56,7 +56,6 @@ export function CardItem({
         {title && (
           <Heading
             className={cn("mb-1 h-full flex-grow text-start", {
-              "group-hover:underline": href,
               "text-start": align === "start",
               "text-center": align === "center",
               "text-end": align === "end",
@@ -90,7 +89,12 @@ export function CardItem({
             className="absolute inset-0 min-w-full"
             aria-label={`Przejdż do strony ${title}`}
           />
-          <ArrowUpRightIcon className="absolute right-4 top-4 z-10 duration-200 group-hover:-translate-y-1 group-hover:translate-x-1 md:opacity-0 md:group-hover:opacity-100" />
+          <div className="absolute right-4 top-4 -z-10 flex items-center gap-1">
+            <p className="text-sm text-cyan-700 group-hover:underline">
+              zobacz więcej
+            </p>
+            <ArrowUpRightIcon className="h-4 w-4 text-cyan-700" />
+          </div>
         </>
       )}
     </Card>

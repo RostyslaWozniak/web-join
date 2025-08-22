@@ -22,7 +22,9 @@ export function SectionHeader({
     >
       <Heading className={cn("mb-3 md:mb-6", titleClassName)}>{title}</Heading>
       {subtitle && (
-        <p className={cn("text-xl", subtitleClassName)}>{subtitle}</p>
+        <p className={cn("text-lg md:text-xl", subtitleClassName)}>
+          {subtitle}
+        </p>
       )}
     </div>
   );

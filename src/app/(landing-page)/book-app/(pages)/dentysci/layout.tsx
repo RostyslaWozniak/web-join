@@ -99,7 +99,7 @@ const jsonLd: WithContext<WebSite> = {
   },
 };
 
-export default function LandingPageLayout({
+export default function DentistLandingPageLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
@@ -126,7 +126,7 @@ export default function LandingPageLayout({
 function CtaHeaderButton() {
   return (
     <AccessibleLink
-      href="/book-app/weterynarze#form"
+      href={`/book-app/${servicePath}#form`}
       aria-label="Umów darmową prezentację"
     >
       <GradientButton outline size="sm" className="min-h-10">

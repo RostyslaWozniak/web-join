@@ -36,7 +36,9 @@ import {
 } from "@/components/icons/brands-icons";
 import { MotionWrapper } from "@/components/motion-wrapper";
 
-export default function VeterinaryLanding() {
+const servicePath = "dentysci";
+
+export default function DentistLandingPage() {
   return (
     <>
       <SectionWrapper paddingBlock="none">
@@ -141,7 +143,7 @@ function HeroSection() {
             {/* <Benefits /> */}
             <MotionWrapper className="w-full sm:w-auto">
               <AccessibleLink
-                href="/book-app/weterynarze#form"
+                href={`/book-app/${servicePath}#form`}
                 aria-label="Umów darmową prezentację"
                 className="mt-4 sm:mx-0 md:mt-8"
               >
@@ -509,7 +511,7 @@ function CtaSection() {
         subtitle="Nie trać więcej czasu na ręczne zarządzanie wizytami. Zobacz, jak oprogramowanie do rezerwacji BookApp może usprawnić codzienną pracę Twojej przychodni i pozwolić Ci skupić się na zapewnianiu zdrowego uśmiechu pacjentów."
       />
       <AccessibleLink
-        href="/book-app/weterynarze#form"
+        href={`/book-app/${servicePath}#form`}
         className="w-full md:w-min"
         aria-label="Przejdź do demo"
       >

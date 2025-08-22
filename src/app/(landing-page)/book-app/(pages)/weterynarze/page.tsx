@@ -24,7 +24,7 @@ import { CardItem } from "@/components/card-item";
 import { CtaForm } from "@/features/forms/cta-form";
 import { SectionHeader } from "@/components/section-header";
 import { cn } from "@/lib/utils";
-import { PricingSection } from "../../../../../components/sections/pricing-section";
+import { PricingSection } from "@/components/sections/pricing-section";
 import {
   AppleIOIcon,
   GoogleCalendarIcon,
@@ -34,7 +34,9 @@ import {
   StripeIcon,
 } from "@/components/icons/brands-icons";
 
-export default function VeterinaryLanding() {
+const servicePath = "weterynarze";
+
+export default function VetLandingPage() {
   return (
     <>
       <SectionWrapper paddingBlock="none">
@@ -127,7 +129,7 @@ function HeroSection() {
             </div>
             <div>
               <AccessibleLink
-                href="/book-app/weterynarze#form"
+                href={`/book-app/${servicePath}#form`}
                 aria-label="Umów darmową prezentację"
                 className="sm:mx-0"
               >
@@ -472,7 +474,7 @@ function CtaSection() {
         zwierząt."
       />
       <AccessibleLink
-        href="/book-app/weterynarze#form"
+        href={`/book-app/${servicePath}#form`}
         className="w-full md:w-min"
         aria-label="Przejdź do demo"
       >

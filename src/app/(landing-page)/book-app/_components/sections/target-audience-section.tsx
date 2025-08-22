@@ -1,5 +1,6 @@
 import { CardItem } from "@/components/card-item";
-import { H2, H3, H4 } from "@/components/ui/typography";
+import { SectionHeader } from "@/components/section-header";
+import { H3, H4 } from "@/components/ui/typography";
 import {
   BriefcaseIcon,
   CarIcon,
@@ -14,17 +15,14 @@ import {
 export function TargetAudienceSection() {
   return (
     <>
-      <div className="mb-6 text-center md:mb-12">
-        <H2 className="mb-6">Czy to rozwiązanie dla Twojej firmy?</H2>
-
-        <p className="mx-auto max-w-4xl text-lg leading-relaxed text-gray-600">
-          BookApp to idealne rozwiązanie dla wszystkich firm usługowych, które
+      <SectionHeader
+        title="Czy to rozwiązanie dla Twojej firmy?"
+        subtitle="BookApp to idealne rozwiązanie dla wszystkich firm usługowych, które
           chcą zoptymalizować zarządzanie wizytami, zwiększyć swoją widoczność
           online i pozyskiwać więcej klientów. Niezależnie od branży, jeśli
           Twoja firma opiera się na rezerwacjach i spotkaniach, BookApp jest dla
-          Ciebie!
-        </p>
-      </div>
+          Ciebie!"
+      />
 
       {/* Business Types */}
       <div>
@@ -53,15 +51,6 @@ export function TargetAudienceSection() {
 const businessTypes = [
   {
     id: "1",
-    title: "Salonów Fryzjerskich i Kosmetycznych",
-    description:
-      "Uwolnij recepcję od ciągłych telefonów, pozwól klientom umawiać wizyty online 24/7 i zaoferuj im wygodne przypomnienia o zabiegach.",
-    icon: ScissorsIcon,
-    color: "bg-pink-100 text-pink-600 border-pink-600",
-    href: null,
-  },
-  {
-    id: "2",
     title: "Gabinetów Stomatologicznych",
     description:
       "Zarządzaj harmonogramem lekarzy i specjalistów, oferując pacjentom szybkie i intuicyjne rezerwacje wizyt, bez konieczności dzwonienia.",
@@ -70,13 +59,22 @@ const businessTypes = [
     href: "/book-app/dentysci",
   },
   {
-    id: "3",
+    id: "2",
     title: "PrzychodniWeterynaryjnych",
     description:
       "Usprawnij umawianie wizyt dla właścicieli zwierząt, wysyłaj automatyczne przypomnienia o szczepieniach czy kontrolach, a także buduj bazę stałych klientów.",
     icon: PawPrintIcon,
     color: "bg-green-100 text-green-600 border-green-600",
     href: "/book-app/weterynarze",
+  },
+  {
+    id: "3",
+    title: "Salonów Fryzjerskich i Kosmetycznych",
+    description:
+      "Uwolnij recepcję od ciągłych telefonów, pozwól klientom umawiać wizyty online 24/7 i zaoferuj im wygodne przypomnienia o zabiegach.",
+    icon: ScissorsIcon,
+    color: "bg-pink-100 text-pink-600 border-pink-600",
+    href: null,
   },
   {
     id: "4",

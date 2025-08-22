@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     countryName: "Poland",
     type: "website",
     images: {
-      url: "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vGv9hFviLmG6Bl5ZSRD14bKQUPw0uxyIj2VEM",
+      url: "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vIlu9mSQsuw8XFMkabNAfpSTG7Kyi6xOWVh4R",
       width: 1200,
       height: 630,
       alt: "System rezerwacji online i nowoczesna strona internetowa dla weterynarzy",
@@ -87,7 +87,7 @@ const jsonLd: WithContext<WebSite> = {
   url: "./",
   name: "Strona i system rezerwacji online dla przychodni weterynaryjnych - BookApp",
   image:
-    "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vGv9hFviLmG6Bl5ZSRD14bKQUPw0uxyIj2VEM",
+    "https://njmm8e6312.ufs.sh/f/mgG8Yp1X9p5vIlu9mSQsuw8XFMkabNAfpSTG7Kyi6xOWVh4R",
   description:
     "BookApp to nowoczesna strona internetowa z systemem rezerwacji wizyt dla przychodni weterynaryjnych. Ułatw klientom umawianie wizyt online 24/7 i zwiększ widoczność w Google.",
   publisher: {
@@ -97,7 +97,7 @@ const jsonLd: WithContext<WebSite> = {
   },
 };
 
-export default function LandingPageLayout({
+export default function VetLandingPageLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
@@ -124,7 +124,7 @@ export default function LandingPageLayout({
 function CtaHeaderButton() {
   return (
     <AccessibleLink
-      href="/book-app/weterynarze#form"
+      href={`/book-app/${servicePath}#form`}
       aria-label="Umów darmową prezentację"
     >
       <GradientButton outline size="sm" className="min-h-10">
