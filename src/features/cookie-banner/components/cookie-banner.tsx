@@ -67,7 +67,7 @@ export function CookieBanner() {
 
   if (showCustomize) {
     return (
-      <div className="fixed inset-0 z-50 flex w-full items-end justify-center bg-black/40 p-2 backdrop-blur-sm sm:items-center">
+      <div className="fixed bottom-2 left-2 right-2 z-50 mx-auto flex w-[calc(100%-16px)] items-end justify-center sm:items-center md:left-1/2 md:-translate-x-1/2">
         <Card className="mx-auto max-h-[calc(100vh-16px)] max-w-2xl overflow-y-auto">
           <CardHeader>
             <div className="flex items-start gap-2">
@@ -190,7 +190,7 @@ export function CookieBanner() {
   // }
 
   return (
-    <div className="fixed inset-0 z-50 flex w-full items-end justify-center bg-black/40 p-2 backdrop-blur-sm sm:items-center">
+    <div className="fixed bottom-2 left-2 right-2 z-50 mx-auto flex w-[calc(100%-16px)] items-end justify-center sm:items-center md:left-1/2 md:-translate-x-1/2">
       <Card className="mx-auto max-w-2xl">
         <CardHeader>
           <div className="flex items-center gap-2">
