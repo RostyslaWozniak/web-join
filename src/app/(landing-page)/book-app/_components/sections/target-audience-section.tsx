@@ -60,7 +60,7 @@ const businessTypes = [
   },
   {
     id: "2",
-    title: "PrzychodniWeterynaryjnych",
+    title: "Przychodni Weterynaryjnych",
     description:
       "Usprawnij umawianie wizyt dla właścicieli zwierząt, wysyłaj automatyczne przypomnienia o szczepieniach czy kontrolach, a także buduj bazę stałych klientów.",
     icon: PawPrintIcon,
