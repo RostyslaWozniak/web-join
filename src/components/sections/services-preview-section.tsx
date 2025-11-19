@@ -92,7 +92,7 @@ export function ServicesPreviewSection() {
         {/* Business Types */}
         <div className="mb-16">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {servicesData.slice(0, 3).map((business, index) => {
+            {servicesData.map((business, index) => {
               const IconComponent = business.icon;
               return (
                 <MotionWrapper

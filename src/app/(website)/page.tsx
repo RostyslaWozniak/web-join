@@ -6,6 +6,7 @@ import {
   FaqSection,
   GridCTASection,
   DontHaveWebsiteSection,
+  ServicesPreviewSection,
 } from "@/components/sections";
 import { ProblemsPreviewSection } from "@/features/problems/components/problems-preview-section";
 import { SectionWrapper } from "@/components/section-wrapper";
@@ -20,17 +21,23 @@ export default function HomePage() {
       {/* DONT HAVE A WEBSITE */}
       <SectionWrapper id="uslugi">
         <MaxWidthWrapper>
-          <DontHaveWebsiteSection />
+          <ServicesPreviewSection />
         </MaxWidthWrapper>
       </SectionWrapper>
+      {/* DONT HAVE A WEBSITE */}
+      {/* <SectionWrapper id="uslugi">
+        <MaxWidthWrapper>
+          <DontHaveWebsiteSection />
+        </MaxWidthWrapper>
+      </SectionWrapper> */}
       {/* SECTION SEPARATOR */}
-      <SectionSeparator />
+      {/* <SectionSeparator /> */}
       {/* PROBLEMS PREVIEW SECTION */}
-      <SectionWrapper>
+      {/* <SectionWrapper>
         <MaxWidthWrapper>
           <ProblemsPreviewSection />
         </MaxWidthWrapper>
-      </SectionWrapper>
+      </SectionWrapper> */}
       {/* BOOK APP PREVIEW */}
       <SectionWrapper className="pt-0 md:pt-0">
         <MaxWidthWrapper size="sm">
