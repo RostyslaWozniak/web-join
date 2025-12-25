@@ -5,10 +5,10 @@ import {
   BookAppPreviewSection,
   FaqSection,
   GridCTASection,
-  DontHaveWebsiteSection,
+  // DontHaveWebsiteSection,
   ServicesPreviewSection,
 } from "@/components/sections";
-import { ProblemsPreviewSection } from "@/features/problems/components/problems-preview-section";
+// import { ProblemsPreviewSection } from "@/features/problems/components/problems-preview-section";
 import { SectionWrapper } from "@/components/section-wrapper";
 import { MaxWidthWrapper } from "@/components/max-width-wrapper";
 import { SectionSeparator } from "@/components/ui/section-separator";
